@@ -1,0 +1,119 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@theme {
+  --color-background: #e9fdff;
+  --color-surface: #e9fdff;
+  --color-surface-bright: #e9fdff;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-low: #e3f7f9;
+  --color-surface-container: #def2f4;
+  --color-surface-container-high: #d8ecee;
+  --color-surface-container-highest: #d2e6e8;
+  --color-surface-dim: #cadee0;
+
+  --color-primary: #00190a;
+  --color-primary-container: #0a2f1b;
+  --color-on-primary: #ffffff;
+  --color-on-primary-container: #73987e;
+
+  --color-secondary: #2d6c00;
+  --color-secondary-container: #abf67e;
+  --color-on-secondary-container: #317203;
+  --color-secondary-fixed: #abf67e;
+
+  --color-on-surface: #0c1e20;
+  --color-on-surface-variant: #424842;
+  --color-outline: #727972;
+  --color-outline-variant: #c1c8c0;
+
+  --font-serif: var(--font-garamond), "EB Garamond", Georgia, serif;
+  --font-sans: var(--font-jakarta), "Plus Jakarta Sans", system-ui, sans-serif;
+  --font-heading: var(--font-garamond), "EB Garamond", Georgia, serif;
+  --font-body: var(--font-jakarta), "Plus Jakarta Sans", system-ui, sans-serif;
+}
+
+@layer base {
+  :root {
+    --bg-page: #e9fdff;
+    --bg-surface: #ffffff;
+    --bg-surface-subtle: #def2f4;
+    --bg-surface-low: #e3f7f9;
+    --text-primary: #00190a;
+    --text-on-surface: #0c1e20;
+    --text-secondary: #424842;
+    --border-subtle: #c1c8c0;
+
+    /* Stitch Palette */
+    --green-primary: #0a2f1b;
+    --green-primary-hover: #00190a;
+    --green-accent: #2d6c00;
+    --green-cta: #abf67e;
+    --green-cta-text: #317203;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: #e9fdff;
+    color: #0c1e20;
+    font-family: var(--font-jakarta), "Plus Jakarta Sans", system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    min-height: 100vh;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-garamond), "EB Garamond", Georgia, serif;
+    letter-spacing: -0.015em;
+    color: #00190a;
+  }
+}
+
+/* Stitch Glassmorphism & Atmospheric Surfaces */
+.glass-navbar {
+  background: rgba(255, 255, 255, 0.78);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 4px 24px rgba(10, 47, 27, 0.04);
+}
+
+.glass-panel {
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  box-shadow: 0 20px 50px -10px rgba(10, 47, 27, 0.07);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 8px 32px -4px rgba(10, 47, 27, 0.05);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(45, 108, 0, 0.35);
+  box-shadow: 0 16px 40px -6px rgba(45, 108, 0, 0.12);
+}
+
+/* Ambient Radial Glows (Stitch Design Signature) */
+.ambient-glow-center {
+  background: radial-gradient(circle, rgba(171, 246, 126, 0.25) 0%, rgba(196, 236, 206, 0.15) 50%, transparent 70%);
+}
+
+.ambient-glow-top {
+  background: radial-gradient(circle, rgba(171, 246, 126, 0.28) 0%, rgba(233, 253, 255, 0) 70%);
+}
