@@ -7,6 +7,7 @@ author:
 category: "Financial literacy and responsible investment"
 categorySlug: "financial-literacy"
 readTime: "7 min read"
+coverImage: "/images/insights_the_fold_governance.jpg"
 featured: false
 excerpt: "Why 100-member cohort caps, statutory compliance, transparent 85/15 surplus sharing, and rigorous KYC separate durable commercial institutions from high-risk informal pools."
 tags: ["Corporate Governance", "The Fold", "Compliance", "SCUML", "CAC", "Risk Management"]

@@ -575,7 +575,7 @@ export default function BusinessPage() {
           >
             <div className="relative h-64 sm:h-72 w-full">
               <img
-                src="/images/hero_corporate_asaba.jpg"
+                src="/images/strategic_partnerships.jpg"
                 alt="Hundredfold Institutional Alliances and Commercial Partnerships"
                 className="w-full h-full object-cover"
               />
@@ -618,7 +618,7 @@ export default function BusinessPage() {
           >
             <div className="relative h-64 sm:h-72 w-full">
               <img
-                src="/images/the_fold_executive_lounge.jpg"
+                src="/images/african_business_ventures.jpg"
                 alt="Business Ventures & Emerging African Enterprise Incubation"
                 className="w-full h-full object-cover"
               />

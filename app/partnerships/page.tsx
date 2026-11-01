@@ -207,17 +207,17 @@ function PartnershipsContent() {
 
             <div className="md:col-span-4 rounded-3xl overflow-hidden shadow-xl border border-white relative h-64 sm:h-72 lg:h-80 group">
               <img
-                src="/images/hero_corporate_asaba.jpg"
-                alt="Hundredfold Executive Headquarters in Asaba Delta State"
+                src="/images/strategic_partnerships.jpg"
+                alt="Hundredfold Institutional Alliances & Commercial Partnerships"
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#0A2F1B]/90 via-transparent to-transparent flex items-end p-6 sm:p-8">
                 <div className="flex flex-col text-white">
                   <span className="text-[10px] uppercase tracking-wider font-bold text-[#ABF67E]">
-                    Corporate Stewardship
+                    Bilateral Agreements
                   </span>
                   <p className="font-serif text-lg sm:text-xl font-semibold mt-1">
-                    Governed from Asaba, Delta State HQ.
+                    Structured commercial alliances &amp; joint ventures.
                   </p>
                 </div>
               </div>
@@ -308,7 +308,7 @@ function PartnershipsContent() {
           <div className="absolute -top-24 -right-24 w-80 h-80 bg-[#ABF67E]/20 rounded-full blur-3xl pointer-events-none" />
 
           <div className="max-w-4xl mx-auto flex flex-col">
-            
+
             {/* Form Header */}
             <div className="flex flex-col items-center text-center pb-10">
               <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#DEF2F4] mb-3">

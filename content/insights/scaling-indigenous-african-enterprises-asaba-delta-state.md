@@ -7,6 +7,7 @@ author:
 category: "Business partnerships and enterprise development"
 categorySlug: "business-partnerships"
 readTime: "5 min read"
+coverImage: "/images/insights_indigenous_enterprises.jpg"
 featured: false
 excerpt: "Strategic analysis of the Asaba commercial corridor, regional logistics integration across the Niger, and how structured enterprise partnerships unleash homegrown African growth."
 tags: ["Enterprise Development", "Asaba", "Delta State", "Africapitalism", "SME Scale"]
