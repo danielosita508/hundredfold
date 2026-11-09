@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import siteConfig from "@/lib/site-config";
 import FoldInquiryForm from "@/components/the-fold/FoldInquiryForm";
 import { motion, useReducedMotion, type Variants } from "framer-motion";
@@ -63,9 +64,9 @@ export default function TheFoldPage() {
       <div className="absolute bottom-20 right-10 w-[520px] h-[520px] bg-[#ABF67E]/8 rounded-full blur-[140px] pointer-events-none" />
 
       {/* ─── SECTION 1: PRESTIGE HERO & BANNER ─── */}
-      <section className="relative max-w-[1320px] mx-auto px-6 lg:px-12 pt-14 pb-20 z-10">
+      <section className="relative max-w-[1320px] mx-auto px-6 lg:px-12 pt-28 lg:pt-32 pb-20 z-10">
         <div className="flex flex-col items-start max-w-4xl">
-          
+
           {/* Prestige Badge */}
           <motion.div
             initial="hidden"
@@ -122,14 +123,14 @@ export default function TheFoldPage() {
             </div>
             <div className="flex items-center gap-2 font-medium">
               <ClockIcon className="w-4 h-4 text-[#ABF67E]" />
-              <span>Cycle 1 Flag-Off: January 2027</span>
+              <span>Cycle 1 Cohort Active</span>
             </div>
           </motion.div>
         </div>
 
         {/* ─── VIP MOSAIC & CONCLAVE SLAB ─── */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mt-14 items-stretch">
-          
+
           <motion.div
             initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -139,13 +140,13 @@ export default function TheFoldPage() {
           >
             <img
               src="/images/the_fold_executive_lounge.jpg"
-              alt="The Fold Executive Conclave at Hundredfold Asaba Headquarters"
+              alt="The Fold Executive Conclave at Hundredfold Headquarters"
               className="absolute inset-0 w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#061D10] via-[#061D10]/50 to-transparent flex flex-col justify-end p-8 lg:p-12" />
             <div className="relative z-10 flex flex-col justify-end p-8 lg:p-12 text-white">
               <span className="text-[11px] uppercase tracking-wider text-[#ABF67E] font-mono font-bold mb-2">
-                EXECUTIVE CONCLAVE &bull; ASABA HQ
+                EXECUTIVE CONCLAVE &bull; CORPORATE HQ
               </span>
               <h2 className="font-serif text-2xl sm:text-3xl text-white font-semibold max-w-xl leading-snug">
                 &ldquo;We assemble not for speculation, but to orchestrate sovereign balance sheets across Africa&apos;s real-economy assets.&rdquo;
@@ -184,7 +185,7 @@ export default function TheFoldPage() {
 
               <div className="pt-4 border-t border-white/10 flex items-center justify-between text-xs text-white/60 font-mono">
                 <span>Cohort Alpha</span>
-                <span className="text-[#ABF67E] font-bold">Jan 2027 Flag-off</span>
+                <span className="text-[#ABF67E] font-bold">Cycle 1 Active</span>
               </div>
             </div>
 
@@ -207,7 +208,7 @@ export default function TheFoldPage() {
 
       {/* ─── SECTION 2: 85% / 15% PROFIT DISTRIBUTION & HIGHLIGHT CALLOUTS ─── */}
       <section className="relative max-w-[1320px] mx-auto px-6 lg:px-12 py-16 z-10">
-        
+
         {/* Prominent Profit Distribution Banner */}
         <motion.div
           initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 20 }}
@@ -281,7 +282,7 @@ export default function TheFoldPage() {
 
         {/* VIP Callout 3 Widgets */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          
+
           <motion.div
             variants={cardScrollVariants}
             initial="hidden"
@@ -329,12 +330,12 @@ export default function TheFoldPage() {
                   CYCLE 1
                 </span>
               </div>
-              <h3 className="font-serif text-3xl font-bold text-white">January 2027</h3>
+              <h3 className="font-serif text-3xl font-bold text-white">Cycle 1</h3>
               <span className="text-xs uppercase font-bold text-[#ABF67E] tracking-wider block mt-1">
-                Inaugural Flag-Off
+                Active Executive Cohort
               </span>
               <p className="text-xs sm:text-sm text-white/70 mt-4 leading-relaxed">
-                Applications and onboarding intake review currently open. Founding cohort members participate in the inaugural Asaba Strategic Retreat.
+                Applications and onboarding intake review currently open. Founding cohort members participate in the inaugural Strategic Executive Retreat.
               </p>
             </div>
             <div className="mt-6 pt-4 border-t border-white/10 flex items-center justify-between text-xs font-mono text-white/50">
@@ -483,7 +484,7 @@ export default function TheFoldPage() {
       {/* ─── SECTION 4: CANDIDATE REGISTRY INTAKE FORM ─── */}
       <section className="relative max-w-[1320px] mx-auto px-6 lg:px-12 py-16 z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          
+
           <div className="lg:col-span-6 space-y-6">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-[#ABF67E] text-xs uppercase font-bold tracking-wider">
               <span>CANDIDATE REGISTRY &bull; CYCLE 1</span>
@@ -494,13 +495,13 @@ export default function TheFoldPage() {
             </h2>
 
             <p className="text-white/80 text-sm sm:text-base leading-relaxed">
-              Admission into The Fold is conducted through a multi-stage review. To initiate confidential review and obtain the 2027 Cohort Alpha Prospectus, submit your credentials.
+              Admission into The Fold is conducted through a multi-stage review. To initiate confidential review and obtain the Cohort Alpha Prospectus, submit your credentials.
             </p>
 
             <div className="space-y-3 pt-2 text-xs sm:text-sm text-white/70">
               <div className="flex items-center gap-2.5">
                 <CheckCircleIcon className="w-4 h-4 text-[#ABF67E] shrink-0" />
-                <span>Complete Non-Disclosure &amp; SCUML Protocol Compliance</span>
+                <span>Complete Non-Disclosure &amp; Institutional Governance Compliance</span>
               </div>
               <div className="flex items-center gap-2.5">
                 <CheckCircleIcon className="w-4 h-4 text-[#ABF67E] shrink-0" />

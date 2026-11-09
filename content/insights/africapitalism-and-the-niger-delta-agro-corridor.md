@@ -74,6 +74,6 @@ When commercial agriculture is treated as an institutional asset class rather th
 
 ---
 
-### Looking Ahead to Cycle 1
+### Looking Ahead with The Fold
 
-As we prepare for the official launch of **The Fold Cycle 1 in January 2027**, agro-trading and supply-chain logistics represent a central pillar of our strategic commercial roadmap. By uniting disciplined private capital with verified agricultural trade flows, Hundredfold is demonstrating that African enterprise can deliver world-class commercial performance with purpose, integrity, and lasting communal impact.
+Under the active commercial operations of **The Fold Cycle 1**, agro-trading and supply-chain logistics represent a central pillar of our strategic commercial roadmap. By uniting disciplined private capital with verified agricultural trade flows, Hundredfold is demonstrating that African enterprise can deliver world-class commercial performance with purpose, integrity, and lasting communal impact.

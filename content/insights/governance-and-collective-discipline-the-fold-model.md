@@ -73,6 +73,6 @@ In complete alignment with our corporate ethics, Hundredfold maintains a strict 
 
 ---
 
-### Preparing for Cycle 1 in January 2027
+### The Fold Cycle 1 Cohort
 
-As we count down to the flag-off of **The Fold Cycle 1 in January 2027**, our commitment remains unshakeable: to build an enduring African institution founded on Christ-driven integrity, Africapitalist purpose, and disciplined commercial execution.
+Under the ongoing commercial operations of **The Fold Cycle 1**, our commitment remains unshakeable: to build an enduring African institution founded on Christ-driven integrity, Africapitalist purpose, and disciplined commercial execution.

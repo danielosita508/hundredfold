@@ -259,7 +259,7 @@ export default function ProposalForm({
                   id="operationalLocation"
                   name="operationalLocation"
                   required
-                  placeholder="e.g. Asaba, Delta State; Lagos; or Nationwide"
+                  placeholder="e.g. Lagos, Abuja, Regional Hubs, or Nationwide"
                   className="w-full px-4 py-3.5 rounded-xl bg-transparent font-sans text-sm text-[#00190A] placeholder-[#424842]/60 focus:outline-none"
                 />
               </div>
@@ -319,7 +319,7 @@ export default function ProposalForm({
                   Detailed Proposal Document Review
                 </option>
                 <option value="office-meeting">
-                  Executive Meeting at Asaba Headquarters
+                  Executive Meeting at Corporate Headquarters
                 </option>
                 <option value="exploratory">
                   Exploratory / Feasibility Discussion
@@ -362,7 +362,7 @@ export default function ProposalForm({
           <div className="flex flex-col sm:flex-row items-center justify-between gap-6 pt-4 border-t border-[#def2f4]">
             <div className="flex items-center gap-2 text-xs text-[#424842]">
               <ShieldCheckIcon className="w-4 h-4 text-[#2D6C00]" />
-              <span>Protected by standard SCUML &amp; Bilateral NDA protocols</span>
+              <span>Protected by Bilateral NDA &amp; Institutional Privacy Protocols</span>
             </div>
 
             <button

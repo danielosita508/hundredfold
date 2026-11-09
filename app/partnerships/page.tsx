@@ -1,6 +1,7 @@
 "use client";
 
 import React, { Suspense } from "react";
+import Image from "next/image";
 import { useSearchParams } from "next/navigation";
 import siteConfig from "@/lib/site-config";
 import ProposalForm from "@/components/forms/ProposalForm";
@@ -100,12 +101,24 @@ function PartnershipsContent() {
 
   return (
     <div className="relative overflow-hidden bg-[#E9FDFF] text-[#0C1E20]">
-      {/* ─── SECTION 1: HERO & TRUST CAPSULE ─── */}
-      <section className="relative w-full overflow-hidden px-6 lg:px-12 pt-12 pb-16">
-        <div className="absolute -top-32 right-1/4 w-[600px] h-[600px] bg-[#ABF67E]/20 rounded-full blur-[140px] pointer-events-none" />
-        <div className="absolute top-1/2 -left-32 w-[500px] h-[500px] bg-[#C4ECCE]/30 rounded-full blur-[150px] pointer-events-none" />
+      {/* ─── SECTION 1: HERO & TRUST CAPSULE (Heirs Holdings Style with Photographic Backdrop) ─── */}
+      <section className="relative w-full overflow-hidden min-h-[440px] lg:min-h-[500px] pt-32 lg:pt-36 pb-16 lg:pb-20 flex flex-col justify-end bg-[#0A2F1B]">
+        {/* Background Image */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/images/strategic_partnerships.jpg"
+            alt="Hundredfold Strategic Commercial Partnerships"
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover object-center"
+          />
+        </div>
 
-        <div className="max-w-[1320px] mx-auto relative z-10">
+        {/* Dark Cinematic Vignette & Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/60 to-black/75 z-[1]" />
+
+        <div className="max-w-[1360px] mx-auto px-6 lg:px-12 w-full relative z-10">
           <div className="flex flex-col lg:flex-row items-start lg:items-end justify-between gap-10">
             <div className="max-w-3xl flex flex-col gap-5">
               <motion.div
@@ -113,9 +126,9 @@ function PartnershipsContent() {
                 animate="visible"
                 custom={0}
                 variants={heroFadeVariants}
-                className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#ABF67E]/30 text-[#2D6C00] shadow-xs backdrop-blur-md self-start"
+                className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/15 backdrop-blur-md text-[#ABF67E] border border-white/20 self-start"
               >
-                <span className="w-2 h-2 rounded-full bg-[#2D6C00] animate-pulse" />
+                <span className="w-2 h-2 rounded-full bg-[#ABF67E] animate-pulse" />
                 <span className="text-[11px] uppercase tracking-wider font-bold">
                   COMMERCIAL COLLABORATION &bull; STRATEGIC ALLIANCES
                 </span>
@@ -126,10 +139,10 @@ function PartnershipsContent() {
                 animate="visible"
                 custom={1}
                 variants={heroFadeVariants}
-                className="font-serif text-4xl sm:text-5xl md:text-6xl text-[#00190A] tracking-tight font-semibold leading-[1.08]"
+                className="font-serif text-4xl sm:text-5xl md:text-6xl text-white tracking-tight font-semibold leading-[1.08] drop-shadow-md"
               >
                 Good Partnerships Begin <br />
-                <span className="text-[#2D6C00]">With Shared Opportunity.</span>
+                <span className="text-[#ABF67E]">With Shared Opportunity.</span>
               </motion.h1>
 
               <motion.p
@@ -137,42 +150,42 @@ function PartnershipsContent() {
                 animate="visible"
                 custom={2}
                 variants={heroFadeVariants}
-                className="text-base sm:text-lg text-[#424842] leading-relaxed max-w-2xl"
+                className="text-base sm:text-lg text-white/85 leading-relaxed max-w-2xl drop-shadow-xs"
               >
                 We believe strong commercial relationships are built on aligned objectives, complementary strengths and mutual accountability. Hundredfold welcomes proposals from businesses, entrepreneurs, suppliers and organisations with opportunities that fit our strategic direction.
               </motion.p>
             </div>
 
-            {/* Metric / Trust Capsule */}
+            {/* Metric / Trust Capsule in Frosted Glass */}
             <motion.div
               initial="hidden"
               animate="visible"
               custom={3}
               variants={heroFadeVariants}
-              className="lg:shrink-0 w-full sm:w-auto p-6 rounded-3xl bg-white/80 backdrop-blur-xl border border-white shadow-[0_12px_40px_-8px_rgba(10,47,27,0.06)] flex flex-row lg:flex-col gap-6 items-stretch"
+              className="lg:shrink-0 w-full sm:w-auto p-6 rounded-3xl bg-white/10 backdrop-blur-xl border border-white/20 text-white shadow-2xl flex flex-row lg:flex-col gap-6 items-stretch"
             >
               <div className="flex flex-col">
-                <span className="text-[10px] uppercase tracking-wider text-[#424842] font-bold">
+                <span className="text-[10px] uppercase tracking-wider text-white/70 font-bold">
                   Sovereign Focus
                 </span>
-                <span className="font-serif text-2xl font-bold text-[#00190A] mt-1">
+                <span className="font-serif text-2xl font-bold text-white mt-1">
                   4 Core Pillars
                 </span>
-                <span className="text-xs text-[#2D6C00] font-semibold mt-0.5">
+                <span className="text-xs text-[#ABF67E] font-semibold mt-0.5">
                   Agro, Land, Alliances &amp; Ventures
                 </span>
               </div>
 
-              <div className="w-px h-auto lg:w-full lg:h-px bg-[#def2f4]" />
+              <div className="w-px h-auto lg:w-full lg:h-px bg-white/20" />
 
               <div className="flex flex-col">
-                <span className="text-[10px] uppercase tracking-wider text-[#424842] font-bold">
+                <span className="text-[10px] uppercase tracking-wider text-white/70 font-bold">
                   Engagement SLA
                 </span>
-                <span className="font-serif text-2xl font-bold text-[#2D6C00] mt-1">
+                <span className="font-serif text-2xl font-bold text-[#ABF67E] mt-1">
                   5-Day Review
                 </span>
-                <span className="text-xs text-[#424842] mt-0.5">
+                <span className="text-xs text-white/80 mt-0.5">
                   Executive Committee Evaluation
                 </span>
               </div>
@@ -357,8 +370,8 @@ function PartnershipsContent() {
                   <CheckCircleIcon className="w-5 h-5" />
                 </div>
                 <div className="flex flex-col">
-                  <span className="text-xs font-bold text-[#00190A]">CAC &bull; SCUML Compliant</span>
-                  <span className="text-[11px] text-[#424842]">Anti-Money Laundering Certified</span>
+                  <span className="text-xs font-bold text-[#00190A]">Institutional Standards</span>
+                  <span className="text-[11px] text-[#424842]">Statutory &amp; Ethical Compliance</span>
                 </div>
               </div>
             </div>

@@ -1,6 +1,7 @@
 import React, { Suspense } from "react";
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { getAllArticles, getAllCategories } from "@/lib/markdown";
 import {
   ShieldCheckIcon,
@@ -39,58 +40,71 @@ async function InsightsContent({
 
   return (
     <div className="relative overflow-hidden bg-[#E9FDFF] text-[#0C1E20] min-h-screen">
-      {/* ─── AMBIENT ATMOSPHERIC RADIAL GLOWS ─── */}
-      <div className="absolute -top-32 right-1/4 w-[600px] h-[600px] bg-[#ABF67E]/20 rounded-full blur-[140px] pointer-events-none" />
-      <div className="absolute top-[500px] -left-32 w-[520px] h-[520px] bg-[#C4ECCE]/30 rounded-full blur-[130px] pointer-events-none" />
+      {/* ─── SECTION 1: TOP EDITORIAL HERO (Photographic Backdrop) ─── */}
+      <section className="relative w-full overflow-hidden min-h-[440px] lg:min-h-[500px] pt-32 lg:pt-36 pb-16 lg:pb-20 flex flex-col justify-end bg-[#0A2F1B]">
+        {/* Background Image */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/images/insights_agro_corridor.jpg"
+            alt="Hundredfold Commercial Intelligence & Macro Perspectives"
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover object-center"
+          />
+        </div>
 
-      <div className="max-w-[1320px] mx-auto px-6 lg:px-12 py-10 w-full flex flex-col gap-12 relative z-10">
-        
-        {/* ─── SECTION 1: TOP EDITORIAL HEADER & TICKER ─── */}
-        <section className="flex flex-col gap-6">
-          <div className="flex flex-wrap items-center justify-between gap-4 py-2 px-5 rounded-full bg-white/80 backdrop-blur-md border border-white shadow-xs">
+        {/* Dark Cinematic Vignette & Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/60 to-black/75 z-[1]" />
+
+        <div className="max-w-[1320px] mx-auto px-6 lg:px-12 w-full relative z-10 flex flex-col gap-6">
+          <div className="flex flex-wrap items-center justify-between gap-4 py-2 px-5 rounded-full bg-white/15 backdrop-blur-md border border-white/20 shadow-xs text-white">
             <div className="flex items-center gap-3">
-              <span className="w-2 h-2 rounded-full bg-[#2D6C00] animate-pulse" />
-              <span className="text-[11px] uppercase tracking-wider text-[#2D6C00] font-bold">
+              <span className="w-2 h-2 rounded-full bg-[#ABF67E] animate-pulse" />
+              <span className="text-[11px] uppercase tracking-wider text-[#ABF67E] font-bold">
                 COMMERCIAL INTELLIGENCE DESK
               </span>
-              <span className="text-xs text-[#424842] hidden md:inline">
+              <span className="text-xs text-white/80 hidden md:inline">
                 &bull; Macro Analysis: African Agro-Corridors &amp; Asset Compounding
               </span>
             </div>
-            <div className="flex items-center gap-6 text-xs text-[#424842] font-mono">
-              <span className="text-[#00190A] font-bold">ASABA &bull; LAGOS &bull; REGIONAL HUBS</span>
+            <div className="flex items-center gap-6 text-xs text-white/80 font-mono">
+              <span className="text-white font-bold">PAN-AFRICAN &bull; REGIONAL HUBS</span>
             </div>
           </div>
 
-          <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 pt-4 pb-2">
+          <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 pt-2">
             <div className="flex flex-col gap-3 max-w-3xl">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#ABF67E]/30 text-[#2D6C00] text-xs uppercase font-bold tracking-wider w-fit">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/15 backdrop-blur-md text-[#ABF67E] border border-white/20 text-xs uppercase font-bold tracking-wider w-fit">
                 <span>H.I.N RESEARCH &amp; INTELLIGENCE</span>
               </div>
-              <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl text-[#00190A] tracking-tight font-semibold leading-[1.08]">
+              <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl text-white tracking-tight font-semibold leading-[1.08]">
                 Market Perspectives &amp; Corporate Dispatches
               </h1>
-              <p className="text-base sm:text-lg text-[#424842] leading-relaxed">
+              <p className="text-base sm:text-lg text-white/85 leading-relaxed">
                 Thought leadership, macroeconomic analysis, and strategic intelligence shaping African commerce and institutional asset deployment.
               </p>
             </div>
 
-            {/* Live Macro Pod */}
-            <div className="flex items-center gap-4 p-5 rounded-2xl bg-white/80 backdrop-blur-md border border-white shadow-xs shrink-0">
+            {/* Sovereign Focus Macro Pod */}
+            <div className="flex items-center gap-4 p-5 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 shadow-xs shrink-0 text-white">
               <div className="flex flex-col">
-                <span className="text-[10px] uppercase text-[#424842] tracking-wider font-bold">
+                <span className="text-[10px] uppercase text-white/70 tracking-wider font-bold">
                   Sovereign Focus
                 </span>
-                <span className="font-serif text-2xl font-bold text-[#00190A] mt-0.5">
+                <span className="font-serif text-2xl font-bold text-white mt-0.5">
                   5 Categories
                 </span>
-                <span className="text-xs text-[#2D6C00] font-semibold">
+                <span className="text-xs text-[#ABF67E] font-semibold">
                   Agro &bull; Land &bull; Governance
                 </span>
               </div>
             </div>
           </div>
-        </section>
+        </div>
+      </section>
+
+      <div className="max-w-[1320px] mx-auto px-6 lg:px-12 py-12 w-full flex flex-col gap-12 relative z-10">
 
         {/* ─── SECTION 2: GRAND HERO EDITORIAL / LEAD COVER DOSSIER ─── */}
         {featuredArticle && (
@@ -169,7 +183,7 @@ async function InsightsContent({
 
         {/* ─── SECTION 3: EDITORIAL MATRIX (SIDEBAR & ARTICLES) ─── */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-          
+
           {/* Left Category Sidebar Navigation */}
           <aside className="lg:col-span-4 flex flex-col gap-6 sticky top-28">
             <div className="p-6 rounded-3xl bg-white/80 backdrop-blur-xl border border-white shadow-xs flex flex-col gap-4">
@@ -185,11 +199,10 @@ async function InsightsContent({
               <nav className="flex flex-col gap-2">
                 <Link
                   href="/insights"
-                  className={`flex items-center justify-between p-3.5 rounded-xl transition-all ${
-                    !activeCategory
+                  className={`flex items-center justify-between p-3.5 rounded-xl transition-all ${!activeCategory
                       ? "bg-[#0A2F1B] text-white font-semibold shadow-xs"
                       : "hover:bg-[#DEF2F4] text-[#424842]"
-                  }`}
+                    }`}
                 >
                   <span className="text-xs font-semibold">All Published Dispatches</span>
                   <span className="text-xs font-mono">{allArticles.length}</span>
@@ -201,11 +214,10 @@ async function InsightsContent({
                     <Link
                       key={cat.slug}
                       href={`/insights?category=${cat.slug}`}
-                      className={`flex items-center justify-between p-3.5 rounded-xl transition-all ${
-                        isActive
+                      className={`flex items-center justify-between p-3.5 rounded-xl transition-all ${isActive
                           ? "bg-[#0A2F1B] text-white font-semibold shadow-xs"
                           : "hover:bg-[#DEF2F4] text-[#424842]"
-                      }`}
+                        }`}
                     >
                       <span className="text-xs font-medium">{cat.name}</span>
                       <span className="text-xs font-mono px-2 py-0.5 rounded-full bg-white/20">
@@ -224,7 +236,7 @@ async function InsightsContent({
                 Wealth preservation across African corridors demands an intentional transition from speculative volatility into hard productive domestic assets yielding resilient multi-generational dividends.
               </p>
               <div className="text-[#ABF67E] text-[10px] uppercase font-bold tracking-wider pt-2 border-t border-white/10">
-                Executive Directive &bull; Asaba HQ
+                Executive Directive &bull; Corporate Desk
               </div>
             </div>
           </aside>

@@ -59,7 +59,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
     .slice(0, 2);
 
   return (
-    <article className="relative overflow-hidden bg-[#E9FDFF] text-[#0C1E20] py-12 sm:py-20 px-4 sm:px-6 lg:px-8 min-h-screen">
+    <article className="relative overflow-hidden bg-[#E9FDFF] text-[#0C1E20] pt-28 sm:pt-36 pb-16 sm:pb-24 px-4 sm:px-6 lg:px-8 min-h-screen">
       {/* Ambient Radial Glows */}
       <div className="absolute -top-32 right-1/4 w-[600px] h-[600px] bg-[#ABF67E]/20 rounded-full blur-[140px] pointer-events-none" />
       <div className="absolute top-[500px] -left-32 w-[520px] h-[520px] bg-[#C4ECCE]/30 rounded-full blur-[130px] pointer-events-none" />

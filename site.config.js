@@ -20,7 +20,7 @@ const siteConfig = {
     foundedYear: 2026,
   },
 
-  // ─── Navigation (7 Core Pages) ───────────────────────────
+  // ─── Navigation (5 Core Pages — Heirs Holdings Conglomerate Structure) ─────
   navigation: [
     { label: "Home", href: "/" },
     { label: "About Us", href: "/about" },
@@ -28,7 +28,6 @@ const siteConfig = {
     { label: "Partnerships", href: "/partnerships" },
     { label: "The Fold", href: "/the-fold" },
     { label: "News & Insights", href: "/insights" },
-    { label: "Contact Us", href: "/contact" },
   ],
 
   // ─── Primary Header CTAs ──────────────────────────────────
@@ -253,7 +252,7 @@ const siteConfig = {
     name: "The Fold",
     tagline: "Welcome to The Fold.",
     vision: "The private community and membership wing of Hundredfold Innovation Network Ltd, convening forward-thinking individuals and investors committed to collective economic advancement and commercial literacy.",
-    cycle1FlagOff: "January 2027",
+    cycle1FlagOff: "Active",
     admissionsStatus: "Reviewing Member Enquiries",
     pillars: [
       "Collective Strength & Structured Networking",

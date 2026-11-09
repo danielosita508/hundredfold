@@ -2,6 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import siteConfig from "@/lib/site-config";
 import { motion, useReducedMotion, type Variants } from "framer-motion";
 import {
@@ -58,12 +59,24 @@ export default function BusinessPage() {
 
   return (
     <div className="relative overflow-hidden bg-[#E9FDFF] text-[#0C1E20]">
-      {/* ─── SECTION 1: HERO & STRATEGIC OVERVIEW ─── */}
-      <section className="relative w-full overflow-hidden px-6 lg:px-12 pt-12 pb-20">
-        <div className="absolute -top-32 left-1/4 w-[620px] h-[620px] bg-[#ABF67E]/20 rounded-full blur-[140px] pointer-events-none" />
-        <div className="absolute top-1/2 -right-40 w-[540px] h-[540px] bg-[#C4ECCE]/30 rounded-full blur-[160px] pointer-events-none" />
+      {/* ─── SECTION 1: HERO & STRATEGIC OVERVIEW (Heirs Holdings Style with Photographic Backdrop) ─── */}
+      <section className="relative w-full overflow-hidden min-h-[440px] lg:min-h-[500px] pt-32 lg:pt-36 pb-16 lg:pb-20 flex flex-col justify-end bg-[#0A2F1B]">
+        {/* Background Image */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/images/agri_business_showcase.jpg"
+            alt="Hundredfold Strategic Commercial Pillars"
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover object-center"
+          />
+        </div>
 
-        <div className="max-w-[1320px] mx-auto relative z-10">
+        {/* Dark Cinematic Vignette & Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/60 to-black/75 z-[1]" />
+
+        <div className="max-w-[1360px] mx-auto px-6 lg:px-12 w-full relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-end">
             <div className="lg:col-span-8 flex flex-col gap-6">
               <motion.div
@@ -71,9 +84,9 @@ export default function BusinessPage() {
                 animate="visible"
                 custom={0}
                 variants={heroFadeVariants}
-                className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#ABF67E]/30 text-[#2D6C00] w-fit shadow-xs backdrop-blur-md"
+                className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/15 backdrop-blur-md text-[#ABF67E] border border-white/20 w-fit"
               >
-                <span className="w-2 h-2 rounded-full bg-[#2D6C00] animate-pulse" />
+                <span className="w-2 h-2 rounded-full bg-[#ABF67E] animate-pulse" />
                 <span className="text-[11px] uppercase tracking-wider font-bold">
                   COMMERCIAL MANDATE &bull; STRATEGIC PATHWAYS
                 </span>
@@ -84,10 +97,10 @@ export default function BusinessPage() {
                 animate="visible"
                 custom={1}
                 variants={heroFadeVariants}
-                className="font-serif text-4xl sm:text-5xl md:text-6xl text-[#00190A] tracking-tight font-semibold leading-[1.08] max-w-3xl"
+                className="font-serif text-4xl sm:text-5xl md:text-6xl text-white tracking-tight font-semibold leading-[1.08] max-w-3xl drop-shadow-md"
               >
                 Where We Focus. <br />
-                <span className="text-[#2D6C00]">Disciplined Capital Stewardship.</span>
+                <span className="text-[#ABF67E]">Disciplined Capital Stewardship.</span>
               </motion.h1>
 
               <motion.p
@@ -95,7 +108,7 @@ export default function BusinessPage() {
                 animate="visible"
                 custom={2}
                 variants={heroFadeVariants}
-                className="text-base sm:text-lg text-[#424842] max-w-2xl leading-relaxed"
+                className="text-base sm:text-lg text-white/85 max-w-2xl leading-relaxed drop-shadow-xs"
               >
                 We deploy capital, expertise and network resources across four strategic commercial pillars designed to address structural economic demand across Nigeria and the wider African continent.
               </motion.p>
@@ -110,25 +123,25 @@ export default function BusinessPage() {
               >
                 <a
                   href="#agro-trading"
-                  className="px-4 py-2 rounded-xl text-xs font-bold bg-white/80 backdrop-blur-md text-[#00190A] border border-white shadow-xs hover:bg-white hover:text-[#2D6C00] transition-all"
+                  className="px-4 py-2 rounded-xl text-xs font-bold bg-white/15 backdrop-blur-md text-white border border-white/20 shadow-xs hover:bg-white hover:text-[#0A2F1B] transition-all"
                 >
-                  &darr; Agro-Trading
+                  &darr; Agriculture
                 </a>
                 <a
                   href="#asset-acquisition"
-                  className="px-4 py-2 rounded-xl text-xs font-bold bg-white/80 backdrop-blur-md text-[#00190A] border border-white shadow-xs hover:bg-white hover:text-[#2D6C00] transition-all"
+                  className="px-4 py-2 rounded-xl text-xs font-bold bg-white/15 backdrop-blur-md text-white border border-white/20 shadow-xs hover:bg-white hover:text-[#0A2F1B] transition-all"
                 >
-                  &darr; Asset Acquisition &amp; Real Estate
+                  &darr; Real Estate &amp; Assets
                 </a>
                 <a
                   href="#strategic-partnerships"
-                  className="px-4 py-2 rounded-xl text-xs font-bold bg-white/80 backdrop-blur-md text-[#00190A] border border-white shadow-xs hover:bg-white hover:text-[#2D6C00] transition-all"
+                  className="px-4 py-2 rounded-xl text-xs font-bold bg-white/15 backdrop-blur-md text-white border border-white/20 shadow-xs hover:bg-white hover:text-[#0A2F1B] transition-all"
                 >
                   &darr; Strategic Partnerships
                 </a>
                 <a
                   href="#business-ventures"
-                  className="px-4 py-2 rounded-xl text-xs font-bold bg-white/80 backdrop-blur-md text-[#00190A] border border-white shadow-xs hover:bg-white hover:text-[#2D6C00] transition-all"
+                  className="px-4 py-2 rounded-xl text-xs font-bold bg-white/15 backdrop-blur-md text-white border border-white/20 shadow-xs hover:bg-white hover:text-[#0A2F1B] transition-all"
                 >
                   &darr; Business Ventures
                 </a>
@@ -143,42 +156,42 @@ export default function BusinessPage() {
               variants={heroFadeVariants}
               className="lg:col-span-4 flex flex-col gap-4"
             >
-              <div className="p-6 rounded-2xl bg-white/85 backdrop-blur-xl border border-white shadow-[0_12px_40px_-8px_rgba(10,47,27,0.06)] flex flex-col gap-2">
-                <div className="flex items-center justify-between text-[#2D6C00]">
+              <div className="p-6 rounded-3xl bg-white/10 backdrop-blur-xl border border-white/20 text-white shadow-2xl flex flex-col gap-2">
+                <div className="flex items-center justify-between text-[#ABF67E]">
                   <span className="text-[10px] uppercase tracking-wider font-bold">
-                    Strategic Focus
+                    Strategic Mandate
                   </span>
-                  <ShieldCheckIcon className="w-5 h-5 text-[#2D6C00]" />
+                  <ShieldCheckIcon className="w-5 h-5 text-[#ABF67E]" />
                 </div>
-                <span className="font-serif text-3xl font-bold text-[#00190A] tracking-tight">
+                <span className="font-serif text-3xl font-bold tracking-tight text-white">
                   4 Core Pillars
                 </span>
-                <span className="text-xs text-[#424842] leading-relaxed">
-                  Carefully structured strategic pathways targeting real-economy utility, cash-flow visibility, and multi-generational value creation.
+                <span className="text-xs text-white/80 leading-relaxed">
+                  Carefully structured strategic pathways targeting real-economy utility, cash-flow visibility, and sovereign balance-sheet compounding.
                 </span>
               </div>
 
               <div className="grid grid-cols-2 gap-4">
-                <div className="p-4 rounded-xl bg-white/70 backdrop-blur-md border border-white shadow-xs flex flex-col">
-                  <span className="text-[10px] uppercase text-[#424842] font-bold tracking-wider">
+                <div className="p-4 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 text-white shadow-xs flex flex-col">
+                  <span className="text-[10px] uppercase text-white/70 font-bold tracking-wider">
                     Governance
                   </span>
-                  <span className="font-serif text-xl font-bold text-[#00190A] mt-1">
-                    CAC &bull; SCUML
+                  <span className="font-serif text-xl font-bold text-white mt-1">
+                    Institutional
                   </span>
-                  <span className="text-[11px] text-[#2D6C00] font-semibold mt-0.5">
+                  <span className="text-[11px] text-[#ABF67E] font-semibold mt-0.5">
                     Statutory Integrity
                   </span>
                 </div>
-                <div className="p-4 rounded-xl bg-white/70 backdrop-blur-md border border-white shadow-xs flex flex-col">
-                  <span className="text-[10px] uppercase text-[#424842] font-bold tracking-wider">
+                <div className="p-4 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 text-white shadow-xs flex flex-col">
+                  <span className="text-[10px] uppercase text-white/70 font-bold tracking-wider">
                     Headquarters
                   </span>
-                  <span className="font-serif text-xl font-bold text-[#00190A] mt-1">
-                    Asaba Hub
+                  <span className="font-serif text-xl font-bold text-white mt-1">
+                    Regional Hub
                   </span>
-                  <span className="text-[11px] text-[#2D6C00] font-semibold mt-0.5">
-                    Delta State Nexus
+                  <span className="text-[11px] text-[#ABF67E] font-semibold mt-0.5">
+                    Strategic Corridors
                   </span>
                 </div>
               </div>
@@ -225,7 +238,7 @@ export default function BusinessPage() {
                       PILLAR 01
                     </span>
                     <h3 className="font-serif text-2xl sm:text-3xl font-bold text-[#00190A] tracking-tight">
-                      Agro-Trading
+                      Agriculture
                     </h3>
                   </div>
                 </div>
@@ -400,7 +413,7 @@ export default function BusinessPage() {
                       PILLAR 02
                     </span>
                     <h3 className="font-serif text-2xl sm:text-3xl font-bold text-[#00190A] tracking-tight">
-                      Asset Acquisition &amp; Ownership
+                      Real Estate
                     </h3>
                   </div>
                 </div>

@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { EB_Garamond, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
-import TopBar from "@/components/layout/TopBar";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import siteConfig from "@/lib/site-config";
@@ -58,10 +57,7 @@ export default function RootLayout({
       className={`${ebGaramond.variable} ${plusJakartaSans.variable} scroll-smooth`}
     >
       <body className="min-h-screen flex flex-col bg-[#E9FDFF] text-[#0C1E20] antialiased selection:bg-[#ABF67E] selection:text-[#0A2F1B]">
-        {/* Institutional Trust Top Strip */}
-        <TopBar />
-
-        {/* Global Floating Glass Navbar (Stitch Design) */}
+        {/* Global Floating Glass Navbar */}
         <Navbar />
 
         {/* Main Content Area */}

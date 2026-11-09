@@ -2,6 +2,8 @@
 
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
+import HeroTicker from "@/components/home/HeroTicker";
 import siteConfig from "@/lib/site-config";
 import { motion, useReducedMotion, type Variants } from "framer-motion";
 import {
@@ -60,248 +62,106 @@ export default function Home() {
 
   return (
     <div className="relative overflow-hidden bg-[#E9FDFF] text-[#0C1E20]">
-      
-      {/* ─── SECTION 1: HERO (Stitch Glassmorphism with Framer Motion Fade-Ins) ─── */}
-      <section className="relative w-full pt-8 pb-20 lg:pt-12 lg:pb-28 overflow-hidden">
-        
-        {/* Ambient Radial Glows (Stitch Design Signature) */}
-        <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-[760px] h-[520px] bg-[#ABF67E]/20 rounded-full blur-[130px] pointer-events-none" />
-        <div className="absolute top-1/3 -right-20 w-[420px] h-[420px] bg-[#C4ECCE]/30 rounded-full blur-[110px] pointer-events-none" />
-        <div className="absolute bottom-10 -left-20 w-[480px] h-[480px] bg-[#ABF67E]/15 rounded-full blur-[120px] pointer-events-none" />
 
-        <div className="relative max-w-[1320px] mx-auto px-6 lg:px-12">
-          
-          {/* Top Micro-Trust Badge */}
-          <motion.div
-            initial="hidden"
-            animate="visible"
-            custom={0}
-            variants={heroFadeVariants}
-            className="flex items-center justify-center mb-6"
-          >
-            <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white/80 backdrop-blur-md border border-white shadow-xs">
-              <span className="w-2 h-2 rounded-full bg-[#2D6C00] animate-pulse" />
-              <span className="text-[11px] uppercase tracking-widest text-[#00190A] font-bold">
-                CAC REGISTERED &bull; SCUML CERTIFIED &bull; ASABA, DELTA STATE
-              </span>
-            </div>
-          </motion.div>
+      {/* ─── SECTION 1: HERO (Cinematic Aerial Industrial Picture Background — Heirs Holdings Conglomerate Aesthetic) ─── */}
+      <section className="relative w-full min-h-screen flex flex-col justify-end pb-16 lg:pb-24 pt-32 overflow-hidden bg-[#0A2F1B]">
 
-          {/* Main Glassmorphic Hero Slab */}
-          <motion.div
-            initial="hidden"
-            animate="visible"
-            custom={1}
-            variants={heroFadeVariants}
-            className="relative rounded-3xl bg-white/75 backdrop-blur-[22px] border border-white/70 shadow-[0_24px_64px_-12px_rgba(10,47,27,0.08)] overflow-hidden"
-          >
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 p-8 md:p-14 lg:p-16 items-center">
-              
-              {/* Left Column: Core Narrative */}
-              <div className="lg:col-span-7 flex flex-col gap-6 text-left">
-                
-                {/* Eyebrow */}
-                <motion.div
-                  initial="hidden"
-                  animate="visible"
-                  custom={2}
-                  variants={heroFadeVariants}
-                  className="inline-flex items-center gap-2 w-fit px-3 py-1 rounded-full bg-[#ABF67E]/30 text-[#2D6C00] text-xs uppercase font-bold tracking-wider"
-                >
-                  <ShieldCheckIcon className="w-4 h-4 text-[#2D6C00]" />
-                  <span>{siteConfig.company.eyebrow}</span>
-                </motion.div>
+        {/* Full-bleed Aerial Industrial Photograph */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/images/hero_industrial_aerial.jpg"
+            alt="Developed industrial economic zone, maritime infrastructure, and modern skyline"
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover object-center"
+          />
+        </div>
 
-                {/* Headline (EB Garamond Serif) */}
-                <motion.h1
-                  initial="hidden"
-                  animate="visible"
-                  custom={3}
-                  variants={heroFadeVariants}
-                  className="font-serif text-4xl sm:text-5xl md:text-6xl text-[#00190A] tracking-tight font-semibold leading-[1.08]"
-                >
-                  Building Businesses. <br />
-                  <span className="text-[#2D6C00]">
-                    Creating Lasting Value.
-                  </span>
-                </motion.h1>
+        {/* Ambient subtle movement with industrial poster */}
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          poster="/images/hero_industrial_aerial.jpg"
+          className="absolute inset-0 w-full h-full object-cover z-[1] pointer-events-none opacity-30 mix-blend-overlay"
+        >
+          <source
+            src="https://videos.pexels.com/video-files/3129671/3129671-hd_1920_1080_30fps.mp4"
+            type="video/mp4"
+          />
+        </video>
 
-                {/* Sub-headline from docs/content.md */}
-                <motion.p
-                  initial="hidden"
-                  animate="visible"
-                  custom={4}
-                  variants={heroFadeVariants}
-                  className="text-base sm:text-lg text-[#424842] max-w-2xl leading-relaxed font-normal"
-                >
-                  We identify opportunities, build strategic partnerships and develop commercial ventures that contribute to Africa&apos;s long-term economic growth.
-                </motion.p>
+        {/* Dark Cinematic Vignette & Gradient Overlay (Heirs Holdings Style) */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/50 to-black/70 z-[2]" />
 
-                {/* Action CTAs */}
-                <motion.div
-                  initial="hidden"
-                  animate="visible"
-                  custom={5}
-                  variants={heroFadeVariants}
-                  className="flex flex-wrap items-center gap-4 pt-2"
-                >
-                  <Link
-                    href="/business"
-                    className="inline-flex items-center justify-center px-8 py-4 rounded-xl bg-[#0A2F1B] text-white text-base font-semibold tracking-wide border-t border-white/20 shadow-[0_12px_28px_-6px_rgba(10,47,27,0.25)] hover:bg-[#00190A] hover:shadow-[0_16px_32px_-4px_rgba(45,108,0,0.3)] transition-all duration-300 group"
-                  >
-                    <span>Explore Our Business</span>
-                    <ArrowRightIcon className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform text-[#ABF67E]" />
-                  </Link>
+        {/* Ambient subtle emerald glow */}
+        <div className="absolute bottom-0 left-0 w-[500px] h-[300px] bg-[#2D6C00]/25 rounded-full blur-[140px] pointer-events-none z-[3]" />
 
-                  <Link
-                    href="/partnerships"
-                    className="inline-flex items-center justify-center px-7 py-4 rounded-xl bg-white/70 backdrop-blur-md text-[#00190A] text-base font-semibold border border-white shadow-xs hover:bg-white hover:text-[#2D6C00] transition-all duration-300"
-                  >
-                    <span>Partner With Us</span>
-                  </Link>
+        {/* Content Container positioned lower-left just like Heirs Holdings */}
+        <div className="relative max-w-[1320px] mx-auto px-6 lg:px-12 w-full z-10">
 
-                  <Link
-                    href="/the-fold"
-                    className="inline-flex items-center gap-2 text-sm font-bold text-[#2D6C00] hover:text-[#00190A] transition-colors py-2 px-1"
-                  >
-                    <UsersIcon className="w-4 h-4 text-[#2D6C00]" />
-                    <span>The Fold &rarr;</span>
-                  </Link>
-                </motion.div>
+          <div className="flex flex-col items-start max-w-4xl">
 
-                {/* Verified Regulatory Assurance */}
-                <motion.div
-                  initial="hidden"
-                  animate="visible"
-                  custom={6}
-                  variants={heroFadeVariants}
-                  className="flex flex-wrap items-center gap-5 pt-4 text-xs text-[#424842]"
-                >
-                  <span className="flex items-center gap-1.5 font-medium">
-                    <CheckCircleIcon className="w-4 h-4 text-[#2D6C00]" />
-                    CAC Incorporated
-                  </span>
-                  <span className="flex items-center gap-1.5 font-medium">
-                    <ShieldCheckIcon className="w-4 h-4 text-[#2D6C00]" />
-                    SCUML Certified
-                  </span>
-                  <span className="flex items-center gap-1.5 font-medium">
-                    <BuildingIcon className="w-4 h-4 text-[#2D6C00]" />
-                    Asaba Headquarters
-                  </span>
-                </motion.div>
-
-              </div>
-
-              {/* Right Column: Visual Architecture */}
-              <motion.div
-                initial="hidden"
-                animate="visible"
-                custom={3}
-                variants={heroFadeVariants}
-                className="lg:col-span-5 relative flex flex-col gap-5"
-              >
-                <div className="relative rounded-2xl overflow-hidden shadow-xl aspect-[4/3] sm:aspect-[16/11] border-2 border-white bg-white group">
-                  <img
-                    src="/images/hero_corporate_asaba.jpg"
-                    alt="Hundredfold Innovation Network Executive Headquarters"
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0A2F1B]/75 via-transparent to-transparent" />
-
-                  {/* Floating Institutional Badge */}
-                  <div className="absolute top-4 left-4 right-4 flex items-center justify-between">
-                    <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/90 backdrop-blur-md text-xs font-bold text-[#00190A] shadow-xs">
-                      <ShieldCheckIcon className="w-3.5 h-3.5 text-[#2D6C00]" />
-                      <span>Corporate Governance</span>
-                    </div>
-                    <span className="px-2.5 py-1 rounded-full bg-[#2D6C00] text-white text-[11px] font-bold shadow-xs">
-                      Asaba Hub
-                    </span>
-                  </div>
-
-                  {/* Bottom Floating Info Strip */}
-                  <div className="absolute bottom-4 left-4 right-4 p-4 rounded-xl bg-white/90 backdrop-blur-md shadow-md flex items-center justify-between">
-                    <div>
-                      <span className="text-[10px] uppercase tracking-wider text-[#2D6C00] font-bold block">
-                        COMMERCIAL PLATFORM
-                      </span>
-                      <span className="text-sm font-bold text-[#00190A] block">
-                        Disciplined Capital Stewardship
-                      </span>
-                    </div>
-                    <span className="px-2.5 py-1 rounded-lg bg-[#ABF67E]/30 text-[#2D6C00] text-xs font-bold">
-                      Phase 1
-                    </span>
-                  </div>
-                </div>
-
-                {/* Grounded Indicator Card */}
-                <div className="p-4 rounded-2xl bg-white/70 backdrop-blur-md border border-white shadow-xs flex items-center justify-between gap-4">
-                  <div className="flex flex-col">
-                    <span className="text-[10px] uppercase text-[#424842] font-bold tracking-wider">
-                      Private Membership Wing
-                    </span>
-                    <span className="font-serif text-lg text-[#00190A] font-semibold">
-                      The Fold &bull; Cycle 1
-                    </span>
-                  </div>
-                  <span className="px-3 py-1 rounded-full bg-[#DEF2F4] text-[#00190A] text-xs font-bold font-mono">
-                    Jan 2027
-                  </span>
-                </div>
-              </motion.div>
-
-            </div>
-
-            {/* Verified Metrics Ribbon */}
-            <motion.div
-              initial="hidden"
-              animate="visible"
-              custom={4}
-              variants={heroFadeVariants}
-              className="bg-[#E3F7F9]/80 backdrop-blur-md px-8 py-5 md:px-14 border-t border-white/60"
+            {/* Tagline / Headline */}
+            <motion.h1
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.85, ease: PRO_MAX_EASE }}
+              className="font-serif text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-white font-medium tracking-tight leading-[1.05] drop-shadow-lg"
             >
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-                <div className="flex flex-col">
-                  <span className="font-serif text-2xl lg:text-3xl font-bold text-[#00190A]">
-                    CAC
-                  </span>
-                  <span className="text-xs text-[#424842] font-medium mt-0.5">
-                    Incorporated in Nigeria
-                  </span>
-                </div>
-                <div className="flex flex-col">
-                  <span className="font-serif text-2xl lg:text-3xl font-bold text-[#2D6C00]">
-                    SCUML
-                  </span>
-                  <span className="text-xs text-[#424842] font-medium mt-0.5">
-                    Protocol Certified
-                  </span>
-                </div>
-                <div className="flex flex-col">
-                  <span className="font-serif text-2xl lg:text-3xl font-bold text-[#00190A]">
-                    4 Pillars
-                  </span>
-                  <span className="text-xs text-[#424842] font-medium mt-0.5">
-                    Strategic Focus Areas
-                  </span>
-                </div>
-                <div className="flex flex-col">
-                  <span className="font-serif text-2xl lg:text-3xl font-bold text-[#2D6C00]">
-                    100 Cap
-                  </span>
-                  <span className="text-xs text-[#424842] font-medium mt-0.5">
-                    Governed Member Cohort
-                  </span>
-                </div>
-              </div>
+              Redefining <br className="hidden sm:inline" />
+              Partnerships.
+            </motion.h1>
+
+            {/* Strategic Pillars Horizontal Ribbon (Heirs Holdings Style: Energy | Power | Banking...) */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2, ease: PRO_MAX_EASE }}
+              className="flex flex-wrap items-center gap-x-3.5 gap-y-2 text-xs sm:text-sm md:text-base text-white/85 font-medium tracking-wide mt-5 md:mt-7 drop-shadow-sm"
+            >
+              <span>Agriculture</span>
+              <span className="text-white/40 font-light">|</span>
+              <span>Real Estate</span>
+              <span className="text-white/40 font-light">|</span>
+              <span>Strategic Partnerships</span>
+              <span className="text-white/40 font-light">|</span>
+              <span>Emerging African Ventures</span>
             </motion.div>
 
-          </motion.div>
+            {/* Clean Action Buttons */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.35, ease: PRO_MAX_EASE }}
+              className="flex flex-wrap items-center gap-4 mt-8 pt-2"
+            >
+              <Link
+                href="/business"
+                className="inline-flex items-center justify-center px-8 py-3.5 rounded-full bg-white text-[#0A2F1B] hover:bg-[#ABF67E] hover:text-[#00190A] transition-all duration-300 text-sm font-semibold tracking-wide shadow-xl group"
+              >
+                <span>Explore Our Business</span>
+                <ArrowRightIcon className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+              </Link>
+
+              <Link
+                href="/partnerships"
+                className="inline-flex items-center justify-center px-8 py-3.5 rounded-full bg-white/10 hover:bg-white/20 text-white border border-white/30 backdrop-blur-md transition-all duration-300 text-sm font-semibold tracking-wide shadow-xl"
+              >
+                <span>Partner With Us</span>
+              </Link>
+            </motion.div>
+
+          </div>
 
         </div>
+
       </section>
+
+      {/* ─── CONTINUOUS INSTITUTIONAL MANDATE TICKER (Directly Below Hero) ─── */}
+      <HeroTicker />
 
       {/* ─── SECTION 2: WHO WE ARE (Scroll In-View Animation) ─── */}
       <section className="relative w-full py-16 lg:py-24 bg-white/40">
@@ -341,7 +201,7 @@ export default function Home() {
       {/* ─── SECTION 3: 4 BUSINESS PILLARS (Framer Motion In-View Fade-In & Stagger) ─── */}
       <section className="relative w-full py-20 lg:py-28 bg-[#E9FDFF]">
         <div className="max-w-[1320px] mx-auto px-6 lg:px-12">
-          
+
           {/* Section Header with In-View Trigger */}
           <motion.div
             initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 20 }}
@@ -384,48 +244,46 @@ export default function Home() {
             variants={staggerGridVariants}
             className="grid grid-cols-1 md:grid-cols-2 gap-8"
           >
-            
-            {/* Pillar 1: Agro-Trading Card */}
+
+            {/* Pillar 1: Agriculture Card */}
             <motion.div
               variants={cardScrollVariants}
               whileHover={shouldReduceMotion ? {} : { y: -6, transition: { duration: 0.25, ease: "easeOut" } }}
-              className="group relative rounded-3xl bg-white/75 backdrop-blur-xl p-8 lg:p-10 border border-white shadow-[0_8px_32px_-4px_rgba(10,47,27,0.06)] hover:shadow-[0_16px_40px_-6px_rgba(45,108,0,0.14)] transition-shadow duration-300 flex flex-col justify-between h-full"
+              className="group relative rounded-3xl bg-white/80 backdrop-blur-xl p-8 lg:p-9 border border-white shadow-[0_8px_32px_-4px_rgba(10,47,27,0.06)] hover:shadow-[0_16px_40px_-6px_rgba(45,108,0,0.14)] transition-all duration-300 flex flex-col justify-between h-full"
             >
-              <div className="space-y-6">
+              <div className="space-y-4">
                 <div className="flex items-center justify-between">
-                  <div className="w-14 h-14 rounded-2xl bg-[#ABF67E]/30 text-[#2D6C00] flex items-center justify-center shadow-inner">
-                    <SproutIcon className="w-7 h-7" />
+                  <div className="w-13 h-13 rounded-2xl bg-[#ABF67E]/30 text-[#2D6C00] flex items-center justify-center shadow-inner">
+                    <SproutIcon className="w-6 h-6" />
                   </div>
                   <span className="text-[11px] uppercase tracking-wider text-[#424842] font-bold px-3 py-1 rounded-full bg-[#DEF2F4]">
                     Area 01
                   </span>
                 </div>
 
-                <h3 className="font-serif text-2xl font-bold text-[#00190A] tracking-tight">
-                  Agro-Trading
-                </h3>
+                <div>
+                  <h3 className="font-serif text-2xl font-bold text-[#00190A] tracking-tight">
+                    Agriculture
+                  </h3>
+                  <p className="text-sm text-[#424842] leading-relaxed mt-1.5">
+                    Sourcing, processing, and trading essential agricultural commodities across high-yield African corridors.
+                  </p>
+                </div>
 
-                <p className="text-sm sm:text-base text-[#424842] leading-relaxed">
-                  Participating in agricultural commodity trading through sourcing relationships, supply-chain coordination, buyer-supplier partnerships and commercially viable trading opportunities.
-                </p>
-
-                <div className="space-y-2 pt-2 text-xs sm:text-sm text-[#424842]">
-                  <div className="flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#2D6C00]" />
-                    <span>Sourcing relationships across agricultural production corridors</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#2D6C00]" />
-                    <span>Supply-chain coordination and buyer-supplier integration</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#2D6C00]" />
-                    <span>Commercially disciplined trading structures and off-taker ties</span>
-                  </div>
+                {/* Section Showcase Image */}
+                <div className="relative w-full aspect-[16/10] rounded-2xl overflow-hidden border border-white/60 shadow-xs">
+                  <Image
+                    src="/images/agri_business_showcase.jpg"
+                    alt="Agriculture and agricultural commodity supply chains"
+                    fill
+                    sizes="(max-width: 768px) 100vw, 550px"
+                    className="object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
                 </div>
               </div>
 
-              <div className="pt-8 flex items-center justify-between border-t border-[#def2f4] mt-6">
+              <div className="pt-6 flex items-center justify-between border-t border-[#def2f4] mt-6">
                 <Link
                   href="/business#agro-trading"
                   className="inline-flex items-center gap-2 text-xs uppercase tracking-wider text-[#00190A] font-bold group-hover:text-[#2D6C00] transition-colors"
@@ -437,47 +295,45 @@ export default function Home() {
               </div>
             </motion.div>
 
-            {/* Pillar 2: Asset Acquisition & Ownership Card */}
+            {/* Pillar 2: Real Estate Card */}
             <motion.div
               variants={cardScrollVariants}
               whileHover={shouldReduceMotion ? {} : { y: -6, transition: { duration: 0.25, ease: "easeOut" } }}
-              className="group relative rounded-3xl bg-white/75 backdrop-blur-xl p-8 lg:p-10 border border-white shadow-[0_8px_32px_-4px_rgba(10,47,27,0.06)] hover:shadow-[0_16px_40px_-6px_rgba(45,108,0,0.14)] transition-shadow duration-300 flex flex-col justify-between h-full"
+              className="group relative rounded-3xl bg-white/80 backdrop-blur-xl p-8 lg:p-9 border border-white shadow-[0_8px_32px_-4px_rgba(10,47,27,0.06)] hover:shadow-[0_16px_40px_-6px_rgba(45,108,0,0.14)] transition-all duration-300 flex flex-col justify-between h-full"
             >
-              <div className="space-y-6">
+              <div className="space-y-4">
                 <div className="flex items-center justify-between">
-                  <div className="w-14 h-14 rounded-2xl bg-[#0A2F1B] text-white flex items-center justify-center shadow-inner">
-                    <BuildingIcon className="w-7 h-7" />
+                  <div className="w-13 h-13 rounded-2xl bg-[#0A2F1B] text-white flex items-center justify-center shadow-inner">
+                    <BuildingIcon className="w-6 h-6" />
                   </div>
                   <span className="text-[11px] uppercase tracking-wider text-[#424842] font-bold px-3 py-1 rounded-full bg-[#DEF2F4]">
                     Area 02
                   </span>
                 </div>
 
-                <h3 className="font-serif text-2xl font-bold text-[#00190A] tracking-tight">
-                  Asset Acquisition &amp; Ownership
-                </h3>
+                <div>
+                  <h3 className="font-serif text-2xl font-bold text-[#00190A] tracking-tight">
+                    Real Estate
+                  </h3>
+                  <p className="text-sm text-[#424842] leading-relaxed mt-1.5">
+                    Acquiring productive commercial land, logistics infrastructure, and tangible physical assets for long-term compounding.
+                  </p>
+                </div>
 
-                <p className="text-sm sm:text-base text-[#424842] leading-relaxed">
-                  Exploring ownership of productive assets, including real estate, as part of our disciplined long-term commercial strategy.
-                </p>
-
-                <div className="space-y-2 pt-2 text-xs sm:text-sm text-[#424842]">
-                  <div className="flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#2D6C00]" />
-                    <span>Identification of high-utility tangible commercial assets</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#2D6C00]" />
-                    <span>Commercial real estate with verifiable utility and cash-flow potential</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#2D6C00]" />
-                    <span>Clean title verification, prudent valuation, and balance-sheet resilience</span>
-                  </div>
+                {/* Section Showcase Image */}
+                <div className="relative w-full aspect-[16/10] rounded-2xl overflow-hidden border border-white/60 shadow-xs">
+                  <Image
+                    src="/images/commercial_real_estate.jpg"
+                    alt="Commercial real estate and productive tangible assets"
+                    fill
+                    sizes="(max-width: 768px) 100vw, 550px"
+                    className="object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
                 </div>
               </div>
 
-              <div className="pt-8 flex items-center justify-between border-t border-[#def2f4] mt-6">
+              <div className="pt-6 flex items-center justify-between border-t border-[#def2f4] mt-6">
                 <Link
                   href="/business#asset-acquisition"
                   className="inline-flex items-center gap-2 text-xs uppercase tracking-wider text-[#00190A] font-bold group-hover:text-[#2D6C00] transition-colors"
@@ -493,43 +349,41 @@ export default function Home() {
             <motion.div
               variants={cardScrollVariants}
               whileHover={shouldReduceMotion ? {} : { y: -6, transition: { duration: 0.25, ease: "easeOut" } }}
-              className="group relative rounded-3xl bg-white/75 backdrop-blur-xl p-8 lg:p-10 border border-white shadow-[0_8px_32px_-4px_rgba(10,47,27,0.06)] hover:shadow-[0_16px_40px_-6px_rgba(45,108,0,0.14)] transition-shadow duration-300 flex flex-col justify-between h-full"
+              className="group relative rounded-3xl bg-white/80 backdrop-blur-xl p-8 lg:p-9 border border-white shadow-[0_8px_32px_-4px_rgba(10,47,27,0.06)] hover:shadow-[0_16px_40px_-6px_rgba(45,108,0,0.14)] transition-all duration-300 flex flex-col justify-between h-full"
             >
-              <div className="space-y-6">
+              <div className="space-y-4">
                 <div className="flex items-center justify-between">
-                  <div className="w-14 h-14 rounded-2xl bg-[#ABF67E]/30 text-[#2D6C00] flex items-center justify-center shadow-inner">
-                    <HandshakeIcon className="w-7 h-7" />
+                  <div className="w-13 h-13 rounded-2xl bg-[#ABF67E]/30 text-[#2D6C00] flex items-center justify-center shadow-inner">
+                    <HandshakeIcon className="w-6 h-6" />
                   </div>
                   <span className="text-[11px] uppercase tracking-wider text-[#424842] font-bold px-3 py-1 rounded-full bg-[#DEF2F4]">
                     Area 03
                   </span>
                 </div>
 
-                <h3 className="font-serif text-2xl font-bold text-[#00190A] tracking-tight">
-                  Strategic Partnerships
-                </h3>
+                <div>
+                  <h3 className="font-serif text-2xl font-bold text-[#00190A] tracking-tight">
+                    Strategic Partnerships
+                  </h3>
+                  <p className="text-sm text-[#424842] leading-relaxed mt-1.5">
+                    Aligning capital, operational capability, and institutional co-investment through structured joint ventures and commercial alliances.
+                  </p>
+                </div>
 
-                <p className="text-sm sm:text-base text-[#424842] leading-relaxed">
-                  Collaborating with businesses, institutions, suppliers and investors where complementary capabilities create mutually beneficial commercial opportunities.
-                </p>
-
-                <div className="space-y-2 pt-2 text-xs sm:text-sm text-[#424842]">
-                  <div className="flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#2D6C00]" />
-                    <span>Commercial joint alliances combining capital and operational reach</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#2D6C00]" />
-                    <span>Aligned commercial objectives with defined corporate governance</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#2D6C00]" />
-                    <span>Equitable risk-reward sharing and transparent accountability</span>
-                  </div>
+                {/* Section Showcase Image */}
+                <div className="relative w-full aspect-[16/10] rounded-2xl overflow-hidden border border-white/60 shadow-xs">
+                  <Image
+                    src="/images/strategic_partnerships.jpg"
+                    alt="Strategic institutional partnerships and commercial co-investment"
+                    fill
+                    sizes="(max-width: 768px) 100vw, 550px"
+                    className="object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
                 </div>
               </div>
 
-              <div className="pt-8 flex items-center justify-between border-t border-[#def2f4] mt-6">
+              <div className="pt-6 flex items-center justify-between border-t border-[#def2f4] mt-6">
                 <Link
                   href="/business#strategic-partnerships"
                   className="inline-flex items-center gap-2 text-xs uppercase tracking-wider text-[#00190A] font-bold group-hover:text-[#2D6C00] transition-colors"
@@ -541,47 +395,45 @@ export default function Home() {
               </div>
             </motion.div>
 
-            {/* Pillar 4: Business Ventures & Enterprise Development Card */}
+            {/* Pillar 4: Business Ventures Card */}
             <motion.div
               variants={cardScrollVariants}
               whileHover={shouldReduceMotion ? {} : { y: -6, transition: { duration: 0.25, ease: "easeOut" } }}
-              className="group relative rounded-3xl bg-white/75 backdrop-blur-xl p-8 lg:p-10 border border-white shadow-[0_8px_32px_-4px_rgba(10,47,27,0.06)] hover:shadow-[0_16px_40px_-6px_rgba(45,108,0,0.14)] transition-shadow duration-300 flex flex-col justify-between h-full"
+              className="group relative rounded-3xl bg-white/80 backdrop-blur-xl p-8 lg:p-9 border border-white shadow-[0_8px_32px_-4px_rgba(10,47,27,0.06)] hover:shadow-[0_16px_40px_-6px_rgba(45,108,0,0.14)] transition-all duration-300 flex flex-col justify-between h-full"
             >
-              <div className="space-y-6">
+              <div className="space-y-4">
                 <div className="flex items-center justify-between">
-                  <div className="w-14 h-14 rounded-2xl bg-[#0A2F1B] text-white flex items-center justify-center shadow-inner">
-                    <TrendingUpIcon className="w-7 h-7" />
+                  <div className="w-13 h-13 rounded-2xl bg-[#0A2F1B] text-white flex items-center justify-center shadow-inner">
+                    <TrendingUpIcon className="w-6 h-6" />
                   </div>
                   <span className="text-[11px] uppercase tracking-wider text-[#424842] font-bold px-3 py-1 rounded-full bg-[#DEF2F4]">
                     Area 04
                   </span>
                 </div>
 
-                <h3 className="font-serif text-2xl font-bold text-[#00190A] tracking-tight">
-                  Business Ventures &amp; Enterprise Development
-                </h3>
+                <div>
+                  <h3 className="font-serif text-2xl font-bold text-[#00190A] tracking-tight">
+                    Business Ventures
+                  </h3>
+                  <p className="text-sm text-[#424842] leading-relaxed mt-1.5">
+                    Backing and scaling promising high-growth African enterprises with patient capital, governance support, and market access.
+                  </p>
+                </div>
 
-                <p className="text-sm sm:text-base text-[#424842] leading-relaxed">
-                  Developing, partnering with and selectively supporting promising businesses, including emerging African enterprises, based on strategic fit and commercial merit.
-                </p>
-
-                <div className="space-y-2 pt-2 text-xs sm:text-sm text-[#424842]">
-                  <div className="flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#2D6C00]" />
-                    <span>Selective venture support anchored on cash flow viability</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#2D6C00]" />
-                    <span>Strategic capital, operational stewardship, and commercial network access</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#2D6C00]" />
-                    <span>Milestone-based progress oversight and governance advisory</span>
-                  </div>
+                {/* Section Showcase Image */}
+                <div className="relative w-full aspect-[16/10] rounded-2xl overflow-hidden border border-white/60 shadow-xs">
+                  <Image
+                    src="/images/african_business_ventures.jpg"
+                    alt="African business ventures and scalable enterprise development"
+                    fill
+                    sizes="(max-width: 768px) 100vw, 550px"
+                    className="object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
                 </div>
               </div>
 
-              <div className="pt-8 flex items-center justify-between border-t border-[#def2f4] mt-6">
+              <div className="pt-6 flex items-center justify-between border-t border-[#def2f4] mt-6">
                 <Link
                   href="/business#business-ventures"
                   className="inline-flex items-center gap-2 text-xs uppercase tracking-wider text-[#00190A] font-bold group-hover:text-[#2D6C00] transition-colors"
@@ -589,7 +441,7 @@ export default function Home() {
                   <span>Explore Pillar</span>
                   <ArrowRightIcon className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                 </Link>
-                <span className="text-[11px] text-[#2D6C00] font-semibold">Enterprise Incubation</span>
+                <span className="text-[11px] text-[#2D6C00] font-semibold">Enterprise Scale</span>
               </div>
             </motion.div>
 
@@ -601,7 +453,7 @@ export default function Home() {
       {/* ─── SECTION 4: OUR APPROACH (Scroll In-View Principles) ─── */}
       <section className="relative w-full py-20 lg:py-24 bg-white/60">
         <div className="max-w-[1320px] mx-auto px-6 lg:px-12">
-          
+
           <motion.div
             initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -668,7 +520,7 @@ export default function Home() {
             variants={staggerGridVariants}
             className="grid grid-cols-1 lg:grid-cols-2 gap-8"
           >
-            
+
             {/* Pathway 1: The Fold */}
             <motion.div
               variants={cardScrollVariants}
@@ -676,7 +528,7 @@ export default function Home() {
               className="relative rounded-3xl bg-white/80 backdrop-blur-xl p-8 md:p-12 border border-white shadow-[0_8px_32px_-4px_rgba(10,47,27,0.06)] hover:shadow-[0_16px_40px_-6px_rgba(45,108,0,0.12)] transition-shadow flex flex-col justify-between overflow-hidden h-full"
             >
               <div className="absolute top-0 right-0 w-32 h-32 bg-[#ABF67E]/20 rounded-bl-full pointer-events-none" />
-              
+
               <div className="space-y-4">
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#ABF67E]/30 text-[#2D6C00] text-xs uppercase font-bold tracking-wider">
                   <span className="w-2 h-2 rounded-full bg-[#2D6C00]" />
@@ -722,7 +574,7 @@ export default function Home() {
               className="relative rounded-3xl bg-white/80 backdrop-blur-xl p-8 md:p-12 border border-white shadow-[0_8px_32px_-4px_rgba(10,47,27,0.06)] hover:shadow-[0_16px_40px_-6px_rgba(45,108,0,0.12)] transition-shadow flex flex-col justify-between overflow-hidden h-full"
             >
               <div className="absolute top-0 right-0 w-32 h-32 bg-[#C4ECCE]/30 rounded-bl-full pointer-events-none" />
-              
+
               <div className="space-y-4">
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#0A2F1B] text-white text-xs uppercase font-bold tracking-wider">
                   <HandshakeIcon className="w-3.5 h-3.5 text-[#ABF67E]" />

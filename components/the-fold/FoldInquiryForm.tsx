@@ -265,9 +265,9 @@ export default function FoldInquiryForm() {
       <div className="flex items-center justify-between pt-2 border-t border-white/10 text-xs text-white/60">
         <span className="flex items-center gap-1.5">
           <ShieldCheckIcon className="w-3.5 h-3.5 text-[#ABF67E]" />
-          CAC Incorporated &bull; SCUML Protocol Certified
+          Strict Confidentiality &bull; Institutional Standards
         </span>
-        <span className="font-mono text-[11px] text-[#ABF67E]">Cycle 1 &bull; Jan 2027</span>
+        <span className="font-mono text-[11px] text-[#ABF67E]">Cycle 1 Active</span>
       </div>
     </form>
   );
