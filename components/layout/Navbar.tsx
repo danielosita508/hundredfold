@@ -54,7 +54,6 @@ const NAV_PAGES: NavItem[] = [
       { label: "Technology", href: "/business#technology" },
     ],
   },
-  { label: "Partnerships", href: "/partnerships", hasDropdown: false },
   { label: "The Fold", href: "/the-fold", hasDropdown: false },
   { label: "Insights", href: "/insights", hasDropdown: false },
 ];
