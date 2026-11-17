@@ -65,22 +65,13 @@ function PartnershipsContent() {
       num: "Route 01",
       icon: SproutIcon,
       tag: "Supply Chains",
-      title: "Commercial & Supply-Chain Partnerships",
+      title: "Agriculture & Commodity Trade",
       description:
         "Suppliers, aggregators, and off-takers in agriculture, logistics, and commodity trading connecting production corridors with commercial demand.",
       badge: "Agro-Trading",
     },
     {
       num: "Route 02",
-      icon: HandshakeIcon,
-      tag: "Joint Alliances",
-      title: "Joint Ventures & Business Development",
-      description:
-        "Established operators looking to co-develop commercial projects, scale distribution, or expand operational reach through aligned joint ventures.",
-      badge: "SPV Architecture",
-    },
-    {
-      num: "Route 03",
       icon: BuildingIcon,
       tag: "Productive Capital",
       title: "Asset & Real Estate Opportunities",
@@ -89,13 +80,22 @@ function PartnershipsContent() {
       badge: "Tangible Yield",
     },
     {
+      num: "Route 03",
+      icon: HandshakeIcon,
+      tag: "Capital Stewardship",
+      title: "Finance & Structured Investment",
+      description:
+        "Institutional co-investors, asset managers, and commercial enterprises seeking structured investment facilities, private credit, and disciplined capital allocation.",
+      badge: "Finance & Capital",
+    },
+    {
       num: "Route 04",
       icon: TrendingUpIcon,
-      tag: "Venture Incubation",
-      title: "Emerging African Business Ventures",
+      tag: "Digital Infrastructure",
+      title: "Technology & Enterprise Systems",
       description:
-        "Founders and enterprise leaders seeking strategic collaboration, commercial backing, board advisory, and market access to scale viable enterprises.",
-      badge: "Enterprise Scale",
+        "Tech founders, digital infrastructure operators, and enterprise software teams seeking commercial distribution, strategic capital, and market scale.",
+      badge: "Technology Scale",
     },
   ];
 

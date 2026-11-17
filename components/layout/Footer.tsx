@@ -53,18 +53,10 @@ export default function Footer() {
                 <Image
                   src="/images/logo.png"
                   alt="Hundredfold Innovation Network"
-                  width={38}
-                  height={38}
-                  className="w-9 h-9 object-contain rounded-full"
+                  width={42}
+                  height={42}
+                  className="w-10 h-10 object-contain rounded-full"
                 />
-              </div>
-              <div className="flex flex-col">
-                <span className="font-serif text-xl text-white font-semibold tracking-tight">
-                  Hundredfold Innovation Network
-                </span>
-                <span className="text-[11px] text-[#ABF67E] uppercase tracking-wider font-bold">
-                  Building Businesses. Creating Lasting Value.
-                </span>
               </div>
             </div>
 
@@ -72,8 +64,8 @@ export default function Footer() {
               Hundredfold Innovation Network Ltd is an African business and investment company focused on identifying commercial opportunities, building strategic relationships and developing ventures with long-term potential.
             </p>
 
-            {/* Circular Social Media Buttons (Heirs Holdings Style) */}
-            <div className="flex items-center gap-3 pt-1">
+            {/* Circular Social Media Buttons (Reduced Size) */}
+            <div className="flex items-center gap-2.5 pt-1">
               {socialLinks.map((item) => {
                 const IconComponent = item.icon;
                 return (
@@ -84,9 +76,9 @@ export default function Footer() {
                     rel="noopener noreferrer"
                     aria-label={`Hundredfold on ${item.name}`}
                     title={item.name}
-                    className="w-10 h-10 rounded-full bg-white/10 hover:bg-[#ABF67E] hover:text-[#0A2F1B] border border-white/15 flex items-center justify-center transition-all duration-300 text-white shadow-xs"
+                    className="w-8 h-8 rounded-full bg-white/10 hover:bg-[#ABF67E] hover:text-[#0A2F1B] border border-white/15 flex items-center justify-center transition-all duration-300 text-white shadow-xs"
                   >
-                    <IconComponent className="w-4 h-4" />
+                    <IconComponent className="w-3.5 h-3.5" />
                   </a>
                 );
               })}
@@ -109,49 +101,29 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Right Side: Pushed to that end (Commercial Focus & The Fold & Network) */}
-          <div className="flex flex-col sm:flex-row gap-10 sm:gap-16 lg:gap-20 shrink-0">
-            {/* Column 1: Commercial Focus */}
-            <div className="flex flex-col gap-3 min-w-[160px]">
-              <span className="text-xs font-bold uppercase tracking-wider text-[#ABF67E]">
-                Commercial Focus
-              </span>
-              <Link href="/business#agro-trading" className="text-xs text-emerald-100/75 hover:text-white transition-colors">
-                Agriculture
+          {/* Right Side: Quick Links (Navbar Links) */}
+          <div className="flex flex-col gap-3 min-w-[200px] shrink-0">
+            <span className="text-xs font-bold uppercase tracking-wider text-[#ABF67E]">
+              Quick Links
+            </span>
+            <div className="flex flex-col gap-2.5">
+              <Link href="/" className="text-xs sm:text-sm text-emerald-100/75 hover:text-white transition-colors">
+                Home
               </Link>
-              <Link href="/business#asset-acquisition" className="text-xs text-emerald-100/75 hover:text-white transition-colors">
-                Real Estate
+              <Link href="/about" className="text-xs sm:text-sm text-emerald-100/75 hover:text-white transition-colors">
+                About Us
               </Link>
-              <Link href="/business#strategic-partnerships" className="text-xs text-emerald-100/75 hover:text-white transition-colors">
-                Strategic Partnerships
+              <Link href="/business" className="text-xs sm:text-sm text-emerald-100/75 hover:text-white transition-colors">
+                Our Business
               </Link>
-              <Link href="/business#business-ventures" className="text-xs text-emerald-100/75 hover:text-white transition-colors">
-                Business Ventures
+              <Link href="/partnerships" className="text-xs sm:text-sm text-emerald-100/75 hover:text-white transition-colors">
+                Partnerships
               </Link>
-              <Link href="/partnerships" className="text-xs text-[#ABF67E] hover:underline font-semibold mt-1">
-                Submit Proposal &rarr;
+              <Link href="/the-fold" className="text-xs sm:text-sm text-emerald-100/75 hover:text-white transition-colors">
+                The Fold
               </Link>
-            </div>
-
-            {/* Column 2: The Fold & Network */}
-            <div className="flex flex-col gap-3 min-w-[160px]">
-              <span className="text-xs font-bold uppercase tracking-wider text-[#ABF67E]">
-                The Fold &amp; Network
-              </span>
-              <Link href="/the-fold" className="text-xs text-emerald-100/75 hover:text-white transition-colors">
-                The Fold Community Wing
-              </Link>
-              <Link href="/the-fold#cohort" className="text-xs text-emerald-100/75 hover:text-white transition-colors">
-                Cycle 1 Cohort
-              </Link>
-              <Link href="/about" className="text-xs text-emerald-100/75 hover:text-white transition-colors">
-                About Hundredfold
-              </Link>
-              <Link href="/about#philosophy" className="text-xs text-emerald-100/75 hover:text-white transition-colors">
-                Africapitalism Philosophy
-              </Link>
-              <Link href="/insights" className="text-xs text-emerald-100/75 hover:text-white transition-colors">
-                News &amp; Insights
+              <Link href="/insights" className="text-xs sm:text-sm text-emerald-100/75 hover:text-white transition-colors">
+                Insights
               </Link>
             </div>
           </div>

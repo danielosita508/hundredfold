@@ -8,6 +8,8 @@ export const APPROVED_PARTNERSHIP_CATEGORIES = [
   "Joint ventures",
   "Asset & real estate",
   "Emerging African ventures",
+  "Finance & capital",
+  "Technology & infrastructure",
 ] as const;
 
 /**
@@ -15,13 +17,17 @@ export const APPROVED_PARTNERSHIP_CATEGORIES = [
  */
 export const partnershipCategoryMap: Record<string, (typeof APPROVED_PARTNERSHIP_CATEGORIES)[number]> = {
   "agro-trading": "Commercial & supply-chain",
-  "strategic-partnerships": "Joint ventures",
+  "strategic-partnerships": "Finance & capital",
+  "finance": "Finance & capital",
   "asset-acquisition": "Asset & real estate",
-  "business-ventures": "Emerging African ventures",
+  "business-ventures": "Technology & infrastructure",
+  "technology": "Technology & infrastructure",
   "Commercial & supply-chain": "Commercial & supply-chain",
-  "Joint ventures": "Joint ventures",
+  "Joint ventures": "Finance & capital",
   "Asset & real estate": "Asset & real estate",
-  "Emerging African ventures": "Emerging African ventures",
+  "Emerging African ventures": "Technology & infrastructure",
+  "Finance & capital": "Finance & capital",
+  "Technology & infrastructure": "Technology & infrastructure",
 };
 
 /**
@@ -66,14 +72,18 @@ export const partnershipProposalSchema = z.object({
       "Joint ventures",
       "Asset & real estate",
       "Emerging African ventures",
+      "Finance & capital",
+      "Technology & infrastructure",
       "agro-trading",
       "strategic-partnerships",
       "asset-acquisition",
       "business-ventures",
+      "finance",
+      "technology",
     ],
     {
       message:
-        "Partnership category must match one of the 4 approved routes (Commercial & supply-chain, Joint ventures, Asset & real estate, Emerging African ventures).",
+        "Partnership category must match one of the approved routes.",
     }
   ),
   operationalLocation: z

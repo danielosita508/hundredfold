@@ -16,10 +16,44 @@ import {
   MapPinIcon,
 } from "@/components/ui/Icons";
 
-// Core navigation pages positioned exactly like Heirs Holdings (5 Core Pillars)
-const NAV_PAGES = [
-  { label: "About Us", href: "/about", hasDropdown: false },
-  { label: "Our Business", href: "/business", hasDropdown: false },
+interface NavSubItem {
+  label: string;
+  href: string;
+}
+
+interface NavItem {
+  label: string;
+  href: string;
+  hasDropdown: boolean;
+  subItems?: NavSubItem[];
+}
+
+// Core navigation pages positioned exactly like Heirs Holdings (5 Core Pillars with Section Dropdowns)
+const NAV_PAGES: NavItem[] = [
+  {
+    label: "About Us",
+    href: "/about",
+    hasDropdown: true,
+    subItems: [
+      { label: "Overview", href: "/about#overview" },
+      { label: "Our Story", href: "/about#story" },
+      { label: "Our Leadership", href: "/about#leadership" },
+      { label: "Our Values", href: "/about#values" },
+      { label: "Vision & Mission", href: "/about#vision-mission" },
+    ],
+  },
+  {
+    label: "Our Business",
+    href: "/business",
+    hasDropdown: true,
+    subItems: [
+      { label: "Overview", href: "/business#overview" },
+      { label: "Agriculture", href: "/business#agriculture" },
+      { label: "Real Estate", href: "/business#real-estate" },
+      { label: "Finance", href: "/business#finance" },
+      { label: "Technology", href: "/business#technology" },
+    ],
+  },
   { label: "Partnerships", href: "/partnerships", hasDropdown: false },
   { label: "The Fold", href: "/the-fold", hasDropdown: false },
   { label: "Insights", href: "/insights", hasDropdown: false },
@@ -29,10 +63,12 @@ export default function Navbar() {
   const pathname = usePathname();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [hoveredNav, setHoveredNav] = useState<string | null>(null);
 
-  // Close mobile menu on route change
+  // Close menus on route change
   useEffect(() => {
     setMobileMenuOpen(false);
+    setHoveredNav(null);
   }, [pathname]);
 
   // Track scroll position for dynamic "Before and After" morph effect (Heirs Holdings Style)
@@ -84,20 +120,12 @@ export default function Navbar() {
                 priority
               />
             </div>
-            <div className="flex flex-col">
-              <span
-                className={`font-serif text-xl sm:text-2xl font-bold tracking-tight leading-tight transition-colors duration-300 ${scrolled ? "text-[#0A2F1B]" : "text-white"
-                  }`}
-              >
-                Hundredfold
-              </span>
-              <span
-                className={`text-[10px] uppercase tracking-widest font-bold transition-colors duration-300 ${scrolled ? "text-[#2D6C00]" : "text-[#ABF67E]"
-                  }`}
-              >
-                Innovation Network Ltd
-              </span>
-            </div>
+            <span
+              className={`font-serif text-xl sm:text-2xl font-bold tracking-tight leading-tight transition-colors duration-300 ${scrolled ? "text-[#0A2F1B]" : "text-white"
+                }`}
+            >
+              Hundredfold
+            </span>
           </Link>
 
           {/* ─── NAVIGATION PAGES (Positioned on the Right, Heirs Holdings Style) ─── */}
@@ -108,28 +136,58 @@ export default function Navbar() {
           >
             {NAV_PAGES.map((item) => {
               const isActive = pathname.startsWith(item.href);
+              const isHovered = hoveredNav === item.label;
 
               return (
-                <Link
+                <div
                   key={item.href}
-                  href={item.href}
-                  className={`flex items-center gap-1 text-[11px] lg:text-xs xl:text-[13px] uppercase font-semibold tracking-wider transition-all duration-200 py-1 relative ${scrolled
-                      ? isActive
-                        ? "text-[#2D6C00] font-bold border-b-2 border-[#2D6C00]"
-                        : "text-[#1C201D] hover:text-[#2D6C00]"
-                      : isActive
-                        ? "text-[#ABF67E] font-bold border-b-2 border-[#ABF67E]"
-                        : "text-white/90 hover:text-white"
-                    }`}
+                  className="relative group py-2"
+                  onMouseEnter={() => item.hasDropdown && setHoveredNav(item.label)}
+                  onMouseLeave={() => setHoveredNav(null)}
                 >
-                  <span>{item.label}</span>
-                  {item.hasDropdown && (
-                    <ChevronDownIcon
-                      className={`w-3 h-3 transition-colors ${scrolled ? "text-gray-400" : "text-white/60"
+                  <Link
+                    href={item.href}
+                    className={`flex items-center gap-1.5 text-[11px] lg:text-xs xl:text-[13px] uppercase font-semibold tracking-wider transition-all duration-200 py-1 relative ${scrolled
+                        ? isActive
+                          ? "text-[#2D6C00] font-bold border-b-2 border-[#2D6C00]"
+                          : "text-[#1C201D] hover:text-[#2D6C00]"
+                        : isActive
+                          ? "text-[#ABF67E] font-bold border-b-2 border-[#ABF67E]"
+                          : "text-white/90 hover:text-white"
+                      }`}
+                  >
+                    <span>{item.label}</span>
+                    {item.hasDropdown && (
+                      <ChevronDownIcon
+                        className={`w-3.5 h-3.5 transition-transform duration-200 ${isHovered ? "rotate-180" : ""
+                          } ${scrolled ? "text-gray-400" : "text-white/70"}`}
+                      />
+                    )}
+                  </Link>
+
+                  {/* Dropdown Card (Heirs Holdings Style with Pure White Card & Clean Section Links) */}
+                  {item.hasDropdown && item.subItems && (
+                    <div
+                      className={`absolute top-full left-0 pt-2 min-w-[210px] transition-all duration-200 z-50 ${isHovered
+                          ? "opacity-100 visible translate-y-0 pointer-events-auto"
+                          : "opacity-0 invisible -translate-y-1 pointer-events-none"
                         }`}
-                    />
+                    >
+                      <div className="bg-white rounded-lg shadow-[0_12px_40px_rgba(0,0,0,0.15)] border border-gray-100 py-3 overflow-hidden flex flex-col">
+                        {item.subItems.map((sub) => (
+                          <Link
+                            key={sub.label}
+                            href={sub.href}
+                            onClick={() => setHoveredNav(null)}
+                            className="px-6 py-2.5 text-sm font-medium text-[#0A2F1B] hover:text-[#2D6C00] hover:bg-[#E9FDFF]/60 transition-colors"
+                          >
+                            {sub.label}
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
                   )}
-                </Link>
+                </div>
               );
             })}
 
@@ -222,17 +280,34 @@ export default function Navbar() {
                 const isActive = pathname.startsWith(item.href);
 
                 return (
-                  <Link
-                    key={item.href}
-                    href={item.href}
-                    className={`flex items-center justify-between px-4 py-3 rounded-xl text-base font-medium transition-colors min-h-[48px] ${isActive
-                        ? "bg-white/15 text-[#ABF67E] font-bold border border-[#ABF67E]/30"
-                        : "text-white/80 hover:bg-white/10 hover:text-white"
-                      }`}
-                  >
-                    <span>{item.label}</span>
-                    <ArrowRightIcon className="w-4 h-4 text-[#ABF67E]" />
-                  </Link>
+                  <div key={item.href} className="space-y-1">
+                    <Link
+                      href={item.href}
+                      onClick={() => setMobileMenuOpen(false)}
+                      className={`flex items-center justify-between px-4 py-3 rounded-xl text-base font-medium transition-colors min-h-[48px] ${isActive
+                          ? "bg-white/15 text-[#ABF67E] font-bold border border-[#ABF67E]/30"
+                          : "text-white/80 hover:bg-white/10 hover:text-white"
+                        }`}
+                    >
+                      <span>{item.label}</span>
+                      <ArrowRightIcon className="w-4 h-4 text-[#ABF67E]" />
+                    </Link>
+
+                    {item.hasDropdown && item.subItems && (
+                      <div className="pl-6 pr-2 py-1 space-y-1 border-l-2 border-[#ABF67E]/30 ml-4">
+                        {item.subItems.map((sub) => (
+                          <Link
+                            key={sub.label}
+                            href={sub.href}
+                            onClick={() => setMobileMenuOpen(false)}
+                            className="block text-xs font-medium text-white/70 hover:text-[#ABF67E] py-1.5 transition-colors"
+                          >
+                            {sub.label}
+                          </Link>
+                        ))}
+                      </div>
+                    )}
+                  </div>
                 );
               })}
 

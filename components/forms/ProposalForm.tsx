@@ -225,16 +225,16 @@ export default function ProposalForm({
                   className="w-full px-4 py-3.5 rounded-xl bg-transparent font-sans text-sm text-[#00190A] focus:outline-none cursor-pointer"
                 >
                   <option value="Commercial & supply-chain">
-                    Commercial &amp; Supply-Chain (Agro-Trading)
-                  </option>
-                  <option value="Joint ventures">
-                    Joint Ventures &amp; Strategic Operations
+                    Agriculture &amp; Commodity Trade
                   </option>
                   <option value="Asset & real estate">
-                    Asset &amp; Real Estate Opportunities
+                    Real Estate &amp; Asset Acquisition
                   </option>
-                  <option value="Emerging African ventures">
-                    Emerging African Business Ventures
+                  <option value="Finance & capital">
+                    Finance &amp; Capital Stewardship
+                  </option>
+                  <option value="Technology & infrastructure">
+                    Technology &amp; Digital Infrastructure
                   </option>
                 </select>
               </div>

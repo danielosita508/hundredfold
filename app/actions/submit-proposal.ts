@@ -41,6 +41,8 @@ export const proposalSchema = z.object({
       "asset-acquisition",
       "strategic-partnerships",
       "business-ventures",
+      "finance",
+      "technology",
       "other-institutional",
     ],
     {
