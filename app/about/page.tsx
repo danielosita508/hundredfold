@@ -670,39 +670,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* ─── CONTACT SECRETARIAT CTA ─── */}
-      <section className="w-full px-6 lg:px-12 py-16 bg-[#00190A] text-white">
-        <div className="max-w-[1360px] mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
-          <div className="space-y-2 max-w-2xl">
-            <span className="text-xs uppercase tracking-wider text-[#ABF67E] font-bold">
-              ENGAGE WITH OUR SECRETARIAT
-            </span>
-            <h2 className="font-serif text-3xl sm:text-4xl font-semibold">
-              Connect With Executive Governance
-            </h2>
-            <p className="text-sm sm:text-base text-white/70">
-              Direct, confidential communication channels for institutional partnerships, co-investments, and corporate governance discussions.
-            </p>
-          </div>
-
-          <div className="flex flex-wrap items-center gap-4 shrink-0">
-            <Link
-              href="/partnerships"
-              className="inline-flex items-center justify-center px-7 py-3.5 rounded-full bg-[#ABF67E] text-[#00190A] hover:bg-white transition-colors text-sm font-bold shadow-md"
-            >
-              <span>Partner With Us</span>
-              <ArrowRightIcon className="w-4 h-4 ml-2" />
-            </Link>
-            <Link
-              href="/contact"
-              className="inline-flex items-center justify-center px-7 py-3.5 rounded-full bg-white/10 hover:bg-white/20 text-white border border-white/20 transition-colors text-sm font-bold"
-            >
-              <span>Contact Secretariat</span>
-            </Link>
-          </div>
-        </div>
-      </section>
-
     </div>
   );
 }
