@@ -38,7 +38,7 @@ const LEADERSHIP_TEAM: LeaderProfile[] = [
   },
   {
     name: "Nkwoboko Ramson",
-    role: "Executive Secretary",
+    role: "Co-Founder & Executive Secretary",
     initials: "NR",
     focus: "Corporate Governance & Executive Administration",
     image: "/images/team_nkwoboko_ramson_v1.jpg",
@@ -51,11 +51,11 @@ const LEADERSHIP_TEAM: LeaderProfile[] = [
   },
   {
     name: "Ajuebor Samuel",
-    role: "Director of Compliance & Governance",
+    role: "Co-Founder & Director of Compliance & Governance",
     initials: "AS",
     focus: "Governance, Statutory Compliance & Institutional Oversight",
     image: "/images/team_ajuebor_samuel_v1.jpg",
-    bio: "Director of Compliance & Governance managing statutory adherence, institutional alliances, and anti-money laundering controls. Dedicated to embedding institutional standards of transparency, SCUML anti-money laundering frameworks, and corporate accountability into every transaction.",
+    bio: "Co-Founder and Director of Compliance & Governance managing statutory adherence, institutional alliances, and anti-money laundering controls. Dedicated to embedding institutional standards of transparency, SCUML anti-money laundering frameworks, and corporate accountability into every transaction.",
     credentials: [
       "Statutory AML / SCUML Compliance Rigour",
       "Corporate Governance & Fiduciary Oversight",
@@ -64,11 +64,11 @@ const LEADERSHIP_TEAM: LeaderProfile[] = [
   },
   {
     name: "Egwuatu Peter",
-    role: "Director of Strategy & Business Development",
+    role: "Co-Founder & Director of Strategy & Business Development",
     initials: "EP",
     focus: "Strategy, Commercial Expansion & Asset Stewardship",
     image: "/images/team_egwuatu_peter_v2.jpg",
-    bio: "Director of Strategy & Business Development focusing on strategic expansion, commercial alliances, and disciplined capital allocation. Guides the group's tangible asset acquisition frameworks, enterprise underwriting, and long-term business compounding.",
+    bio: "Co-Founder and Director of Strategy & Business Development focusing on strategic expansion, commercial alliances, and disciplined capital allocation. Guides the group's tangible asset acquisition frameworks, enterprise underwriting, and long-term business compounding.",
     credentials: [
       "Strategic Corporate Expansion & Joint Ventures",
       "Enterprise Underwriting & Due Diligence",
@@ -77,11 +77,11 @@ const LEADERSHIP_TEAM: LeaderProfile[] = [
   },
   {
     name: "Eregare Godson",
-    role: "Director of Membership & Investor Relations",
+    role: "Co-Founder & Director of Membership & Investor Relations",
     initials: "GE",
     focus: "Membership Expansion, Investor Relations & Syndicate Strategy",
     image: "/images/team_eregare_godson_v1.jpg",
-    bio: "Director of Membership & Investor Relations stewarding private partnership cohorts, investor engagement, and community network expansion. Coordinates vetted private syndicates, investor communications, and strategic relationship development for The Fold and Hundredfold initiatives.",
+    bio: "Co-Founder and Director of Membership & Investor Relations stewarding private partnership cohorts, investor engagement, and community network expansion. Coordinates vetted private syndicates, investor communications, and strategic relationship development for The Fold and Hundredfold initiatives.",
     credentials: [
       "Investor Relations & Capital Cohort Stewardship",
       "Private Syndicate & Network Growth",
