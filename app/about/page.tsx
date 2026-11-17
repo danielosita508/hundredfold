@@ -136,9 +136,6 @@ export default function AboutPage() {
   const [selectedLeader, setSelectedLeader] = useState<LeaderProfile | null>(null);
   const [openValueIndex, setOpenValueIndex] = useState<number | null>(0);
 
-  const ceo = LEADERSHIP_TEAM[0];
-  const directors = LEADERSHIP_TEAM.slice(1);
-
   // Close modal on Escape key press
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -389,95 +386,59 @@ export default function AboutPage() {
             </p>
           </motion.div>
 
-          {/* Executive Hierarchy: CEO Top Centered (Wide & Heroic), then 2x2 Directors Filling the Screen */}
+          {/* Unified Leadership Showcase: 5 Pictures with No Space Between (gap-0) */}
           <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.1 }}
             variants={staggerGridVariants}
-            className="flex flex-col items-center gap-10 sm:gap-14 w-full"
+            className="w-full overflow-hidden rounded-3xl shadow-2xl border border-white/80 bg-[#0A2F1B]"
           >
-            {/* 1. CEO Hero Portrait Card - Wider and Bigger, Centered on Top (Heirs Holdings Style) */}
-            <div className="flex justify-center w-full">
-              <motion.div
-                variants={cardScrollVariants}
-                whileHover={shouldReduceMotion ? {} : { y: -6, transition: { duration: 0.25 } }}
-                onClick={() => setSelectedLeader(ceo)}
-                className="group relative h-[480px] sm:h-[540px] lg:h-[600px] w-full max-w-[1100px] lg:max-w-[1240px] rounded-3xl overflow-hidden bg-black cursor-pointer shadow-2xl hover:shadow-[0_25px_60px_-15px_rgba(10,47,27,0.3)] transition-all duration-300 select-none border border-white/80"
-              >
-                {/* Background Portrait Image with headroom framing */}
-                <Image
-                  src={ceo.image}
-                  alt={`${ceo.name} — ${ceo.role}`}
-                  fill
-                  sizes="(max-width: 1280px) 100vw, 1240px"
-                  className="object-cover object-[center_15%] group-hover:scale-105 transition-all duration-700 ease-out"
-                  priority
-                />
-
-                {/* Subtle Executive Leadership Badge */}
-                <div className="absolute top-5 left-5 sm:top-7 sm:left-7 px-4 py-1.5 rounded-full bg-[#0A2F1B]/80 backdrop-blur-md border border-[#ABF67E]/40 text-[#ABF67E] text-xs font-bold uppercase tracking-wider z-10">
-                  Founder &amp; CEO
-                </div>
-
-                {/* Ambient vignette / bottom gradient for crisp text readability */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/30 to-transparent transition-opacity duration-300" />
-
-                {/* Name & Position at the bottom */}
-                <div className="absolute inset-x-0 bottom-0 p-6 sm:p-10 flex flex-col justify-end z-10 transition-all duration-300">
-                  <h3 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight drop-shadow-md">
-                    {ceo.name}
-                  </h3>
-                  <p className="text-sm sm:text-base text-[#ABF67E] uppercase font-bold tracking-wider mt-1 drop-shadow-sm">
-                    {ceo.role} &bull; {ceo.focus}
-                  </p>
-                  <span className="text-xs sm:text-sm text-white/85 mt-2.5 font-medium flex items-center gap-2 opacity-90 group-hover:opacity-100 transition-opacity">
-                    <span>Click to view executive profile &amp; credentials</span>
-                    <ArrowRightIcon className="w-4 h-4 text-[#ABF67E]" />
-                  </span>
-                </div>
-              </motion.div>
-            </div>
-
-            {/* 2. Two-by-Two Executive Directors Grid - Spanning Full Screen Width */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 lg:gap-10 w-full">
-              {directors.map((member) => (
-                <motion.div
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-0 w-full">
+              {LEADERSHIP_TEAM.map((member, index) => (
+                <div
                   key={member.name}
-                  variants={cardScrollVariants}
-                  whileHover={shouldReduceMotion ? {} : { y: -6, transition: { duration: 0.25 } }}
                   onClick={() => setSelectedLeader(member)}
-                  className="group relative h-[440px] sm:h-[460px] lg:h-[480px] w-full rounded-3xl overflow-hidden bg-black cursor-pointer shadow-lg hover:shadow-2xl transition-all duration-300 select-none border border-white"
+                  className={`group relative h-[480px] sm:h-[540px] lg:h-[620px] w-full overflow-hidden cursor-pointer select-none bg-[#0A2F1B] border-b border-white/10 lg:border-b-0 lg:border-r last:border-none ${
+                    index === 0 ? "sm:col-span-2 lg:col-span-1" : ""
+                  }`}
                 >
-                  {/* Background Portrait Image */}
+                  {/* Portrait Photograph */}
                   <Image
                     src={member.image}
                     alt={`${member.name} — ${member.role}`}
                     fill
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                    className="object-cover object-[center_15%] group-hover:scale-105 transition-all duration-500 ease-out"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 20vw"
+                    className="object-cover object-[center_15%] group-hover:scale-105 transition-transform duration-700 ease-out"
+                    priority={index < 2}
                   />
 
-                  {/* Ambient vignette / bottom gradient for crisp text readability */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/25 to-transparent transition-opacity duration-300" />
+                  {/* Overlay: Name, Title & Extra Writeups are INVISIBLE by default, ONLY show when hovered above */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/60 to-transparent opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6 sm:p-7 z-10">
+                    <div className="transform translate-y-3 group-hover:translate-y-0 transition-transform duration-300 ease-out space-y-1.5">
+                      {/* Title / Role */}
+                      <p className="text-xs uppercase font-bold tracking-wider text-[#ABF67E] drop-shadow-sm">
+                        {member.role}
+                      </p>
 
-                  {/* Name & Position at the bottom */}
-                  <div className="absolute inset-x-0 bottom-0 p-6 sm:p-8 flex flex-col justify-end z-10 transition-all duration-300">
-                    <h3 className="font-serif text-2xl sm:text-3xl font-bold text-white tracking-tight drop-shadow-md">
-                      {member.name}
-                    </h3>
-                    <p className="text-xs sm:text-sm text-[#ABF67E] uppercase font-bold tracking-wider mt-1 drop-shadow-sm">
-                      {member.role}
-                    </p>
-                    <p className="text-xs sm:text-sm text-white/75 mt-0.5 line-clamp-1">
-                      {member.focus}
-                    </p>
-                    <span className="text-[11px] text-white/80 mt-2.5 font-medium flex items-center gap-1.5 opacity-90 group-hover:opacity-100 transition-opacity">
-                      <span>Click to read full bio</span>
-                      <ArrowRightIcon className="w-3.5 h-3.5 text-[#ABF67E]" />
-                    </span>
+                      {/* Name */}
+                      <h3 className="font-serif text-2xl lg:text-2xl xl:text-3xl font-bold text-white tracking-tight drop-shadow-md leading-snug">
+                        {member.name}
+                      </h3>
+
+                      {/* Extra writeup: Focus / Mandate */}
+                      <p className="text-xs sm:text-sm text-white/85 leading-snug drop-shadow-sm line-clamp-2">
+                        {member.focus}
+                      </p>
+
+                      {/* Extra writeup: Interactive Hint */}
+                      <div className="pt-2 flex items-center gap-1.5 text-xs font-semibold text-[#ABF67E] drop-shadow-sm">
+                        <span>Click to view executive profile &amp; credentials</span>
+                        <ArrowRightIcon className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                      </div>
+                    </div>
                   </div>
-                </motion.div>
+                </div>
               ))}
             </div>
           </motion.div>
@@ -507,30 +468,30 @@ export default function AboutPage() {
               </p>
             </div>
 
-            {/* Right Column: Interactive Numbered Accordion */}
+            {/* Right Column: Interactive Numbered Accordion (Refined Font Scale) */}
             <div className="lg:col-span-7 divide-y divide-white/15 border-t border-b border-white/15">
               {CORPORATE_VALUES.map((val, idx) => {
                 const isOpen = openValueIndex === idx;
                 return (
-                  <div key={val.number} className="py-6 sm:py-7">
+                  <div key={val.number} className="py-4 sm:py-5">
                     <button
                       onClick={() => setOpenValueIndex(isOpen ? null : idx)}
-                      className="w-full flex items-start justify-between gap-6 text-left group transition-colors cursor-pointer"
+                      className="w-full flex items-center justify-between gap-4 text-left group transition-colors cursor-pointer"
                       aria-expanded={isOpen}
                     >
-                      <div className="flex items-baseline gap-4 sm:gap-6">
-                        <span className="text-[#ABF67E] font-bold text-lg sm:text-xl shrink-0 font-mono">
+                      <div className="flex items-center gap-3.5 sm:gap-5">
+                        <span className="text-[#ABF67E] font-bold text-xs sm:text-sm shrink-0 font-mono">
                           {val.number}
                         </span>
-                        <span className="text-xl sm:text-2xl lg:text-[1.65rem] font-serif font-medium text-white group-hover:text-[#ABF67E] transition-colors leading-snug">
+                        <span className="text-base sm:text-lg lg:text-xl font-serif font-medium text-white group-hover:text-[#ABF67E] transition-colors leading-snug">
                           {val.title}
                         </span>
                       </div>
-                      <div className="text-[#ABF67E]/80 group-hover:text-[#ABF67E] transition-colors shrink-0 pt-0.5">
+                      <div className="text-[#ABF67E]/80 group-hover:text-[#ABF67E] transition-colors shrink-0">
                         {isOpen ? (
-                          <span className="text-2xl font-light leading-none select-none">&minus;</span>
+                          <span className="text-lg sm:text-xl font-light leading-none select-none">&minus;</span>
                         ) : (
-                          <span className="text-2xl font-light leading-none select-none">&#43;</span>
+                          <span className="text-lg sm:text-xl font-light leading-none select-none">&#43;</span>
                         )}
                       </div>
                     </button>
@@ -544,7 +505,7 @@ export default function AboutPage() {
                           transition={{ duration: 0.3, ease: PRO_MAX_EASE }}
                           className="overflow-hidden"
                         >
-                          <p className="pt-4 pl-9 sm:pl-12 text-sm sm:text-base text-emerald-100/80 leading-relaxed max-w-2xl font-normal">
+                          <p className="pt-3 pl-7 sm:pl-9 text-xs sm:text-sm text-emerald-100/75 leading-relaxed max-w-2xl font-normal">
                             {val.description}
                           </p>
                         </motion.div>
