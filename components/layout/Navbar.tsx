@@ -38,7 +38,7 @@ const NAV_PAGES: NavItem[] = [
       { label: "Overview", href: "/about#overview" },
       { label: "Our Story", href: "/about#story" },
       { label: "Our Leadership", href: "/about#leadership" },
-      { label: "Our Values", href: "/about#values" },
+      { label: "Our Five Pillars", href: "/about#pillars" },
       { label: "Vision & Mission", href: "/about#vision-mission" },
     ],
   },
@@ -105,27 +105,32 @@ export default function Navbar() {
 
           {/* ─── BRAND LOGO (Top-Left, Heirs Holdings Style) ─── */}
           <Link href="/" className="flex items-center gap-3 shrink-0 group">
-            <div
-              className={`w-10 h-10 rounded-full border p-1 flex items-center justify-center backdrop-blur-xs transition-all duration-300 ${scrolled
-                  ? "bg-[#0A2F1B]/5 border-[#0A2F1B]/20 group-hover:border-[#0A2F1B]"
-                  : "bg-white/10 border-white/30 group-hover:border-white"
-                }`}
-            >
+            <div className="relative w-9 h-9 sm:w-10 sm:h-10 flex items-center justify-center shrink-0">
               <Image
-                src="/images/logo.png"
+                src="/images/logo_v2.png"
                 alt="Hundredfold Innovation Network"
-                width={36}
-                height={36}
-                className="w-8 h-8 object-contain rounded-full"
+                width={40}
+                height={40}
+                className="w-full h-full object-contain transition-transform duration-300 group-hover:scale-105"
                 priority
               />
             </div>
-            <span
-              className={`font-serif text-xl sm:text-2xl font-bold tracking-tight leading-tight transition-colors duration-300 ${scrolled ? "text-[#0A2F1B]" : "text-white"
+            <div className="flex flex-col">
+              <span
+                className={`font-serif text-xl sm:text-2xl font-bold tracking-tight leading-tight transition-colors duration-300 ${
+                  scrolled ? "text-[#0A2F1B]" : "text-white"
                 }`}
-            >
-              Hundredfold
-            </span>
+              >
+                Hundredfold
+              </span>
+              <span
+                className={`text-[10px] uppercase tracking-widest font-bold transition-colors duration-300 ${
+                  scrolled ? "text-[#2D6C00]" : "text-[#ABF67E]"
+                }`}
+              >
+                Innovation Network Ltd
+              </span>
+            </div>
           </Link>
 
           {/* ─── NAVIGATION PAGES (Positioned on the Right, Heirs Holdings Style) ─── */}

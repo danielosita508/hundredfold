@@ -269,34 +269,34 @@ const siteConfig = {
   // ─── Leadership Team (Exact Directive Roster) ──────────────
   team: [
     {
-      name: "Daniel.C. Evans",
+      name: "Daniel C. Evans",
       role: "Founder & CEO",
-      photo: "/assets/team-daniel-evans.jpg",
+      photo: "/images/team_daniel_evans_v3.jpg",
       bio: "Executive leader and founder guiding Hundredfold's strategic vision, commercial alliances, capital allocation, and corporate governance.",
     },
     {
-      name: "Ramson Udoka",
-      role: "Executive Director",
-      photo: "/assets/team-ramson-udoka.jpg",
-      bio: "Commercial operations leader overseeing agricultural commodity trading pipelines, supplier networks, and operational execution.",
+      name: "Nkwoboko Ramson",
+      role: "Executive Secretary",
+      photo: "/images/team_nkwoboko_ramson_v1.jpg",
+      bio: "Executive Secretary and co-founder overseeing institutional administration, board secretarial governance, and statutory stakeholder coordination.",
+    },
+    {
+      name: "Ajuebor Samuel",
+      role: "Director of Compliance & Governance",
+      photo: "/images/team_ajuebor_samuel_v1.jpg",
+      bio: "Director of Compliance & Governance managing statutory adherence, institutional alliances, and anti-money laundering controls.",
     },
     {
       name: "Egwuatu Peter",
-      role: "Executive Director",
-      photo: "/assets/team-egwuatu-peter.jpg",
-      bio: "Strategic investment and enterprise development executive focusing on venture due diligence, valuation, and capital stewardship.",
+      role: "Director of Strategy & Business Development",
+      photo: "/images/team_egwuatu_peter_v2.jpg",
+      bio: "Director of Strategy & Business Development focusing on strategic expansion, commercial alliances, and disciplined capital allocation.",
     },
     {
-      name: "Samuel Ajuebor",
-      role: "Executive Director",
-      photo: "/assets/team-samuel-ajuebor.jpg",
-      bio: "Corporate operations and governance officer managing stakeholder coordination, institutional alliances, and compliance frameworks.",
-    },
-    {
-      name: "Godson Eregare",
-      role: "Executive Director",
-      photo: "/assets/team-godson-eregare.jpg",
-      bio: "Enterprise expansion and community network strategist stewarding private partnership cohorts and commercial initiatives.",
+      name: "Eregare Godson",
+      role: "Director of Membership & Investor Relations",
+      photo: "/images/team_eregare_godson_v1.jpg",
+      bio: "Director of Membership & Investor Relations stewarding private partnership cohorts, investor engagement, and community network expansion.",
     },
   ],
 

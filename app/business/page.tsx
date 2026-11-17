@@ -70,7 +70,7 @@ export default function BusinessPage() {
     <div className="relative overflow-hidden bg-[#E9FDFF] text-[#0C1E20] font-sans">
 
       {/* ─── STEP 1: THE HERO SECTION (Massive Skyline Image & Clean Title Only) ─── */}
-      <section id="overview" className="relative w-full overflow-hidden min-h-[85vh] sm:min-h-[90vh] lg:min-h-[95vh] pt-36 sm:pt-44 lg:pt-52 pb-6 sm:pb-8 lg:pb-10 flex flex-col justify-end bg-[#0A2F1B]">
+      <section id="overview" className="relative w-full min-h-screen flex flex-col justify-end pb-8 sm:pb-10 lg:pb-12 pt-32 overflow-hidden bg-[#0A2F1B]">
         {/* Full-Bleed Corporate Skyscraper / Skyline Background */}
         <div className="absolute inset-0 z-0">
           <Image
@@ -86,13 +86,13 @@ export default function BusinessPage() {
         {/* Dark Cinematic Vignette & Gradient Overlay */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/50 to-black/60 z-[1]" />
 
-        {/* Hero Title Container */}
-        <div className="max-w-[1360px] mx-auto px-6 lg:px-12 w-full relative z-10">
+        {/* Hero Title Container: Shifted to the left and placed lower */}
+        <div className="w-full px-5 sm:px-8 lg:px-12 relative z-10 flex flex-col items-start text-left">
           <motion.h1
             initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: PRO_MAX_EASE }}
-            className="font-serif text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-white tracking-tight font-medium leading-[1.08] drop-shadow-2xl text-left"
+            className="font-serif text-4xl sm:text-6xl md:text-7xl lg:text-8xl text-white tracking-tight font-medium leading-[1.08] drop-shadow-2xl text-left whitespace-nowrap"
           >
             Investment Portfolio
           </motion.h1>

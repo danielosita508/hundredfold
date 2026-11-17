@@ -49,14 +49,22 @@ export default function Footer() {
           {/* Left Side: Brand Overview, Social Media & Direct Contact (Heirs Holdings Style) */}
           <div className="flex-1 max-w-xl flex flex-col gap-5">
             <div className="flex items-center gap-3">
-              <div className="p-1 rounded-full bg-white/10 border border-white/20 flex items-center justify-center">
+              <div className="relative w-10 h-10 flex items-center justify-center shrink-0">
                 <Image
-                  src="/images/logo.png"
+                  src="/images/logo_v2.png"
                   alt="Hundredfold Innovation Network"
-                  width={42}
-                  height={42}
-                  className="w-10 h-10 object-contain rounded-full"
+                  width={40}
+                  height={40}
+                  className="w-full h-full object-contain"
                 />
+              </div>
+              <div className="flex flex-col">
+                <span className="font-serif text-xl text-white font-semibold tracking-tight">
+                  Hundredfold
+                </span>
+                <span className="text-[10px] uppercase tracking-widest font-bold text-[#ABF67E]">
+                  Innovation Network Ltd
+                </span>
               </div>
             </div>
 

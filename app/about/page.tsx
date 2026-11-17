@@ -7,7 +7,6 @@ import { motion, AnimatePresence, useReducedMotion, type Variants } from "framer
 import {
   ArrowRightIcon,
   CheckCircleIcon,
-  BuildingIcon,
   XIcon,
   TargetIcon,
 } from "@/components/ui/Icons";
@@ -30,7 +29,7 @@ const LEADERSHIP_TEAM: LeaderProfile[] = [
     role: "Founder & CEO",
     initials: "DE",
     focus: "Strategic Vision & Capital Allocation",
-    image: "/images/team_daniel_evans.jpg",
+    image: "/images/team_daniel_evans_v3.jpg",
     bio: "Executive leader and founder guiding Hundredfold's strategic vision, commercial alliances, capital allocation, and corporate governance. Anchored in the philosophy of Africapitalism, he steers the group's overarching mandate to build disciplined African enterprise across agriculture, real estate, finance, and technology.",
     credentials: [
       "Executive Leadership & Capital Strategy",
@@ -39,38 +38,25 @@ const LEADERSHIP_TEAM: LeaderProfile[] = [
     ],
   },
   {
-    name: "Ramson Udoka",
-    role: "Executive Director",
-    initials: "RU",
-    focus: "Commodity Supply Chains & Trade Operations",
-    image: "/images/team_ramson_udoka.jpg",
-    bio: "Commercial operations leader overseeing agricultural commodity trading pipelines, supplier networks, and operational execution. Directs supply-chain coordination connecting prime agrarian production basins with verified processing hubs and commercial off-takers across Nigeria and West Africa.",
+    name: "Nkwoboko Ramson",
+    role: "Executive Secretary",
+    initials: "NR",
+    focus: "Corporate Governance & Executive Administration",
+    image: "/images/team_nkwoboko_ramson_v1.jpg",
+    bio: "Executive Secretary and co-founder overseeing institutional administration, board secretarial governance, and statutory stakeholder coordination. Directs corporate operational execution and regulatory frameworks connecting Hundredfold's enterprise entities across Nigeria and West Africa.",
     credentials: [
-      "Agro-Commodity Aggregation & Logistics",
-      "Off-Taker Contract Structuring",
-      "Regional Supply Chain Risk Mitigation",
+      "Executive Secretarial Administration & Board Governance",
+      "Statutory Compliance & Legal Documentation",
+      "Cross-Sector Operational Coordination",
     ],
   },
   {
-    name: "Egwuatu Peter",
-    role: "Executive Director",
-    initials: "EP",
-    focus: "Investment Diligence & Asset Stewardship",
-    image: "/images/team_egwuatu_peter.jpg",
-    bio: "Strategic investment and enterprise development executive focusing on venture due diligence, valuation, and capital stewardship. Guides the group's tangible asset acquisition frameworks, productive real estate underwriting, and balance-sheet preservation.",
-    credentials: [
-      "Real Asset Valuation & Land Verification",
-      "Balance-Sheet Compounding Frameworks",
-      "Enterprise Underwriting & Diligence",
-    ],
-  },
-  {
-    name: "Samuel Ajuebor",
-    role: "Executive Director",
-    initials: "SA",
-    focus: "Governance, Compliance & Statutory Oversight",
-    image: "/images/team_samuel_ajuebor.jpg",
-    bio: "Corporate operations and governance officer managing stakeholder coordination, institutional alliances, and statutory compliance frameworks. Dedicated to embedding institutional standards of transparency, SCUML anti-money laundering controls, and corporate accountability into every transaction.",
+    name: "Ajuebor Samuel",
+    role: "Director of Compliance & Governance",
+    initials: "AS",
+    focus: "Governance, Statutory Compliance & Institutional Oversight",
+    image: "/images/team_ajuebor_samuel_v1.jpg",
+    bio: "Director of Compliance & Governance managing statutory adherence, institutional alliances, and anti-money laundering controls. Dedicated to embedding institutional standards of transparency, SCUML anti-money laundering frameworks, and corporate accountability into every transaction.",
     credentials: [
       "Statutory AML / SCUML Compliance Rigour",
       "Corporate Governance & Fiduciary Oversight",
@@ -78,63 +64,74 @@ const LEADERSHIP_TEAM: LeaderProfile[] = [
     ],
   },
   {
-    name: "Godson Eregare",
-    role: "Executive Director",
-    initials: "GE",
-    focus: "Enterprise Expansion & Syndicate Strategy",
-    image: "/images/team_godson_eregare.jpg",
-    bio: "Enterprise expansion and community network strategist stewarding private partnership cohorts, regional stakeholder relationships, and commercial collaboration initiatives. Coordinates vetted private syndicates and high-conviction African enterprise development.",
+    name: "Egwuatu Peter",
+    role: "Director of Strategy & Business Development",
+    initials: "EP",
+    focus: "Strategy, Commercial Expansion & Asset Stewardship",
+    image: "/images/team_egwuatu_peter_v2.jpg",
+    bio: "Director of Strategy & Business Development focusing on strategic expansion, commercial alliances, and disciplined capital allocation. Guides the group's tangible asset acquisition frameworks, enterprise underwriting, and long-term business compounding.",
     credentials: [
-      "Private Syndicate & Cohort Stewardship",
-      "Regional Commercial Alliances",
-      "Enterprise Growth Incubation",
+      "Strategic Corporate Expansion & Joint Ventures",
+      "Enterprise Underwriting & Due Diligence",
+      "Commercial Model Structuring & Scaling",
+    ],
+  },
+  {
+    name: "Eregare Godson",
+    role: "Director of Membership & Investor Relations",
+    initials: "GE",
+    focus: "Membership Expansion, Investor Relations & Syndicate Strategy",
+    image: "/images/team_eregare_godson_v1.jpg",
+    bio: "Director of Membership & Investor Relations stewarding private partnership cohorts, investor engagement, and community network expansion. Coordinates vetted private syndicates, investor communications, and strategic relationship development for The Fold and Hundredfold initiatives.",
+    credentials: [
+      "Investor Relations & Capital Cohort Stewardship",
+      "Private Syndicate & Network Growth",
+      "Stakeholder Engagement & Fiduciary Communications",
     ],
   },
 ];
 
-interface CorporateValue {
+interface CorporatePillar {
   number: string;
   title: string;
   description: string;
 }
 
-const CORPORATE_VALUES: CorporateValue[] = [
+const FIVE_PILLARS: CorporatePillar[] = [
   {
     number: "01",
-    title: "Integrity",
-    description:
-      "Uncompromising honesty, transparent dealings, and rigorous moral accountability in every commercial transaction.",
+    title: "Unity",
+    description: "Collective capital and shared opportunity",
   },
   {
     number: "02",
-    title: "Excellence",
-    description:
-      "High institutional standards of execution, diligence, and operational rigor across all our business pillars.",
+    title: "Discipline",
+    description: "Structured contributions and responsible investing",
   },
   {
     number: "03",
-    title: "Enterprise & Innovation",
-    description:
-      "Bold commercial initiative, innovative problem-solving, and disciplined value creation across Africa's high-growth sectors.",
+    title: "Governance",
+    description: "Transparency, accountability, and leadership oversight",
   },
   {
     number: "04",
-    title: "Governance & Accountability",
-    description:
-      "Total fiduciary responsibility to our partners, statutory compliance (CAC & SCUML), and transparent board oversight.",
+    title: "Strategic Investment",
+    description: "Focus on productive economic sectors",
   },
   {
     number: "05",
-    title: "Community & Stewardship",
-    description:
-      "Fostering shared prosperity, strategic network collaboration, and generational economic advancement across Africa.",
+    title: "Long-Term Wealth",
+    description: "Building sustainable financial growth",
   },
 ];
 
 export default function AboutPage() {
   const shouldReduceMotion = useReducedMotion();
   const [selectedLeader, setSelectedLeader] = useState<LeaderProfile | null>(null);
-  const [openValueIndex, setOpenValueIndex] = useState<number | null>(0);
+  const [openPillarIndex, setOpenPillarIndex] = useState<number | null>(0);
+
+  const ceo = LEADERSHIP_TEAM[0];
+  const directors = LEADERSHIP_TEAM.slice(1);
 
   // Close modal on Escape key press
   useEffect(() => {
@@ -186,13 +183,13 @@ export default function AboutPage() {
   return (
     <div className="relative overflow-hidden bg-[#E9FDFF] text-[#0C1E20]">
 
-      {/* ─── SECTION 1: EDITORIAL HERO BANNER (Heirs Holdings Style with Photographic Backdrop) ─── */}
-      <section id="overview" className="relative w-full overflow-hidden min-h-[440px] lg:min-h-[500px] pt-32 lg:pt-36 pb-16 lg:pb-20 flex flex-col justify-end bg-[#0A2F1B]">
+      {/* ─── SECTION 1: EDITORIAL HERO BANNER (Full-Bleed Photographic Backdrop) ─── */}
+      <section id="overview" className="relative w-full min-h-screen flex flex-col justify-end pb-8 sm:pb-10 lg:pb-12 pt-32 overflow-hidden bg-[#0A2F1B]">
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <Image
             src="/images/african_business_ventures.jpg"
-            alt="Hundredfold Pan-African Enterprise"
+            alt="Hundredfold Pan-African Enterprise - Redefining Partnerships"
             fill
             priority
             sizes="100vw"
@@ -200,70 +197,24 @@ export default function AboutPage() {
           />
         </div>
 
-        {/* Dark Cinematic Vignette & Gradient Overlay (Heirs Holdings Style) */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/60 to-black/75 z-[1]" />
+        {/* Dark Cinematic Vignette & Bottom Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/55 to-black/65 z-[1]" />
 
-        <div className="max-w-[1360px] mx-auto px-6 lg:px-12 w-full relative z-10">
-          <div className="flex flex-col items-start gap-4 max-w-4xl">
-            <motion.h1
-              initial="hidden"
-              animate="visible"
-              custom={1}
-              variants={fadeInVariants}
-              className="font-serif text-4xl sm:text-5xl md:text-6xl text-white tracking-tight font-semibold leading-[1.08] drop-shadow-md"
-            >
-              Building Businesses. <br />
-              Creating Lasting Value.
-            </motion.h1>
-
-            <motion.p
-              initial="hidden"
-              animate="visible"
-              custom={2}
-              variants={fadeInVariants}
-              className="text-base sm:text-lg text-white/85 max-w-3xl leading-relaxed mt-2 drop-shadow-xs"
-            >
-              Hundredfold Innovation Network Ltd is an African business and investment company focused on identifying high-impact commercial opportunities, building strategic relationships, and developing ventures with long-term potential.
-            </motion.p>
-
-            {/* Sovereign & Regulatory Badges */}
-            <motion.div
-              initial="hidden"
-              animate="visible"
-              custom={3}
-              variants={fadeInVariants}
-              className="flex flex-wrap items-center gap-4 sm:gap-6 mt-6"
-            >
-              <div className="flex items-center gap-3 px-4 py-2.5 rounded-xl bg-white/10 backdrop-blur-md shadow-xs border border-white/20 text-white">
-                <BuildingIcon className="w-5 h-5 text-[#ABF67E]" />
-                <div className="flex flex-col">
-                  <span className="text-[10px] uppercase tracking-wider text-[#ABF67E] font-bold">
-                    HQ Nexus
-                  </span>
-                  <span className="text-xs font-semibold">
-                    Asaba, Delta State &bull; Nigeria
-                  </span>
-                </div>
-              </div>
-
-              <div className="flex items-center gap-3 px-4 py-2.5 rounded-xl bg-white/10 backdrop-blur-md shadow-xs border border-white/20 text-white">
-                <CheckCircleIcon className="w-5 h-5 text-[#ABF67E]" />
-                <div className="flex flex-col">
-                  <span className="text-[10px] uppercase tracking-wider text-[#ABF67E] font-bold">
-                    Statutory Framework
-                  </span>
-                  <span className="text-xs font-semibold">
-                    CAC Registered &bull; SCUML Certified
-                  </span>
-                </div>
-              </div>
-            </motion.div>
-          </div>
+        {/* Hero Title Container: Shifted to the left and placed lower */}
+        <div className="w-full px-5 sm:px-8 lg:px-12 relative z-10 flex flex-col items-start text-left">
+          <motion.h1
+            initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: PRO_MAX_EASE }}
+            className="font-serif text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl text-white tracking-tight font-medium leading-none drop-shadow-2xl text-left whitespace-nowrap"
+          >
+            Redefining Partnerships.
+          </motion.h1>
         </div>
       </section>
 
       {/* ─── STEP 2: "ABOUT US" SECTION (Executive Story with CEO Portrait & Full-Width Continuation) ─── */}
-      <section id="story" className="relative w-full py-20 lg:py-28 px-6 lg:px-12 bg-white/70 scroll-mt-20">
+      <section id="story" className="relative w-full pt-16 sm:pt-20 pb-10 sm:pb-12 lg:pb-14 px-6 lg:px-12 bg-white/70 scroll-mt-20">
         <div className="max-w-[1240px] mx-auto">
           <motion.div
             initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 24 }}
@@ -274,7 +225,7 @@ export default function AboutPage() {
           >
             {/* Main Story & Founder Feature Grid */}
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
-              
+
               {/* Left Column: Heading and Narrative Paragraphs */}
               <div className="lg:col-span-7 space-y-6">
                 <div className="space-y-4">
@@ -299,77 +250,83 @@ export default function AboutPage() {
                   <p>
                     We are a private, member-based investment network incorporated under Nigerian law. A limited number of committed individuals pool capital and skills to invest in opportunities that would be hard to reach alone, and each cohort is deliberately capped to keep accountability strong as the network grows.
                   </p>
-
-                  <p>
-                    We begin with agriculture, in a country that is Africa&apos;s largest food market and still cannot meet its own demand. Real estate and other productive assets follow as part of our long-term strategy. Every opportunity is reviewed by the Investment Committee and approved by the Board before any capital is committed, and no fixed return is promised.
-                  </p>
-
-                  <p>
-                    Inspired by Africapitalism, we believe African enterprise can create economic prosperity and social wealth together. At the centre of the network is The Fold, our community of members, with mentorship, financial education and a voice in governance.
-                  </p>
-                </div>
-
-                {/* Link CTA */}
-                <div className="pt-4 border-t border-[#DEF2F4]">
-                  <Link
-                    href="/business"
-                    className="group inline-flex items-center gap-2 text-base font-semibold text-[#2D6C00] underline underline-offset-8 decoration-2 decoration-[#2D6C00] hover:text-[#00190A] hover:decoration-[#00190A] transition-all"
-                  >
-                    <span>Explore Our Commercial Scope</span>
-                    <ArrowRightIcon className="w-4 h-4 text-[#2D6C00] group-hover:translate-x-1 group-hover:text-[#00190A] transition-all" />
-                  </Link>
                 </div>
               </div>
 
-              {/* Right Column: Large Portrait of Founder & CEO with Quote and Name Underneath */}
-              <div className="lg:col-span-5 flex flex-col gap-5 lg:sticky lg:top-28">
-                {/* Large Portrait Image */}
-                <div className="relative aspect-[3/4] w-full rounded-3xl overflow-hidden shadow-2xl border border-white bg-[#0A2F1B]">
+              {/* Right Column: Large Portrait of Founder & CEO with Overlay Quote at the Bottom */}
+              <div className="lg:col-span-5">
+                <div className="relative aspect-[3/4] w-full rounded-3xl overflow-hidden shadow-2xl border border-white/60 bg-[#0A2F1B] group">
                   <Image
-                    src="/images/team_daniel_evans.jpg"
+                    src="/images/team_daniel_evans_v3.jpg"
                     alt="Daniel C. Evans — Founder & CEO, Hundredfold Innovation Network Ltd"
                     fill
                     sizes="(max-width: 1024px) 100vw, 550px"
-                    className="object-cover object-top hover:scale-105 transition-transform duration-700 ease-out"
+                    className="object-cover object-top group-hover:scale-105 transition-transform duration-700 ease-out"
                     priority
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
-                </div>
 
-                {/* Executive Quote and Name Underneath */}
-                <div className="p-6 sm:p-7 rounded-2xl bg-white border border-[#DEF2F4] shadow-md space-y-4">
-                  <div className="text-3xl font-serif text-[#2D6C00] leading-none select-none">
-                    &ldquo;
-                  </div>
-                  <blockquote className="font-serif text-base sm:text-lg text-[#00190A] italic leading-relaxed -mt-3">
-                    Sustainable African wealth is not built on short-term speculation, but on disciplined enterprise, strategic capital allocation, and long-term ownership of productive assets.
-                  </blockquote>
-                  <div className="pt-3 border-t border-[#DEF2F4] flex items-center justify-between">
-                    <div>
-                      <h4 className="font-serif text-lg font-bold text-[#00190A]">
-                        Daniel C. Evans
-                      </h4>
-                      <p className="text-xs uppercase tracking-wider text-[#2D6C00] font-bold mt-0.5">
-                        Founder &amp; Chief Executive Officer
-                      </p>
+                  {/* Dark Cinematic Vignette & Bottom Gradient for High Text Readability */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/60 via-45% to-transparent pointer-events-none" />
+
+                  {/* Executive Quote & Attribution Overlaid Directly on the Bottom of the Picture */}
+                  <div className="absolute inset-x-0 bottom-0 p-6 sm:p-7 z-10 flex flex-col gap-2.5 text-white">
+                    <div className="text-3xl font-serif text-[#ABF67E] leading-none select-none">
+                      &ldquo;
                     </div>
-                    <div className="w-9 h-9 rounded-full bg-[#0A2F1B] text-[#ABF67E] flex items-center justify-center font-serif text-xs font-bold shadow-xs">
-                      HIN
+                    <blockquote className="font-serif text-sm sm:text-base text-white/95 italic leading-relaxed -mt-1 drop-shadow-xs">
+                      Sustainable African wealth is not built on short-term speculation, but on disciplined enterprise, strategic capital allocation, and long-term ownership of productive assets.
+                    </blockquote>
+                    <div className="pt-3 border-t border-white/20 flex items-center justify-between">
+                      <div>
+                        <h4 className="font-serif text-base sm:text-lg font-bold text-white tracking-wide">
+                          Daniel C. Evans
+                        </h4>
+                        <p className="text-[11px] sm:text-xs uppercase tracking-wider text-[#ABF67E] font-bold mt-0.5">
+                          Founder &amp; Chief Executive Officer
+                        </p>
+                      </div>
+                      <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-white/15 backdrop-blur-md border border-white/25 text-[#ABF67E] flex items-center justify-center font-serif text-xs font-bold shadow-xs">
+                        HIN
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
 
             </div>
+
+            {/* Full-Width Story Continuation Below the Picture */}
+            <div className="pt-4 sm:pt-6 space-y-6 w-full">
+              <div className="space-y-5 text-base sm:text-lg text-[#374138] leading-relaxed">
+                <p>
+                  We begin with agriculture, in a country that is Africa&apos;s largest food market and still cannot meet its own demand. Real estate and other productive assets follow as part of our long-term strategy. Every opportunity is reviewed by the Investment Committee and approved by the Board before any capital is committed, and no fixed return is promised.
+                </p>
+
+                <p>
+                  Inspired by Africapitalism, we believe African enterprise can create economic prosperity and social wealth together. At the centre of the network is The Fold, our community of members, with mentorship, financial education and a voice in governance.
+                </p>
+              </div>
+
+              {/* Link CTA */}
+              <div className="pt-4 border-t border-[#DEF2F4]">
+                <Link
+                  href="/business"
+                  className="group inline-flex items-center gap-2 text-base font-semibold text-[#2D6C00] underline underline-offset-8 decoration-2 decoration-[#2D6C00] hover:text-[#00190A] hover:decoration-[#00190A] transition-all"
+                >
+                  <span>Explore Our Commercial Scope</span>
+                  <ArrowRightIcon className="w-4 h-4 text-[#2D6C00] group-hover:translate-x-1 group-hover:text-[#00190A] transition-all" />
+                </Link>
+              </div>
+            </div>
           </motion.div>
         </div>
       </section>
 
-      {/* ─── STEP 3: "OUR LEADERSHIP" SECTION (Intro + 5 Large Portrait Columns) ─── */}
-      <section id="leadership" className="w-full px-6 lg:px-12 py-20 lg:py-28 bg-[#E9FDFF] border-t border-[#c1c8c0]/30">
-        <div className="max-w-[1360px] mx-auto flex flex-col gap-14">
+      {/* ─── STEP 3: "OUR LEADERSHIP" SECTION (Heirs Holdings Style Gallery Grid) ─── */}
+      <section id="leadership" className="w-full px-6 lg:px-12 pt-10 sm:pt-12 lg:pt-14 pb-16 sm:pb-20 lg:pb-24 bg-white border-t border-black/5">
+        <div className="max-w-[1360px] mx-auto flex flex-col gap-10 sm:gap-12">
 
-          {/* Leadership Intro Header (Centered without "Governed for Longevity") */}
+          {/* Leadership Intro Header */}
           <motion.div
             initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -386,56 +343,70 @@ export default function AboutPage() {
             </p>
           </motion.div>
 
-          {/* Unified Leadership Showcase: 5 Pictures with No Space Between (gap-0) */}
+          {/* Executive Leadership Grid: Heirs Holdings Style (Centered CEO + 4-Column Directors Grid, Tight Gaps, Grayscale-to-Color, Centered Hover Text) */}
           <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.1 }}
             variants={staggerGridVariants}
-            className="w-full overflow-hidden rounded-3xl shadow-2xl border border-white/80 bg-[#0A2F1B]"
+            className="flex flex-col items-center gap-3 sm:gap-4 lg:gap-5 w-full"
           >
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-0 w-full">
-              {LEADERSHIP_TEAM.map((member, index) => (
+            {/* 1. Founder & CEO (Centered on Top) */}
+            <div className="w-full flex justify-center">
+              <div
+                onClick={() => setSelectedLeader(ceo)}
+                className="group relative aspect-[4/5] w-full max-w-[280px] sm:max-w-[320px] lg:max-w-[340px] overflow-hidden cursor-pointer select-none bg-[#141815] rounded-none"
+              >
+                {/* Background Portrait Image: Grayscale by default, full color on hover, magnifies smoothly */}
+                <Image
+                  src={ceo.image}
+                  alt={`${ceo.name} — ${ceo.role}`}
+                  fill
+                  sizes="(max-width: 640px) 280px, (max-width: 1024px) 320px, 340px"
+                  className="object-cover object-top grayscale group-hover:grayscale-0 group-hover:scale-108 transition-all duration-500 ease-out"
+                  priority
+                />
+
+                {/* Minimal Bottom Overlay: Soft gradient vignette only at bottom, reveals writeup at the bottom */}
+                <div className="absolute inset-x-0 bottom-0 pt-16 pb-5 px-4 bg-gradient-to-t from-black/90 via-black/50 to-transparent opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 group-active:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-end text-center z-10 pointer-events-none">
+                  <div className="transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300 ease-out flex flex-col items-center space-y-1">
+                    <h3 className="font-serif text-base sm:text-lg lg:text-xl font-bold text-white tracking-wide uppercase drop-shadow-md">
+                      {ceo.name}
+                    </h3>
+                    <p className="text-[11px] sm:text-xs uppercase font-bold tracking-wider text-[#ABF67E] drop-shadow-sm whitespace-nowrap">
+                      {ceo.role}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* 2. Executive Directors (4-Column Grid with tight uniform gaps, square tiles) */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-5 w-full max-w-[1240px] mx-auto">
+              {directors.map((member) => (
                 <div
                   key={member.name}
                   onClick={() => setSelectedLeader(member)}
-                  className={`group relative h-[480px] sm:h-[540px] lg:h-[620px] w-full overflow-hidden cursor-pointer select-none bg-[#0A2F1B] border-b border-white/10 lg:border-b-0 lg:border-r last:border-none ${
-                    index === 0 ? "sm:col-span-2 lg:col-span-1" : ""
-                  }`}
+                  className="group relative aspect-[4/5] w-full overflow-hidden cursor-pointer select-none bg-[#141815] rounded-none"
                 >
-                  {/* Portrait Photograph */}
+                  {/* Background Portrait Image: Grayscale by default, full color on hover, magnifies smoothly */}
                   <Image
                     src={member.image}
                     alt={`${member.name} — ${member.role}`}
                     fill
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 20vw"
-                    className="object-cover object-[center_15%] group-hover:scale-105 transition-transform duration-700 ease-out"
-                    priority={index < 2}
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                    className="object-cover object-top grayscale group-hover:grayscale-0 group-hover:scale-108 transition-all duration-500 ease-out"
                   />
 
-                  {/* Overlay: Name, Title & Extra Writeups are INVISIBLE by default, ONLY show when hovered above */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/60 to-transparent opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6 sm:p-7 z-10">
-                    <div className="transform translate-y-3 group-hover:translate-y-0 transition-transform duration-300 ease-out space-y-1.5">
-                      {/* Title / Role */}
-                      <p className="text-xs uppercase font-bold tracking-wider text-[#ABF67E] drop-shadow-sm">
-                        {member.role}
-                      </p>
-
-                      {/* Name */}
-                      <h3 className="font-serif text-2xl lg:text-2xl xl:text-3xl font-bold text-white tracking-tight drop-shadow-md leading-snug">
+                  {/* Minimal Bottom Overlay: Soft gradient vignette only at bottom, reveals writeup at the bottom */}
+                  <div className="absolute inset-x-0 bottom-0 pt-16 pb-5 px-3 sm:px-4 bg-gradient-to-t from-black/90 via-black/50 to-transparent opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 group-active:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-end text-center z-10 pointer-events-none">
+                    <div className="transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300 ease-out flex flex-col items-center space-y-1">
+                      <h3 className="font-serif text-base sm:text-lg lg:text-xl font-bold text-white tracking-wide uppercase drop-shadow-md">
                         {member.name}
                       </h3>
-
-                      {/* Extra writeup: Focus / Mandate */}
-                      <p className="text-xs sm:text-sm text-white/85 leading-snug drop-shadow-sm line-clamp-2">
-                        {member.focus}
+                      <p className="text-[10px] sm:text-[11px] lg:text-xs uppercase font-bold tracking-wider text-[#ABF67E] drop-shadow-sm leading-tight max-w-[95%]">
+                        {member.role}
                       </p>
-
-                      {/* Extra writeup: Interactive Hint */}
-                      <div className="pt-2 flex items-center gap-1.5 text-xs font-semibold text-[#ABF67E] drop-shadow-sm">
-                        <span>Click to view executive profile &amp; credentials</span>
-                        <ArrowRightIcon className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
-                      </div>
                     </div>
                   </div>
                 </div>
@@ -446,84 +417,84 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* ─── INTERACTIVE OUR VALUES SECTION (Redesigned with Brand Colors & Font) ─── */}
-      <section id="values" className="w-full px-6 lg:px-12 py-20 lg:py-28 bg-[#0A2F1B] text-white scroll-mt-20 border-t border-white/10 relative overflow-hidden">
+      {/* ─── OUR FIVE PILLARS SECTION (Centralized Top & Centralized Under) ─── */}
+      <section id="pillars" className="w-full px-6 lg:px-12 py-20 lg:py-28 bg-[#0A2F1B] text-white scroll-mt-20 border-t border-white/10 relative overflow-hidden">
+        <span id="values" className="sr-only" />
         {/* Subtle decorative brand glow */}
         <div className="absolute top-0 right-0 w-96 h-96 bg-[#ABF67E]/5 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute bottom-0 left-0 w-80 h-80 bg-[#ABF67E]/5 rounded-full blur-3xl pointer-events-none" />
 
-        <div className="max-w-[1360px] mx-auto relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
-            
-            {/* Left Column: Eyebrow badge & Serif Headline */}
-            <div className="lg:col-span-5 flex flex-col gap-5 lg:sticky lg:top-32">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#ABF67E]/20 border border-[#ABF67E]/30 text-[#ABF67E] text-xs uppercase font-bold tracking-wider w-fit">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#ABF67E]" />
-                <span>Our Values</span>
-              </div>
-              <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-medium text-white tracking-tight leading-[1.12]">
-                The values that define our enterprise.
-              </h2>
-              <p className="text-sm sm:text-base text-emerald-100/75 leading-relaxed max-w-md">
-                Our institutional commitments guide every capital allocation, commercial alliance, and operational decision across our business.
-              </p>
+        <div className="max-w-[1000px] mx-auto relative z-10 flex flex-col items-center">
+
+          {/* Centralized Top Header */}
+          <div className="flex flex-col items-center text-center gap-4 max-w-2xl mx-auto mb-12 sm:mb-16">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#ABF67E]/20 border border-[#ABF67E]/30 text-[#ABF67E] text-xs uppercase font-bold tracking-wider">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#ABF67E]" />
+              <span>Our Five Pillars</span>
             </div>
-
-            {/* Right Column: Interactive Numbered Accordion (Refined Font Scale) */}
-            <div className="lg:col-span-7 divide-y divide-white/15 border-t border-b border-white/15">
-              {CORPORATE_VALUES.map((val, idx) => {
-                const isOpen = openValueIndex === idx;
-                return (
-                  <div key={val.number} className="py-4 sm:py-5">
-                    <button
-                      onClick={() => setOpenValueIndex(isOpen ? null : idx)}
-                      className="w-full flex items-center justify-between gap-4 text-left group transition-colors cursor-pointer"
-                      aria-expanded={isOpen}
-                    >
-                      <div className="flex items-center gap-3.5 sm:gap-5">
-                        <span className="text-[#ABF67E] font-bold text-xs sm:text-sm shrink-0 font-mono">
-                          {val.number}
-                        </span>
-                        <span className="text-base sm:text-lg lg:text-xl font-serif font-medium text-white group-hover:text-[#ABF67E] transition-colors leading-snug">
-                          {val.title}
-                        </span>
-                      </div>
-                      <div className="text-[#ABF67E]/80 group-hover:text-[#ABF67E] transition-colors shrink-0">
-                        {isOpen ? (
-                          <span className="text-lg sm:text-xl font-light leading-none select-none">&minus;</span>
-                        ) : (
-                          <span className="text-lg sm:text-xl font-light leading-none select-none">&#43;</span>
-                        )}
-                      </div>
-                    </button>
-
-                    <AnimatePresence initial={false}>
-                      {isOpen && (
-                        <motion.div
-                          initial={{ opacity: 0, height: 0 }}
-                          animate={{ opacity: 1, height: "auto" }}
-                          exit={{ opacity: 0, height: 0 }}
-                          transition={{ duration: 0.3, ease: PRO_MAX_EASE }}
-                          className="overflow-hidden"
-                        >
-                          <p className="pt-3 pl-7 sm:pl-9 text-xs sm:text-sm text-emerald-100/75 leading-relaxed max-w-2xl font-normal">
-                            {val.description}
-                          </p>
-                        </motion.div>
-                      )}
-                    </AnimatePresence>
-                  </div>
-                );
-              })}
-            </div>
-
+            <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-medium text-white tracking-tight leading-[1.15]">
+              The pillars that define our enterprise.
+            </h2>
+            <p className="text-sm sm:text-base text-emerald-100/75 leading-relaxed max-w-xl">
+              Our foundational pillars guide every capital allocation, strategic partnership, and operational decision across our business.
+            </p>
           </div>
+
+          {/* Centralized Under: Interactive Numbered Accordion */}
+          <div className="w-full max-w-3xl mx-auto divide-y divide-white/15 border-t border-b border-white/15">
+            {FIVE_PILLARS.map((pillar, idx) => {
+              const isOpen = openPillarIndex === idx;
+              return (
+                <div key={pillar.number} className="py-4 sm:py-5">
+                  <button
+                    onClick={() => setOpenPillarIndex(isOpen ? null : idx)}
+                    className="w-full flex items-center justify-between gap-4 text-left group transition-colors cursor-pointer"
+                    aria-expanded={isOpen}
+                  >
+                    <div className="flex items-center gap-3.5 sm:gap-5">
+                      <span className="text-[#ABF67E] font-bold text-xs sm:text-sm shrink-0 font-mono">
+                        {pillar.number}
+                      </span>
+                      <span className="text-base sm:text-lg lg:text-xl font-serif font-medium text-white group-hover:text-[#ABF67E] transition-colors leading-snug">
+                        {pillar.title}
+                      </span>
+                    </div>
+                    <div className="text-[#ABF67E]/80 group-hover:text-[#ABF67E] transition-colors shrink-0">
+                      {isOpen ? (
+                        <span className="text-lg sm:text-xl font-light leading-none select-none">&minus;</span>
+                      ) : (
+                        <span className="text-lg sm:text-xl font-light leading-none select-none">&#43;</span>
+                      )}
+                    </div>
+                  </button>
+
+                  <AnimatePresence initial={false}>
+                    {isOpen && (
+                      <motion.div
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{ opacity: 1, height: "auto" }}
+                        exit={{ opacity: 0, height: 0 }}
+                        transition={{ duration: 0.3, ease: PRO_MAX_EASE }}
+                        className="overflow-hidden"
+                      >
+                        <p className="pt-3 pl-7 sm:pl-9 text-xs sm:text-sm text-emerald-100/75 leading-relaxed max-w-2xl font-normal">
+                          {pillar.description}
+                        </p>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+              );
+            })}
+          </div>
+
         </div>
       </section>
 
       {/* ─── STEP 4: LEADERSHIP BIO REVEAL MODAL (Interactive Modal Overlay) ─── */}
       <AnimatePresence>
         {selectedLeader && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 overflow-y-auto">
+          <div className="fixed inset-0 z-50 flex justify-center p-3 sm:p-5 overflow-y-auto">
             {/* Modal Backdrop */}
             <motion.div
               initial={{ opacity: 0 }}
@@ -541,86 +512,41 @@ export default function AboutPage() {
               transition={{ duration: 0.3, ease: PRO_MAX_EASE }}
               role="dialog"
               aria-modal="true"
-              className="relative w-full max-w-2xl bg-white rounded-3xl shadow-2xl border border-white overflow-hidden z-10 my-8"
+              className="relative w-full max-w-[360px] sm:max-w-[400px] bg-white rounded-2xl sm:rounded-3xl shadow-2xl overflow-hidden z-10 m-auto my-4 sm:my-6 border-none"
             >
-              {/* Header Banner */}
-              <div className="relative h-44 sm:h-48 w-full bg-gradient-to-r from-[#00190A] via-[#0A2F1B] to-[#123E25] p-6 sm:p-8 flex items-end justify-between">
-                <div className="flex items-center gap-4 relative z-10">
-                  <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full border-2 border-[#ABF67E] overflow-hidden relative shadow-lg shrink-0">
-                    <Image
-                      src={selectedLeader.image}
-                      alt={selectedLeader.name}
-                      fill
-                      className="object-cover object-top"
-                    />
-                  </div>
-                  <div>
-                    <span className="text-[11px] uppercase tracking-wider text-[#ABF67E] font-bold">
-                      {selectedLeader.role}
-                    </span>
-                    <h3 className="font-serif text-2xl sm:text-3xl font-bold text-white tracking-tight">
-                      {selectedLeader.name}
-                    </h3>
-                  </div>
-                </div>
+              {/* Close Button Floating on Top-Right */}
+              <button
+                onClick={() => setSelectedLeader(null)}
+                className="absolute top-3.5 right-3.5 p-2 rounded-full bg-black/45 hover:bg-black/70 text-white backdrop-blur-md transition-all cursor-pointer z-30 shadow-md"
+                aria-label="Close biography dialog"
+              >
+                <XIcon className="w-5 h-5" />
+              </button>
 
-                {/* Close Button */}
-                <button
-                  onClick={() => setSelectedLeader(null)}
-                  className="absolute top-4 right-4 p-2 rounded-full bg-white/15 hover:bg-white/30 text-white transition-colors"
-                  aria-label="Close biography dialog"
-                >
-                  <XIcon className="w-5 h-5" />
-                </button>
+              {/* Full-Width Portrait Image: Exact 4:5 Shape as the About Page, Anchored to Top */}
+              <div className="relative w-full aspect-[4/5] bg-[#141815] overflow-hidden">
+                <Image
+                  src={selectedLeader.image}
+                  alt={selectedLeader.name}
+                  fill
+                  sizes="(max-width: 640px) 360px, 400px"
+                  className="object-cover object-top"
+                  priority
+                />
               </div>
 
-              {/* Biography Body */}
-              <div className="p-6 sm:p-10 space-y-6">
-                <div>
-                  <h4 className="text-xs uppercase tracking-wider text-[#2D6C00] font-bold mb-1.5">
-                    Executive Portfolio &bull; {selectedLeader.focus}
-                  </h4>
-                  <p className="text-base sm:text-lg text-[#00190A] font-serif leading-snug">
-                    {selectedLeader.focus}
-                  </p>
-                </div>
+              {/* Content Body: Centralized Role, Name, and Bio */}
+              <div className="p-5 sm:p-7 flex flex-col items-center text-center">
+                <span className="text-xs uppercase font-bold tracking-wider text-[#2D6C00]">
+                  {selectedLeader.role}
+                </span>
+                <h3 className="font-serif text-2xl sm:text-3xl font-bold text-[#00190A] tracking-tight mt-1">
+                  {selectedLeader.name}
+                </h3>
 
-                <div className="space-y-3">
-                  <h4 className="text-xs uppercase tracking-wider text-[#424842] font-bold">
-                    Official Biography
-                  </h4>
-                  <p className="text-sm sm:text-base text-[#424842] leading-relaxed">
-                    {selectedLeader.bio}
-                  </p>
-                </div>
-
-                {/* Governance Credentials */}
-                <div className="pt-4 border-t border-[#def2f4] space-y-2.5">
-                  <h4 className="text-xs uppercase tracking-wider text-[#00190A] font-bold">
-                    Key Governance Competencies
-                  </h4>
-                  <ul className="space-y-2">
-                    {selectedLeader.credentials.map((cred) => (
-                      <li key={cred} className="flex items-center gap-2.5 text-xs sm:text-sm text-[#424842]">
-                        <CheckCircleIcon className="w-4 h-4 text-[#2D6C00] shrink-0" />
-                        <span>{cred}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                {/* Modal Footer */}
-                <div className="pt-6 border-t border-[#def2f4] flex items-center justify-between">
-                  <span className="text-[11px] font-mono text-[#424842]">
-                    Hundredfold Innovation Network Ltd
-                  </span>
-                  <button
-                    onClick={() => setSelectedLeader(null)}
-                    className="px-6 py-2.5 rounded-xl bg-[#0A2F1B] hover:bg-[#00190A] text-white text-xs font-semibold transition-colors"
-                  >
-                    Close Profile
-                  </button>
-                </div>
+                <p className="mt-3.5 text-sm sm:text-base text-[#424842] leading-relaxed">
+                  {selectedLeader.bio}
+                </p>
               </div>
             </motion.div>
           </div>
@@ -643,10 +569,7 @@ export default function AboutPage() {
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#2D6C00] text-white text-[11px] uppercase font-bold tracking-wider w-fit">
                   <span>OUR VISION</span>
                 </div>
-                <h3 className="font-serif text-2xl sm:text-3xl font-bold text-[#00190A]">
-                  Enduring Economic Value
-                </h3>
-                <p className="text-base sm:text-lg text-[#424842] leading-relaxed">
+                <p className="text-base sm:text-lg text-[#00190A] leading-relaxed">
                   To build a leading African investment and business development network that creates enduring economic value, fosters enterprise, and transforms commercial opportunities into long-term wealth.
                 </p>
               </div>
@@ -658,10 +581,7 @@ export default function AboutPage() {
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#2D6C00] text-white text-[11px] uppercase font-bold tracking-wider w-fit">
                   <span>OUR MISSION</span>
                 </div>
-                <h3 className="font-serif text-2xl sm:text-3xl font-bold text-[#00190A]">
-                  Disciplined Scaling
-                </h3>
-                <p className="text-base sm:text-lg text-[#424842] leading-relaxed">
+                <p className="text-base sm:text-lg text-[#00190A] leading-relaxed">
                   To identify, structure and scale viable commercial ventures across key African sectors through disciplined research, strategic partnerships, collective strength, and unwavering governance.
                 </p>
               </div>
