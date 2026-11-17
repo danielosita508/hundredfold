@@ -351,7 +351,7 @@ export default function AboutPage() {
             variants={staggerGridVariants}
             className="flex flex-col items-center gap-3 sm:gap-4 lg:gap-5 w-full"
           >
-            {/* 1. Founder & CEO (Centered on Top with Rounded Corners & Elegant Divide) */}
+            {/* 1. Founder & CEO (Centered on Top with Rounded Corners) */}
             <div className="w-full flex justify-center">
               <div
                 onClick={() => setSelectedLeader(ceo)}
@@ -367,33 +367,24 @@ export default function AboutPage() {
                   priority
                 />
 
-                {/* Ambient vignette / bottom gradient for high text readability */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/50 via-40% to-transparent pointer-events-none" />
+                {/* Ambient vignette / bottom gradient on hover */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 via-35% to-transparent opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 group-active:opacity-100 transition-opacity duration-300 pointer-events-none" />
 
-                {/* Bottom Description with Little Divide */}
-                <div className="absolute inset-x-0 bottom-0 p-5 sm:p-6 flex flex-col items-center justify-end text-center z-10 transition-all duration-300">
-                  <h3 className="font-serif text-lg sm:text-xl font-bold text-white tracking-wide drop-shadow-md">
-                    {ceo.name}
-                  </h3>
-                  <p className="text-[11px] sm:text-xs uppercase font-bold tracking-wider text-[#ABF67E] drop-shadow-sm mt-0.5">
-                    {ceo.role}
-                  </p>
-
-                  {/* ─── A Little Divide for the Description ─── */}
-                  <div className="w-10 h-0.5 bg-[#ABF67E] rounded-full my-2 shadow-xs" />
-
-                  <p className="text-[11px] sm:text-xs text-white/85 line-clamp-1 max-w-[95%]">
-                    {ceo.focus}
-                  </p>
-                  <span className="text-[10px] text-white/70 group-hover:text-white mt-1.5 flex items-center gap-1 transition-colors">
-                    <span>Click to read full bio</span>
-                    <ArrowRightIcon className="w-3 h-3 text-[#ABF67E]" />
-                  </span>
+                {/* Bottom Overlay: The two top lines invisible by default and reveal on hover. The two lines below removed! */}
+                <div className="absolute inset-x-0 bottom-0 p-5 sm:p-6 flex flex-col items-center justify-end text-center z-10 opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 group-active:opacity-100 transition-opacity duration-300 pointer-events-none">
+                  <div className="transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300 ease-out flex flex-col items-center space-y-1">
+                    <h3 className="font-serif text-lg sm:text-xl font-bold text-white tracking-wide uppercase drop-shadow-md">
+                      {ceo.name}
+                    </h3>
+                    <p className="text-[11px] sm:text-xs uppercase font-bold tracking-wider text-[#ABF67E] drop-shadow-sm whitespace-nowrap">
+                      {ceo.role}
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
 
-            {/* 2. Executive Directors (4-Column Grid with tight uniform gaps, rounded cards, and divide) */}
+            {/* 2. Executive Directors (4-Column Grid with rounded cards) */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-5 w-full max-w-[1240px] mx-auto">
               {directors.map((member) => (
                 <div
@@ -410,24 +401,19 @@ export default function AboutPage() {
                     className="object-cover object-top grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500 ease-out"
                   />
 
-                  {/* Ambient vignette / bottom gradient */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/50 via-40% to-transparent pointer-events-none" />
+                  {/* Ambient vignette / bottom gradient on hover */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 via-35% to-transparent opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 group-active:opacity-100 transition-opacity duration-300 pointer-events-none" />
 
-                  {/* Bottom Description with Little Divide */}
-                  <div className="absolute inset-x-0 bottom-0 p-4 sm:p-5 flex flex-col items-center justify-end text-center z-10 transition-all duration-300">
-                    <h3 className="font-serif text-sm sm:text-base font-bold text-white tracking-wide drop-shadow-md">
-                      {member.name}
-                    </h3>
-                    <p className="text-[10px] sm:text-[11px] uppercase font-bold tracking-wider text-[#ABF67E] drop-shadow-sm mt-0.5 line-clamp-1 max-w-[95%]">
-                      {member.role}
-                    </p>
-
-                    {/* ─── A Little Divide for the Description ─── */}
-                    <div className="w-8 h-0.5 bg-[#ABF67E] rounded-full my-1.5 shadow-xs" />
-
-                    <p className="text-[10px] sm:text-[11px] text-white/80 line-clamp-1 max-w-[95%]">
-                      {member.focus}
-                    </p>
+                  {/* Bottom Overlay: The two top lines invisible by default and reveal on hover. The two lines below removed! */}
+                  <div className="absolute inset-x-0 bottom-0 p-4 sm:p-5 flex flex-col items-center justify-end text-center z-10 opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 group-active:opacity-100 transition-opacity duration-300 pointer-events-none">
+                    <div className="transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300 ease-out flex flex-col items-center space-y-1">
+                      <h3 className="font-serif text-sm sm:text-base font-bold text-white tracking-wide uppercase drop-shadow-md">
+                        {member.name}
+                      </h3>
+                      <p className="text-[10px] sm:text-[11px] uppercase font-bold tracking-wider text-[#ABF67E] drop-shadow-sm leading-tight max-w-[95%]">
+                        {member.role}
+                      </p>
+                    </div>
                   </div>
                 </div>
               ))}
@@ -524,7 +510,7 @@ export default function AboutPage() {
               className="fixed inset-0 bg-black/80 backdrop-blur-sm transition-opacity"
             />
 
-            {/* Modal Dialog Content */}
+            {/* Modal Dialog Content: Wide Executive Portfolio View */}
             <motion.div
               initial={{ opacity: 0, scale: 0.95, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
@@ -532,44 +518,87 @@ export default function AboutPage() {
               transition={{ duration: 0.3, ease: PRO_MAX_EASE }}
               role="dialog"
               aria-modal="true"
-              className="relative w-full max-w-[360px] sm:max-w-[400px] bg-white rounded-2xl sm:rounded-3xl shadow-2xl overflow-hidden z-10 m-auto my-4 sm:my-6 border-none"
+              className="relative w-full max-w-[880px] lg:max-w-[940px] bg-white rounded-3xl shadow-2xl overflow-hidden z-10 m-auto my-4 sm:my-8 border border-black/5 flex flex-col md:flex-row"
             >
               {/* Close Button Floating on Top-Right */}
               <button
                 onClick={() => setSelectedLeader(null)}
-                className="absolute top-3.5 right-3.5 p-2 rounded-full bg-black/45 hover:bg-black/70 text-white backdrop-blur-md transition-all cursor-pointer z-30 shadow-md"
+                className="absolute top-4 right-4 p-2.5 rounded-full bg-black/5 hover:bg-black/15 text-[#00190A] transition-all cursor-pointer z-30 shadow-xs"
                 aria-label="Close biography dialog"
               >
                 <XIcon className="w-5 h-5" />
               </button>
 
-              {/* Full-Width Portrait Image: Exact 4:5 Shape as the About Page, Anchored to Top */}
-              <div className="relative w-full aspect-[4/5] bg-[#141815] overflow-hidden">
+              {/* Left Side: Generous Executive Portrait Image */}
+              <div className="relative w-full md:w-[360px] lg:w-[400px] shrink-0 bg-[#141815] min-h-[360px] md:min-h-[500px] overflow-hidden">
                 <Image
                   src={selectedLeader.image}
                   alt={selectedLeader.name}
                   fill
-                  sizes="(max-width: 640px) 360px, 400px"
+                  sizes="(max-width: 768px) 100vw, 400px"
                   className="object-cover object-top"
                   priority
                 />
               </div>
 
-              {/* Content Body: Centralized Role, Name, Little Divide, and Bio */}
-              <div className="p-5 sm:p-7 flex flex-col items-center text-center">
-                <span className="text-xs uppercase font-bold tracking-wider text-[#2D6C00]">
-                  {selectedLeader.role}
-                </span>
-                <h3 className="font-serif text-2xl sm:text-3xl font-bold text-[#00190A] tracking-tight mt-1">
-                  {selectedLeader.name}
-                </h3>
+              {/* Right Side: Name, Position, and Portfolio on the side */}
+              <div className="flex-1 p-6 sm:p-8 lg:p-10 flex flex-col justify-between overflow-y-auto max-h-[85vh] md:max-h-[560px]">
+                <div className="space-y-4">
+                  {/* Position Badge */}
+                  <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-[#ABF67E]/30 text-[#2D6C00] text-xs uppercase font-bold tracking-wider w-fit">
+                    {selectedLeader.role}
+                  </span>
 
-                {/* ─── A Little Divide for the Description ─── */}
-                <div className="w-12 h-0.5 bg-[#ABF67E] rounded-full my-3.5 shadow-2xs" />
+                  {/* Leader Name */}
+                  <h3 className="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold text-[#00190A] tracking-tight">
+                    {selectedLeader.name}
+                  </h3>
 
-                <p className="text-sm sm:text-base text-[#424842] leading-relaxed">
-                  {selectedLeader.bio}
-                </p>
+                  {/* Portfolio / Focus Title */}
+                  <p className="text-sm sm:text-base font-semibold text-[#2D6C00]">
+                    {selectedLeader.focus}
+                  </p>
+
+                  <div className="w-full h-px bg-[#DEF2F4] my-3" />
+
+                  {/* Executive Biography */}
+                  <p className="text-sm sm:text-base text-[#424842] leading-relaxed">
+                    {selectedLeader.bio}
+                  </p>
+
+                  {/* Portfolio Credentials & Key Governance Competencies */}
+                  {selectedLeader.credentials && selectedLeader.credentials.length > 0 && (
+                    <div className="pt-4 border-t border-[#DEF2F4] space-y-2.5">
+                      <h4 className="text-[11px] uppercase tracking-wider text-[#00190A] font-bold">
+                        Portfolio &amp; Governance Competencies
+                      </h4>
+                      <div className="flex flex-col sm:flex-row flex-wrap gap-2">
+                        {selectedLeader.credentials.map((cred) => (
+                          <span
+                            key={cred}
+                            className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-medium bg-[#E9FDFF] text-[#0A2F1B] border border-[#DEF2F4]"
+                          >
+                            <CheckCircleIcon className="w-3.5 h-3.5 text-[#2D6C00] shrink-0" />
+                            <span>{cred}</span>
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                </div>
+
+                {/* Footer Strip */}
+                <div className="pt-6 mt-6 border-t border-[#DEF2F4] flex items-center justify-between text-xs text-[#424842]/70">
+                  <span className="font-mono text-[11px]">
+                    Hundredfold Innovation Network Ltd
+                  </span>
+                  <button
+                    onClick={() => setSelectedLeader(null)}
+                    className="px-4 py-1.5 rounded-full bg-[#0A2F1B] hover:bg-[#00190A] text-white text-xs font-semibold transition-colors cursor-pointer"
+                  >
+                    Close Profile
+                  </button>
+                </div>
               </div>
             </motion.div>
           </div>
