@@ -351,11 +351,11 @@ export default function AboutPage() {
             variants={staggerGridVariants}
             className="flex flex-col items-center gap-3 sm:gap-4 lg:gap-5 w-full"
           >
-            {/* 1. Founder & CEO (Centered on Top) */}
+            {/* 1. Founder & CEO (Centered on Top with Rounded Corners & Elegant Divide) */}
             <div className="w-full flex justify-center">
               <div
                 onClick={() => setSelectedLeader(ceo)}
-                className="group relative aspect-[4/5] w-full max-w-[280px] sm:max-w-[320px] lg:max-w-[340px] overflow-hidden cursor-pointer select-none bg-[#141815] rounded-none"
+                className="group relative aspect-[4/5] w-full max-w-[280px] sm:max-w-[320px] lg:max-w-[340px] rounded-2xl sm:rounded-3xl overflow-hidden cursor-pointer select-none bg-[#141815] shadow-xl border border-black/5"
               >
                 {/* Background Portrait Image: Grayscale by default, full color on hover, magnifies smoothly */}
                 <Image
@@ -363,31 +363,43 @@ export default function AboutPage() {
                   alt={`${ceo.name} — ${ceo.role}`}
                   fill
                   sizes="(max-width: 640px) 280px, (max-width: 1024px) 320px, 340px"
-                  className="object-cover object-top grayscale group-hover:grayscale-0 group-hover:scale-108 transition-all duration-500 ease-out"
+                  className="object-cover object-top grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500 ease-out"
                   priority
                 />
 
-                {/* Minimal Bottom Overlay: Soft gradient vignette only at bottom, reveals writeup at the bottom */}
-                <div className="absolute inset-x-0 bottom-0 pt-16 pb-5 px-4 bg-gradient-to-t from-black/90 via-black/50 to-transparent opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 group-active:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-end text-center z-10 pointer-events-none">
-                  <div className="transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300 ease-out flex flex-col items-center space-y-1">
-                    <h3 className="font-serif text-base sm:text-lg lg:text-xl font-bold text-white tracking-wide uppercase drop-shadow-md">
-                      {ceo.name}
-                    </h3>
-                    <p className="text-[11px] sm:text-xs uppercase font-bold tracking-wider text-[#ABF67E] drop-shadow-sm whitespace-nowrap">
-                      {ceo.role}
-                    </p>
-                  </div>
+                {/* Ambient vignette / bottom gradient for high text readability */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/50 via-40% to-transparent pointer-events-none" />
+
+                {/* Bottom Description with Little Divide */}
+                <div className="absolute inset-x-0 bottom-0 p-5 sm:p-6 flex flex-col items-center justify-end text-center z-10 transition-all duration-300">
+                  <h3 className="font-serif text-lg sm:text-xl font-bold text-white tracking-wide drop-shadow-md">
+                    {ceo.name}
+                  </h3>
+                  <p className="text-[11px] sm:text-xs uppercase font-bold tracking-wider text-[#ABF67E] drop-shadow-sm mt-0.5">
+                    {ceo.role}
+                  </p>
+
+                  {/* ─── A Little Divide for the Description ─── */}
+                  <div className="w-10 h-0.5 bg-[#ABF67E] rounded-full my-2 shadow-xs" />
+
+                  <p className="text-[11px] sm:text-xs text-white/85 line-clamp-1 max-w-[95%]">
+                    {ceo.focus}
+                  </p>
+                  <span className="text-[10px] text-white/70 group-hover:text-white mt-1.5 flex items-center gap-1 transition-colors">
+                    <span>Click to read full bio</span>
+                    <ArrowRightIcon className="w-3 h-3 text-[#ABF67E]" />
+                  </span>
                 </div>
               </div>
             </div>
 
-            {/* 2. Executive Directors (4-Column Grid with tight uniform gaps, square tiles) */}
+            {/* 2. Executive Directors (4-Column Grid with tight uniform gaps, rounded cards, and divide) */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-5 w-full max-w-[1240px] mx-auto">
               {directors.map((member) => (
                 <div
                   key={member.name}
                   onClick={() => setSelectedLeader(member)}
-                  className="group relative aspect-[4/5] w-full overflow-hidden cursor-pointer select-none bg-[#141815] rounded-none"
+                  className="group relative aspect-[4/5] w-full rounded-2xl overflow-hidden cursor-pointer select-none bg-[#141815] shadow-lg border border-black/5"
                 >
                   {/* Background Portrait Image: Grayscale by default, full color on hover, magnifies smoothly */}
                   <Image
@@ -395,19 +407,27 @@ export default function AboutPage() {
                     alt={`${member.name} — ${member.role}`}
                     fill
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                    className="object-cover object-top grayscale group-hover:grayscale-0 group-hover:scale-108 transition-all duration-500 ease-out"
+                    className="object-cover object-top grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500 ease-out"
                   />
 
-                  {/* Minimal Bottom Overlay: Soft gradient vignette only at bottom, reveals writeup at the bottom */}
-                  <div className="absolute inset-x-0 bottom-0 pt-16 pb-5 px-3 sm:px-4 bg-gradient-to-t from-black/90 via-black/50 to-transparent opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 group-active:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-end text-center z-10 pointer-events-none">
-                    <div className="transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300 ease-out flex flex-col items-center space-y-1">
-                      <h3 className="font-serif text-base sm:text-lg lg:text-xl font-bold text-white tracking-wide uppercase drop-shadow-md">
-                        {member.name}
-                      </h3>
-                      <p className="text-[10px] sm:text-[11px] lg:text-xs uppercase font-bold tracking-wider text-[#ABF67E] drop-shadow-sm leading-tight max-w-[95%]">
-                        {member.role}
-                      </p>
-                    </div>
+                  {/* Ambient vignette / bottom gradient */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/50 via-40% to-transparent pointer-events-none" />
+
+                  {/* Bottom Description with Little Divide */}
+                  <div className="absolute inset-x-0 bottom-0 p-4 sm:p-5 flex flex-col items-center justify-end text-center z-10 transition-all duration-300">
+                    <h3 className="font-serif text-sm sm:text-base font-bold text-white tracking-wide drop-shadow-md">
+                      {member.name}
+                    </h3>
+                    <p className="text-[10px] sm:text-[11px] uppercase font-bold tracking-wider text-[#ABF67E] drop-shadow-sm mt-0.5 line-clamp-1 max-w-[95%]">
+                      {member.role}
+                    </p>
+
+                    {/* ─── A Little Divide for the Description ─── */}
+                    <div className="w-8 h-0.5 bg-[#ABF67E] rounded-full my-1.5 shadow-xs" />
+
+                    <p className="text-[10px] sm:text-[11px] text-white/80 line-clamp-1 max-w-[95%]">
+                      {member.focus}
+                    </p>
                   </div>
                 </div>
               ))}
@@ -535,7 +555,7 @@ export default function AboutPage() {
                 />
               </div>
 
-              {/* Content Body: Centralized Role, Name, and Bio */}
+              {/* Content Body: Centralized Role, Name, Little Divide, and Bio */}
               <div className="p-5 sm:p-7 flex flex-col items-center text-center">
                 <span className="text-xs uppercase font-bold tracking-wider text-[#2D6C00]">
                   {selectedLeader.role}
@@ -544,7 +564,10 @@ export default function AboutPage() {
                   {selectedLeader.name}
                 </h3>
 
-                <p className="mt-3.5 text-sm sm:text-base text-[#424842] leading-relaxed">
+                {/* ─── A Little Divide for the Description ─── */}
+                <div className="w-12 h-0.5 bg-[#ABF67E] rounded-full my-3.5 shadow-2xs" />
+
+                <p className="text-sm sm:text-base text-[#424842] leading-relaxed">
                   {selectedLeader.bio}
                 </p>
               </div>
