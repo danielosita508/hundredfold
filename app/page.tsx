@@ -164,46 +164,6 @@ export default function Home() {
             >
               Hundredfold Innovation Network Ltd is an African business and investment company focused on identifying high-impact commercial opportunities, building strategic relationships, and developing ventures with long-term potential.
             </motion.p>
-
-            {/* Strategic Pillars Horizontal Ribbon (Sectors Below Description) */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.28, ease: PRO_MAX_EASE }}
-              className="flex flex-wrap items-center gap-x-3.5 gap-y-2 text-xs sm:text-sm text-white/90 font-medium tracking-wide mt-4 drop-shadow-sm"
-            >
-              <span>Agriculture</span>
-              <span className="text-white/40 font-light">|</span>
-              <span>Real Estate</span>
-              <span className="text-white/40 font-light">|</span>
-              <span>Finance</span>
-              <span className="text-white/40 font-light">|</span>
-              <span>Technology</span>
-            </motion.div>
-
-            {/* Clean Action Buttons */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.35, ease: PRO_MAX_EASE }}
-              className="flex flex-wrap items-center gap-4 mt-8 pt-2"
-            >
-              <Link
-                href="/business"
-                className="inline-flex items-center justify-center px-8 py-3.5 rounded-full bg-white text-[#0A2F1B] hover:bg-[#ABF67E] hover:text-[#00190A] transition-all duration-300 text-sm font-semibold tracking-wide shadow-xl group"
-              >
-                <span>Explore Our Business</span>
-                <ArrowRightIcon className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-              </Link>
-
-              <Link
-                href="/partnerships"
-                className="inline-flex items-center justify-center px-8 py-3.5 rounded-full bg-white/10 hover:bg-white/20 text-white border border-white/30 backdrop-blur-md transition-all duration-300 text-sm font-semibold tracking-wide shadow-xl"
-              >
-                <span>Partner With Us</span>
-              </Link>
-            </motion.div>
-
           </div>
 
         </div>
@@ -325,9 +285,9 @@ export default function Home() {
                   {/* Rich Emerald Green Overlay on Hover (Fades in slowly to match title slide) */}
                   <div className="absolute inset-0 bg-gradient-to-t from-[#00190A]/95 via-[#0A2F1B]/80 to-[#0A2F1B]/60 opacity-0 group-hover:opacity-100 transition-opacity duration-700 ease-out pointer-events-none" />
 
-                  {/* Sector Title (Bottom-Left, Uppercase, Bold White - Slides slowly into picture on hover) */}
+                  {/* Sector Title (Bottom-Left, Light Sans-Serif, Title Case White - Slides slowly into picture on hover) */}
                   <div className="relative z-10 overflow-hidden">
-                    <h3 className="font-sans text-2xl sm:text-3xl lg:text-4xl font-bold uppercase tracking-wider text-white drop-shadow-xl opacity-100 sm:opacity-0 sm:translate-y-10 sm:group-hover:opacity-100 sm:group-hover:translate-y-0 transition-all duration-700 ease-out">
+                    <h3 className="font-sans text-2xl sm:text-3xl lg:text-4xl font-light tracking-wide text-white drop-shadow-lg opacity-100 sm:opacity-0 sm:translate-y-10 sm:group-hover:opacity-100 sm:group-hover:translate-y-0 transition-all duration-700 ease-out">
                       {sector.title}
                     </h3>
                   </div>
