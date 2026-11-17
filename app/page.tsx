@@ -40,25 +40,6 @@ const BUSINESS_SECTORS = [
   },
 ];
 
-// Summarized high-impact operational principles
-const SUMMARIZED_PRINCIPLES = [
-  {
-    name: "Integrity",
-    description: "Total commercial transparency and ethical corporate governance.",
-  },
-  {
-    name: "Due Diligence",
-    description: "Disciplined research and risk assessment preceding every allocation.",
-  },
-  {
-    name: "Execution",
-    description: "Focused operational delivery and active governance across ventures.",
-  },
-  {
-    name: "Long-Term Value",
-    description: "Building generative assets that endure across economic cycles.",
-  },
-];
 
 export default function Home() {
   const shouldReduceMotion = useReducedMotion();
@@ -77,28 +58,6 @@ export default function Home() {
     }),
   };
 
-  const staggerGridVariants: Variants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: shouldReduceMotion ? 0 : 0.12,
-        delayChildren: shouldReduceMotion ? 0 : 0.05,
-      },
-    },
-  };
-
-  const cardScrollVariants: Variants = {
-    hidden: { opacity: 0, y: shouldReduceMotion ? 0 : 32 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: shouldReduceMotion ? 0 : 0.55,
-        ease: PRO_MAX_EASE,
-      },
-    },
-  };
 
   return (
     <div className="relative overflow-hidden bg-[#E9FDFF] text-[#0C1E20]">
@@ -298,57 +257,30 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ─── SECTION 4: OUR APPROACH (Summarized & Sleek) ─── */}
-      <section className="relative w-full py-14 sm:py-16 lg:py-20 bg-white/70">
-        <div className="max-w-[1320px] mx-auto px-6 lg:px-12">
+      {/* ─── SECTION 4: OUR APPROACH (Simple Centralized Summary) ─── */}
+      <section className="relative w-full py-16 sm:py-20 lg:py-24 bg-white/70">
+        <div className="max-w-[860px] mx-auto px-6 lg:px-8 text-center">
 
           <motion.div
             initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.5, ease: PRO_MAX_EASE }}
-            className="max-w-2xl mb-10 space-y-3"
+            className="flex flex-col items-center space-y-4 sm:space-y-6"
           >
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#ABF67E]/30 text-[#2D6C00] text-xs uppercase font-bold tracking-wider">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#ABF67E]/30 text-[#2D6C00] text-xs uppercase font-bold tracking-wider">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#2D6C00]" />
               <span>OUR APPROACH</span>
             </div>
+
             <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-semibold text-[#00190A] tracking-tight">
-              Opportunity With Purpose. <br />
+              Opportunity With Purpose. <br className="hidden sm:inline" />
               Growth With Discipline.
             </h2>
-            <p className="text-sm sm:text-base text-[#424842] leading-relaxed">
-              We approach every venture with research-led judgment, disciplined risk management, and long-term commitment.
-            </p>
-          </motion.div>
 
-          {/* 4 Guiding Principles Staggered Grid */}
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.15 }}
-            variants={staggerGridVariants}
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5"
-          >
-            {SUMMARIZED_PRINCIPLES.map((principle, idx) => (
-              <motion.div
-                key={principle.name}
-                variants={cardScrollVariants}
-                whileHover={shouldReduceMotion ? {} : { y: -4, transition: { duration: 0.2 } }}
-                className="bg-white/90 backdrop-blur-md rounded-2xl p-6 border border-[#DEF2F4] hover:border-[#2D6C00]/30 shadow-xs hover:shadow-md transition-all flex flex-col justify-between h-full"
-              >
-                <div className="space-y-2.5">
-                  <span className="text-xs font-mono font-bold text-[#2D6C00]">
-                    0{idx + 1}
-                  </span>
-                  <h3 className="font-serif text-lg sm:text-xl font-bold text-[#00190A]">
-                    {principle.name}
-                  </h3>
-                  <p className="text-xs sm:text-sm text-[#424842] leading-relaxed">
-                    {principle.description}
-                  </p>
-                </div>
-              </motion.div>
-            ))}
+            <p className="text-base sm:text-lg lg:text-xl text-[#424842] leading-relaxed font-light">
+              We approach every venture with research-led judgment, disciplined risk management, and long-term commitment. Guided by commercial integrity, rigorous due diligence, and active execution, we build generative assets that endure across economic cycles.
+            </p>
           </motion.div>
 
         </div>
