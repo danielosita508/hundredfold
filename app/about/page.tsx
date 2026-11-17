@@ -6,7 +6,6 @@ import Image from "next/image";
 import { motion, AnimatePresence, useReducedMotion, type Variants } from "framer-motion";
 import {
   ArrowRightIcon,
-  CheckCircleIcon,
   XIcon,
   TargetIcon,
 } from "@/components/ui/Icons";
@@ -542,7 +541,7 @@ export default function AboutPage() {
               </div>
 
               {/* Right Side: Name, Position, and Portfolio on the side */}
-              <div className="flex-1 p-6 sm:p-8 lg:p-10 flex flex-col justify-between overflow-y-auto max-h-[85vh] md:max-h-[560px]">
+              <div className="flex-1 p-6 sm:p-8 lg:p-10 flex flex-col justify-center overflow-y-auto max-h-[85vh] md:max-h-[560px]">
                 <div className="space-y-4">
                   {/* Position Badge */}
                   <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-[#ABF67E]/30 text-[#2D6C00] text-xs uppercase font-bold tracking-wider w-fit">
@@ -565,39 +564,6 @@ export default function AboutPage() {
                   <p className="text-sm sm:text-base text-[#424842] leading-relaxed">
                     {selectedLeader.bio}
                   </p>
-
-                  {/* Portfolio Credentials & Key Governance Competencies */}
-                  {selectedLeader.credentials && selectedLeader.credentials.length > 0 && (
-                    <div className="pt-4 border-t border-[#DEF2F4] space-y-2.5">
-                      <h4 className="text-[11px] uppercase tracking-wider text-[#00190A] font-bold">
-                        Portfolio &amp; Governance Competencies
-                      </h4>
-                      <div className="flex flex-col sm:flex-row flex-wrap gap-2">
-                        {selectedLeader.credentials.map((cred) => (
-                          <span
-                            key={cred}
-                            className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-medium bg-[#E9FDFF] text-[#0A2F1B] border border-[#DEF2F4]"
-                          >
-                            <CheckCircleIcon className="w-3.5 h-3.5 text-[#2D6C00] shrink-0" />
-                            <span>{cred}</span>
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                  )}
-                </div>
-
-                {/* Footer Strip */}
-                <div className="pt-6 mt-6 border-t border-[#DEF2F4] flex items-center justify-between text-xs text-[#424842]/70">
-                  <span className="font-mono text-[11px]">
-                    Hundredfold Innovation Network Ltd
-                  </span>
-                  <button
-                    onClick={() => setSelectedLeader(null)}
-                    className="px-4 py-1.5 rounded-full bg-[#0A2F1B] hover:bg-[#00190A] text-white text-xs font-semibold transition-colors cursor-pointer"
-                  >
-                    Close Profile
-                  </button>
                 </div>
               </div>
             </motion.div>
