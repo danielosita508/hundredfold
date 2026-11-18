@@ -207,20 +207,10 @@ export default function AboutPage() {
 
         {/* Hero Title Container Layered on Top (z-20) */}
         <div className="w-full max-w-[1360px] mx-auto px-6 lg:px-12 relative z-20 flex flex-col items-start text-left">
-          <motion.div
-            initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: PRO_MAX_EASE }}
-            className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#ABF67E]/30 text-[#ABF67E] text-xs uppercase font-bold tracking-wider mb-4 border border-[#ABF67E]/30"
-          >
-            <span className="w-1.5 h-1.5 rounded-full bg-[#ABF67E]" />
-            <span>ABOUT HUNDREDFOLD</span>
-          </motion.div>
-
           <motion.h1
             initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 24 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.1, ease: PRO_MAX_EASE }}
+            transition={{ duration: 0.8, ease: PRO_MAX_EASE }}
             className="font-serif text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-white tracking-tight font-medium leading-[1.05] drop-shadow-2xl text-left"
           >
             Redefining Partnerships.
