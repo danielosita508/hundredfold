@@ -43,8 +43,8 @@ export default function Footer() {
 
   return (
     <footer className="w-full bg-[#E9FDFF] text-[#0C1E20] border-t border-[#0A2F1B]/10">
-      <div className="max-w-[1320px] mx-auto px-6 lg:px-12 pt-16 pb-12">
-        <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-10 lg:gap-16 pb-12 border-b border-[#0A2F1B]/10">
+      <div className="max-w-[1320px] mx-auto px-6 lg:px-12 pt-16 pb-14">
+        <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-10 lg:gap-16">
 
           {/* Left Side: Brand Overview, Social Media & Direct Contact (Heirs Holdings Style) */}
           <div className="flex-1 max-w-xl flex flex-col gap-5">
@@ -135,26 +135,27 @@ export default function Footer() {
           </div>
 
         </div>
+      </div>
 
-        {/* Simplified Bottom Bar: Clean Copyright & Links */}
-        <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-[#52635B]">
-          <p className="text-[11px] text-[#52635B]">
+      {/* ─── Bottom Section: Returned to Brand Green (#0A2F1B) ─── */}
+      <div className="w-full bg-[#0A2F1B] text-white border-t border-[#0A2F1B]/20">
+        <div className="max-w-[1320px] mx-auto px-6 lg:px-12 py-6 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-emerald-100/75">
+          <p className="text-[11px] text-emerald-200/75">
             &copy; {siteConfig.company.foundedYear} Hundredfold Innovation Network Ltd (H.I.N). All Rights Reserved.
           </p>
 
-          <div className="flex items-center gap-6 text-xs font-medium text-[#52635B]">
-            <Link href="/about" className="hover:text-[#00190A] transition-colors">
+          <div className="flex items-center gap-6 text-xs font-medium text-emerald-200/80">
+            <Link href="/about" className="hover:text-white transition-colors">
               Governance
             </Link>
-            <Link href="/the-fold#join" className="hover:text-[#00190A] transition-colors">
+            <Link href="/the-fold#join" className="hover:text-white transition-colors">
               Join The Fold
             </Link>
-            <Link href="/about#contact" className="hover:text-[#00190A] transition-colors">
+            <Link href="/about#contact" className="hover:text-white transition-colors">
               Contact
             </Link>
           </div>
         </div>
-
       </div>
     </footer>
   );
