@@ -110,6 +110,7 @@ export default function Navbar() {
                 alt="Hundredfold Innovation Network"
                 width={40}
                 height={40}
+                quality={100}
                 className="w-full h-full object-contain transition-transform duration-300 group-hover:scale-105"
                 priority
               />

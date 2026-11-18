@@ -84,6 +84,7 @@ export default function Home() {
                 alt={HERO_SLIDES[currentSlide].alt}
                 fill
                 priority
+                quality={100}
                 sizes="100vw"
                 className="object-cover object-center"
               />
@@ -200,7 +201,8 @@ export default function Home() {
                   src="/images/premium_photo-1707155465391-5cfc46746a34.avif"
                   alt="Executive boardroom presentation and institutional strategic briefing"
                   fill
-                  sizes="(max-width: 1024px) 100vw, 520px"
+                  quality={100}
+                  sizes="100vw"
                   className="object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
                 />
 
@@ -284,7 +286,8 @@ export default function Home() {
                     src={sector.image}
                     alt={sector.alt}
                     fill
-                    sizes="(max-width: 768px) 100vw, 50vw"
+                    quality={100}
+                    sizes="100vw"
                     className="object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
                   />
 

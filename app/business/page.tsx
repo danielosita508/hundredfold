@@ -109,6 +109,7 @@ export default function BusinessPage() {
             alt="Our Holdings - Hundredfold Pan-African Skyline"
             fill
             priority
+            quality={100}
             sizes="100vw"
             className="object-cover object-center"
           />
@@ -184,7 +185,8 @@ export default function BusinessPage() {
                   src={sector.image}
                   alt={sector.alt}
                   fill
-                  sizes="(max-width: 1320px) 100vw, 1320px"
+                  quality={100}
+                  sizes="100vw"
                   className="object-cover object-center group-hover:scale-105 transition-transform duration-1000 ease-out"
                 />
 

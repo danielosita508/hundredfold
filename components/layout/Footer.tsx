@@ -55,6 +55,7 @@ export default function Footer() {
                   alt="Hundredfold Innovation Network"
                   width={40}
                   height={40}
+                  quality={100}
                   className="w-full h-full object-contain"
                 />
               </div>

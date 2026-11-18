@@ -191,6 +191,7 @@ export default function AboutPage() {
             alt="Hundredfold Pan-African Enterprise - Redefining Partnerships"
             fill
             priority
+            quality={100}
             sizes="100vw"
             className="object-cover object-center"
           />
@@ -274,7 +275,8 @@ export default function AboutPage() {
                     src="/images/pexels-artempodrez-6584751.jpg"
                     alt="Editorial executive portrait — High-end African enterprise feature"
                     fill
-                    sizes="(max-width: 1024px) 100vw, 550px"
+                    sizes="100vw"
+                    quality={100}
                     className="object-cover object-top grayscale group-hover:scale-105 transition-transform duration-700 ease-out"
                     priority
                   />
@@ -376,7 +378,8 @@ export default function AboutPage() {
                   src={ceo.image}
                   alt={`${ceo.name} — ${ceo.role}`}
                   fill
-                  sizes="(max-width: 640px) 280px, (max-width: 1024px) 320px, 340px"
+                  sizes="100vw"
+                  quality={100}
                   className="object-cover object-top grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500 ease-out"
                   priority
                 />
@@ -411,7 +414,8 @@ export default function AboutPage() {
                     src={member.image}
                     alt={`${member.name} — ${member.role}`}
                     fill
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                    sizes="100vw"
+                    quality={100}
                     className="object-cover object-top grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500 ease-out"
                   />
 
@@ -549,7 +553,8 @@ export default function AboutPage() {
                   src={selectedLeader.image}
                   alt={selectedLeader.name}
                   fill
-                  sizes="(max-width: 768px) 100vw, 400px"
+                  sizes="100vw"
+                  quality={100}
                   className="object-cover object-top"
                   priority
                 />
@@ -597,7 +602,8 @@ export default function AboutPage() {
                 src="/images/istockphoto-2189200243-612x612.jpg"
                 alt="Leadership, Training, Community & Strategic Alliance Cohorts"
                 fill
-                sizes="(max-width: 1024px) 100vw, 500px"
+                sizes="100vw"
+                quality={100}
                 className="object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent pointer-events-none" />

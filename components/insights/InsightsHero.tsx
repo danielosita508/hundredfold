@@ -21,6 +21,7 @@ export default function InsightsHero() {
           alt="Hundredfold Pan-African Enterprise — News & Insights"
           fill
           priority
+          quality={100}
           sizes="100vw"
           className="object-cover object-center"
         />
