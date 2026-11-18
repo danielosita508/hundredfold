@@ -20,19 +20,18 @@ const siteConfig = {
     foundedYear: 2026,
   },
 
-  // ─── Navigation (5 Core Pages — Heirs Holdings Conglomerate Structure) ─────
+  // ─── Navigation (Core Pages — Heirs Holdings Conglomerate Structure) ─────
   navigation: [
     { label: "Home", href: "/" },
     { label: "About Us", href: "/about" },
     { label: "Investments", href: "/investments" },
-    { label: "Partnerships", href: "/partnerships" },
     { label: "The Fold", href: "/the-fold" },
     { label: "News & Insights", href: "/insights" },
   ],
 
   // ─── Primary Header CTAs ──────────────────────────────────
   headerCtas: {
-    primary: { label: "Partner With Us", href: "/partnerships" },
+    primary: { label: "Partner With Us", href: "/the-fold#join" },
     secondary: { label: "The Fold", href: "/the-fold" },
   },
 

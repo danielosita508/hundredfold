@@ -482,7 +482,7 @@ export default function TheFoldPage() {
       </section>
 
       {/* ─── SECTION 4: CANDIDATE REGISTRY INTAKE FORM ─── */}
-      <section className="relative max-w-[1320px] mx-auto px-6 lg:px-12 py-16 z-10">
+      <section id="join" className="relative max-w-[1320px] mx-auto px-6 lg:px-12 py-16 z-10 scroll-mt-24">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
 
           <div className="lg:col-span-6 space-y-6">

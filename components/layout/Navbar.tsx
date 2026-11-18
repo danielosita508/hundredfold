@@ -211,7 +211,7 @@ export default function Navbar() {
 
             {/* Partner CTA button on extra large screens */}
             <Link
-              href="/partnerships"
+              href="/the-fold#join"
               id="nav-partner-cta"
               className={`hidden xl:inline-flex items-center justify-center px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider shadow-md ml-1 transition-all duration-300 ${scrolled
                   ? "bg-[#0A2F1B] text-white hover:bg-[#2D6C00]"
@@ -329,7 +329,8 @@ export default function Navbar() {
             {/* Mobile Action CTAs */}
             <div className="pt-4 border-t border-white/10 space-y-3">
               <Link
-                href="/partnerships"
+                href="/the-fold#join"
+                onClick={() => setMobileMenuOpen(false)}
                 className="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-xl text-sm font-semibold text-[#0A2F1B] bg-[#ABF67E] hover:bg-white shadow-md min-h-[48px]"
               >
                 <span>Partner With Us</span>

@@ -253,7 +253,7 @@ export default function InvestmentsPage() {
 
           <div className="flex items-center shrink-0">
             <Link
-              href="/partnerships"
+              href="/the-fold#join"
               className="inline-flex items-center justify-center px-8 py-3.5 rounded-full bg-[#ABF67E] text-[#00190A] hover:bg-white transition-colors text-sm font-bold shadow-lg group"
             >
               <span>Partner With Us</span>

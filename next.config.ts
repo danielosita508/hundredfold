@@ -14,6 +14,11 @@ const nextConfig: NextConfig = {
         destination: "/investments",
         permanent: true,
       },
+      {
+        source: "/partnerships",
+        destination: "/the-fold#join",
+        permanent: true,
+      },
     ];
   },
   experimental: {

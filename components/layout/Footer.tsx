@@ -125,9 +125,6 @@ export default function Footer() {
               <Link href="/investments" className="text-xs sm:text-sm text-emerald-100/75 hover:text-white transition-colors">
                 Investments
               </Link>
-              <Link href="/partnerships" className="text-xs sm:text-sm text-emerald-100/75 hover:text-white transition-colors">
-                Partnerships
-              </Link>
               <Link href="/the-fold" className="text-xs sm:text-sm text-emerald-100/75 hover:text-white transition-colors">
                 The Fold
               </Link>
@@ -149,8 +146,8 @@ export default function Footer() {
             <Link href="/about" className="hover:text-white transition-colors">
               Governance
             </Link>
-            <Link href="/partnerships" className="hover:text-white transition-colors">
-              Partnerships
+            <Link href="/the-fold#join" className="hover:text-white transition-colors">
+              Join The Fold
             </Link>
             <Link href="/about#contact" className="hover:text-white transition-colors">
               Contact
