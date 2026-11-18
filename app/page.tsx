@@ -262,44 +262,44 @@ export default function Home() {
           </motion.div>
         </div>
 
-        {/* Heirs Holdings Style 2 Up 2 Down Edge-to-Edge Grid */}
+        {/* Heirs Holdings Style Panoramic 4-Column Strip (Full-Bleed Grayscale-to-Color Architecture) */}
         <div className="w-full">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-0 w-full">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-0 w-full">
             {BUSINESS_SECTORS.map((sector, index) => {
               const borderClasses =
                 index === 0
-                  ? "border-b border-white/15 md:border-r"
+                  ? "border-b sm:border-b lg:border-b-0 sm:border-r border-white/20"
                   : index === 1
-                  ? "border-b border-white/15"
+                  ? "border-b sm:border-b lg:border-b-0 lg:border-r border-white/20"
                   : index === 2
-                  ? "border-b md:border-b-0 border-white/15 md:border-r"
+                  ? "border-b sm:border-b-0 sm:border-r border-white/20"
                   : "";
 
               return (
                 <Link
                   key={sector.title}
                   href={sector.href}
-                  className={`group relative w-full h-[400px] sm:h-[460px] lg:h-[500px] overflow-hidden bg-[#0A2F1B] flex flex-col justify-end p-8 sm:p-12 lg:p-14 ${borderClasses} cursor-pointer select-none`}
+                  className={`group relative w-full h-[360px] sm:h-[400px] lg:h-[440px] overflow-hidden bg-[#0A2F1B] flex flex-col justify-end ${borderClasses} cursor-pointer select-none`}
                 >
-                  {/* Background Photographic Image (Full Natural Colors) */}
+                  {/* Background Photographic Image: Grayscale by default to match Heirs Holdings, blooms to full color on hover */}
                   <Image
                     src={sector.image}
                     alt={sector.alt}
                     fill
                     quality={100}
-                    sizes="100vw"
-                    className="object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                    className="object-cover object-center grayscale contrast-105 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-out"
                   />
 
-                  {/* Base subtle vignette for mobile readability */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/10 transition-opacity duration-700 sm:opacity-0" />
+                  {/* Base subtle vignette for text readability */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent pointer-events-none" />
 
-                  {/* Rich Emerald Green Overlay on Hover (Fades in slowly to match title slide) */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#00190A]/95 via-[#0A2F1B]/80 to-[#0A2F1B]/60 opacity-0 group-hover:opacity-100 transition-opacity duration-700 ease-out pointer-events-none" />
+                  {/* Rich Emerald Green Overlay on Hover */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#00190A]/95 via-[#0A2F1B]/75 to-[#0A2F1B]/35 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-out pointer-events-none" />
 
-                  {/* Sector Title (Bottom-Left, Light Sans-Serif, Title Case White - Slides slowly into picture on hover) */}
-                  <div className="relative z-10 overflow-hidden">
-                    <h3 className="font-sans text-2xl sm:text-3xl lg:text-4xl font-light tracking-wide text-white drop-shadow-lg opacity-100 sm:opacity-0 sm:translate-y-10 sm:group-hover:opacity-100 sm:group-hover:translate-y-0 transition-all duration-700 ease-out">
+                  {/* Sector Title (Bottom-Left, Light Sans-Serif, Title Case White) */}
+                  <div className="relative z-10 p-6 sm:p-8 lg:p-10 flex flex-col justify-end h-full">
+                    <h3 className="font-sans text-xl sm:text-2xl lg:text-3xl font-light tracking-wide text-white drop-shadow-md transform transition-transform duration-500 ease-out group-hover:-translate-y-1">
                       {sector.title}
                     </h3>
                   </div>
