@@ -42,9 +42,9 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="w-full bg-[#0A2F1B] text-white border-t border-white/10">
+    <footer className="w-full bg-[#E9FDFF] text-[#0C1E20] border-t border-[#0A2F1B]/10">
       <div className="max-w-[1320px] mx-auto px-6 lg:px-12 pt-16 pb-12">
-        <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-10 lg:gap-16 pb-12 border-b border-white/10">
+        <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-10 lg:gap-16 pb-12 border-b border-[#0A2F1B]/10">
 
           {/* Left Side: Brand Overview, Social Media & Direct Contact (Heirs Holdings Style) */}
           <div className="flex-1 max-w-xl flex flex-col gap-5">
@@ -60,16 +60,16 @@ export default function Footer() {
                 />
               </div>
               <div className="flex flex-col">
-                <span className="font-serif text-xl text-white font-semibold tracking-tight">
+                <span className="font-serif text-xl text-[#00190A] font-semibold tracking-tight">
                   Hundredfold
                 </span>
-                <span className="text-[10px] uppercase tracking-widest font-bold text-[#ABF67E]">
+                <span className="text-[10px] uppercase tracking-widest font-bold text-[#2D6C00]">
                   Innovation Network Ltd
                 </span>
               </div>
             </div>
 
-            <p className="text-xs sm:text-sm text-emerald-100/75 leading-relaxed max-w-lg">
+            <p className="text-xs sm:text-sm text-[#424842] leading-relaxed max-w-lg">
               Hundredfold Innovation Network Ltd is an African business and investment company focused on identifying commercial opportunities, building strategic relationships and developing ventures with long-term potential.
             </p>
 
@@ -85,7 +85,7 @@ export default function Footer() {
                     rel="noopener noreferrer"
                     aria-label={`Hundredfold on ${item.name}`}
                     title={item.name}
-                    className="w-8 h-8 rounded-full bg-white/10 hover:bg-[#ABF67E] hover:text-[#0A2F1B] border border-white/15 flex items-center justify-center transition-all duration-300 text-white shadow-xs"
+                    className="w-8 h-8 rounded-full bg-white hover:bg-[#0A2F1B] hover:text-white border border-[#DEF2F4] flex items-center justify-center transition-all duration-300 text-[#0A2F1B] shadow-xs"
                   >
                     <IconComponent className="w-3.5 h-3.5" />
                   </a>
@@ -94,16 +94,16 @@ export default function Footer() {
             </div>
 
             {/* Direct Corporate Contact */}
-            <div className="flex flex-col gap-2 pt-1 text-xs sm:text-sm text-emerald-100/80">
+            <div className="flex flex-col gap-2 pt-1 text-xs sm:text-sm text-[#424842]">
               <div className="flex items-center gap-2.5">
-                <MailIcon className="w-4 h-4 shrink-0 text-[#ABF67E]" />
-                <a href={`mailto:${siteConfig.contact.corporateEmail}`} className="hover:text-white transition-colors">
+                <MailIcon className="w-4 h-4 shrink-0 text-[#2D6C00]" />
+                <a href={`mailto:${siteConfig.contact.corporateEmail}`} className="hover:text-[#00190A] transition-colors">
                   {siteConfig.contact.corporateEmail}
                 </a>
               </div>
               <div className="flex items-center gap-2.5">
-                <PhoneIcon className="w-4 h-4 shrink-0 text-[#ABF67E]" />
-                <a href={`tel:${siteConfig.contact.phone}`} className="hover:text-white transition-colors font-medium">
+                <PhoneIcon className="w-4 h-4 shrink-0 text-[#2D6C00]" />
+                <a href={`tel:${siteConfig.contact.phone}`} className="hover:text-[#00190A] transition-colors font-medium">
                   {siteConfig.contact.phone}
                 </a>
               </div>
@@ -112,23 +112,23 @@ export default function Footer() {
 
           {/* Right Side: Quick Links (Navbar Links) */}
           <div className="flex flex-col gap-3 min-w-[200px] shrink-0">
-            <span className="text-xs font-bold uppercase tracking-wider text-[#ABF67E]">
+            <span className="text-xs font-bold uppercase tracking-wider text-[#2D6C00]">
               Quick Links
             </span>
             <div className="flex flex-col gap-2.5">
-              <Link href="/" className="text-xs sm:text-sm text-emerald-100/75 hover:text-white transition-colors">
+              <Link href="/" className="text-xs sm:text-sm text-[#424842] hover:text-[#00190A] transition-colors">
                 Home
               </Link>
-              <Link href="/about" className="text-xs sm:text-sm text-emerald-100/75 hover:text-white transition-colors">
+              <Link href="/about" className="text-xs sm:text-sm text-[#424842] hover:text-[#00190A] transition-colors">
                 About Us
               </Link>
-              <Link href="/investments" className="text-xs sm:text-sm text-emerald-100/75 hover:text-white transition-colors">
+              <Link href="/investments" className="text-xs sm:text-sm text-[#424842] hover:text-[#00190A] transition-colors">
                 Investments
               </Link>
-              <Link href="/the-fold" className="text-xs sm:text-sm text-emerald-100/75 hover:text-white transition-colors">
+              <Link href="/the-fold" className="text-xs sm:text-sm text-[#424842] hover:text-[#00190A] transition-colors">
                 The Fold
               </Link>
-              <Link href="/insights" className="text-xs sm:text-sm text-emerald-100/75 hover:text-white transition-colors">
+              <Link href="/insights" className="text-xs sm:text-sm text-[#424842] hover:text-[#00190A] transition-colors">
                 Insights
               </Link>
             </div>
@@ -137,19 +137,19 @@ export default function Footer() {
         </div>
 
         {/* Simplified Bottom Bar: Clean Copyright & Links */}
-        <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-emerald-100/70">
-          <p className="text-[11px] text-emerald-200/70">
+        <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-[#52635B]">
+          <p className="text-[11px] text-[#52635B]">
             &copy; {siteConfig.company.foundedYear} Hundredfold Innovation Network Ltd (H.I.N). All Rights Reserved.
           </p>
 
-          <div className="flex items-center gap-6 text-xs font-medium text-emerald-200/80">
-            <Link href="/about" className="hover:text-white transition-colors">
+          <div className="flex items-center gap-6 text-xs font-medium text-[#52635B]">
+            <Link href="/about" className="hover:text-[#00190A] transition-colors">
               Governance
             </Link>
-            <Link href="/the-fold#join" className="hover:text-white transition-colors">
+            <Link href="/the-fold#join" className="hover:text-[#00190A] transition-colors">
               Join The Fold
             </Link>
-            <Link href="/about#contact" className="hover:text-white transition-colors">
+            <Link href="/about#contact" className="hover:text-[#00190A] transition-colors">
               Contact
             </Link>
           </div>
