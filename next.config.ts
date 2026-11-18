@@ -7,6 +7,15 @@ const nextConfig: NextConfig = {
   images: {
     formats: ["image/avif", "image/webp"],
   },
+  async redirects() {
+    return [
+      {
+        source: "/business",
+        destination: "/investments",
+        permanent: true,
+      },
+    ];
+  },
   experimental: {
     agentUpgrade: "security",
   },

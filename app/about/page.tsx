@@ -326,10 +326,10 @@ export default function AboutPage() {
               {/* Link CTA */}
               <div className="pt-4 border-t border-[#DEF2F4]">
                 <Link
-                  href="/business"
+                  href="/investments"
                   className="group inline-flex items-center gap-2 text-base font-semibold text-[#2D6C00] underline underline-offset-8 decoration-2 decoration-[#2D6C00] hover:text-[#00190A] hover:decoration-[#00190A] transition-all"
                 >
-                  <span>Explore Our Commercial Scope</span>
+                  <span>Explore Our Investments</span>
                   <ArrowRightIcon className="w-4 h-4 text-[#2D6C00] group-hover:translate-x-1 group-hover:text-[#00190A] transition-all" />
                 </Link>
               </div>

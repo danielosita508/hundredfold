@@ -63,7 +63,7 @@ const TABS: TabItem[] = [
     image: "/images/agri_business_showcase.jpg",
     caption: "Agriculture Corridor • Sourcing & Aggregation",
     ctaText: "View Agriculture Scope",
-    ctaHref: "/business#agro-trading",
+    ctaHref: "/investments#agriculture",
   },
   {
     id: "asset-acquisition",
@@ -80,7 +80,7 @@ const TABS: TabItem[] = [
     image: "/images/commercial_real_estate.jpg",
     caption: "Real Estate • Productive Commercial Infrastructure",
     ctaText: "Explore Real Estate Strategy",
-    ctaHref: "/business#asset-acquisition",
+    ctaHref: "/investments#real-estate",
   },
   {
     id: "finance",
@@ -97,7 +97,7 @@ const TABS: TabItem[] = [
     image: "/images/strategic_partnerships.jpg",
     caption: "Finance • Institutional Capital Stewardship",
     ctaText: "Explore Finance Scope",
-    ctaHref: "/business#finance",
+    ctaHref: "/investments#finance",
   },
   {
     id: "technology",
@@ -114,7 +114,7 @@ const TABS: TabItem[] = [
     image: "/images/african_business_ventures.jpg",
     caption: "Technology • Digital Infrastructure & Enterprise Systems",
     ctaText: "Explore Technology Scope",
-    ctaHref: "/business#technology",
+    ctaHref: "/investments#technology",
   },
   {
     id: "the-fold",

@@ -122,8 +122,8 @@ export default function Footer() {
               <Link href="/about" className="text-xs sm:text-sm text-emerald-100/75 hover:text-white transition-colors">
                 About Us
               </Link>
-              <Link href="/business" className="text-xs sm:text-sm text-emerald-100/75 hover:text-white transition-colors">
-                Our Business
+              <Link href="/investments" className="text-xs sm:text-sm text-emerald-100/75 hover:text-white transition-colors">
+                Investments
               </Link>
               <Link href="/partnerships" className="text-xs sm:text-sm text-emerald-100/75 hover:text-white transition-colors">
                 Partnerships

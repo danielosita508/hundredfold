@@ -22,29 +22,29 @@ const HERO_SLIDES = [
   },
 ];
 
-// Strategic Business Sectors conforming to Heirs Holdings panoramic strip architecture
+// Strategic Investment Sectors conforming to Heirs Holdings panoramic strip architecture
 const BUSINESS_SECTORS = [
   {
     title: "Agriculture",
-    href: "/business#agriculture",
+    href: "/investments#agriculture",
     image: "/images/agric.jpg",
     alt: "Agriculture and agricultural commodity supply chains",
   },
   {
     title: "Real Estate",
-    href: "/business#real-estate",
+    href: "/investments#real-estate",
     image: "/images/business-skyscraper_ZDUJ7AJIQ2.jpg",
     alt: "Commercial real estate and productive tangible assets",
   },
   {
     title: "Finance",
-    href: "/business#finance",
+    href: "/investments#finance",
     image: "/images/photo-1590283603385-17ffb3a7f29f.avif",
     alt: "Financial capital stewardship and strategic investment",
   },
   {
     title: "Technology",
-    href: "/business#technology",
+    href: "/investments#technology",
     image: "/images/premium_photo-1661963212517-830bbb7d76fc.avif",
     alt: "Technology infrastructure and digital enterprise solutions",
   },
@@ -238,7 +238,7 @@ export default function Home() {
             <div className="flex flex-col gap-3 max-w-2xl">
               <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#ABF67E]/30 text-[#2D6C00] text-xs uppercase font-bold tracking-wider w-fit">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#2D6C00]" />
-                <span>OUR BUSINESS</span>
+                <span>INVESTMENTS</span>
               </div>
 
               <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-semibold text-[#00190A] tracking-tight">
@@ -252,10 +252,10 @@ export default function Home() {
 
             <div className="shrink-0">
               <Link
-                href="/business"
+                href="/investments"
                 className="inline-flex items-center gap-2 text-sm uppercase tracking-wider text-[#2D6C00] font-bold hover:text-[#00190A] transition-colors"
               >
-                <span>View Full Business Scope</span>
+                <span>View Full Investment Scope</span>
                 <ArrowRightIcon className="w-4 h-4" />
               </Link>
             </div>
@@ -385,7 +385,7 @@ export default function Home() {
                   href="/the-fold"
                   className="inline-flex items-center justify-center px-8 py-4 rounded-xl bg-[#0A2F1B] text-white text-sm font-semibold shadow-md hover:bg-[#00190A] transition-all group"
                 >
-                  <span>Enquire About Joining The Fold</span>
+                  <span>Join The Fold</span>
                   <ArrowRightIcon className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform text-[#ABF67E]" />
                 </Link>
               </div>

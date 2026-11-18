@@ -24,7 +24,7 @@ const siteConfig = {
   navigation: [
     { label: "Home", href: "/" },
     { label: "About Us", href: "/about" },
-    { label: "Our Business", href: "/business" },
+    { label: "Investments", href: "/investments" },
     { label: "Partnerships", href: "/partnerships" },
     { label: "The Fold", href: "/the-fold" },
     { label: "News & Insights", href: "/insights" },
