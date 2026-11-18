@@ -555,22 +555,17 @@ export default function AboutPage() {
                 />
               </div>
 
-              {/* Right Side: Name, Position, and Portfolio on the side */}
+              {/* Right Side: Name, Position, and Bio */}
               <div className="flex-1 p-6 sm:p-8 lg:p-10 flex flex-col justify-center overflow-y-auto max-h-[85vh] md:max-h-[560px]">
-                <div className="space-y-4">
-                  {/* Position Badge */}
-                  <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-[#ABF67E]/30 text-[#2D6C00] text-xs uppercase font-bold tracking-wider w-fit">
-                    {selectedLeader.role}
-                  </span>
-
+                <div className="space-y-3">
                   {/* Leader Name */}
                   <h3 className="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold text-[#00190A] tracking-tight">
                     {selectedLeader.name}
                   </h3>
 
-                  {/* Portfolio / Focus Title */}
-                  <p className="text-sm sm:text-base font-semibold text-[#2D6C00]">
-                    {selectedLeader.focus}
+                  {/* Position Title under Name (Unwrapped) */}
+                  <p className="text-xs sm:text-sm uppercase font-bold tracking-wider text-[#2D6C00]">
+                    {selectedLeader.role}
                   </p>
 
                   <div className="w-full h-px bg-[#DEF2F4] my-3" />
