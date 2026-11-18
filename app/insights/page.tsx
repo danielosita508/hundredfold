@@ -1,8 +1,8 @@
 import React, { Suspense } from "react";
 import type { Metadata } from "next";
 import Link from "next/link";
-import Image from "next/image";
 import { getAllArticles, getAllCategories } from "@/lib/markdown";
+import InsightsHero from "@/components/insights/InsightsHero";
 import {
   ShieldCheckIcon,
   ArrowRightIcon,
@@ -40,69 +40,8 @@ async function InsightsContent({
 
   return (
     <div className="relative overflow-hidden bg-[#E9FDFF] text-[#0C1E20] min-h-screen">
-      {/* ─── SECTION 1: TOP EDITORIAL HERO (Photographic Backdrop) ─── */}
-      <section className="relative w-full overflow-hidden min-h-[440px] lg:min-h-[500px] pt-32 lg:pt-36 pb-16 lg:pb-20 flex flex-col justify-end bg-[#0A2F1B]">
-        {/* Background Image */}
-        <div className="absolute inset-0 z-0">
-          <Image
-            src="/images/insights_agro_corridor.jpg"
-            alt="Hundredfold Commercial Intelligence & Macro Perspectives"
-            fill
-            priority
-            sizes="100vw"
-            className="object-cover object-center"
-          />
-        </div>
-
-        {/* Dark Cinematic Vignette & Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/60 to-black/75 z-[1]" />
-
-        <div className="max-w-[1320px] mx-auto px-6 lg:px-12 w-full relative z-10 flex flex-col gap-6">
-          <div className="flex flex-wrap items-center justify-between gap-4 py-2 px-5 rounded-full bg-white/15 backdrop-blur-md border border-white/20 shadow-xs text-white">
-            <div className="flex items-center gap-3">
-              <span className="w-2 h-2 rounded-full bg-[#ABF67E] animate-pulse" />
-              <span className="text-[11px] uppercase tracking-wider text-[#ABF67E] font-bold">
-                COMMERCIAL INTELLIGENCE DESK
-              </span>
-              <span className="text-xs text-white/80 hidden md:inline">
-                &bull; Macro Analysis: African Agro-Corridors &amp; Asset Compounding
-              </span>
-            </div>
-            <div className="flex items-center gap-6 text-xs text-white/80 font-mono">
-              <span className="text-white font-bold">PAN-AFRICAN &bull; REGIONAL HUBS</span>
-            </div>
-          </div>
-
-          <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 pt-2">
-            <div className="flex flex-col gap-3 max-w-3xl">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/15 backdrop-blur-md text-[#ABF67E] border border-white/20 text-xs uppercase font-bold tracking-wider w-fit">
-                <span>H.I.N RESEARCH &amp; INTELLIGENCE</span>
-              </div>
-              <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl text-white tracking-tight font-semibold leading-[1.08]">
-                Market Perspectives &amp; Corporate Dispatches
-              </h1>
-              <p className="text-base sm:text-lg text-white/85 leading-relaxed">
-                Thought leadership, macroeconomic analysis, and strategic intelligence shaping African commerce and institutional asset deployment.
-              </p>
-            </div>
-
-            {/* Sovereign Focus Macro Pod */}
-            <div className="flex items-center gap-4 p-5 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 shadow-xs shrink-0 text-white">
-              <div className="flex flex-col">
-                <span className="text-[10px] uppercase text-white/70 tracking-wider font-bold">
-                  Sovereign Focus
-                </span>
-                <span className="font-serif text-2xl font-bold text-white mt-0.5">
-                  5 Categories
-                </span>
-                <span className="text-xs text-[#ABF67E] font-semibold">
-                  Agro &bull; Land &bull; Governance
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* ─── SECTION 1: TOP EDITORIAL HERO (Full-Bleed Photographic Backdrop matching About page) ─── */}
+      <InsightsHero />
 
       <div className="max-w-[1320px] mx-auto px-6 lg:px-12 py-12 w-full flex flex-col gap-12 relative z-10">
 

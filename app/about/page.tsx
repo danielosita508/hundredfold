@@ -182,12 +182,12 @@ export default function AboutPage() {
   return (
     <div className="relative overflow-hidden bg-[#E9FDFF] text-[#0C1E20]">
 
-      {/* ─── SECTION 1: EDITORIAL HERO BANNER (Full-Bleed Photographic Backdrop) ─── */}
-      <section id="overview" className="relative w-full min-h-screen flex flex-col justify-end pb-8 sm:pb-10 lg:pb-12 pt-32 overflow-hidden bg-[#0A2F1B]">
+      {/* ─── SECTION 1: EDITORIAL HERO BANNER (Full-Bleed Photographic Backdrop with Frosted Glass) ─── */}
+      <section id="overview" className="relative w-full min-h-[90vh] lg:min-h-screen flex flex-col justify-end pb-12 sm:pb-16 lg:pb-24 pt-32 overflow-hidden bg-[#0A2F1B]">
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <Image
-            src="/images/african_business_ventures.jpg"
+            src="/images/pexels-artem-korolev-2159253660-38320074.jpg"
             alt="Hundredfold Pan-African Enterprise - Redefining Partnerships"
             fill
             priority
@@ -196,34 +196,59 @@ export default function AboutPage() {
           />
         </div>
 
-        {/* Dark Cinematic Vignette & Bottom Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/55 to-black/65 z-[1]" />
+        {/* Cinematic Dark Frosted Glass Overlay */}
+        <div className="absolute inset-0 bg-black/50 backdrop-blur-sm z-10 pointer-events-none" />
 
-        {/* Hero Title Container: Shifted to the left and placed lower */}
-        <div className="w-full px-5 sm:px-8 lg:px-12 relative z-10 flex flex-col items-start text-left">
+        {/* Dark Cinematic Vignette & Bottom Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-black/60 z-10 pointer-events-none" />
+
+        {/* Subtle emerald brand glow */}
+        <div className="absolute bottom-0 left-0 w-[550px] h-[340px] bg-[#2D6C00]/25 rounded-full blur-[140px] pointer-events-none z-10" />
+
+        {/* Hero Title Container Layered on Top (z-20) */}
+        <div className="w-full max-w-[1360px] mx-auto px-6 lg:px-12 relative z-20 flex flex-col items-start text-left">
+          <motion.div
+            initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: PRO_MAX_EASE }}
+            className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#ABF67E]/30 text-[#ABF67E] text-xs uppercase font-bold tracking-wider mb-4 border border-[#ABF67E]/30"
+          >
+            <span className="w-1.5 h-1.5 rounded-full bg-[#ABF67E]" />
+            <span>ABOUT HUNDREDFOLD</span>
+          </motion.div>
+
           <motion.h1
             initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 24 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: PRO_MAX_EASE }}
-            className="font-serif text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl text-white tracking-tight font-medium leading-none drop-shadow-2xl text-left whitespace-nowrap"
+            transition={{ duration: 0.8, delay: 0.1, ease: PRO_MAX_EASE }}
+            className="font-serif text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-white tracking-tight font-medium leading-[1.05] drop-shadow-2xl text-left"
           >
             Redefining Partnerships.
           </motion.h1>
+
+          <motion.p
+            initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2, ease: PRO_MAX_EASE }}
+            className="text-base sm:text-lg md:text-xl text-white/90 max-w-3xl font-light leading-relaxed mt-4 drop-shadow-md"
+          >
+            An institutional African business and investment network building disciplined, generative enterprises across vital economic frontiers.
+          </motion.p>
         </div>
       </section>
 
-      {/* ─── STEP 2: "ABOUT US" SECTION (Executive Story with CEO Portrait & Full-Width Continuation) ─── */}
-      <section id="story" className="relative w-full pt-16 sm:pt-20 pb-10 sm:pb-12 lg:pb-14 px-6 lg:px-12 bg-white/70 scroll-mt-20">
+      {/* ─── STEP 2: "ABOUT US" SECTION (High-End Magazine Feature with B&W Editorial Portrait) ─── */}
+      <section id="story" className="relative w-full pt-16 sm:pt-20 pb-12 sm:pb-16 lg:pb-20 px-6 lg:px-12 bg-white/70 scroll-mt-20">
         <div className="max-w-[1240px] mx-auto">
           <motion.div
             initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.15 }}
             transition={{ duration: 0.55, ease: PRO_MAX_EASE }}
-            className="space-y-8"
+            className="space-y-10"
           >
             {/* Main Story & Founder Feature Grid */}
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
 
               {/* Left Column: Heading and Narrative Paragraphs */}
               <div className="lg:col-span-7 space-y-6">
@@ -232,12 +257,12 @@ export default function AboutPage() {
                     <span>ABOUT US</span>
                   </div>
 
-                  <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-semibold text-[#00190A] tracking-tight">
+                  <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-semibold text-[#00190A] tracking-tight leading-[1.12]">
                     Founded for African Enterprise.
                   </h2>
                 </div>
 
-                <div className="space-y-5 text-base sm:text-lg text-[#374138] leading-relaxed">
+                <div className="space-y-5 text-base sm:text-lg text-[#374138] leading-relaxed font-normal">
                   <p>
                     Hundredfold Innovation Network Ltd was established to address the structural gap between African commercial opportunity and disciplined institutional execution. While Africa possesses abundant natural resources, vibrant markets and ambitious entrepreneurs, sustainable wealth creation requires pooled resources, rigorous governance and strategic operational frameworks.
                   </p>
@@ -252,15 +277,15 @@ export default function AboutPage() {
                 </div>
               </div>
 
-              {/* Right Column: Large Portrait of Founder & CEO with Overlay Quote at the Bottom */}
+              {/* Right Column: High-End Magazine Feature with B&W Image and Executive Quote */}
               <div className="lg:col-span-5">
                 <div className="relative aspect-[3/4] w-full rounded-3xl overflow-hidden shadow-2xl border border-white/60 bg-[#0A2F1B] group">
                   <Image
-                    src="/images/team_daniel_evans_v3.jpg"
-                    alt="Daniel C. Evans — Founder & CEO, Hundredfold Innovation Network Ltd"
+                    src="/images/pexels-artempodrez-6584751.jpg"
+                    alt="Editorial executive portrait — High-end African enterprise feature"
                     fill
                     sizes="(max-width: 1024px) 100vw, 550px"
-                    className="object-cover object-top group-hover:scale-105 transition-transform duration-700 ease-out"
+                    className="object-cover object-top grayscale group-hover:scale-105 transition-transform duration-700 ease-out"
                     priority
                   />
 
@@ -570,6 +595,77 @@ export default function AboutPage() {
           </div>
         )}
       </AnimatePresence>
+
+      {/* ─── COMMUNITY, ALLIANCES & THE FOLD COHORTS (Editorial Feature with High-End Image) ─── */}
+      <section id="community" className="w-full px-6 lg:px-12 py-16 sm:py-20 lg:py-24 bg-[#E9FDFF] border-t border-[#DEF2F4] scroll-mt-20">
+        <div className="max-w-[1240px] mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.6, ease: PRO_MAX_EASE }}
+            className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center"
+          >
+            {/* Left Column: Image with Glass Overlay */}
+            <div className="lg:col-span-5 relative aspect-[4/3] sm:aspect-[1/1] w-full rounded-3xl overflow-hidden shadow-2xl border border-white/80 bg-[#0A2F1B] group">
+              <Image
+                src="/images/istockphoto-2189200243-612x612.jpg"
+                alt="Leadership, Training, Community & Strategic Alliance Cohorts"
+                fill
+                sizes="(max-width: 1024px) 100vw, 500px"
+                className="object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent pointer-events-none" />
+              <div className="absolute inset-x-0 bottom-0 p-6 z-10 text-white">
+                <span className="text-[10px] font-mono uppercase tracking-widest text-[#ABF67E] font-bold">
+                  Leadership &amp; Community
+                </span>
+                <h4 className="font-serif text-lg font-semibold text-white mt-1">
+                  Collective Strength, Mentorship &amp; Governance
+                </h4>
+              </div>
+            </div>
+
+            {/* Right Column: Narrative & Links */}
+            <div className="lg:col-span-7 space-y-6">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#ABF67E]/30 text-[#2D6C00] text-xs uppercase font-bold tracking-wider">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#2D6C00]" />
+                <span>THE FOLD &amp; ALLIANCES</span>
+              </div>
+
+              <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-semibold text-[#00190A] tracking-tight leading-[1.12]">
+                Convening Forward-Thinking Leaders.
+              </h2>
+
+              <p className="text-base sm:text-lg text-[#424842] leading-relaxed">
+                Through The Fold and our institutional alliances, we assemble private syndicates and ambitious business operators into structured cohorts. Every cohort provides member mentorship, financial education, and an active voice in governance.
+              </p>
+
+              <div className="flex flex-wrap gap-2.5 pt-1">
+                <span className="px-3.5 py-1.5 rounded-lg bg-white text-[#00190A] text-xs font-semibold border border-[#DEF2F4] shadow-xs">
+                  Cohort Mentorship
+                </span>
+                <span className="px-3.5 py-1.5 rounded-lg bg-white text-[#00190A] text-xs font-semibold border border-[#DEF2F4] shadow-xs">
+                  Sovereign Syndicates
+                </span>
+                <span className="px-3.5 py-1.5 rounded-lg bg-white text-[#00190A] text-xs font-semibold border border-[#DEF2F4] shadow-xs">
+                  Active Governance
+                </span>
+              </div>
+
+              <div className="pt-2">
+                <Link
+                  href="/the-fold"
+                  className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-[#0A2F1B] text-white text-sm font-semibold hover:bg-[#00190A] transition-colors shadow-sm group"
+                >
+                  <span>Explore The Fold Community</span>
+                  <ArrowRightIcon className="w-4 h-4 text-[#ABF67E] group-hover:translate-x-1 transition-transform" />
+                </Link>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
 
       {/* ─── VISION & MISSION STATEMENT (Bottom Section) ─── */}
       <section id="vision-mission" className="w-full px-6 lg:px-12 py-16 lg:py-24 bg-white border-t border-[#c1c8c0]/25 scroll-mt-20">

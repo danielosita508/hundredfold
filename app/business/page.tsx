@@ -10,44 +10,75 @@ const PRO_MAX_EASE = [0.16, 1, 0.3, 1] as const;
 
 interface PortfolioSector {
   id: string;
+  number: string;
   title: string;
   image: string;
   alt: string;
+  tagline: string;
   description: string;
+  highlights: string[];
 }
 
 const PORTFOLIO_SECTORS: PortfolioSector[] = [
   {
     id: "agriculture",
+    number: "01",
     title: "Agriculture",
-    image: "/images/agri_business_showcase.jpg",
-    alt: "Agricultural commodity trading, processing, and supply-chain operations",
+    image: "/images/agric.jpg",
+    alt: "Agricultural commodity trading, processing, and agrarian supply-chain operations",
+    tagline: "Sovereign Agrarian Corridors & Commodity Supply",
     description:
-      "We participate in agricultural commodity trading through sourcing relationships, supply-chain coordination, and buyer-supplier partnerships connecting rural agrarian basins with commercial off-takers across Nigeria and West Africa.",
+      "We participate in agricultural commodity trading through robust sourcing relationships, supply-chain coordination, and buyer-supplier partnerships connecting rural agrarian basins with commercial off-takers across Nigeria and West Africa. Sourcing staple commodities at institutional scale, we bridge production and industrial demand.",
+    highlights: [
+      "Agro-Commodity Aggregation",
+      "Off-Taker Contract Structuring",
+      "Regional Supply Chain Logistics",
+    ],
   },
   {
     id: "real-estate",
+    number: "02",
     title: "Real Estate",
-    image: "/images/commercial_real_estate.jpg",
+    image: "/images/business-skyscraper_ZDUJ7AJIQ2.jpg",
     alt: "Commercial real estate, prime commercial land, and productive physical infrastructure",
+    tagline: "Productive Physical Assets & Commercial Real Estate",
     description:
-      "We acquire and develop prime commercial real estate, logistics hubs, and tangible physical assets designed for long-term capital preservation, income generation, and sovereign balance-sheet compounding.",
+      "We acquire and develop prime commercial real estate, logistics hubs, and tangible physical assets designed for long-term capital preservation, income generation, and sovereign balance-sheet compounding. Our focus is on prime commercial corridors that yield steady cash flow and inflation-resilient equity.",
+    highlights: [
+      "Prime Commercial Land Holdings",
+      "Logistics & Warehousing Corridors",
+      "Balance-Sheet Compounding Assets",
+    ],
   },
   {
     id: "finance",
+    number: "03",
     title: "Finance",
-    image: "/images/strategic_partnerships.jpg",
-    alt: "Institutional financial stewardship, capital deployment, and strategic alliances",
+    image: "/images/photo-1590283603385-17ffb3a7f29f.avif",
+    alt: "Institutional financial stewardship, capital deployment, and strategic market analytics",
+    tagline: "Disciplined Capital Stewardship & Co-Investment",
     description:
-      "We deploy patient capital and structure institutional financial partnerships to support viable enterprise expansion, providing structured liquidity and transparent co-investment vehicles.",
+      "We deploy patient capital and structure institutional financial partnerships to support viable enterprise expansion. Through transparent co-investment syndicates and rigorous risk-adjusted due diligence, we provide structured liquidity and governance-first capital solutions.",
+    highlights: [
+      "Structured Co-Investment Syndicates",
+      "Due Diligence & Valuation Rigour",
+      "Long-Term Capital Preservation",
+    ],
   },
   {
     id: "technology",
+    number: "04",
     title: "Technology",
-    image: "/images/african_business_ventures.jpg",
+    image: "/images/premium_photo-1661963212517-830bbb7d76fc.avif",
     alt: "Digital technology infrastructure, enterprise platforms, and scalable African solutions",
+    tagline: "Digital Infrastructure & Enterprise Systems",
     description:
-      "We invest in foundational digital infrastructure, commercial software platforms, and scalable technological platforms that accelerate trade, automate operations, and expand market access across the continent.",
+      "We invest in foundational digital infrastructure, commercial software platforms, and scalable technological platforms that accelerate trade, automate operations, and expand market access across the continent. By integrating digital efficiency into physical enterprise, we build competitive moats.",
+    highlights: [
+      "Enterprise Automation Platforms",
+      "Trade & Commodity Digitization",
+      "Scalable Digital Infrastructure",
+    ],
   },
 ];
 
@@ -69,12 +100,12 @@ export default function BusinessPage() {
   return (
     <div className="relative overflow-hidden bg-[#E9FDFF] text-[#0C1E20] font-sans">
 
-      {/* ─── STEP 1: THE HERO SECTION (Massive Skyline Image & Clean Title Only) ─── */}
-      <section id="overview" className="relative w-full min-h-screen flex flex-col justify-end pb-8 sm:pb-10 lg:pb-12 pt-32 overflow-hidden bg-[#0A2F1B]">
+      {/* ─── STEP 1: THE HERO SECTION (Massive Skyline with Frosted Glass Overlay) ─── */}
+      <section id="overview" className="relative w-full min-h-[90vh] lg:min-h-screen flex flex-col justify-end pb-12 sm:pb-16 lg:pb-24 pt-32 overflow-hidden bg-[#0A2F1B]">
         {/* Full-Bleed Corporate Skyscraper / Skyline Background */}
         <div className="absolute inset-0 z-0">
           <Image
-            src="/images/hero_industrial_aerial.jpg"
+            src="/images/pexels-towfiqu-barbhuiya-3440682-14527417.jpg"
             alt="Our Holdings - Hundredfold Pan-African Skyline"
             fill
             priority
@@ -83,40 +114,70 @@ export default function BusinessPage() {
           />
         </div>
 
-        {/* Dark Cinematic Vignette & Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/50 to-black/60 z-[1]" />
+        {/* Cinematic Dark Frosted Glass Overlay */}
+        <div className="absolute inset-0 bg-black/50 backdrop-blur-sm z-10 pointer-events-none" />
 
-        {/* Hero Title Container: Shifted to the left and placed lower */}
-        <div className="w-full px-5 sm:px-8 lg:px-12 relative z-10 flex flex-col items-start text-left">
+        {/* Dark Cinematic Vignette & Directional Gradient */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-black/60 z-10 pointer-events-none" />
+
+        {/* Subtle emerald brand glow */}
+        <div className="absolute bottom-0 left-0 w-[550px] h-[320px] bg-[#2D6C00]/25 rounded-full blur-[140px] pointer-events-none z-10" />
+
+        {/* Hero Title Container Layered on Top (z-20) */}
+        <div className="w-full max-w-[1320px] mx-auto px-6 lg:px-12 relative z-20 flex flex-col items-start text-left">
+          <motion.div
+            initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: PRO_MAX_EASE }}
+            className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#ABF67E]/30 text-[#ABF67E] text-xs uppercase font-bold tracking-wider mb-4 border border-[#ABF67E]/30"
+          >
+            <span className="w-1.5 h-1.5 rounded-full bg-[#ABF67E]" />
+            <span>COMMERCIAL SCOPE</span>
+          </motion.div>
+
           <motion.h1
             initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 24 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: PRO_MAX_EASE }}
-            className="font-serif text-4xl sm:text-6xl md:text-7xl lg:text-8xl text-white tracking-tight font-medium leading-[1.08] drop-shadow-2xl text-left whitespace-nowrap"
+            transition={{ duration: 0.8, delay: 0.1, ease: PRO_MAX_EASE }}
+            className="font-serif text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-white tracking-tight font-medium leading-[1.05] drop-shadow-2xl text-left"
           >
             Investment Portfolio
           </motion.h1>
-        </div>
-      </section>
 
-      {/* ─── STEP 2: PORTFOLIO HIGHLIGHT (Concise Single Summary Statement) ─── */}
-      <section className="w-full py-8 sm:py-10 lg:py-12 px-6 lg:px-12 bg-white/90 border-b border-[#DEF2F4]">
-        <div className="max-w-[960px] mx-auto text-center">
           <motion.p
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
-            variants={fadeInVariants}
-            className="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-[2.6rem] text-[#00190A] leading-relaxed font-normal tracking-tight"
+            initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2, ease: PRO_MAX_EASE }}
+            className="text-base sm:text-lg md:text-xl text-white/90 max-w-3xl font-light leading-relaxed mt-4 drop-shadow-md"
           >
-            We invest in sectors that provide strong long-term returns and have the ability to transform Africa&apos;s economy.
+            Deploying capital, rigorous diligence, and strategic networks across four foundational African commercial pillars.
           </motion.p>
         </div>
       </section>
 
-      {/* ─── STEP 3: THE 4 INVESTMENT SECTORS (Clean, Image-Driven Portfolio Blocks) ─── */}
-      <section className="w-full pt-12 sm:pt-16 lg:pt-20 pb-20 lg:pb-32 px-6 lg:px-12 bg-[#E9FDFF]">
-        <div className="max-w-[1240px] mx-auto space-y-24 sm:space-y-32 lg:space-y-40">
+      {/* ─── STEP 2: PORTFOLIO HIGHLIGHT (Concise Single Summary Statement) ─── */}
+      <section className="w-full py-12 sm:py-16 lg:py-20 px-6 lg:px-12 bg-white/90 border-b border-[#DEF2F4]">
+        <div className="max-w-[1000px] mx-auto text-center">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+            variants={fadeInVariants}
+            className="space-y-4"
+          >
+            <span className="text-xs uppercase tracking-widest text-[#2D6C00] font-bold">
+              STRATEGIC ASSET ALLOCATION
+            </span>
+            <p className="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-[2.6rem] text-[#00190A] leading-relaxed font-normal tracking-tight">
+              We invest in sectors that provide strong long-term returns and have the ability to transform Africa&apos;s economy.
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ─── STEP 3: THE 4 INVESTMENT SECTORS (Massive Edge-to-Edge Banners with Glass Overlays) ─── */}
+      <section className="w-full py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-12 bg-[#E9FDFF]">
+        <div className="max-w-[1320px] mx-auto space-y-16 sm:space-y-24 lg:space-y-32">
           {PORTFOLIO_SECTORS.map((sector) => (
             <motion.div
               key={sector.title}
@@ -125,27 +186,58 @@ export default function BusinessPage() {
               whileInView="visible"
               viewport={{ once: true, amount: 0.2 }}
               variants={fadeInVariants}
-              className="scroll-mt-28 flex flex-col gap-6 sm:gap-8"
+              className="scroll-mt-28 relative w-full rounded-3xl overflow-hidden shadow-2xl bg-[#0A2F1B] border border-white/60 group"
             >
-              {/* Wide High-Quality Sector Image */}
-              <div className="relative aspect-[16/9] sm:aspect-[21/9] lg:aspect-[2.35/1] w-full rounded-2xl sm:rounded-3xl overflow-hidden shadow-xl bg-slate-900 border border-white/60">
+              {/* Massive Full-Bleed Image Background */}
+              <div className="relative w-full h-[500px] sm:h-[580px] lg:h-[640px] overflow-hidden">
                 <Image
                   src={sector.image}
                   alt={sector.alt}
                   fill
-                  sizes="(max-width: 1240px) 100vw, 1240px"
-                  className="object-cover object-center hover:scale-105 transition-transform duration-700 ease-out"
+                  sizes="(max-width: 1320px) 100vw, 1320px"
+                  className="object-cover object-center group-hover:scale-105 transition-transform duration-1000 ease-out"
                 />
-              </div>
 
-              {/* Title and Short Summary Paragraph Directly Below */}
-              <div className="space-y-3 max-w-3xl">
-                <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-semibold text-[#00190A] tracking-tight">
-                  {sector.title}
-                </h2>
-                <p className="font-sans text-base sm:text-lg lg:text-xl text-[#424842] leading-relaxed">
-                  {sector.description}
-                </p>
+                {/* Cinematic Dark Frosted Glass Overlay */}
+                <div className="absolute inset-0 bg-black/50 backdrop-blur-sm z-10 pointer-events-none" />
+
+                {/* Additional Vignette & Directional Lighting */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-black/30 z-10 pointer-events-none" />
+
+                {/* Overlaid Glass-Morphism Content Card (Layered on top at z-20) */}
+                <div className="absolute inset-0 z-20 p-6 sm:p-10 lg:p-16 flex flex-col justify-end">
+                  <div className="max-w-3xl space-y-4 sm:space-y-5 rounded-2xl sm:rounded-3xl bg-black/40 backdrop-blur-md p-6 sm:p-8 lg:p-10 border border-white/20 shadow-2xl">
+                    <div className="flex items-center gap-3">
+                      <span className="text-[#ABF67E] font-mono text-sm sm:text-base font-bold tracking-wider">
+                        {sector.number}
+                      </span>
+                      <span className="w-8 h-px bg-[#ABF67E]/60" />
+                      <span className="text-xs uppercase tracking-widest font-bold text-white/80">
+                        {sector.tagline}
+                      </span>
+                    </div>
+
+                    <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium text-white tracking-tight leading-[1.08] drop-shadow-md">
+                      {sector.title}
+                    </h2>
+
+                    <p className="font-sans text-sm sm:text-base lg:text-lg text-white/90 leading-relaxed font-light drop-shadow-xs">
+                      {sector.description}
+                    </p>
+
+                    {/* Sector Highlights Chips */}
+                    <div className="pt-2 flex flex-wrap gap-2 sm:gap-2.5">
+                      {sector.highlights.map((item) => (
+                        <span
+                          key={item}
+                          className="px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-white/15 backdrop-blur-md text-[#ABF67E] border border-white/20"
+                        >
+                          {item}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
               </div>
             </motion.div>
           ))}
@@ -153,24 +245,27 @@ export default function BusinessPage() {
       </section>
 
       {/* ─── STEP 4: CLEAN CTA SECTION (Compact Banner) ─── */}
-      <section className="w-full px-6 lg:px-12 py-7 sm:py-8 bg-[#00190A] text-white">
-        <div className="max-w-[1240px] mx-auto flex flex-col md:flex-row md:items-center justify-between gap-6">
+      <section className="w-full px-6 lg:px-12 py-10 sm:py-12 bg-[#00190A] text-white border-t border-white/10">
+        <div className="max-w-[1320px] mx-auto flex flex-col md:flex-row md:items-center justify-between gap-6">
           <div className="flex flex-col gap-1.5 max-w-2xl">
             <span className="text-xs uppercase tracking-wider text-[#ABF67E] font-bold">
               CO-INVESTMENT &amp; ALLIANCES
             </span>
+            <h3 className="font-serif text-2xl sm:text-3xl font-semibold text-white">
+              Partner Across Our Strategic Sectors
+            </h3>
             <p className="text-sm sm:text-base text-white/80 leading-relaxed">
-              We welcome dialogue with institutional partners, qualified co-investors, and commercial collaborators across our 4 strategic sectors.
+              We welcome dialogue with institutional partners, qualified co-investors, and commercial collaborators across our 4 strategic pillars.
             </p>
           </div>
 
           <div className="flex items-center shrink-0">
             <Link
               href="/partnerships"
-              className="inline-flex items-center justify-center px-7 py-3 rounded-full bg-[#ABF67E] text-[#00190A] hover:bg-white transition-colors text-sm font-bold shadow-md"
+              className="inline-flex items-center justify-center px-8 py-3.5 rounded-full bg-[#ABF67E] text-[#00190A] hover:bg-white transition-colors text-sm font-bold shadow-lg group"
             >
               <span>Partner With Us</span>
-              <ArrowRightIcon className="w-4 h-4 ml-2" />
+              <ArrowRightIcon className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
             </Link>
           </div>
         </div>
