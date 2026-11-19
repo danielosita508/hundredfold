@@ -6,11 +6,6 @@ import Image from "next/image";
 import FoldInquiryForm from "@/components/the-fold/FoldInquiryForm";
 import { motion, AnimatePresence, useReducedMotion, type Variants } from "framer-motion";
 import {
-  ShieldCheckIcon,
-  ArrowRightIcon,
-  CheckCircleIcon,
-  BuildingIcon,
-  UsersIcon,
   TrendingUpIcon,
   ChevronLeftIcon,
   ChevronRightIcon,
@@ -21,64 +16,64 @@ import {
 
 const PRO_MAX_EASE = [0.16, 1, 0.3, 1] as const;
 
-// The Fold Hero Auto-Fading Slides
+// The Fold Hero Auto-Fading Slides (Ultra-Concise Copy)
 const THE_FOLD_HERO_SLIDES = [
   {
     image: "/images/pexels-artem-korolev-2159253660-38320074.jpg",
     alt: "The Fold Executive Conclave at Hundredfold Headquarters",
     title: "Welcome to The Fold",
     description:
-      "The private membership and collaborative syndicate network of Hundredfold Innovation Network Ltd, uniting vetted enterprise leaders and capital allocators across African commercial frontiers.",
+      "A private syndicate of vetted enterprise leaders pooling capital into productive African frontiers.",
   },
   {
     image: "/images/benjamin-child-GWe0dlVD9e0-unsplash.jpg",
     alt: "Executive Boardroom Conclave and Private Syndicate Assembly",
     title: "Private Syndicate Conclave",
     description:
-      "Assembling exceptional entrepreneurs and institutional allocators into structured cohorts with active governance, audited yields, and collective leverage.",
+      "Collective leverage and structured cohorts anchored in institutional governance.",
   },
   {
     image: "/images/adeolu-eletu-E7RLgUjjazc-unsplash.jpg",
     alt: "Vetted African Enterprise Leadership Cohort",
     title: "Sovereign Capital Network",
     description:
-      "Pooling private capital into tangible productive assets with institutional transparency and disciplined risk-adjusted compounding.",
+      "Pooling capital into tangible assets with disciplined, risk-adjusted compounding.",
   },
   {
     image: "/images/charles-forerunner-3fPXt37X6UQ-unsplash.jpg",
     alt: "Modern Enterprise Infrastructure and High-Yield Venues",
     title: "Disciplined Stewardship",
     description:
-      "Anchored in our constitution with an 85% direct operational return distribution model to participating cohort syndicate members.",
+      "Direct 85% operational distribution model for participating syndicate members.",
   },
 ];
 
-// Three Sovereign Pillars of The Fold with Rich High-Res Photography
+// Three Sovereign Pillars of The Fold (Summarized to Essential Points)
 const FOLD_PILLARS = [
   {
     number: "01",
-    tag: "SYNDICATE SCALE",
+    tag: "SCALE",
     title: "Collective Leverage",
     description:
-      "Uniting vetted entrepreneurs and allocators into an organized network capable of executing commercial ventures beyond individual scope.",
+      "Pooled capital and commercial scale to execute ventures beyond individual reach.",
     image: "/images/benjamin-child-GWe0dlVD9e0-unsplash.jpg",
     alt: "Executive syndicate assembly and institutional boardroom meeting",
   },
   {
     number: "02",
-    tag: "STRICT CEILING",
-    title: "100-Member Cap",
+    tag: "TRUST",
+    title: "Strict 100 Cap",
     description:
-      "A strict numerical limit per cohort preserving confidentiality, high-trust peer relations, and active participation without mass dilution.",
+      "Deliberate cohort ceiling preserving confidentiality, alignment, and high trust.",
     image: "/images/istockphoto-2189200243-612x612.jpg",
     alt: "Curated peer cohort and executive boardroom discussion",
   },
   {
     number: "03",
-    tag: "DUE DILIGENCE",
-    title: "Audited Governance",
+    tag: "RIGOUR",
+    title: "Audited Yields",
     description:
-      "Continuous commercial due diligence, risk analysis, and priority access to approved trading activities and sovereign assets.",
+      "Disciplined due diligence, risk governance, and board-approved yield distribution.",
     image: "/images/photo-1590283603385-17ffb3a7f29f.avif",
     alt: "Financial data analytics, commercial due diligence, and capital stewardship",
   },
@@ -111,12 +106,12 @@ export default function TheFoldPage() {
   };
 
   const fadeInVariants: Variants = {
-    hidden: { opacity: 0, y: shouldReduceMotion ? 0 : 24 },
+    hidden: { opacity: 0, y: shouldReduceMotion ? 0 : 20 },
     visible: {
       opacity: 1,
       y: 0,
       transition: {
-        duration: shouldReduceMotion ? 0 : 0.6,
+        duration: shouldReduceMotion ? 0 : 0.55,
         ease: PRO_MAX_EASE,
       },
     },
@@ -127,19 +122,19 @@ export default function TheFoldPage() {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: shouldReduceMotion ? 0 : 0.1,
-        delayChildren: shouldReduceMotion ? 0 : 0.05,
+        staggerChildren: shouldReduceMotion ? 0 : 0.08,
+        delayChildren: shouldReduceMotion ? 0 : 0.04,
       },
     },
   };
 
   const cardScrollVariants: Variants = {
-    hidden: { opacity: 0, y: shouldReduceMotion ? 0 : 20 },
+    hidden: { opacity: 0, y: shouldReduceMotion ? 0 : 18 },
     visible: {
       opacity: 1,
       y: 0,
       transition: {
-        duration: shouldReduceMotion ? 0 : 0.5,
+        duration: shouldReduceMotion ? 0 : 0.45,
         ease: PRO_MAX_EASE,
       },
     },
@@ -151,7 +146,7 @@ export default function TheFoldPage() {
       {/* ─── SECTION 1: PRESTIGE HERO CAROUSEL ─── */}
       <section
         id="overview"
-        className="relative w-full min-h-[580px] lg:min-h-[640px] h-[72vh] flex flex-col justify-between overflow-hidden bg-black"
+        className="relative w-full min-h-[560px] lg:min-h-[620px] h-[70vh] flex flex-col justify-between overflow-hidden bg-black"
       >
         {/* Crisp Background Slides */}
         <div className="absolute inset-0 z-0">
@@ -209,7 +204,6 @@ export default function TheFoldPage() {
             </motion.p>
           </div>
         </div>
-
 
         {/* Bottom Hero Controls Container (z-20) */}
         <div className="relative max-w-[1360px] mx-auto px-6 lg:px-12 w-full pb-8 sm:pb-12 z-20 flex items-end justify-between">
@@ -282,7 +276,7 @@ export default function TheFoldPage() {
               href="#join"
               className="rounded-full border border-white/80 bg-black/25 px-7 py-3 text-[14px] font-semibold text-white hover:bg-white hover:text-black transition-all shadow-md backdrop-blur-sm whitespace-nowrap"
             >
-              Request Syndicate Access
+              Request Access
             </Link>
 
             <button
@@ -306,120 +300,110 @@ export default function TheFoldPage() {
         </div>
       </section>
 
-      {/* ─── SECTION 2: CONCLAVE HIGHLIGHT (Concise Institutional Summary Banner) ─── */}
-      <section id="conclave-statement" className="w-full py-12 sm:py-16 lg:py-20 px-6 lg:px-12 bg-white/90 border-b border-[#DEF2F4] scroll-mt-20">
-        <div className="max-w-[1020px] mx-auto text-center">
+      {/* ─── SECTION 2: CONCLAVE HIGHLIGHT (Single Focused Sentence) ─── */}
+      <section id="conclave-statement" className="w-full py-12 sm:py-16 px-6 lg:px-12 bg-white/90 border-b border-[#DEF2F4] scroll-mt-20">
+        <div className="max-w-[960px] mx-auto text-center">
           <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.3 }}
             variants={fadeInVariants}
-            className="space-y-4"
+            className="space-y-3"
           >
             <span className="text-xs uppercase tracking-[0.25em] font-bold text-[#2D6C00] block">
               THE FOLD CONCLAVE
             </span>
-            <p className="font-heading text-2xl sm:text-3xl md:text-4xl lg:text-[2.25rem] text-[#00190A] leading-snug sm:leading-relaxed font-semibold tracking-tight">
-              A private syndicate of vetted enterprise leaders pooling capital into Africa&apos;s most productive commercial frontiers.
-            </p>
-            <p className="text-sm sm:text-base text-[#424842] max-w-2xl mx-auto">
-              Deliberately capped at 100 members per cohort to preserve high trust, confidentiality, and active peer participation.
+            <p className="font-heading text-2xl sm:text-3xl md:text-4xl text-[#00190A] leading-snug sm:leading-relaxed font-semibold tracking-tight">
+              A private syndicate of 100 vetted enterprise leaders pooling capital into Africa&apos;s most productive commercial sectors.
             </p>
           </motion.div>
         </div>
       </section>
 
-      {/* ─── SECTION 3: MAGAZINE SPLIT FEATURE (85% / 15% Surplus Allocation) ─── */}
-      <section className="relative w-full py-16 sm:py-20 lg:py-24 px-6 lg:px-12">
-        <div className="max-w-[1320px] mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+      {/* ─── SECTION 3: 85% / 15% ALLOCATION MODEL (Clean, Summarized Visual Split) ─── */}
+      <section className="relative w-full py-14 sm:py-18 px-6 lg:px-12">
+        <div className="max-w-[1240px] mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
 
-            {/* Left Column: High-End Photographic Feature Card */}
+            {/* Left Column: Clean Image with Minimal Caption */}
             <motion.div
-              initial={{ opacity: 0, scale: 0.97, y: shouldReduceMotion ? 0 : 20 }}
+              initial={{ opacity: 0, scale: 0.98, y: shouldReduceMotion ? 0 : 15 }}
               whileInView={{ opacity: 1, scale: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}
-              transition={{ duration: 0.7, ease: PRO_MAX_EASE }}
+              transition={{ duration: 0.6, ease: PRO_MAX_EASE }}
               className="lg:col-span-6"
             >
-              <div className="relative aspect-[4/3] w-full rounded-3xl overflow-hidden shadow-2xl border border-white bg-[#0A2F1B] group">
+              <div className="relative aspect-[4/3] w-full rounded-3xl overflow-hidden shadow-xl border border-white bg-[#0A2F1B] group">
                 <Image
                   src="/images/istockphoto-2189200243-612x612.jpg"
                   alt="Executive roundtable and syndicate cohort assembly"
                   fill
                   quality={100}
-                  sizes="(max-width: 1024px) 100vw, 650px"
+                  sizes="(max-width: 1024px) 100vw, 600px"
                   className="object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
                 />
 
-                {/* Dark Vignette Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/35 to-transparent pointer-events-none" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent pointer-events-none" />
 
-                <div className="absolute inset-x-0 bottom-0 p-6 sm:p-8 z-10 flex flex-col gap-1.5 text-white">
-                  <span className="text-[11px] font-mono uppercase tracking-widest text-[#ABF67E] font-bold">
-                    Statutory Governance &bull; Audited Yields
+                <div className="absolute inset-x-0 bottom-0 p-6 z-10 flex flex-col gap-1 text-white">
+                  <span className="text-[10px] font-mono uppercase tracking-widest text-[#ABF67E] font-bold">
+                    SURPLUS FRAMEWORK
                   </span>
-                  <h4 className="font-heading text-lg sm:text-xl font-bold text-white tracking-wide">
-                    Surplus Performance Framework
+                  <h4 className="font-heading text-lg sm:text-xl font-bold text-white">
+                    85% / 15% Allocation Model
                   </h4>
-                  <p className="text-xs sm:text-sm text-white/80 max-w-md">
-                    Structured allocation model compliant with corporate MEMART and verified operational yields.
-                  </p>
                 </div>
               </div>
             </motion.div>
 
-            {/* Right Column: Clean Editorial 85% / 15% Breakdown */}
+            {/* Right Column: Clean Summarized Split Card */}
             <motion.div
-              initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 25 }}
+              initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}
-              transition={{ duration: 0.6, ease: PRO_MAX_EASE }}
+              transition={{ duration: 0.55, ease: PRO_MAX_EASE }}
               className="lg:col-span-6 space-y-6"
             >
-              <span className="text-xs uppercase tracking-[0.25em] font-bold text-[#2D6C00] block">
-                DISTRIBUTION STRUCTURE
-              </span>
+              <div>
+                <span className="text-xs uppercase tracking-[0.25em] font-bold text-[#2D6C00] block">
+                  DISTRIBUTION STRUCTURE
+                </span>
+                <h2 className="font-heading text-3xl sm:text-4xl font-semibold text-[#00190A] tracking-tight mt-1">
+                  85% / 15% Surplus Model
+                </h2>
+              </div>
 
-              <h2 className="font-heading text-3xl sm:text-4xl font-semibold text-[#00190A] tracking-tight">
-                The 85% / 15% Profit Allocation Model
-              </h2>
-
-              <p className="text-sm sm:text-base text-[#424842] leading-relaxed">
-                Commercial returns generated from approved trading activities, asset performance, and syndicates are allocated under a transparent, board-approved structure:
-              </p>
-
-              {/* Visual Split Cards */}
+              {/* Visual Split Cards (Clean & Minimal) */}
               <div className="p-6 rounded-2xl bg-white border border-[#DEF2F4] shadow-md space-y-5">
                 <div>
-                  <div className="flex justify-between items-center text-sm font-semibold mb-1.5">
-                    <span className="text-[#00190A] font-bold">Participating Cohort Members</span>
+                  <div className="flex justify-between items-center text-sm font-semibold mb-2">
+                    <span className="text-[#00190A] font-bold">Cohort Members</span>
                     <span className="text-[#2D6C00] font-heading text-2xl font-bold">85%</span>
                   </div>
                   <div className="w-full bg-[#E9FDFF] h-3 rounded-full overflow-hidden border border-[#DEF2F4]">
                     <div className="bg-[#2D6C00] h-full w-[85%] rounded-full" />
                   </div>
-                  <p className="text-xs text-[#556358] mt-1.5">
-                    Distributed directly to members based on audited operational yields and board resolutions.
-                  </p>
+                  <span className="text-xs text-[#556358] block mt-1.5">
+                    Distributed directly to members based on audited operational yields.
+                  </span>
                 </div>
 
-                <div className="pt-3 border-t border-[#DEF2F4]">
-                  <div className="flex justify-between items-center text-sm font-semibold mb-1.5">
-                    <span className="text-[#00190A] font-bold">Network Reserve Stewardship</span>
+                <div className="pt-4 border-t border-[#DEF2F4]">
+                  <div className="flex justify-between items-center text-sm font-semibold mb-2">
+                    <span className="text-[#00190A] font-bold">Reserve &amp; Governance</span>
                     <span className="text-[#0A2F1B] font-heading text-2xl font-bold">15%</span>
                   </div>
                   <div className="w-full bg-[#E9FDFF] h-3 rounded-full overflow-hidden border border-[#DEF2F4]">
                     <div className="bg-[#0A2F1B]/60 h-full w-[15%] rounded-full" />
                   </div>
-                  <p className="text-xs text-[#556358] mt-1.5">
-                    Retained for corporate governance, statutory audits, risk buffering, and operational management.
-                  </p>
+                  <span className="text-xs text-[#556358] block mt-1.5">
+                    Retained for statutory audits, operations, and risk buffering.
+                  </span>
                 </div>
               </div>
 
-              <p className="text-xs text-[#718275] leading-relaxed italic">
-                * Distributions follow Board approvals and verified operational audits. No fixed or guaranteed returns are offered, upholding regulatory compliance.
+              <p className="text-[11px] text-[#718275] italic">
+                * Distributions follow Board approvals and verified operational audits.
               </p>
             </motion.div>
 
@@ -427,76 +411,60 @@ export default function TheFoldPage() {
         </div>
       </section>
 
-      {/* ─── SECTION 4: THREE SOVEREIGN PILLARS (Rich Photographic Cards) ─── */}
-      <section className="relative w-full py-16 sm:py-20 lg:py-24 px-6 lg:px-12 bg-white/70 border-y border-[#DEF2F4]">
-        <div className="max-w-[1320px] mx-auto">
+      {/* ─── SECTION 4: THREE PILLARS (Clean Photographic Cards) ─── */}
+      <section className="relative w-full py-14 sm:py-18 px-6 lg:px-12 bg-white/70 border-y border-[#DEF2F4]">
+        <div className="max-w-[1240px] mx-auto">
           {/* Section Header */}
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 sm:mb-14">
-            <div className="space-y-3">
-              <span className="text-xs uppercase tracking-[0.25em] font-bold text-[#2D6C00] block">
-                COMMUNITY ARCHITECTURE
-              </span>
-              <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl font-semibold text-[#00190A] tracking-tight">
-                Three Pillars of The Fold
-              </h2>
-            </div>
-            <p className="text-sm sm:text-base text-[#424842] max-w-md leading-relaxed">
-              Structured to anchor private capital into tangible productive assets, ethical commerce, and compounding growth.
-            </p>
+          <div className="mb-10 text-center sm:text-left">
+            <span className="text-xs uppercase tracking-[0.25em] font-bold text-[#2D6C00] block">
+              ARCHITECTURE
+            </span>
+            <h2 className="font-heading text-3xl sm:text-4xl font-semibold text-[#00190A] tracking-tight mt-1">
+              Three Pillars of The Fold
+            </h2>
           </div>
 
-          {/* 3 High-End Photographic Cards */}
+          {/* 3 Summarized Photographic Cards */}
           <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.15 }}
             variants={staggerGridVariants}
-            className="grid grid-cols-1 md:grid-cols-3 gap-8"
+            className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8"
           >
             {FOLD_PILLARS.map((pillar) => (
               <motion.div
                 key={pillar.title}
                 variants={cardScrollVariants}
-                className="rounded-3xl overflow-hidden bg-white border border-[#DEF2F4] shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col group"
+                className="rounded-3xl overflow-hidden bg-white border border-[#DEF2F4] shadow-md hover:shadow-xl transition-all duration-300 flex flex-col group"
               >
-                {/* Photographic Header */}
+                {/* Image */}
                 <div className="relative aspect-[16/10] w-full overflow-hidden bg-[#0A2F1B]">
                   <Image
                     src={pillar.image}
                     alt={pillar.alt}
                     fill
                     quality={100}
-                    sizes="(max-width: 768px) 100vw, 420px"
+                    sizes="(max-width: 768px) 100vw, 400px"
                     className="object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent pointer-events-none" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
 
                   <div className="absolute top-4 left-4 z-10">
                     <span className="inline-flex items-center px-3 py-1 rounded-full bg-black/50 backdrop-blur-md border border-white/20 text-[#ABF67E] text-[10px] font-mono font-bold tracking-wider uppercase">
                       {pillar.tag}
                     </span>
                   </div>
-
-                  <div className="absolute bottom-3 right-4 z-10 text-white/70 font-mono text-xs">
-                    PILLAR // {pillar.number}
-                  </div>
                 </div>
 
-                {/* Card Content */}
-                <div className="p-6 sm:p-7 flex-1 flex flex-col justify-between space-y-4">
-                  <div className="space-y-2">
-                    <h3 className="font-heading text-2xl font-bold text-[#00190A] tracking-tight">
-                      {pillar.title}
-                    </h3>
-                    <p className="text-sm text-[#424842] leading-relaxed">
-                      {pillar.description}
-                    </p>
-                  </div>
-
-                  <div className="pt-4 border-t border-[#DEF2F4] flex items-center justify-between text-xs font-semibold text-[#2D6C00]">
-                    <span>Cohort Sovereign Mandate</span>
-                    <ArrowRightIcon className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                  </div>
+                {/* Content */}
+                <div className="p-6 flex-1 flex flex-col justify-between space-y-2">
+                  <h3 className="font-heading text-xl font-bold text-[#00190A] tracking-tight">
+                    {pillar.title}
+                  </h3>
+                  <p className="text-xs sm:text-sm text-[#424842] leading-relaxed">
+                    {pillar.description}
+                  </p>
                 </div>
               </motion.div>
             ))}
@@ -505,7 +473,7 @@ export default function TheFoldPage() {
       </section>
 
       {/* ─── SECTION 5: FULL-BLEED PANORAMIC IMAGE BREAK ─── */}
-      <section className="relative w-full h-[360px] sm:h-[440px] lg:h-[480px] overflow-hidden bg-black flex items-center justify-center">
+      <section className="relative w-full h-[320px] sm:h-[400px] overflow-hidden bg-black flex items-center justify-center">
         <Image
           src="/images/cytonn-photography-n95VMLxqM2I-unsplash.jpg"
           alt="African corporate skyline and sovereign asset development"
@@ -515,31 +483,27 @@ export default function TheFoldPage() {
           className="object-cover object-center"
         />
 
-        {/* Cinematic Overlays */}
         <div className="absolute inset-0 bg-black/55 pointer-events-none" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-transparent to-black/60 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/50 pointer-events-none" />
 
-        <div className="relative max-w-[900px] mx-auto px-6 text-center z-10 space-y-4">
+        <div className="relative max-w-[800px] mx-auto px-6 text-center z-10 space-y-3">
           <span className="text-xs uppercase tracking-[0.25em] font-bold text-[#ABF67E] block">
             THE FOLD MANDATE
           </span>
-          <h2 className="font-heading text-3xl sm:text-5xl lg:text-6xl font-bold text-white tracking-tight drop-shadow-xl">
+          <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight drop-shadow-xl">
             Disciplined Capital. Compounding Enterprise.
           </h2>
-          <p className="text-white/85 text-sm sm:text-base max-w-xl mx-auto font-light">
-            Preserving sovereign purchasing power across generations through organized private syndicate ownership.
-          </p>
         </div>
       </section>
 
       {/* ─── SECTION 6: CANDIDATE REGISTRY INTAKE FORM ─── */}
-      <section id="join" className="relative w-full py-16 sm:py-20 lg:py-24 px-6 lg:px-12 bg-[#E9FDFF] text-[#0C1E20] border-t border-[#DEF2F4] scroll-mt-28">
-        <div className="max-w-[1320px] mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+      <section id="join" className="relative w-full py-14 sm:py-20 px-6 lg:px-12 bg-[#E9FDFF] text-[#0C1E20] border-t border-[#DEF2F4] scroll-mt-28">
+        <div className="max-w-[1240px] mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
 
-            {/* Left Column: Prominent Magazine Editorial Card */}
+            {/* Left Column: Magazine Feature Card */}
             <div className="lg:col-span-5 flex flex-col justify-center">
-              <div className="relative aspect-[3/4] sm:aspect-[4/5] w-full rounded-3xl overflow-hidden shadow-2xl border border-white bg-[#0A2F1B] group">
+              <div className="relative aspect-[3/4] sm:aspect-[4/5] w-full rounded-3xl overflow-hidden shadow-xl border border-white bg-[#0A2F1B] group">
                 <Image
                   src="/images/istockphoto-2211042706-612x612.jpg"
                   alt="The Fold Strategic Alliances and Executive Conclave"
@@ -549,12 +513,10 @@ export default function TheFoldPage() {
                   className="object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
                 />
 
-                {/* Dark Vignette Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent pointer-events-none" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent pointer-events-none" />
 
-                {/* Overlaid Executive Caption */}
-                <div className="absolute inset-x-0 bottom-0 p-6 sm:p-8 z-10 flex flex-col gap-2.5 text-white">
-                  <span className="text-[11px] font-mono uppercase tracking-widest text-[#ABF67E] font-bold">
+                <div className="absolute inset-x-0 bottom-0 p-6 sm:p-8 z-10 flex flex-col gap-2 text-white">
+                  <span className="text-[10px] font-mono uppercase tracking-widest text-[#ABF67E] font-bold">
                     CYCLE 1 ADMISSIONS
                   </span>
 
@@ -562,19 +524,16 @@ export default function TheFoldPage() {
                     Join The Fold
                   </h3>
 
-                  <p className="text-xs sm:text-sm text-white/85 leading-relaxed font-light">
-                    A private syndicate of 100 vetted enterprise operators and capital allocators pooling resources into Africa&apos;s most productive sectors.
+                  <p className="text-xs text-white/80 leading-relaxed font-light">
+                    Confidential syndicate admissions strictly limited to 100 members.
                   </p>
 
-                  <div className="flex flex-wrap gap-2 pt-2">
-                    <span className="px-3.5 py-1.5 rounded-full bg-white/15 backdrop-blur-md text-xs font-mono text-white border border-white/20">
+                  <div className="flex flex-wrap gap-1.5 pt-1">
+                    <span className="px-3 py-1 rounded-full bg-white/15 backdrop-blur-md text-[11px] font-mono text-white border border-white/20">
                       Strict 100 Cap
                     </span>
-                    <span className="px-3.5 py-1.5 rounded-full bg-white/15 backdrop-blur-md text-xs font-mono text-white border border-white/20">
+                    <span className="px-3 py-1 rounded-full bg-white/15 backdrop-blur-md text-[11px] font-mono text-white border border-white/20">
                       Confidential Review
-                    </span>
-                    <span className="px-3.5 py-1.5 rounded-full bg-white/15 backdrop-blur-md text-xs font-mono text-white border border-white/20">
-                      85% Member Surplus
                     </span>
                   </div>
                 </div>
