@@ -25,7 +25,7 @@ const ABOUT_HERO_SLIDES = [
     alt: "Hundredfold Pan-African Enterprise - Redefining Partnerships",
     title: "Redefining Partnerships.",
     description:
-      "An institutional African business and investment network building disciplined, generative enterprises across vital economic frontiers.",
+      "Hundredfold Innovation Network is a community-driven investment and business network designed to connect individuals around structured opportunities for wealth creation.",
   },
   {
     image: "/images/benjamin-child-GWe0dlVD9e0-unsplash.jpg",

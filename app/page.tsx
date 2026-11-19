@@ -24,7 +24,7 @@ const HERO_SLIDES = [
     alt: "Global African commercial partnership and investment landscape",
     title: "Redefining Partnerships.",
     description:
-      "Hundredfold Innovation Network Ltd is an African business and investment company focused on identifying high-impact commercial opportunities, building strategic relationships, and developing ventures with long-term potential.",
+      "Hundredfold Innovation Network is a community-driven investment and business network designed to connect individuals around structured opportunities for wealth creation.",
   },
   {
     image: "/images/cytonn-photography-n95VMLxqM2I-unsplash.jpg",
