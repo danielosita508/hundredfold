@@ -23,23 +23,23 @@ const INSIGHTS_HERO_SLIDES = [
   {
     image: "/images/sean-pollock-PhYq704ffdA-unsplash.jpg",
     alt: "Commercial real estate and tangible asset research",
-    title: "Tangible Sovereign Assets",
+    title: "News & Insights",
     description:
-      "Deep dives into high-yielding real estate corridors, land banking frameworks, and balance-sheet inflation hedges across West Africa.",
+      "Thought leadership, macroeconomic analysis, and strategic intelligence shaping African commerce and institutional asset deployment.",
   },
   {
     image: "/images/andras-vas-Bd7gNnWJBkU-unsplash.jpg",
     alt: "Macroeconomic intelligence and strategic investment analytics",
-    title: "Disciplined Capital Stewardship",
+    title: "News & Insights",
     description:
-      "Market intelligence on structured co-investment syndicates, currency resilience, and high-conviction African enterprise growth.",
+      "Thought leadership, macroeconomic analysis, and strategic intelligence shaping African commerce and institutional asset deployment.",
   },
   {
     image: "/images/insights_the_fold_governance.jpg",
     alt: "Corporate governance and sovereign enterprise thought leadership",
-    title: "Institutional Governance",
+    title: "News & Insights",
     description:
-      "Best practices in statutory AML compliance, board secretarial administration, and Africapitalism investment principles.",
+      "Thought leadership, macroeconomic analysis, and strategic intelligence shaping African commerce and institutional asset deployment.",
   },
 ];
 
