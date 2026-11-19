@@ -545,7 +545,7 @@ export default function InvestmentPhilosophy() {
               </motion.div>
             </div>
 
-            {/* CTA Button matching Heirs Holdings (LEARN MORE in red/green accent) */}
+            {/* CTA Button matching brand green with lemon green underline */}
             <motion.div
               initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 15 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -555,10 +555,10 @@ export default function InvestmentPhilosophy() {
             >
               <Link
                 href="/investments"
-                className="inline-flex items-center gap-2 text-xs sm:text-sm font-bold uppercase tracking-[0.18em] text-[#C0392B] hover:text-[#991B1B] transition-colors group"
+                className="inline-flex items-center gap-2 text-xs sm:text-sm font-bold uppercase tracking-[0.18em] text-[#2D6C00] hover:text-[#00190A] underline underline-offset-8 decoration-2 decoration-[#9BE564] hover:decoration-[#2D6C00] transition-all group"
               >
                 <span>LEARN MORE</span>
-                <ArrowRightIcon className="w-4 h-4 group-hover:translate-x-1.5 transition-transform duration-200" />
+                <ArrowRightIcon className="w-4 h-4 text-[#2D6C00] group-hover:text-[#00190A] group-hover:translate-x-1.5 transition-all duration-200" />
               </Link>
             </motion.div>
 
