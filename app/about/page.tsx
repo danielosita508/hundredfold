@@ -706,7 +706,7 @@ export default function AboutPage() {
             transition={{ duration: 0.6, ease: PRO_MAX_EASE }}
             className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center"
           >
-            {/* Left Column: Image with Glass Overlay */}
+            {/* Left Column: Image with Clean Aesthetic */}
             <div className="lg:col-span-5 relative aspect-[4/3] sm:aspect-[1/1] w-full rounded-3xl overflow-hidden shadow-2xl border border-white/80 bg-[#0A2F1B] group">
               <Image
                 src="/images/istockphoto-2189200243-612x612.jpg"
@@ -716,15 +716,6 @@ export default function AboutPage() {
                 quality={100}
                 className="object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent pointer-events-none" />
-              <div className="absolute inset-x-0 bottom-0 p-6 z-10 text-white">
-                <span className="text-[10px] font-mono uppercase tracking-widest text-[#ABF67E] font-bold">
-                  Leadership &amp; Community
-                </span>
-                <h4 className="font-heading text-lg font-semibold text-white mt-1">
-                  Collective Strength, Mentorship &amp; Governance
-                </h4>
-              </div>
             </div>
 
             {/* Right Column: Narrative & Links */}
@@ -740,18 +731,6 @@ export default function AboutPage() {
               <p className="text-base sm:text-lg text-[#424842] leading-relaxed">
                 Through The Fold and our institutional alliances, we assemble private syndicates and ambitious business operators into structured cohorts. Every cohort provides member mentorship, financial education, and an active voice in governance.
               </p>
-
-              <div className="flex flex-wrap gap-2.5 pt-1">
-                <span className="px-3.5 py-1.5 rounded-lg bg-white text-[#00190A] text-xs font-semibold border border-[#DEF2F4] shadow-xs">
-                  Cohort Mentorship
-                </span>
-                <span className="px-3.5 py-1.5 rounded-lg bg-white text-[#00190A] text-xs font-semibold border border-[#DEF2F4] shadow-xs">
-                  Sovereign Syndicates
-                </span>
-                <span className="px-3.5 py-1.5 rounded-lg bg-white text-[#00190A] text-xs font-semibold border border-[#DEF2F4] shadow-xs">
-                  Active Governance
-                </span>
-              </div>
 
               <div className="pt-2">
                 <Link
