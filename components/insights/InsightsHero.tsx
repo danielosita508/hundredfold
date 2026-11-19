@@ -14,7 +14,7 @@ const PRO_MAX_EASE = [0.16, 1, 0.3, 1] as const;
 
 const INSIGHTS_HERO_SLIDES = [
   {
-    image: "/images/insights_agro_corridor.jpg",
+    image: "/images/tim-mossholder-xDwEa2kaeJA-unsplash.jpg",
     alt: "Agricultural commodity corridors and trade logistics analysis",
     title: "News & Insights",
     description:
@@ -35,7 +35,7 @@ const INSIGHTS_HERO_SLIDES = [
       "Thought leadership, macroeconomic analysis, and strategic intelligence shaping African commerce and institutional asset deployment.",
   },
   {
-    image: "/images/insights_the_fold_governance.jpg",
+    image: "/images/adeolu-eletu-E7RLgUjjazc-unsplash.jpg",
     alt: "Corporate governance and sovereign enterprise thought leadership",
     title: "News & Insights",
     description:

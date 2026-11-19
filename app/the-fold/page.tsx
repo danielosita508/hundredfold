@@ -24,7 +24,7 @@ const PRO_MAX_EASE = [0.16, 1, 0.3, 1] as const;
 // The Fold Hero Auto-Fading Slides
 const THE_FOLD_HERO_SLIDES = [
   {
-    image: "/images/the_fold_executive_lounge.jpg",
+    image: "/images/pexels-artem-korolev-2159253660-38320074.jpg",
     alt: "The Fold Executive Conclave at Hundredfold Headquarters",
     title: "Welcome to The Fold",
     description:
@@ -562,7 +562,7 @@ export default function TheFoldPage() {
             <div className="lg:col-span-5 flex flex-col justify-center">
               <div className="relative aspect-[3/4] sm:aspect-[4/5] w-full rounded-3xl overflow-hidden shadow-2xl border border-white bg-[#0A2F1B] group">
                 <Image
-                  src="/images/strategic_partnerships.jpg"
+                  src="/images/istockphoto-2211042706-612x612.jpg"
                   alt="The Fold Strategic Alliances and Executive Conclave"
                   fill
                   quality={100}

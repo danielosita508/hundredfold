@@ -20,7 +20,7 @@ const PRO_MAX_EASE = [0.16, 1, 0.3, 1] as const;
 // Hero Auto-Fading Slides with sharp corporate Transcorp typography
 const HERO_SLIDES = [
   {
-    image: "/images/watermarked_img_12091658178589332582.jpg",
+    image: "/images/pexels-thomas-haney-175964438-20812782.jpg",
     alt: "Global African commercial partnership and investment landscape",
     title: "Redefining Partnerships.",
     description:
@@ -75,25 +75,25 @@ const BUSINESS_SECTORS = [
   {
     title: "Agriculture",
     href: "/investments#agriculture",
-    image: "/images/agric.jpg",
+    image: "/images/tim-mossholder-xDwEa2kaeJA-unsplash.jpg",
     alt: "Agriculture and agricultural commodity supply chains",
   },
   {
     title: "Real Estate",
     href: "/investments#real-estate",
-    image: "/images/business-skyscraper_ZDUJ7AJIQ2.jpg",
+    image: "/images/sean-pollock-PhYq704ffdA-unsplash.jpg",
     alt: "Commercial real estate and productive tangible assets",
   },
   {
     title: "Finance",
     href: "/investments#finance",
-    image: "/images/photo-1590283603385-17ffb3a7f29f.avif",
+    image: "/images/andras-vas-Bd7gNnWJBkU-unsplash.jpg",
     alt: "Financial capital stewardship and strategic investment",
   },
   {
     title: "Technology",
     href: "/investments#technology",
-    image: "/images/premium_photo-1661963212517-830bbb7d76fc.avif",
+    image: "/images/fotis-fotopoulos-6sAl6aQ4OWI-unsplash.jpg",
     alt: "Technology infrastructure and digital enterprise solutions",
   },
 ];
@@ -382,17 +382,16 @@ export default function Home() {
                   className="object-cover object-center grayscale contrast-110 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-out"
                 />
 
-                {/* Base subtle vignette for text readability */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent pointer-events-none" />
+                {/* Base subtle dark gradient for text legibility (no colored tints) */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent pointer-events-none" />
 
-                {/* Rich Emerald Green Overlay on Hover */}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#00190A]/95 via-[#0A2F1B]/75 to-[#0A2F1B]/35 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-out pointer-events-none" />
-
-                {/* Sector Title (Bottom-Left, Poppins Semi-Bold, Title Case White) */}
-                <div className="relative z-10 p-5 sm:p-6 lg:p-8 flex flex-col justify-end h-full">
-                  <h3 className="font-poppins text-base sm:text-lg lg:text-xl font-semibold tracking-tight text-white drop-shadow-md transform transition-transform duration-500 ease-out group-hover:-translate-y-1">
-                    {sector.title}
-                  </h3>
+                {/* Sector Title: Completely invisible until hovered, slides smoothly up into view */}
+                <div className="relative z-10 p-5 sm:p-6 lg:p-8 flex flex-col justify-end h-full pointer-events-none">
+                  <div className="opacity-0 group-hover:opacity-100 transform translate-y-3 group-hover:translate-y-0 transition-all duration-500 ease-out">
+                    <h3 className="font-poppins text-base sm:text-lg lg:text-xl font-semibold tracking-tight text-white drop-shadow-lg">
+                      {sector.title}
+                    </h3>
+                  </div>
                 </div>
               </Link>
             ))}

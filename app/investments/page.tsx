@@ -70,7 +70,7 @@ const PORTFOLIO_SECTORS: PortfolioSector[] = [
     id: "agriculture",
     number: "01",
     title: "Agriculture",
-    image: "/images/agric.jpg",
+    image: "/images/tim-mossholder-xDwEa2kaeJA-unsplash.jpg",
     alt: "Agricultural commodity trading, processing, and agrarian supply-chain operations",
     tagline: "Sovereign Agrarian Corridors & Commodity Supply",
     description:
@@ -85,7 +85,7 @@ const PORTFOLIO_SECTORS: PortfolioSector[] = [
     id: "real-estate",
     number: "02",
     title: "Real Estate",
-    image: "/images/business-skyscraper_ZDUJ7AJIQ2.jpg",
+    image: "/images/sean-pollock-PhYq704ffdA-unsplash.jpg",
     alt: "Commercial real estate, prime commercial land, and productive physical infrastructure",
     tagline: "Productive Physical Assets & Commercial Real Estate",
     description:
@@ -100,7 +100,7 @@ const PORTFOLIO_SECTORS: PortfolioSector[] = [
     id: "finance",
     number: "03",
     title: "Finance",
-    image: "/images/photo-1590283603385-17ffb3a7f29f.avif",
+    image: "/images/andras-vas-Bd7gNnWJBkU-unsplash.jpg",
     alt: "Institutional financial stewardship, capital deployment, and strategic market analytics",
     tagline: "Disciplined Capital Stewardship & Co-Investment",
     description:
@@ -115,7 +115,7 @@ const PORTFOLIO_SECTORS: PortfolioSector[] = [
     id: "technology",
     number: "04",
     title: "Technology",
-    image: "/images/premium_photo-1661963212517-830bbb7d76fc.avif",
+    image: "/images/fotis-fotopoulos-6sAl6aQ4OWI-unsplash.jpg",
     alt: "Digital technology infrastructure, enterprise platforms, and scalable African solutions",
     tagline: "Digital Infrastructure & Enterprise Systems",
     description:
@@ -364,8 +364,8 @@ export default function InvestmentsPage() {
               className="object-cover object-center group-hover:scale-105 transition-transform duration-1000 ease-out"
             />
 
-            {/* Subtle Base Dark Layer for Photo Richness, deepening to Frosted Backdrop on Hover */}
-            <div className="absolute inset-0 bg-black/10 group-hover:bg-black/50 backdrop-blur-none group-hover:backdrop-blur-[2px] transition-all duration-700 ease-out pointer-events-none" />
+            {/* Subtle Base Dark Layer for Photo Richness, deepening to Dark Backdrop on Hover (Zero Blur) */}
+            <div className="absolute inset-0 bg-black/10 group-hover:bg-black/50 transition-all duration-700 ease-out pointer-events-none" />
 
             {/* Sector Name: Completely Invisible Until Hovered Upon */}
             <div className="absolute inset-0 z-20 flex flex-col items-center justify-center p-6 text-center pointer-events-none">
