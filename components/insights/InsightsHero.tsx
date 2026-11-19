@@ -27,8 +27,10 @@ export default function InsightsHero() {
         />
       </div>
 
-      {/* Crisp Directional Gradient Overlay (Dark text backdrop on left, 100% bright & sharp on right) */}
-      <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/30 to-transparent z-10 pointer-events-none" />
+      {/* Dark Cinematic Overlays (Sharp Photo, Rich Executive Tone) */}
+      <div className="absolute inset-0 bg-black/50 z-10 pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-black/70 z-10 pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/35 to-transparent z-10 pointer-events-none" />
 
       {/* Hero Title Container Layered on Top (z-20, uniform bottom-anchored placement) */}
       <div className="w-full max-w-[1360px] mx-auto px-6 lg:px-12 relative z-20 flex flex-col items-start text-left">

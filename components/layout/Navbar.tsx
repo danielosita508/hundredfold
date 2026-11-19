@@ -94,14 +94,14 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 w-full z-50 h-[76px] transition-colors duration-300 ease-out ${
+      className={`fixed top-0 left-0 w-full z-50 h-[88px] transition-colors duration-300 ease-out ${
         scrolled
           ? "bg-black border-b border-white/10 shadow-lg"
-          : "bg-gradient-to-b from-black/80 via-black/30 to-transparent border-b border-transparent"
+          : "bg-gradient-to-b from-black/90 via-black/50 to-transparent border-b border-transparent"
       }`}
     >
       <div className="max-w-[1360px] mx-auto px-6 lg:px-12 h-full">
-        <div className="flex items-center justify-between h-full gap-4 sm:gap-6">
+        <div className="flex items-center justify-between h-full pt-2 sm:pt-3 gap-4 sm:gap-6">
 
           {/* ─── BRAND LOGO (Top-Left, Heirs Holdings Style) ─── */}
           <Link href="/" className="flex items-center gap-3 shrink-0 group">
@@ -239,7 +239,7 @@ export default function Navbar() {
 
       {/* ─── MOBILE NAVIGATION DRAWER (< 768px) ─── */}
       {mobileMenuOpen && (
-        <div className="md:hidden fixed inset-x-0 top-[76px] bottom-0 z-40 bg-[#0A2F1B]/98 text-white backdrop-blur-2xl border-t border-white/10 overflow-y-auto shadow-2xl p-6">
+        <div className="md:hidden fixed inset-x-0 top-[88px] bottom-0 z-40 bg-[#0A2F1B]/98 text-white backdrop-blur-2xl border-t border-white/10 overflow-y-auto shadow-2xl p-6">
           <div className="max-w-md mx-auto space-y-6">
 
             {/* Mobile Navigation List */}

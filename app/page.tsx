@@ -27,11 +27,32 @@ const HERO_SLIDES = [
       "Hundredfold Innovation Network Ltd is an African business and investment company focused on identifying high-impact commercial opportunities, building strategic relationships, and developing ventures with long-term potential.",
   },
   {
-    image: "/images/pexels-artem-korolev-2159253660-38320074.jpg",
-    alt: "Institutional infrastructure and strategic commercial horizons",
+    image: "/images/cytonn-photography-n95VMLxqM2I-unsplash.jpg",
+    alt: "Modern African corporate skyline and sovereign asset development",
     title: "Building Businesses. Creating Value.",
     description:
       "Grounded in institutional governance and disciplined capital stewardship, we pool capabilities and participate in high-conviction ventures across key sovereign sectors.",
+  },
+  {
+    image: "/images/tim-mossholder-xDwEa2kaeJA-unsplash.jpg",
+    alt: "Agricultural commodity corridors and fertile agro-processing basins",
+    title: "Agrarian Corridors & Food Security.",
+    description:
+      "Coordinating large-scale agricultural commodity aggregation, supply chain logistics, and strategic off-taker partnerships connecting rural basins with industrial demand.",
+  },
+  {
+    image: "/images/sean-pollock-PhYq704ffdA-unsplash.jpg",
+    alt: "Productive commercial real estate and prime logistics hubs",
+    title: "Disciplined Capital. Real Assets.",
+    description:
+      "Acquiring prime commercial land, logistics hubs, and productive tangible assets engineered for long-term purchasing power preservation and sovereign balance-sheet compounding.",
+  },
+  {
+    image: "/images/benjamin-child-GWe0dlVD9e0-unsplash.jpg",
+    alt: "Executive boardroom conclave and institutional governance assembly",
+    title: "Generative Enterprise. Lasting Impact.",
+    description:
+      "Guided by the philosophy of Africapitalism, we build enduring commercial institutions that create compounding economic value for investors, partners, and communities.",
   },
 ];
 
@@ -119,8 +140,10 @@ export default function Home() {
           </AnimatePresence>
         </div>
 
-        {/* Crisp Directional Gradient Overlay (Dark text backdrop on left, 100% bright & sharp on right) */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/30 to-transparent z-10 pointer-events-none" />
+        {/* Dark Cinematic Overlays (Sharp Photo, Rich Executive Tone) */}
+        <div className="absolute inset-0 bg-black/50 z-10 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-black/70 z-10 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/35 to-transparent z-10 pointer-events-none" />
 
         {/* Hero Content Container (Layered on Top z-20, flexed down toward the bottom controls for uniform placement) */}
         <div className="relative max-w-[1360px] mx-auto px-6 lg:px-12 w-full z-20 flex-1 flex flex-col justify-end pb-8 sm:pb-10 pt-28">
@@ -157,65 +180,79 @@ export default function Home() {
         {/* Bottom Hero Controls Container (z-20) */}
         <div className="relative max-w-[1360px] mx-auto px-6 lg:px-12 w-full pb-8 sm:pb-12 z-20 flex items-end justify-between">
 
-          {/* Bottom-Left: Three 44x44px crisp white square buttons with centered 10px uppercase tracking-widest white labels */}
-          <div className="flex items-center gap-4 sm:gap-6">
-            {/* PREV */}
-            <div className="flex flex-col items-center gap-1.5">
+          {/* Bottom-Left: Sleek Institutional Carousel Navigation & Progress Controller */}
+          <div className="flex items-center gap-3 sm:gap-5 p-2 px-3 sm:px-4 rounded-full bg-black/45 backdrop-blur-md border border-white/20 shadow-xl">
+            {/* Slide Index Counter */}
+            <div className="font-mono text-xs font-semibold tracking-wider flex items-center gap-1 pl-1 select-none">
+              <span className="text-[#ABF67E] font-bold text-sm">0{currentSlide + 1}</span>
+              <span className="text-white/30">/</span>
+              <span className="text-white/60">0{HERO_SLIDES.length}</span>
+            </div>
+
+            {/* Slide Progress Dash Indicators */}
+            <div className="flex items-center gap-1.5 sm:gap-2">
+              {HERO_SLIDES.map((_, idx) => (
+                <button
+                  key={idx}
+                  type="button"
+                  onClick={() => setCurrentSlide(idx)}
+                  aria-label={`Go to slide ${idx + 1}`}
+                  className="py-2 cursor-pointer focus:outline-none group"
+                >
+                  <span
+                    className={`block h-1 rounded-full transition-all duration-500 ${
+                      currentSlide === idx
+                        ? "w-8 sm:w-10 bg-[#ABF67E]"
+                        : "w-3 sm:w-4 bg-white/30 group-hover:bg-white/60"
+                    }`}
+                  />
+                </button>
+              ))}
+            </div>
+
+            {/* Subtle Frosted Glass Navigation Buttons */}
+            <div className="flex items-center gap-1.5 border-l border-white/15 pl-2 sm:pl-3">
               <button
                 type="button"
                 onClick={handlePrevSlide}
-                className="h-11 w-11 bg-white hover:bg-white/90 active:scale-95 transition-all flex items-center justify-center text-black shadow-md cursor-pointer select-none"
+                className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-white/10 hover:bg-[#ABF67E] hover:text-[#0A2F1B] text-white transition-all flex items-center justify-center cursor-pointer active:scale-95 shadow-sm"
                 aria-label="Previous slide"
               >
-                <ChevronLeftIcon className="w-4 h-4 text-black stroke-[2.5]" />
+                <ChevronLeftIcon className="w-3.5 h-3.5" />
               </button>
-              <span className="text-[10px] uppercase tracking-widest font-semibold text-white">
-                PREV
-              </span>
-            </div>
 
-            {/* PAUSE / PLAY */}
-            <div className="flex flex-col items-center gap-1.5">
               <button
                 type="button"
                 onClick={handleTogglePause}
-                className="h-11 w-11 bg-white hover:bg-white/90 active:scale-95 transition-all flex items-center justify-center text-black shadow-md cursor-pointer select-none"
-                aria-label={isPaused ? "Play slideshow" : "Pause slideshow"}
+                className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-white/10 hover:bg-[#ABF67E] hover:text-[#0A2F1B] text-white transition-all flex items-center justify-center cursor-pointer active:scale-95 shadow-sm"
+                aria-label={isPaused ? "Resume autoplay" : "Pause autoplay"}
+                title={isPaused ? "Resume autoplay" : "Pause autoplay"}
               >
                 {isPaused ? (
-                  <PlayIcon className="w-4 h-4 text-black" />
+                  <PlayIcon className="w-3.5 h-3.5 ml-0.5" />
                 ) : (
-                  <PauseIcon className="w-4 h-4 text-black" />
+                  <PauseIcon className="w-3.5 h-3.5" />
                 )}
               </button>
-              <span className="text-[10px] uppercase tracking-widest font-semibold text-white">
-                {isPaused ? "PLAY" : "PAUSE"}
-              </span>
-            </div>
 
-            {/* NEXT */}
-            <div className="flex flex-col items-center gap-1.5">
               <button
                 type="button"
                 onClick={handleNextSlide}
-                className="h-11 w-11 bg-white hover:bg-white/90 active:scale-95 transition-all flex items-center justify-center text-black shadow-md cursor-pointer select-none"
+                className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-white/10 hover:bg-[#ABF67E] hover:text-[#0A2F1B] text-white transition-all flex items-center justify-center cursor-pointer active:scale-95 shadow-sm"
                 aria-label="Next slide"
               >
-                <ChevronRightIcon className="w-4 h-4 text-black stroke-[2.5]" />
+                <ChevronRightIcon className="w-3.5 h-3.5" />
               </button>
-              <span className="text-[10px] uppercase tracking-widest font-semibold text-white">
-                NEXT
-              </span>
             </div>
           </div>
 
           {/* Bottom-Right: Translucent white-bordered pill button & stacked downward chevrons */}
           <div className="flex flex-col items-center gap-3">
             <Link
-              href="/business"
+              href="/investments"
               className="rounded-full border border-white/80 bg-black/25 px-7 py-3 text-[14px] font-semibold text-white hover:bg-white hover:text-black transition-all shadow-md backdrop-blur-sm whitespace-nowrap"
             >
-              Explore Our Businesses
+              Explore Our Investments
             </Link>
 
             <button
