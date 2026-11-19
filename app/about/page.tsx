@@ -302,24 +302,6 @@ export default function AboutPage() {
           </div>
         </div>
 
-      {/* ─── Side Navigation Arrows (Left & Right Flanks of Hero) ─── */}
-      <button
-        type="button"
-        onClick={handlePrevSlide}
-        className="absolute left-4 sm:left-6 lg:left-8 top-1/2 -translate-y-1/2 z-30 w-11 h-11 sm:w-13 sm:h-13 rounded-full bg-black/40 hover:bg-black/75 text-white backdrop-blur-md border border-white/20 shadow-2xl transition-all duration-300 flex items-center justify-center cursor-pointer hover:scale-110 active:scale-95 group focus:outline-none"
-        aria-label="Previous slide"
-      >
-        <ChevronLeftIcon className="w-5 h-5 sm:w-6 sm:h-6 text-white group-hover:text-[#ABF67E] transition-colors" />
-      </button>
-
-      <button
-        type="button"
-        onClick={handleNextSlide}
-        className="absolute right-4 sm:right-6 lg:right-8 top-1/2 -translate-y-1/2 z-30 w-11 h-11 sm:w-13 sm:h-13 rounded-full bg-black/40 hover:bg-black/75 text-white backdrop-blur-md border border-white/20 shadow-2xl transition-all duration-300 flex items-center justify-center cursor-pointer hover:scale-110 active:scale-95 group focus:outline-none"
-        aria-label="Next slide"
-      >
-        <ChevronRightIcon className="w-5 h-5 sm:w-6 sm:h-6 text-white group-hover:text-[#ABF67E] transition-colors" />
-      </button>
 
       {/* Bottom Hero Actions Container (z-20) */}
       <div className="relative max-w-[1360px] mx-auto px-6 lg:px-12 w-full pb-8 sm:pb-12 z-20 flex items-end justify-end">
@@ -370,9 +352,9 @@ export default function AboutPage() {
               {/* Left Column: Heading and Narrative Paragraphs */}
               <div className="lg:col-span-7 space-y-6">
                 <div className="space-y-4">
-                  <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#ABF67E]/30 text-[#2D6C00] text-xs uppercase font-bold tracking-wider">
-                    <span>ABOUT US</span>
-                  </div>
+                  <span className="text-xs uppercase tracking-[0.25em] font-bold text-[#2D6C00] block">
+                    ABOUT US
+                  </span>
 
                   <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-semibold text-[#00190A] tracking-tight leading-[1.12]">
                     Founded for African Enterprise.
@@ -479,9 +461,9 @@ export default function AboutPage() {
             transition={{ duration: 0.5, ease: PRO_MAX_EASE }}
             className="flex flex-col items-center text-center max-w-3xl mx-auto space-y-5"
           >
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#ABF67E]/30 text-[#2D6C00] text-xs uppercase font-bold tracking-wider">
-              <span>OUR LEADERSHIP</span>
-            </div>
+            <span className="text-xs uppercase tracking-[0.25em] font-bold text-[#2D6C00] block">
+              OUR LEADERSHIP
+            </span>
 
             <p className="text-base sm:text-lg text-[#424842] leading-relaxed">
               Providing strategic oversight and driving operational excellence, our leadership team upholds the principles of good governance, active stewardship, and long-term value creation. Guided by institutional standards of corporate governance, transparency, and accountability, our directors combine deep sector expertise across agriculture, real estate, finance, and technology.
@@ -581,10 +563,9 @@ export default function AboutPage() {
 
           {/* Centralized Top Header */}
           <div className="flex flex-col items-center text-center gap-4 max-w-2xl mx-auto mb-12 sm:mb-16">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#ABF67E]/20 border border-[#ABF67E]/30 text-[#ABF67E] text-xs uppercase font-bold tracking-wider">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#ABF67E]" />
-              <span>Our Five Pillars</span>
-            </div>
+            <span className="text-xs uppercase tracking-[0.25em] font-bold text-[#ABF67E] block">
+              Our Five Pillars
+            </span>
             <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-medium text-white tracking-tight leading-[1.15]">
               The pillars that define our enterprise.
             </h2>

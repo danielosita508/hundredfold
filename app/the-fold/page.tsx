@@ -210,24 +210,6 @@ export default function TheFoldPage() {
           </div>
         </div>
 
-        {/* ─── Side Navigation Arrows (Matching About & Home pages) ─── */}
-        <button
-          type="button"
-          onClick={handlePrevSlide}
-          className="absolute left-4 sm:left-6 lg:left-8 top-1/2 -translate-y-1/2 z-30 w-11 h-11 sm:w-13 sm:h-13 rounded-full bg-black/40 hover:bg-black/75 text-white backdrop-blur-md border border-white/20 shadow-2xl transition-all duration-300 flex items-center justify-center cursor-pointer hover:scale-110 active:scale-95 group focus:outline-none"
-          aria-label="Previous slide"
-        >
-          <ChevronLeftIcon className="w-5 h-5 sm:w-6 sm:h-6 text-white group-hover:text-[#ABF67E] transition-colors" />
-        </button>
-
-        <button
-          type="button"
-          onClick={handleNextSlide}
-          className="absolute right-4 sm:right-6 lg:right-8 top-1/2 -translate-y-1/2 z-30 w-11 h-11 sm:w-13 sm:h-13 rounded-full bg-black/40 hover:bg-black/75 text-white backdrop-blur-md border border-white/20 shadow-2xl transition-all duration-300 flex items-center justify-center cursor-pointer hover:scale-110 active:scale-95 group focus:outline-none"
-          aria-label="Next slide"
-        >
-          <ChevronRightIcon className="w-5 h-5 sm:w-6 sm:h-6 text-white group-hover:text-[#ABF67E] transition-colors" />
-        </button>
 
         {/* Bottom Hero Controls Container (z-20) */}
         <div className="relative max-w-[1360px] mx-auto px-6 lg:px-12 w-full pb-8 sm:pb-12 z-20 flex items-end justify-between">
