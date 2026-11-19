@@ -101,7 +101,7 @@ export default function InvestmentsPage() {
     <div className="relative overflow-hidden bg-[#E9FDFF] text-[#0C1E20] font-sans">
 
       {/* ─── STEP 1: THE HERO SECTION (Transcorp Style Sharp Panoramic Backdrop) ─── */}
-      <section id="overview" className="relative w-full min-h-[75vh] lg:min-h-[82vh] flex flex-col justify-between pb-12 sm:pb-16 lg:pb-20 overflow-hidden bg-black">
+      <section id="overview" className="relative w-full min-h-[560px] lg:min-h-[620px] h-[70vh] flex flex-col justify-end pb-14 sm:pb-16 lg:pb-20 overflow-hidden bg-black">
         {/* Full-Bleed Corporate Skyscraper / Skyline Background (Zero Blur / Zero Filter) */}
         <div className="absolute inset-0 z-0">
           <Image
@@ -118,19 +118,19 @@ export default function InvestmentsPage() {
         {/* Crisp Directional Gradient Overlay (Dark text backdrop on left, 100% bright & sharp on right) */}
         <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/30 to-transparent z-10 pointer-events-none" />
 
-        {/* Hero Title Container Layered on Top (z-20, positioned comfortably down from navbar) */}
-        <div className="w-full max-w-[1360px] mx-auto px-6 lg:px-12 relative z-20 pt-28 sm:pt-36 lg:pt-44 xl:pt-48 flex flex-col items-start text-left">
+        {/* Hero Title Container Layered on Top (z-20, uniform bottom-anchored placement) */}
+        <div className="w-full max-w-[1360px] mx-auto px-6 lg:px-12 relative z-20 flex flex-col items-start text-left">
           <motion.h1
             initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.65, ease: PRO_MAX_EASE }}
-            className="font-poppins text-[30px] sm:text-[36px] lg:text-[42px] font-bold leading-[1.15] tracking-[-0.02em] max-w-[550px] text-white drop-shadow-md text-left"
+            className="font-poppins text-[30px] sm:text-[36px] lg:text-[42px] font-bold leading-[1.15] tracking-[-0.02em] max-w-[580px] text-white drop-shadow-md text-left"
           >
             Investments &amp; Commercial Scope
           </motion.h1>
 
           {/* Hundredfold Brand Green Accent Divider */}
-          <div className="my-6 h-[2px] w-[220px] bg-[#9BE564]" />
+          <div className="my-5 sm:my-6 h-[2px] w-[220px] bg-[#9BE564]" />
 
           <motion.p
             initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 15 }}

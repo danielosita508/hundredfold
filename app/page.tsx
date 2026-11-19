@@ -122,8 +122,8 @@ export default function Home() {
         {/* Crisp Directional Gradient Overlay (Dark text backdrop on left, 100% bright & sharp on right) */}
         <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/30 to-transparent z-10 pointer-events-none" />
 
-        {/* Hero Content Container (Layered on Top z-20, positioned comfortably down from navbar) */}
-        <div className="relative max-w-[1360px] mx-auto px-6 lg:px-12 w-full z-20 pt-24 sm:pt-36 lg:pt-44 xl:pt-48">
+        {/* Hero Content Container (Layered on Top z-20, flexed down toward the bottom controls for uniform placement) */}
+        <div className="relative max-w-[1360px] mx-auto px-6 lg:px-12 w-full z-20 flex-1 flex flex-col justify-end pb-8 sm:pb-10 pt-28">
           <div className="flex flex-col items-start">
 
             {/* Headline in Poppins (Sans-Serif, Corporate Bold) */}
