@@ -38,23 +38,12 @@ Why does **The Fold** strictly cap membership at **100 individuals per cohort**?
 
 ---
 
-### The 85% / 15% Distribution Formula
+### Disciplined Performance Framework
 
-A hallmark of institutional governance is complete transparency regarding how commercial proceeds are accounted for and shared. The Fold's ratified profit distribution architecture embodies this clarity:
+A hallmark of institutional governance is complete transparency regarding how commercial proceeds are accounted for and shared. The Fold's ratified surplus distribution architecture embodies this clarity:
 
-```
-[Net Verified Commercial Surplus From Syndicate Operations]
-                     │
-         ┌───────────┴───────────┐
-         ▼                       ▼
-    [85% Distributed]       [15% Retained]
-   Direct to Cohort       Hundredfold Management &
-   Members in Full        Operational Infrastructure
-   (Proportional Share)   (Audit, Legal, Risk Buffer)
-```
-
-* **85% Distributable Surplus**: Directly returned to cohort members based on verified commercial milestones achieved across active trading, asset leases, and operational ventures.
-* **15% Management Allocation**: Retained by Hundredfold to cover executive coordination, continuous risk modeling, statutory audit, and institutional reserves.
+* **Direct Member Surplus**: Distributed to participating cohort members based on verified commercial milestones achieved across active trading, asset leases, and operational ventures.
+* **Institutional Reserves & Governance**: Retained by Hundredfold to cover executive coordination, statutory audits, legal protections, and risk buffering.
 
 There are no hidden deductions, arbitrary management fees, or opaque overheads. Every naira distributed is backed by verifiable operational records and audited financial statements reviewed by independent accountants.
 

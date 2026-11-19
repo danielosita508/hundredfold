@@ -44,7 +44,7 @@ const THE_FOLD_HERO_SLIDES = [
     alt: "Modern Enterprise Infrastructure and High-Yield Venues",
     title: "Disciplined Stewardship",
     description:
-      "Direct 85% operational distribution model for participating syndicate members.",
+      "Transparent governance, verified due diligence, and audited operational reporting.",
   },
 ];
 
@@ -258,7 +258,7 @@ export default function TheFoldPage() {
         </div>
       </section>
 
-      {/* ─── SECTION 3: 85% / 15% ALLOCATION MODEL (Clean, Summarized Visual Split) ─── */}
+      {/* ─── SECTION 3: CORPORATE SYNERGY (How Hundredfold Powers The Fold) ─── */}
       <section className="relative w-full py-14 sm:py-18 px-6 lg:px-12">
         <div className="max-w-[1240px] mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
@@ -285,16 +285,16 @@ export default function TheFoldPage() {
 
                 <div className="absolute inset-x-0 bottom-0 p-6 z-10 flex flex-col gap-1 text-white">
                   <span className="text-[10px] font-mono uppercase tracking-widest text-[#ABF67E] font-bold">
-                    SURPLUS FRAMEWORK
+                    CORPORATE SYNERGY
                   </span>
                   <h4 className="font-heading text-lg sm:text-xl font-bold text-white">
-                    85% / 15% Allocation Model
+                    The Hundredfold Network Engine
                   </h4>
                 </div>
               </div>
             </motion.div>
 
-            {/* Right Column: Clean Summarized Split Card */}
+            {/* Right Column: Clean Summarized Corporate Integration Card */}
             <motion.div
               initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -304,45 +304,57 @@ export default function TheFoldPage() {
             >
               <div>
                 <span className="text-xs uppercase tracking-[0.25em] font-bold text-[#2D6C00] block">
-                  DISTRIBUTION STRUCTURE
+                  ENTERPRISE INTEGRATION
                 </span>
                 <h2 className="font-heading text-3xl sm:text-4xl font-semibold text-[#00190A] tracking-tight mt-1">
-                  85% / 15% Surplus Model
+                  How Hundredfold Powers The Fold
                 </h2>
               </div>
 
-              {/* Visual Split Cards (Clean & Minimal) */}
+              {/* Company Synergy Cards (Clean, Structured, Institutional) */}
               <div className="p-6 rounded-2xl bg-white border border-[#DEF2F4] shadow-md space-y-5">
                 <div>
-                  <div className="flex justify-between items-center text-sm font-semibold mb-2">
-                    <span className="text-[#00190A] font-bold">Cohort Members</span>
-                    <span className="text-[#2D6C00] font-heading text-2xl font-bold">85%</span>
+                  <div className="flex items-center gap-2 mb-1">
+                    <span className="w-2 h-2 rounded-full bg-[#2D6C00]" />
+                    <h3 className="text-sm font-bold text-[#00190A]">Curated Sovereign Dealflow</h3>
                   </div>
-                  <div className="w-full bg-[#E9FDFF] h-3 rounded-full overflow-hidden border border-[#DEF2F4]">
-                    <div className="bg-[#2D6C00] h-full w-[85%] rounded-full" />
-                  </div>
-                  <span className="text-xs text-[#556358] block mt-1.5">
-                    Distributed directly to members based on audited operational yields.
-                  </span>
+                  <p className="text-xs text-[#556358] leading-relaxed pl-4">
+                    The Fold does not speculate. Members co-participate alongside Hundredfold&apos;s high-conviction ventures across Agro-Trading, Real Estate, and Digital Infrastructure.
+                  </p>
                 </div>
 
                 <div className="pt-4 border-t border-[#DEF2F4]">
-                  <div className="flex justify-between items-center text-sm font-semibold mb-2">
-                    <span className="text-[#00190A] font-bold">Reserve &amp; Governance</span>
-                    <span className="text-[#0A2F1B] font-heading text-2xl font-bold">15%</span>
+                  <div className="flex items-center gap-2 mb-1">
+                    <span className="w-2 h-2 rounded-full bg-[#2D6C00]" />
+                    <h3 className="text-sm font-bold text-[#00190A]">Institutional Governance &amp; Custodianship</h3>
                   </div>
-                  <div className="w-full bg-[#E9FDFF] h-3 rounded-full overflow-hidden border border-[#DEF2F4]">
-                    <div className="bg-[#0A2F1B]/60 h-full w-[15%] rounded-full" />
+                  <p className="text-xs text-[#556358] leading-relaxed pl-4">
+                    Backed by Hundredfold&apos;s corporate umbrella, statutory CAC and SCUML compliance, and board-level risk management.
+                  </p>
+                </div>
+
+                <div className="pt-4 border-t border-[#DEF2F4]">
+                  <div className="flex items-center gap-2 mb-1">
+                    <span className="w-2 h-2 rounded-full bg-[#2D6C00]" />
+                    <h3 className="text-sm font-bold text-[#00190A]">Executive Mentorship &amp; Literacy</h3>
                   </div>
-                  <span className="text-xs text-[#556358] block mt-1.5">
-                    Retained for statutory audits, operations, and risk buffering.
-                  </span>
+                  <p className="text-xs text-[#556358] leading-relaxed pl-4">
+                    Direct access to company leadership, quarterly macroeconomic briefings, and peer-to-peer syndication with vetted African enterprise leaders.
+                  </p>
                 </div>
               </div>
 
-              <p className="text-[11px] text-[#718275] italic">
-                * Distributions follow Board approvals and verified operational audits.
-              </p>
+              <div className="flex flex-wrap gap-2 pt-1">
+                <span className="px-3 py-1 rounded-full bg-white border border-[#DEF2F4] text-[11px] font-semibold text-[#00190A]">
+                  3 Sovereign Sectors
+                </span>
+                <span className="px-3 py-1 rounded-full bg-white border border-[#DEF2F4] text-[11px] font-semibold text-[#00190A]">
+                  Corporate MEMART Governed
+                </span>
+                <span className="px-3 py-1 rounded-full bg-white border border-[#DEF2F4] text-[11px] font-semibold text-[#00190A]">
+                  Audited Operations
+                </span>
+              </div>
             </motion.div>
 
           </div>
