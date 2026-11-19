@@ -187,8 +187,8 @@ function SectorCarouselCard({
         </motion.div>
       </AnimatePresence>
 
-      {/* Deep gradient overlay ensuring text legibility */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/50 to-transparent pointer-events-none z-10" />
+      {/* Deep gradient overlay ensuring text legibility on hover */}
+      <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/50 to-transparent pointer-events-none z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
       {/* Carousel Progress Indicators (subtle dashes visible on hover) */}
       {sector.images.length > 1 && (
@@ -204,9 +204,9 @@ function SectorCarouselCard({
         </div>
       )}
 
-      {/* Sector Title, Green Line & Description (Title & Line visible by default; Description reveals on hover) */}
+      {/* Sector Title, Green Line & Description (Completely invisible by default; reveals smoothly on hover) */}
       <div className="relative z-20 p-5 sm:p-6 lg:p-7 flex flex-col justify-end h-full pointer-events-none">
-        <div className="transform transition-transform duration-500 group-hover:-translate-y-1">
+        <div className="opacity-0 translate-y-3 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 ease-out">
           <h3 className="font-poppins text-xl sm:text-2xl font-bold tracking-tight text-white drop-shadow-md">
             {sector.title}
           </h3>
@@ -214,12 +214,10 @@ function SectorCarouselCard({
           {/* Accent Green Line */}
           <div className="w-12 sm:w-14 h-[2px] bg-[#9BE564] my-2.5 rounded-full group-hover:w-16 transition-all duration-300" />
           
-          {/* Concise Sector Description (Invisible until hovered upon) */}
-          <div className="overflow-hidden max-h-0 opacity-0 group-hover:max-h-40 group-hover:opacity-100 transition-all duration-500 ease-out">
-            <p className="font-poppins text-[13px] sm:text-[14px] font-normal leading-[1.6] text-white/90 drop-shadow-sm pt-1">
-              {sector.description}
-            </p>
-          </div>
+          {/* Sector Description */}
+          <p className="font-poppins text-[13px] sm:text-[14px] font-normal leading-[1.6] text-white/90 drop-shadow-sm pt-1">
+            {sector.description}
+          </p>
         </div>
       </div>
     </Link>
