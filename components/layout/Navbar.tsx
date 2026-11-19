@@ -37,6 +37,7 @@ const NAV_PAGES: NavItem[] = [
     subItems: [
       { label: "Overview", href: "/about#overview" },
       { label: "Our Story", href: "/about#story" },
+      { label: "Investment Philosophy", href: "/about#philosophy" },
       { label: "Our Leadership", href: "/about#leadership" },
       { label: "Our Five Pillars", href: "/about#pillars" },
       { label: "Vision & Mission", href: "/about#vision-mission" },
@@ -117,7 +118,7 @@ export default function Navbar() {
               />
             </div>
             <div className="flex flex-col">
-              <span className="font-serif text-xl sm:text-2xl font-bold tracking-tight leading-tight transition-colors duration-300 text-white">
+              <span className="font-heading text-xl sm:text-2xl font-bold tracking-tight leading-tight transition-colors duration-300 text-white">
                 Hundredfold
               </span>
               <span className="text-[10px] uppercase tracking-widest font-bold transition-colors duration-300 text-[#ABF67E]">

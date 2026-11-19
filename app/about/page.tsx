@@ -14,6 +14,7 @@ import {
   PlayIcon,
   ChevronDownIcon,
 } from "@/components/ui/Icons";
+import InvestmentPhilosophy from "@/components/about/InvestmentPhilosophy";
 
 const PRO_MAX_EASE = [0.16, 1, 0.3, 1] as const;
 
@@ -419,7 +420,7 @@ export default function AboutPage() {
                     <span>ABOUT US</span>
                   </div>
 
-                  <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-semibold text-[#00190A] tracking-tight leading-[1.12]">
+                  <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-semibold text-[#00190A] tracking-tight leading-[1.12]">
                     Founded for African Enterprise.
                   </h2>
                 </div>
@@ -457,22 +458,22 @@ export default function AboutPage() {
 
                   {/* Executive Quote & Attribution Overlaid Directly on the Bottom of the Picture */}
                   <div className="absolute inset-x-0 bottom-0 p-6 sm:p-7 z-10 flex flex-col gap-2.5 text-white">
-                    <div className="text-3xl font-serif text-[#ABF67E] leading-none select-none">
+                    <div className="text-3xl font-heading text-[#ABF67E] leading-none select-none">
                       &ldquo;
                     </div>
-                    <blockquote className="font-serif text-sm sm:text-base text-white/95 italic leading-relaxed -mt-1 drop-shadow-xs">
+                    <blockquote className="font-heading text-sm sm:text-base text-white/95 italic leading-relaxed -mt-1 drop-shadow-xs">
                       Sustainable African wealth is not built on short-term speculation, but on disciplined enterprise, strategic capital allocation, and long-term ownership of productive assets.
                     </blockquote>
                     <div className="pt-3 border-t border-white/20 flex items-center justify-between">
                       <div>
-                        <h4 className="font-serif text-base sm:text-lg font-bold text-white tracking-wide">
+                        <h4 className="font-heading text-base sm:text-lg font-bold text-white tracking-wide">
                           Daniel C. Evans
                         </h4>
                         <p className="text-[11px] sm:text-xs uppercase tracking-wider text-[#ABF67E] font-bold mt-0.5">
                           Founder &amp; Chief Executive Officer
                         </p>
                       </div>
-                      <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-white/15 backdrop-blur-md border border-white/25 text-[#ABF67E] flex items-center justify-center font-serif text-xs font-bold shadow-xs">
+                      <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-white/15 backdrop-blur-md border border-white/25 text-[#ABF67E] flex items-center justify-center font-heading text-xs font-bold shadow-xs">
                         HIN
                       </div>
                     </div>
@@ -508,6 +509,9 @@ export default function AboutPage() {
           </motion.div>
         </div>
       </section>
+
+      {/* ─── STEP 2.5: "OUR INVESTMENT PHILOSOPHY" (Heirs Holdings Style Radial Portfolio Wheel & Narrative) ─── */}
+      <InvestmentPhilosophy />
 
       {/* ─── STEP 3: "OUR LEADERSHIP" SECTION (Heirs Holdings Style Gallery Grid) ─── */}
       <section id="leadership" className="w-full px-6 lg:px-12 pt-10 sm:pt-12 lg:pt-14 pb-16 sm:pb-20 lg:pb-24 bg-white border-t border-black/5">
@@ -561,7 +565,7 @@ export default function AboutPage() {
                 {/* Bottom Overlay: The two top lines invisible by default and reveal on hover. The two lines below removed! */}
                 <div className="absolute inset-x-0 bottom-0 p-5 sm:p-6 flex flex-col items-center justify-end text-center z-10 opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 group-active:opacity-100 transition-opacity duration-300 pointer-events-none">
                   <div className="transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300 ease-out flex flex-col items-center space-y-1">
-                    <h3 className="font-serif text-lg sm:text-xl font-bold text-white tracking-wide uppercase drop-shadow-md">
+                    <h3 className="font-heading text-lg sm:text-xl font-bold text-white tracking-wide uppercase drop-shadow-md">
                       {ceo.name}
                     </h3>
                     <p className="text-[11px] sm:text-xs uppercase font-bold tracking-wider text-[#ABF67E] drop-shadow-sm whitespace-nowrap">
@@ -596,7 +600,7 @@ export default function AboutPage() {
                   {/* Bottom Overlay: The two top lines invisible by default and reveal on hover. The two lines below removed! */}
                   <div className="absolute inset-x-0 bottom-0 p-4 sm:p-5 flex flex-col items-center justify-end text-center z-10 opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 group-active:opacity-100 transition-opacity duration-300 pointer-events-none">
                     <div className="transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300 ease-out flex flex-col items-center space-y-1">
-                      <h3 className="font-serif text-sm sm:text-base font-bold text-white tracking-wide uppercase drop-shadow-md">
+                      <h3 className="font-heading text-sm sm:text-base font-bold text-white tracking-wide uppercase drop-shadow-md">
                         {member.name}
                       </h3>
                       <p className="text-[10px] sm:text-[11px] uppercase font-bold tracking-wider text-[#ABF67E] drop-shadow-sm leading-tight max-w-[95%]">
@@ -627,7 +631,7 @@ export default function AboutPage() {
               <span className="w-1.5 h-1.5 rounded-full bg-[#ABF67E]" />
               <span>Our Five Pillars</span>
             </div>
-            <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-medium text-white tracking-tight leading-[1.15]">
+            <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-medium text-white tracking-tight leading-[1.15]">
               The pillars that define our enterprise.
             </h2>
             <p className="text-sm sm:text-base text-emerald-100/75 leading-relaxed max-w-xl">
@@ -650,7 +654,7 @@ export default function AboutPage() {
                       <span className="text-[#ABF67E] font-bold text-xs sm:text-sm shrink-0 font-mono">
                         {pillar.number}
                       </span>
-                      <span className="text-base sm:text-lg lg:text-xl font-serif font-medium text-white group-hover:text-[#ABF67E] transition-colors leading-snug">
+                      <span className="text-base sm:text-lg lg:text-xl font-heading font-medium text-white group-hover:text-[#ABF67E] transition-colors leading-snug">
                         {pillar.title}
                       </span>
                     </div>
@@ -735,7 +739,7 @@ export default function AboutPage() {
               <div className="flex-1 p-6 sm:p-8 lg:p-10 flex flex-col justify-center overflow-y-auto max-h-[85vh] md:max-h-[560px]">
                 <div className="space-y-3">
                   {/* Leader Name */}
-                  <h3 className="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold text-[#00190A] tracking-tight">
+                  <h3 className="font-heading text-2xl sm:text-3xl lg:text-4xl font-bold text-[#00190A] tracking-tight">
                     {selectedLeader.name}
                   </h3>
 
@@ -782,7 +786,7 @@ export default function AboutPage() {
                 <span className="text-[10px] font-mono uppercase tracking-widest text-[#ABF67E] font-bold">
                   Leadership &amp; Community
                 </span>
-                <h4 className="font-serif text-lg font-semibold text-white mt-1">
+                <h4 className="font-heading text-lg font-semibold text-white mt-1">
                   Collective Strength, Mentorship &amp; Governance
                 </h4>
               </div>
@@ -795,7 +799,7 @@ export default function AboutPage() {
                 <span>THE FOLD &amp; ALLIANCES</span>
               </div>
 
-              <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-semibold text-[#00190A] tracking-tight leading-[1.12]">
+              <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-semibold text-[#00190A] tracking-tight leading-[1.12]">
                 Convening Forward-Thinking Leaders.
               </h2>
 
@@ -833,7 +837,7 @@ export default function AboutPage() {
       <section id="vision-mission" className="w-full px-6 lg:px-12 py-16 lg:py-24 bg-white border-t border-[#c1c8c0]/25 scroll-mt-20">
         <div className="max-w-[1360px] mx-auto flex flex-col gap-10">
           <div>
-            <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-[#00190A] tracking-tight font-semibold">
+            <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl text-[#00190A] tracking-tight font-semibold">
               Our Vision & Mission
             </h2>
           </div>

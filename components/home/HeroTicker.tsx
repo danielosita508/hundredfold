@@ -54,7 +54,7 @@ export default function HeroTicker() {
             className="inline-flex items-center gap-3 sm:gap-4 tracking-wider"
           >
             <span className="w-1.5 h-1.5 rounded-full bg-[#ABF67E] shrink-0" />
-            <span className="font-serif font-bold tracking-widest text-white text-sm sm:text-base uppercase">
+            <span className="font-heading font-bold tracking-widest text-white text-sm sm:text-base uppercase">
               {sector}
             </span>
             <span className="text-white/20 pl-6 sm:pl-8">&bull;</span>

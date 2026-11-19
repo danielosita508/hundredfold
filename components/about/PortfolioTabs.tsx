@@ -232,7 +232,7 @@ export default function PortfolioTabs() {
                   <span>{currentTab.eyebrow}</span>
                 </div>
 
-                <h3 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-[#00190A] tracking-tight font-medium leading-[1.15]">
+                <h3 className="font-heading text-3xl sm:text-4xl lg:text-5xl text-[#00190A] tracking-tight font-medium leading-[1.15]">
                   {currentTab.headline}
                 </h3>
 

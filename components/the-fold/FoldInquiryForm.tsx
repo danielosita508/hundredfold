@@ -36,7 +36,7 @@ export default function FoldInquiryForm() {
         </div>
 
         <div className="space-y-2">
-          <h3 className="font-serif text-2xl sm:text-3xl font-bold tracking-tight text-white">
+          <h3 className="font-heading text-2xl sm:text-3xl font-bold tracking-tight text-white">
             Dossier Received by Secretariat
           </h3>
           <p className="text-white/80 text-sm sm:text-base max-w-xl mx-auto leading-relaxed">
@@ -91,7 +91,7 @@ export default function FoldInquiryForm() {
           <ShieldCheckIcon className="w-4 h-4 text-[#ABF67E]" />
           <span>Strict Executive Confidentiality &bull; Admissions Registry</span>
         </div>
-        <h3 className="font-serif text-2xl sm:text-3xl font-bold tracking-tight text-white">
+        <h3 className="font-heading text-2xl sm:text-3xl font-bold tracking-tight text-white">
           Request Cohort Dossier &amp; Vetting Criteria
         </h3>
         <p className="text-white/70 text-xs sm:text-sm">

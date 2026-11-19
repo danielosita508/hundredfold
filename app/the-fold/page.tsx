@@ -289,7 +289,7 @@ export default function TheFoldPage() {
                 <span>COMMERCIAL DISTRIBUTION STRUCTURE</span>
               </div>
 
-              <h2 className="font-serif text-3xl sm:text-4xl text-white font-semibold tracking-tight">
+              <h2 className="font-heading text-3xl sm:text-4xl text-white font-semibold tracking-tight">
                 The 85% / 15% Profit Distribution Model
               </h2>
 
@@ -320,7 +320,7 @@ export default function TheFoldPage() {
                 <div>
                   <div className="flex justify-between items-center text-sm font-semibold mb-1">
                     <span className="text-white">Cohort Members</span>
-                    <span className="text-[#ABF67E] font-serif text-2xl font-bold">85%</span>
+                    <span className="text-[#ABF67E] font-heading text-2xl font-bold">85%</span>
                   </div>
                   <div className="w-full bg-white/10 h-3 rounded-full overflow-hidden">
                     <div className="bg-[#ABF67E] h-full w-[85%]" />
@@ -330,7 +330,7 @@ export default function TheFoldPage() {
                 <div>
                   <div className="flex justify-between items-center text-sm font-semibold mb-1">
                     <span className="text-white/80">Management &amp; Reserve</span>
-                    <span className="text-white/80 font-serif text-2xl font-bold">15%</span>
+                    <span className="text-white/80 font-heading text-2xl font-bold">15%</span>
                   </div>
                   <div className="w-full bg-white/10 h-3 rounded-full overflow-hidden">
                     <div className="bg-white/40 h-full w-[15%]" />
@@ -364,7 +364,7 @@ export default function TheFoldPage() {
                   STRICT CAP
                 </span>
               </div>
-              <h3 className="font-serif text-3xl font-bold text-white">100 Members</h3>
+              <h3 className="font-heading text-3xl font-bold text-white">100 Members</h3>
               <span className="text-xs uppercase font-bold text-[#ABF67E] tracking-wider block mt-1">
                 Per Cohort Matrix
               </span>
@@ -395,7 +395,7 @@ export default function TheFoldPage() {
                   CYCLE 1
                 </span>
               </div>
-              <h3 className="font-serif text-3xl font-bold text-white">Cycle 1</h3>
+              <h3 className="font-heading text-3xl font-bold text-white">Cycle 1</h3>
               <span className="text-xs uppercase font-bold text-[#ABF67E] tracking-wider block mt-1">
                 Active Executive Cohort
               </span>
@@ -426,7 +426,7 @@ export default function TheFoldPage() {
                   MANDATE
                 </span>
               </div>
-              <h3 className="font-serif text-3xl font-bold text-white">Hundredfold Vision</h3>
+              <h3 className="font-heading text-3xl font-bold text-white">Hundredfold Vision</h3>
               <span className="text-xs uppercase font-bold text-[#ABF67E] tracking-wider block mt-1">
                 Shared Economic Power
               </span>
@@ -450,7 +450,7 @@ export default function TheFoldPage() {
             <span className="text-xs uppercase tracking-widest text-[#ABF67E] font-bold">
               COMMUNITY ARCHITECTURE
             </span>
-            <h2 className="font-serif text-3xl sm:text-4xl text-white font-semibold mt-2">
+            <h2 className="font-heading text-3xl sm:text-4xl text-white font-semibold mt-2">
               Three Sovereign Pillars of The Fold
             </h2>
           </div>
@@ -477,7 +477,7 @@ export default function TheFoldPage() {
                 <BuildingIcon className="w-5 h-5 text-[#ABF67E]" />
               </div>
 
-              <h3 className="font-serif text-2xl font-bold text-white">
+              <h3 className="font-heading text-2xl font-bold text-white">
                 Collective Strength &amp; Networking
               </h3>
 
@@ -503,7 +503,7 @@ export default function TheFoldPage() {
                 <ShieldCheckIcon className="w-5 h-5 text-[#ABF67E]" />
               </div>
 
-              <h3 className="font-serif text-2xl font-bold text-white">
+              <h3 className="font-heading text-2xl font-bold text-white">
                 Due Diligence &amp; Economic Literacy
               </h3>
 
@@ -529,7 +529,7 @@ export default function TheFoldPage() {
                 <TrendingUpIcon className="w-5 h-5 text-[#ABF67E]" />
               </div>
 
-              <h3 className="font-serif text-2xl font-bold text-white">
+              <h3 className="font-heading text-2xl font-bold text-white">
                 Exclusive Corporate Access
               </h3>
 
@@ -555,7 +555,7 @@ export default function TheFoldPage() {
               <span>CANDIDATE REGISTRY &bull; CYCLE 1</span>
             </div>
 
-            <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-white font-semibold tracking-tight">
+            <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl text-white font-semibold tracking-tight">
               Lodge Your Candidate Dossier.
             </h2>
 

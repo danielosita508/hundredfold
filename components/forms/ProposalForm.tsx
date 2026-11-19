@@ -42,7 +42,7 @@ export default function ProposalForm({
           </div>
 
           <div className="space-y-2">
-            <h3 className="font-serif text-2xl sm:text-3xl font-bold text-[#00190A]">
+            <h3 className="font-heading text-2xl sm:text-3xl font-bold text-[#00190A]">
               Transmission Received
             </h3>
             <p className="text-sm sm:text-base text-[#424842] max-w-xl mx-auto leading-relaxed">

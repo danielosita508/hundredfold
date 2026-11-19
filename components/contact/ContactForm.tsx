@@ -39,7 +39,7 @@ export default function ContactForm() {
           <span className="font-sans text-xs uppercase tracking-wider text-[#2D6C00] font-bold">
             Executive Registry Logged
           </span>
-          <h3 className="font-serif text-2xl sm:text-3xl font-medium text-[#00190A]">
+          <h3 className="font-heading text-2xl sm:text-3xl font-medium text-[#00190A]">
             Memorandum Dispatched to Secretariat
           </h3>
           <p className="font-sans text-[#424842] text-sm sm:text-base max-w-xl mx-auto leading-relaxed">
@@ -92,7 +92,7 @@ export default function ContactForm() {
             <ShieldCheckIcon className="w-4 h-4 text-[#2D6C00]" />
             <span>Corporate Engagement Portal</span>
           </div>
-          <h3 className="font-serif text-2xl sm:text-3xl font-medium text-[#00190A]">
+          <h3 className="font-heading text-2xl sm:text-3xl font-medium text-[#00190A]">
             Transmit Formal Memorandum
           </h3>
           <p className="font-sans text-[#424842] text-xs sm:text-sm mt-1">

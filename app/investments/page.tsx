@@ -195,10 +195,10 @@ export default function InvestmentsPage() {
           </AnimatePresence>
         </div>
 
-        {/* Subtle Dark Overlays (Just enough to be noticed, keeping photo bright & vivid) */}
-        <div className="absolute inset-0 bg-black/25 z-10 pointer-events-none" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/40 z-10 pointer-events-none" />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-black/15 to-transparent z-10 pointer-events-none" />
+        {/* Dark Cinematic Overlays (Sharp Photo, Rich Executive Tone) */}
+        <div className="absolute inset-0 bg-black/50 z-10 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-black/70 z-10 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/35 to-transparent z-10 pointer-events-none" />
 
         {/* Hero Title Container Layered on Top (z-20, uniform bottom-anchored placement) */}
         <div className="relative max-w-[1360px] mx-auto px-6 lg:px-12 w-full z-20 flex-1 flex flex-col justify-end pb-8 sm:pb-10 pt-28">
@@ -339,81 +339,45 @@ export default function InvestmentsPage() {
             <span className="text-xs uppercase tracking-widest text-[#2D6C00] font-bold">
               STRATEGIC ASSET ALLOCATION
             </span>
-            <p className="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-[2.6rem] text-[#00190A] leading-relaxed font-normal tracking-tight">
+            <p className="font-heading text-2xl sm:text-3xl md:text-4xl lg:text-[2.3rem] text-[#00190A] leading-snug sm:leading-relaxed font-semibold tracking-tight">
               We invest in sectors that provide strong long-term returns and have the ability to transform Africa&apos;s economy.
             </p>
           </motion.div>
         </div>
       </section>
 
-      {/* ─── STEP 3: THE 4 INVESTMENT SECTORS (Massive Edge-to-Edge Banners with Glass Overlays) ─── */}
-      <section className="w-full py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-12 bg-[#E9FDFF]">
-        <div className="max-w-[1320px] mx-auto space-y-16 sm:space-y-24 lg:space-y-32">
-          {PORTFOLIO_SECTORS.map((sector) => (
-            <motion.div
-              key={sector.title}
-              id={sector.id}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.2 }}
-              variants={fadeInVariants}
-              className="scroll-mt-28 relative w-full rounded-3xl overflow-hidden shadow-2xl bg-[#0A2F1B] border border-white/60 group"
-            >
-              {/* Massive Full-Bleed Image Background */}
-              <div className="relative w-full h-[500px] sm:h-[580px] lg:h-[640px] overflow-hidden">
-                <Image
-                  src={sector.image}
-                  alt={sector.alt}
-                  fill
-                  quality={100}
-                  sizes="100vw"
-                  className="object-cover object-center group-hover:scale-105 transition-transform duration-1000 ease-out"
-                />
+      {/* ─── STEP 3: THE 4 INVESTMENT SECTORS (Full-Width Photographic Banners, Invisible Writeup until Hover) ─── */}
+      <section id="sectors" className="w-full bg-black flex flex-col">
+        {PORTFOLIO_SECTORS.map((sector) => (
+          <div
+            key={sector.title}
+            id={sector.id}
+            className="scroll-mt-20 relative w-full h-[520px] sm:h-[620px] lg:h-[720px] overflow-hidden bg-black group select-none cursor-pointer border-b border-black/40 last:border-b-0"
+          >
+            {/* Massive Full-Bleed Image Filling 100% of Width */}
+            <Image
+              src={sector.image}
+              alt={sector.alt}
+              fill
+              quality={100}
+              sizes="100vw"
+              className="object-cover object-center group-hover:scale-105 transition-transform duration-1000 ease-out"
+            />
 
-                {/* Cinematic Dark Frosted Glass Overlay */}
-                <div className="absolute inset-0 bg-black/50 backdrop-blur-sm z-10 pointer-events-none" />
+            {/* Subtle Base Dark Layer for Photo Richness, deepening to Frosted Backdrop on Hover */}
+            <div className="absolute inset-0 bg-black/10 group-hover:bg-black/50 backdrop-blur-none group-hover:backdrop-blur-[2px] transition-all duration-700 ease-out pointer-events-none" />
 
-                {/* Additional Vignette & Directional Lighting */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-black/30 z-10 pointer-events-none" />
-
-                {/* Overlaid Glass-Morphism Content Card (Layered on top at z-20) */}
-                <div className="absolute inset-0 z-20 p-6 sm:p-10 lg:p-16 flex flex-col justify-end">
-                  <div className="max-w-3xl space-y-4 sm:space-y-5 rounded-2xl sm:rounded-3xl bg-black/40 backdrop-blur-md p-6 sm:p-8 lg:p-10 border border-white/20 shadow-2xl">
-                    <div className="flex items-center gap-3">
-                      <span className="text-[#ABF67E] font-mono text-sm sm:text-base font-bold tracking-wider">
-                        {sector.number}
-                      </span>
-                      <span className="w-8 h-px bg-[#ABF67E]/60" />
-                      <span className="text-xs uppercase tracking-widest font-bold text-white/80">
-                        {sector.tagline}
-                      </span>
-                    </div>
-
-                    <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium text-white tracking-tight leading-[1.08] drop-shadow-md">
-                      {sector.title}
-                    </h2>
-
-                    <p className="font-sans text-sm sm:text-base lg:text-lg text-white/90 leading-relaxed font-light drop-shadow-xs">
-                      {sector.description}
-                    </p>
-
-                    {/* Sector Highlights Chips */}
-                    <div className="pt-2 flex flex-wrap gap-2 sm:gap-2.5">
-                      {sector.highlights.map((item) => (
-                        <span
-                          key={item}
-                          className="px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-white/15 backdrop-blur-md text-[#ABF67E] border border-white/20"
-                        >
-                          {item}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                </div>
+            {/* Sector Name: Completely Invisible Until Hovered Upon */}
+            <div className="absolute inset-0 z-20 flex flex-col items-center justify-center p-6 text-center pointer-events-none">
+              <div className="opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500 ease-out flex flex-col items-center">
+                <h2 className="font-heading text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-white tracking-tight drop-shadow-2xl">
+                  {sector.title}
+                </h2>
+                <div className="mt-4 sm:mt-6 h-[2px] w-16 sm:w-24 bg-[#9BE564] drop-shadow-md" />
               </div>
-            </motion.div>
-          ))}
-        </div>
+            </div>
+          </div>
+        ))}
       </section>
 
       {/* ─── STEP 4: CLEAN CTA SECTION (Compact Banner) ─── */}
@@ -423,7 +387,7 @@ export default function InvestmentsPage() {
             <span className="text-xs uppercase tracking-wider text-[#ABF67E] font-bold">
               CO-INVESTMENT &amp; ALLIANCES
             </span>
-            <h3 className="font-serif text-2xl sm:text-3xl font-semibold text-white">
+            <h3 className="font-heading text-2xl sm:text-3xl font-semibold text-white">
               Partner Across Our Strategic Sectors
             </h3>
             <p className="text-sm sm:text-base text-white/80 leading-relaxed">

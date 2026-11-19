@@ -1,0 +1,571 @@
+"use client";
+
+import React, { useState } from "react";
+import Link from "next/link";
+import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
+import { ArrowRightIcon } from "@/components/ui/Icons";
+
+const PRO_MAX_EASE = [0.16, 1, 0.3, 1] as const;
+
+export interface SectorItem {
+  id: string;
+  name: string;
+  categoryLabel: string;
+  color: string;
+  hoverColor: string;
+  lightBg: string;
+  textColor: string;
+  accentColor: string;
+  tagline: string;
+  focusItems: string[];
+  description: string;
+  href: string;
+}
+
+export const SECTORS: SectorItem[] = [
+  {
+    id: "agro-trading",
+    name: "AGRO-TRADING",
+    categoryLabel: "Agriculture & Commodity Supply Chains",
+    color: "#1E5208", // Forest Green
+    hoverColor: "#2A6E0C",
+    lightBg: "#F0FDF4",
+    textColor: "#14532D",
+    accentColor: "#ABF67E",
+    tagline: "Sovereign Agrarian Corridors & Commodity Supply",
+    focusItems: ["Agro-Commodity Aggregation", "Regional Supply Logistics", "Commercial Off-Taker Supply"],
+    description:
+      "Sourcing staple agricultural commodities at scale across rural basins, connecting domestic production with industrial off-takers across Nigeria and West Africa.",
+    href: "/investments#agriculture",
+  },
+  {
+    id: "real-estate",
+    name: "REAL ESTATE",
+    categoryLabel: "Productive Assets & Real Estate",
+    color: "#C25E00", // Warm Terracotta / Amber
+    hoverColor: "#D97706",
+    lightBg: "#FFFBEB",
+    textColor: "#78350F",
+    accentColor: "#FDE68A",
+    tagline: "Tangible Sovereign Assets & Land Banking",
+    focusItems: ["Commercial Land Holdings", "Logistics & Warehousing Corridors", "Balance-Sheet Compounding Assets"],
+    description:
+      "Acquiring and developing prime commercial land, warehousing logistics, and physical assets that generate steady recurring income and hedge against currency volatility.",
+    href: "/investments#real-estate",
+  },
+  {
+    id: "finance",
+    name: "FINANCE",
+    categoryLabel: "Capital Stewardship & Co-Investment",
+    color: "#0F2B48", // Deep Corporate Navy
+    hoverColor: "#1E3A8A",
+    lightBg: "#EFF6FF",
+    textColor: "#1E3A8A",
+    accentColor: "#93C5FD",
+    tagline: "Disciplined Capital Stewardship & Syndicates",
+    focusItems: ["Structured Co-Investment Syndicates", "Fiduciary Due Diligence Rigour", "Long-Term Capital Preservation"],
+    description:
+      "Deploying patient capital and structuring co-investment syndicates that provide structured liquidity and governance-first capital to proven commercial operators.",
+    href: "/investments#finance",
+  },
+  {
+    id: "technology",
+    name: "TECHNOLOGY",
+    categoryLabel: "Digital Infrastructure & Enterprise Systems",
+    color: "#0284C7", // Cyan / Slate Blue
+    hoverColor: "#0369A1",
+    lightBg: "#F0F9FF",
+    textColor: "#075985",
+    accentColor: "#7DD3FC",
+    tagline: "Digital Infrastructure & Commodity Digitization",
+    focusItems: ["Enterprise Automation Systems", "Trade & Supply Digitization", "Scalable African Platforms"],
+    description:
+      "Investing in foundational digital tools, enterprise software, and supply-chain digitization platforms that accelerate African trade velocity and operational transparency.",
+    href: "/investments#technology",
+  },
+  {
+    id: "the-fold",
+    name: "THE FOLD",
+    categoryLabel: "Community, Literacy & Collective Advancement",
+    color: "#581C87", // Royal Purple
+    hoverColor: "#6B21A8",
+    lightBg: "#FAF5FF",
+    textColor: "#581C87",
+    accentColor: "#D8B4FE",
+    tagline: "Governed Cohorts & Commercial Literacy",
+    focusItems: ["Governed Member Cohorts", "Executive Mentorship & Literacy", "Collective Economic Advancement"],
+    description:
+      "Convening forward-thinking business leaders, entrepreneurs, and investors committed to commercial literacy, ethical commerce, and governed collective economic strength.",
+    href: "/the-fold",
+  },
+  {
+    id: "enterprise-dev",
+    name: "ENTERPRISE",
+    categoryLabel: "Strategic Ventures & Business Alliances",
+    color: "#991B1B", // Rich Crimson
+    hoverColor: "#B91C1C",
+    lightBg: "#FEF2F2",
+    textColor: "#991B1B",
+    accentColor: "#FECACA",
+    tagline: "Joint Ventures & Indigenous African Scaling",
+    focusItems: ["Joint Venture Structuring", "Strategic Supply Alliances", "Pan-African Commercial Scaling"],
+    description:
+      "Forming high-conviction joint ventures and institutional partnerships with indigenous African companies poised for continental expansion and operational leadership.",
+    href: "/investments",
+  },
+];
+
+export default function InvestmentPhilosophy() {
+  const shouldReduceMotion = useReducedMotion();
+  const [activeSectorId, setActiveSectorId] = useState<string>("agro-trading");
+
+  const activeSector = SECTORS.find((s) => s.id === activeSectorId) || SECTORS[0];
+
+  // SVG wheel geometry
+  const cx = 270;
+  const cy = 270;
+  const rOuter = 248;
+  const rMid = 196; // colored outer rim boundary
+  const rInner = 92; // inner slice boundary
+  const rCenter = 88; // center circle boundary
+
+  const totalSlices = SECTORS.length;
+  const sliceAngle = 360 / totalSlices;
+
+  // Helper to create annular arc paths
+  const getSlicePath = (index: number, r1: number, r2: number) => {
+    // Start at -90deg (12 o'clock)
+    const startAngle = -90 + index * sliceAngle;
+    const endAngle = startAngle + sliceAngle;
+
+    const rad1 = (startAngle * Math.PI) / 180;
+    const rad2 = (endAngle * Math.PI) / 180;
+
+    const x1 = cx + r2 * Math.cos(rad1);
+    const y1 = cy + r2 * Math.sin(rad1);
+    const x2 = cx + r2 * Math.cos(rad2);
+    const y2 = cy + r2 * Math.sin(rad2);
+
+    const x3 = cx + r1 * Math.cos(rad2);
+    const y3 = cy + r1 * Math.sin(rad2);
+    const x4 = cx + r1 * Math.cos(rad1);
+    const y4 = cy + r1 * Math.sin(rad1);
+
+    const largeArcFlag = sliceAngle > 180 ? 1 : 0;
+
+    return `M ${x1} ${y1} A ${r2} ${r2} 0 ${largeArcFlag} 1 ${x2} ${y2} L ${x3} ${y3} A ${r1} ${r1} 0 ${largeArcFlag} 0 ${x4} ${y4} Z`;
+  };
+
+  // Helper to compute center point of inner slice for text placing
+  const getSliceCenterPoint = (index: number, radius: number) => {
+    const midAngle = -90 + (index + 0.5) * sliceAngle;
+    const rad = (midAngle * Math.PI) / 180;
+    return {
+      x: cx + radius * Math.cos(rad),
+      y: cy + radius * Math.sin(rad),
+      angle: midAngle,
+    };
+  };
+
+  return (
+    <section
+      id="philosophy"
+      className="relative w-full py-16 sm:py-20 lg:py-28 px-6 lg:px-12 bg-white text-[#0C1E20] scroll-mt-20 overflow-hidden border-t border-[#c1c8c0]/25"
+    >
+      <div className="max-w-[1360px] mx-auto">
+        
+        {/* Header Label / Eyebrow (Matching Heirs Holdings Style) */}
+        <div className="w-full text-center mb-10 sm:mb-14">
+          <motion.span
+            initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 12 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="text-xs uppercase tracking-[0.25em] font-bold text-[#2D6C00]"
+          >
+            INVESTMENT PHILOSOPHY
+          </motion.span>
+        </div>
+
+        {/* Two-Column Grid: Radial Portfolio Wheel (Left) & Philosophy Narrative (Right) */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+          
+          {/* ─── LEFT COLUMN: The Circular Sector Wheel Diagram ─── */}
+          <div className="lg:col-span-6 flex flex-col items-center">
+            
+            {/* SVG Interactive Wheel Container */}
+            <div className="relative w-full max-w-[460px] sm:max-w-[500px] aspect-square flex items-center justify-center">
+              
+              <svg
+                viewBox="0 0 540 540"
+                className="w-full h-full drop-shadow-xl select-none"
+                style={{ touchAction: "manipulation" }}
+              >
+                <defs>
+                  {/* Subtle inner slice shadow */}
+                  <filter id="hubGlow" x="-20%" y="-20%" width="140%" height="140%">
+                    <feDropShadow dx="0" dy="2" stdDeviation="4" floodOpacity="0.12" />
+                  </filter>
+                  <filter id="africaGlow" x="-20%" y="-20%" width="140%" height="140%">
+                    <feDropShadow dx="0" dy="1" stdDeviation="2" floodColor="#1E5208" floodOpacity="0.3" />
+                  </filter>
+                </defs>
+
+                {/* Slices Rendering */}
+                {SECTORS.map((sector, idx) => {
+                  const isSelected = sector.id === activeSectorId;
+                  const innerSlicePath = getSlicePath(idx, rInner, rMid);
+                  const outerArcPath = getSlicePath(idx, rMid, rOuter);
+                  const centerPt = getSliceCenterPoint(idx, 142);
+                  const rimCenterPt = getSliceCenterPoint(idx, 222);
+
+                  return (
+                    <g
+                      key={sector.id}
+                      onClick={() => setActiveSectorId(sector.id)}
+                      onMouseEnter={() => setActiveSectorId(sector.id)}
+                      className="cursor-pointer transition-transform duration-300 group"
+                      role="button"
+                      tabIndex={0}
+                      aria-label={`${sector.name} sector: ${sector.tagline}`}
+                      onKeyDown={(e) => {
+                        if (e.key === "Enter" || e.key === " ") {
+                          setActiveSectorId(sector.id);
+                        }
+                      }}
+                    >
+                      {/* Inner Slice (White / Off-White background with division details) */}
+                      <path
+                        d={innerSlicePath}
+                        fill={isSelected ? sector.lightBg : "#FFFFFF"}
+                        stroke="#E2E8F0"
+                        strokeWidth="1.5"
+                        className="transition-colors duration-300 group-hover:brightness-95"
+                      />
+
+                      {/* Outer Colored Rim Arc */}
+                      <path
+                        d={outerArcPath}
+                        fill={isSelected ? sector.hoverColor : sector.color}
+                        stroke="#FFFFFF"
+                        strokeWidth="2"
+                        className="transition-all duration-300 group-hover:brightness-110"
+                      />
+
+                      {/* Outer Sector Name Label */}
+                      <text
+                        x={rimCenterPt.x}
+                        y={rimCenterPt.y}
+                        textAnchor="middle"
+                        dominantBaseline="central"
+                        transform={`rotate(${rimCenterPt.angle > 0 && rimCenterPt.angle < 180 ? rimCenterPt.angle - 90 : rimCenterPt.angle + 90}, ${rimCenterPt.x}, ${rimCenterPt.y})`}
+                        fill="#FFFFFF"
+                        fontSize="10.5"
+                        fontWeight="700"
+                        letterSpacing="1.5"
+                        className="pointer-events-none uppercase font-sans tracking-widest"
+                      >
+                        {sector.name}
+                      </text>
+
+                      {/* Inner Slice Content Labels (Representative Focus Area / Capabilities) */}
+                      <g
+                        transform={`translate(${centerPt.x}, ${centerPt.y})`}
+                        className="pointer-events-none"
+                      >
+                        <text
+                          textAnchor="middle"
+                          dominantBaseline="central"
+                          fill={isSelected ? sector.color : "#1E293B"}
+                          fontSize="9.5"
+                          fontWeight={isSelected ? "700" : "600"}
+                          className="font-sans transition-colors duration-200"
+                        >
+                          {sector.focusItems[0]}
+                        </text>
+                        {sector.focusItems[1] && (
+                          <text
+                            y="13"
+                            textAnchor="middle"
+                            dominantBaseline="central"
+                            fill="#64748B"
+                            fontSize="8"
+                            fontWeight="500"
+                            className="font-sans"
+                          >
+                            {sector.focusItems[1]}
+                          </text>
+                        )}
+                      </g>
+                    </g>
+                  );
+                })}
+
+                {/* Thin Radial Separator Lines from Hub to Outer Edge */}
+                {SECTORS.map((_, idx) => {
+                  const angle = -90 + idx * sliceAngle;
+                  const rad = (angle * Math.PI) / 180;
+                  const x1 = cx + rInner * Math.cos(rad);
+                  const y1 = cy + rInner * Math.sin(rad);
+                  const x2 = cx + rOuter * Math.cos(rad);
+                  const y2 = cy + rOuter * Math.sin(rad);
+
+                  return (
+                    <line
+                      key={`sep-${idx}`}
+                      x1={x1}
+                      y1={y1}
+                      x2={x2}
+                      y2={y2}
+                      stroke="#FFFFFF"
+                      strokeWidth="2.5"
+                      className="pointer-events-none"
+                    />
+                  );
+                })}
+
+                {/* ─── Center Hub Medallion: Globe + Pan-African Continent + HIN Identity ─── */}
+                <circle
+                  cx={cx}
+                  cy={cy}
+                  r={rCenter}
+                  fill="#FFFFFF"
+                  stroke="#CBD5E1"
+                  strokeWidth="2"
+                  filter="url(#hubGlow)"
+                  className="pointer-events-none"
+                />
+
+                {/* Center Outer Accent Ring */}
+                <circle
+                  cx={cx}
+                  cy={cy}
+                  r={rCenter - 5}
+                  fill="#F8FAFC"
+                  stroke="#E2E8F0"
+                  strokeWidth="1"
+                  className="pointer-events-none"
+                />
+
+                {/* Stylized Pan-African Globe Vector */}
+                <g
+                  transform={`translate(${cx - 24}, ${cy - 48})`}
+                  className="pointer-events-none"
+                  filter="url(#africaGlow)"
+                >
+                  {/* Stylized Africa Continent Silhouette Path */}
+                  <path
+                    d="M 22 2 C 26 2, 33 4, 38 9 C 40 12, 42 16, 40 19 C 38 22, 35 24, 37 28 C 39 31, 38 36, 35 41 C 32 45, 27 49, 24 50 C 23 49, 21 44, 21 40 C 20 37, 16 34, 15 31 C 13 28, 9 27, 8 23 C 7 19, 10 16, 12 14 C 13 11, 12 8, 14 6 C 16 4, 19 2, 22 2 Z"
+                    fill="#1E5208"
+                    stroke="#ABF67E"
+                    strokeWidth="1.2"
+                  />
+                  {/* Madagascar Island Accent */}
+                  <ellipse cx="43" cy="38" rx="2.5" ry="5.5" transform="rotate(20 43 38)" fill="#2D6C00" />
+                  {/* Nigerian / Asaba Sovereign Hub Marker */}
+                  <circle cx="19" cy="24" r="2.2" fill="#ABF67E" stroke="#00190A" strokeWidth="0.8" />
+                </g>
+
+                {/* Central Brand Motto & Identity */}
+                <text
+                  x={cx}
+                  y={cy + 16}
+                  textAnchor="middle"
+                  fill="#00190A"
+                  fontSize="8.5"
+                  fontWeight="800"
+                  letterSpacing="1.2"
+                  className="font-sans uppercase pointer-events-none"
+                >
+                  HUNDREDFOLD
+                </text>
+                <text
+                  x={cx}
+                  y={cy + 29}
+                  textAnchor="middle"
+                  fill="#475569"
+                  fontSize="7.2"
+                  fontWeight="600"
+                  letterSpacing="0.4"
+                  className="font-sans pointer-events-none"
+                >
+                  Investing in Africa&apos;s
+                </text>
+                <text
+                  x={cx}
+                  y={cy + 39}
+                  textAnchor="middle"
+                  fill="#1E5208"
+                  fontSize="7.5"
+                  fontWeight="700"
+                  letterSpacing="0.5"
+                  className="font-sans uppercase pointer-events-none"
+                >
+                  Potential
+                </text>
+              </svg>
+            </div>
+
+            {/* Mobile / Accessible Interactive Sector Pills */}
+            <div className="w-full mt-6 flex flex-wrap items-center justify-center gap-1.5 sm:gap-2">
+              {SECTORS.map((s) => {
+                const isSelected = s.id === activeSectorId;
+                return (
+                  <button
+                    key={s.id}
+                    onClick={() => setActiveSectorId(s.id)}
+                    className={`px-3 py-1.5 rounded-full text-xs font-semibold tracking-wide transition-all duration-200 border ${
+                      isSelected
+                        ? "bg-[#00190A] text-[#ABF67E] border-[#00190A] shadow-sm scale-105"
+                        : "bg-white text-[#475569] border-[#E2E8F0] hover:bg-[#F8FAFC] hover:text-[#00190A]"
+                    }`}
+                  >
+                    {s.name}
+                  </button>
+                );
+              })}
+            </div>
+
+            {/* Micro Callout for the Selected Sector */}
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={activeSector.id}
+                initial={{ opacity: 0, y: 6 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -6 }}
+                transition={{ duration: 0.2 }}
+                className="mt-4 w-full max-w-[460px] p-3.5 sm:p-4 rounded-xl border border-[#DEF2F4] bg-[#F8FAFC] flex items-center justify-between gap-3"
+              >
+                <div className="flex flex-col text-left">
+                  <div className="flex items-center gap-2">
+                    <span
+                      className="w-2.5 h-2.5 rounded-full shrink-0"
+                      style={{ backgroundColor: activeSector.color }}
+                    />
+                    <span className="text-xs font-bold uppercase tracking-wider text-[#00190A]">
+                      {activeSector.name}: {activeSector.tagline}
+                    </span>
+                  </div>
+                  <p className="text-xs text-[#475569] mt-0.5 line-clamp-1">
+                    {activeSector.description}
+                  </p>
+                </div>
+                <Link
+                  href={activeSector.href}
+                  className="shrink-0 text-xs font-bold text-[#1E5208] hover:text-[#00190A] flex items-center gap-1 underline underline-offset-4"
+                >
+                  <span>Explore</span>
+                  <ArrowRightIcon className="w-3.5 h-3.5" />
+                </Link>
+              </motion.div>
+            </AnimatePresence>
+          </div>
+
+          {/* ─── RIGHT COLUMN: Philosophy Narrative (Matching Reference Copy Structure) ─── */}
+          <div className="lg:col-span-6 flex flex-col items-start text-left">
+            
+            <motion.h2
+              initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, ease: PRO_MAX_EASE }}
+              className="font-heading text-3xl sm:text-4xl lg:text-[44px] text-[#00190A] font-semibold leading-[1.15] tracking-tight"
+            >
+              Our Investment Philosophy
+            </motion.h2>
+
+            {/* Core Brand Statement */}
+            <motion.p
+              initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.1, ease: PRO_MAX_EASE }}
+              className="mt-6 text-base sm:text-lg text-[#334155] leading-relaxed font-normal"
+            >
+              At Hundredfold, we believe that lasting prosperity is created by building resilient businesses, strong institutions and sustainable economies. Our investments demonstrate the power of Africapitalism in action.
+            </motion.p>
+
+            {/* Value Creation Subheading */}
+            <motion.p
+              initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.15, ease: PRO_MAX_EASE }}
+              className="mt-6 text-base sm:text-lg text-[#0F172A] font-medium"
+            >
+              We create value in three ways:
+            </motion.p>
+
+            {/* Three Value Creation Tenets (Directly matching reference list structure) */}
+            <div className="mt-5 space-y-4 w-full">
+              
+              {/* 1. Disciplined Capital */}
+              <motion.div
+                initial={{ opacity: 0, x: shouldReduceMotion ? 0 : 15 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.2, ease: PRO_MAX_EASE }}
+                className="flex items-start gap-3"
+              >
+                <span className="w-2 h-2 rounded-full bg-[#1E5208] mt-2.5 shrink-0" />
+                <p className="text-sm sm:text-base text-[#334155] leading-relaxed">
+                  <strong className="text-[#0F172A] font-semibold">Disciplined Capital:</strong>{" "}
+                  We invest where we can create long-term value through sound commercial judgment, rejecting speculative hype in favor of cash-generating, productive assets.
+                </p>
+              </motion.div>
+
+              {/* 2. Active Stewardship */}
+              <motion.div
+                initial={{ opacity: 0, x: shouldReduceMotion ? 0 : 15 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.25, ease: PRO_MAX_EASE }}
+                className="flex items-start gap-3"
+              >
+                <span className="w-2 h-2 rounded-full bg-[#1E5208] mt-2.5 shrink-0" />
+                <p className="text-sm sm:text-base text-[#334155] leading-relaxed">
+                  <strong className="text-[#0F172A] font-semibold">Active Stewardship:</strong>{" "}
+                  We partner with our businesses and co-investors to strengthen corporate governance, statutory compliance, and institutional operational resilience.
+                </p>
+              </motion.div>
+
+              {/* 3. Purposeful Growth */}
+              <motion.div
+                initial={{ opacity: 0, x: shouldReduceMotion ? 0 : 15 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.3, ease: PRO_MAX_EASE }}
+                className="flex items-start gap-3"
+              >
+                <span className="w-2 h-2 rounded-full bg-[#1E5208] mt-2.5 shrink-0" />
+                <p className="text-sm sm:text-base text-[#334155] leading-relaxed">
+                  <strong className="text-[#0F172A] font-semibold">Purposeful Growth:</strong>{" "}
+                  We invest in foundational sectors that generate sustainable returns, while advancing Africa&apos;s economic development and regional self-reliance.
+                </p>
+              </motion.div>
+            </div>
+
+            {/* CTA Button matching Heirs Holdings (LEARN MORE in red/green accent) */}
+            <motion.div
+              initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.35, ease: PRO_MAX_EASE }}
+              className="mt-8 sm:mt-10 pt-4"
+            >
+              <Link
+                href="/investments"
+                className="inline-flex items-center gap-2 text-xs sm:text-sm font-bold uppercase tracking-[0.18em] text-[#C0392B] hover:text-[#991B1B] transition-colors group"
+              >
+                <span>LEARN MORE</span>
+                <ArrowRightIcon className="w-4 h-4 group-hover:translate-x-1.5 transition-transform duration-200" />
+              </Link>
+            </motion.div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+  );
+}

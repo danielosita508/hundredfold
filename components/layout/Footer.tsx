@@ -60,7 +60,7 @@ export default function Footer() {
                 />
               </div>
               <div className="flex flex-col">
-                <span className="font-serif text-xl text-[#00190A] font-semibold tracking-tight">
+                <span className="font-heading text-xl text-[#00190A] font-semibold tracking-tight">
                   Hundredfold
                 </span>
                 <span className="text-[10px] uppercase tracking-widest font-bold text-[#2D6C00]">
