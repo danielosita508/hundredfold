@@ -60,7 +60,7 @@ const TABS: TabItem[] = [
       "Strict moisture, grading, and quality compliance protocols",
       "Commercially disciplined contracts with verified processors",
     ],
-    image: "/images/agric.jpg",
+    image: "/images/agric-maize-crops.jpg",
     caption: "Agriculture Corridor • Sourcing & Aggregation",
     ctaText: "View Agriculture Scope",
     ctaHref: "/investments#agriculture",

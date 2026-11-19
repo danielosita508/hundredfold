@@ -7,7 +7,7 @@ author:
 category: "Agro-trading and African supply chains"
 categorySlug: "agro-trading"
 readTime: "6 min read"
-coverImage: "/images/tim-mossholder-xDwEa2kaeJA-unsplash.jpg"
+coverImage: "/images/agric-maize-crops.jpg"
 featured: true
 excerpt: "How structured commodity aggregation, verifiable warehouse logistics, and disciplined capital allocation turn regional agricultural potential into lasting institutional wealth across the Niger Delta."
 tags: ["Agro-Trading", "Africapitalism", "Supply Chains", "Commodity Logistics", "Delta State"]

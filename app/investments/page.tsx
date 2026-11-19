@@ -26,7 +26,7 @@ const INVESTMENT_HERO_SLIDES = [
       "Deploying disciplined capital, operational governance, and strategic syndicates into high-conviction African real estate, agriculture, finance, and technology.",
   },
   {
-    image: "/images/tim-mossholder-xDwEa2kaeJA-unsplash.jpg",
+    image: "/images/agric-maize-crops.jpg",
     alt: "Agriculture & Commodity Supply Chains",
     title: "Sovereign Agrarian Basins",
     description:
@@ -72,11 +72,13 @@ const PORTFOLIO_SECTORS: PortfolioSector[] = [
     id: "agriculture",
     number: "01",
     title: "Agriculture",
-    image: "/images/tim-mossholder-xDwEa2kaeJA-unsplash.jpg",
+    image: "/images/agric-maize-crops.jpg",
     images: [
-      "/images/tim-mossholder-xDwEa2kaeJA-unsplash.jpg",
-      "/images/agric.jpg",
-      "/images/annie-spratt-IT6aov1ScW0-unsplash.jpg",
+      "/images/agric-maize-crops.jpg",
+      "/images/agric-produce-aggregation.jpg",
+      "/images/agric-livestock-barn.jpg",
+      "/images/agric-cattle-ranching.jpg",
+      "/images/agric-yam-tubers.jpg",
     ],
     alt: "Agricultural commodity trading, processing, and agrarian supply-chain operations",
     tagline: "Sovereign Agrarian Corridors & Commodity Supply",

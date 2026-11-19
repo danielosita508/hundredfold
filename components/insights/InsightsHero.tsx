@@ -10,7 +10,7 @@ const PRO_MAX_EASE = [0.16, 1, 0.3, 1] as const;
 
 const INSIGHTS_HERO_SLIDES = [
   {
-    image: "/images/tim-mossholder-xDwEa2kaeJA-unsplash.jpg",
+    image: "/images/agric-maize-crops.jpg",
     alt: "Agricultural commodity corridors and trade logistics analysis",
     title: "News & Insights",
     description:

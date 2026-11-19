@@ -36,7 +36,7 @@ const HERO_SLIDES = [
       "Grounded in institutional governance and disciplined capital stewardship, we pool capabilities and participate in high-conviction ventures across key sovereign sectors.",
   },
   {
-    image: "/images/agric-tractor-field.jpg",
+    image: "/images/agric-maize-crops.jpg",
     alt: "Agricultural commodity corridors and fertile agro-processing basins",
     title: "Agrarian Corridors & Food Security.",
     description:
@@ -88,11 +88,13 @@ const BUSINESS_SECTORS: SectorItem[] = [
     description:
       "Coordinating agricultural commodity aggregation, farm asset acquisition, and reliable supply chain corridors across productive African basins.",
     images: [
-      "/images/tim-mossholder-xDwEa2kaeJA-unsplash.jpg",
-      "/images/agric.jpg",
-      "/images/annie-spratt-IT6aov1ScW0-unsplash.jpg",
+      "/images/agric-maize-crops.jpg",
+      "/images/agric-produce-aggregation.jpg",
+      "/images/agric-livestock-barn.jpg",
+      "/images/agric-cattle-ranching.jpg",
+      "/images/agric-yam-tubers.jpg",
     ],
-    alt: "Agriculture and agricultural commodity supply chains",
+    alt: "Agriculture, agro-commodity aggregation, and livestock corridors",
   },
   {
     title: "Real Estate",
