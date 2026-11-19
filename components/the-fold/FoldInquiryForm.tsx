@@ -30,36 +30,36 @@ export default function FoldInquiryForm() {
 
   if (state.success) {
     return (
-      <div className="p-8 sm:p-12 rounded-3xl bg-white/10 backdrop-blur-2xl border border-white/20 shadow-2xl space-y-6 text-center text-white animate-fadeIn">
-        <div className="w-16 h-16 rounded-full bg-[#ABF67E]/20 border-2 border-[#ABF67E] flex items-center justify-center mx-auto text-[#ABF67E] shadow-sm">
+      <div className="p-8 sm:p-12 rounded-3xl bg-white border border-[#DEF2F4] shadow-2xl space-y-6 text-center text-[#00190A] animate-fadeIn">
+        <div className="w-16 h-16 rounded-full bg-[#ABF67E]/30 border-2 border-[#2D6C00] flex items-center justify-center mx-auto text-[#2D6C00] shadow-sm">
           <CheckCircleIcon className="w-8 h-8" />
         </div>
 
         <div className="space-y-2">
-          <h3 className="font-heading text-2xl sm:text-3xl font-bold tracking-tight text-white">
+          <h3 className="font-heading text-2xl sm:text-3xl font-bold tracking-tight text-[#00190A]">
             Dossier Received by Secretariat
           </h3>
-          <p className="text-white/80 text-sm sm:text-base max-w-xl mx-auto leading-relaxed">
+          <p className="text-[#424842] text-sm sm:text-base max-w-xl mx-auto leading-relaxed">
             {state.message}
           </p>
         </div>
 
         {state.referenceId && (
-          <div className="inline-block px-4 py-2 rounded-xl bg-white/10 border border-white/20 font-mono text-xs text-[#ABF67E]">
+          <div className="inline-block px-4 py-2 rounded-xl bg-[#E9FDFF] border border-[#DEF2F4] font-mono text-xs text-[#2D6C00]">
             Candidate Registration ID:{" "}
-            <span className="font-bold text-white">{state.referenceId}</span>
+            <span className="font-bold text-[#00190A]">{state.referenceId}</span>
           </div>
         )}
 
-        <p className="text-xs text-white/60 max-w-md mx-auto">
+        <p className="text-xs text-[#556358] max-w-md mx-auto">
           The formal Cycle 1 Prospectus and executive interview schedule will be communicated to your work email.
         </p>
 
-        <div className="pt-4 border-t border-white/10 flex flex-col sm:flex-row items-center justify-center gap-4 text-xs">
+        <div className="pt-4 border-t border-[#DEF2F4] flex flex-col sm:flex-row items-center justify-center gap-4 text-xs">
           <button
             type="button"
             onClick={() => window.location.reload()}
-            className="px-6 py-3 rounded-xl bg-white/15 hover:bg-white/25 text-white font-bold transition-colors min-h-[44px] cursor-pointer"
+            className="px-6 py-3 rounded-full bg-[#0A2F1B] hover:bg-[#00190A] text-white font-semibold transition-colors min-h-[44px] cursor-pointer shadow-sm"
           >
             Submit Another Dossier
           </button>
@@ -70,10 +70,10 @@ export default function FoldInquiryForm() {
             )}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#ABF67E] text-[#00190A] hover:bg-[#8ee459] font-bold transition-colors min-h-[44px] shadow-sm"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#ABF67E] text-[#00190A] hover:bg-[#8ee459] font-bold transition-colors min-h-[44px] shadow-sm"
           >
             <WhatsAppIcon className="w-4 h-4 text-[#00190A]" />
-            <span>Connect with Secretariat on WhatsApp</span>
+            <span>Connect on WhatsApp</span>
           </a>
         </div>
       </div>
@@ -84,37 +84,37 @@ export default function FoldInquiryForm() {
     <form
       ref={formRef}
       action={formAction}
-      className="p-8 sm:p-10 rounded-3xl bg-white/10 backdrop-blur-2xl border border-white/20 shadow-2xl space-y-6 text-white"
+      className="p-8 sm:p-10 rounded-3xl bg-white border border-[#DEF2F4] shadow-2xl space-y-6 text-[#00190A]"
     >
-      <div className="space-y-2 border-b border-white/10 pb-5">
-        <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#ABF67E]">
-          <ShieldCheckIcon className="w-4 h-4 text-[#ABF67E]" />
-          <span>Strict Executive Confidentiality &bull; Admissions Registry</span>
+      <div className="space-y-1.5 border-b border-[#DEF2F4] pb-4">
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#ABF67E]/30 text-[#2D6C00] text-xs uppercase font-bold tracking-wider">
+          <span className="w-1.5 h-1.5 rounded-full bg-[#2D6C00]" />
+          <span>CANDIDATE REGISTRY</span>
         </div>
-        <h3 className="font-heading text-2xl sm:text-3xl font-bold tracking-tight text-white">
-          Request Cohort Dossier &amp; Vetting Criteria
+        <h3 className="font-heading text-2xl sm:text-3xl font-bold tracking-tight text-[#00190A]">
+          Request Cohort Dossier
         </h3>
-        <p className="text-white/70 text-xs sm:text-sm">
-          Please submit your profile. Admittance is strictly merit-based and governed by cohort availability (strict 100 seats).
+        <p className="text-[#556358] text-xs sm:text-sm">
+          Submit your profile for confidential Secretariat review (strict 100 seats per cohort).
         </p>
       </div>
 
       {/* General Form Error Alert */}
       {state.message && !state.success && (
-        <div className="p-4 rounded-xl bg-red-950/60 backdrop-blur-md border border-red-500/50 text-red-200 text-xs flex items-start gap-2.5">
-          <span className="text-red-400 font-bold">&bull;</span>
+        <div className="p-4 rounded-xl bg-red-50 border border-red-200 text-red-700 text-xs flex items-start gap-2.5">
+          <span className="text-red-500 font-bold">&bull;</span>
           <span>{state.message}</span>
         </div>
       )}
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
         {/* Full Name */}
-        <div className="space-y-2">
+        <div className="space-y-1.5">
           <label
             htmlFor="fold-fullName"
-            className="block text-xs font-bold uppercase tracking-wider text-white"
+            className="block text-xs font-semibold text-[#00190A]"
           >
-            Principal / Delegate Full Name <span className="text-[#ABF67E]">*</span>
+            Full Name <span className="text-[#2D6C00]">*</span>
           </label>
           <input
             type="text"
@@ -122,41 +122,41 @@ export default function FoldInquiryForm() {
             name="fullName"
             required
             placeholder="e.g. Dr. Daniel Evans"
-            className="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/20 text-white placeholder-white/40 text-sm focus:outline-none focus:ring-2 focus:ring-[#ABF67E]/40 focus:border-[#ABF67E] transition-all"
+            className="w-full px-4 py-3 rounded-xl bg-[#F8FDFF] border border-[#DEF2F4] text-[#00190A] placeholder-[#8A9E92] text-sm focus:outline-none focus:ring-2 focus:ring-[#2D6C00]/20 focus:border-[#2D6C00] transition-all"
           />
           {state.errors?.fullName && (
-            <p className="text-red-400 text-xs">{state.errors.fullName[0]}</p>
+            <p className="text-red-500 text-xs">{state.errors.fullName[0]}</p>
           )}
         </div>
 
         {/* Email */}
-        <div className="space-y-2">
+        <div className="space-y-1.5">
           <label
             htmlFor="fold-email"
-            className="block text-xs font-bold uppercase tracking-wider text-white"
+            className="block text-xs font-semibold text-[#00190A]"
           >
-            Confidential Work Email <span className="text-[#ABF67E]">*</span>
+            Work Email <span className="text-[#2D6C00]">*</span>
           </label>
           <input
             type="email"
             id="fold-email"
             name="email"
             required
-            placeholder="principal@enterprise.com"
-            className="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/20 text-white placeholder-white/40 text-sm focus:outline-none focus:ring-2 focus:ring-[#ABF67E]/40 focus:border-[#ABF67E] transition-all"
+            placeholder="name@enterprise.com"
+            className="w-full px-4 py-3 rounded-xl bg-[#F8FDFF] border border-[#DEF2F4] text-[#00190A] placeholder-[#8A9E92] text-sm focus:outline-none focus:ring-2 focus:ring-[#2D6C00]/20 focus:border-[#2D6C00] transition-all"
           />
           {state.errors?.email && (
-            <p className="text-red-400 text-xs">{state.errors.email[0]}</p>
+            <p className="text-red-500 text-xs">{state.errors.email[0]}</p>
           )}
         </div>
 
         {/* Phone */}
-        <div className="space-y-2">
+        <div className="space-y-1.5">
           <label
             htmlFor="fold-phone"
-            className="block text-xs font-bold uppercase tracking-wider text-white"
+            className="block text-xs font-semibold text-[#00190A]"
           >
-            Direct Telephone / WhatsApp <span className="text-[#ABF67E]">*</span>
+            Phone / WhatsApp <span className="text-[#2D6C00]">*</span>
           </label>
           <input
             type="tel"
@@ -164,26 +164,26 @@ export default function FoldInquiryForm() {
             name="phone"
             required
             placeholder="+234 (0) 800 000 0000"
-            className="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/20 text-white placeholder-white/40 text-sm focus:outline-none focus:ring-2 focus:ring-[#ABF67E]/40 focus:border-[#ABF67E] transition-all"
+            className="w-full px-4 py-3 rounded-xl bg-[#F8FDFF] border border-[#DEF2F4] text-[#00190A] placeholder-[#8A9E92] text-sm focus:outline-none focus:ring-2 focus:ring-[#2D6C00]/20 focus:border-[#2D6C00] transition-all"
           />
           {state.errors?.phone && (
-            <p className="text-red-400 text-xs">{state.errors.phone[0]}</p>
+            <p className="text-red-500 text-xs">{state.errors.phone[0]}</p>
           )}
         </div>
 
         {/* Profile Type */}
-        <div className="space-y-2">
+        <div className="space-y-1.5">
           <label
             htmlFor="fold-profileType"
-            className="block text-xs font-bold uppercase tracking-wider text-white"
+            className="block text-xs font-semibold text-[#00190A]"
           >
-            Applicant Profile <span className="text-[#ABF67E]">*</span>
+            Applicant Profile <span className="text-[#2D6C00]">*</span>
           </label>
           <select
             id="fold-profileType"
             name="profileType"
             defaultValue="private-operator"
-            className="w-full px-4 py-3 rounded-xl bg-[#0A2F1B] border border-white/20 text-white text-sm focus:outline-none focus:ring-2 focus:ring-[#ABF67E]/40 focus:border-[#ABF67E] transition-all cursor-pointer"
+            className="w-full px-4 py-3 rounded-xl bg-[#F8FDFF] border border-[#DEF2F4] text-[#00190A] text-sm focus:outline-none focus:ring-2 focus:ring-[#2D6C00]/20 focus:border-[#2D6C00] transition-all cursor-pointer"
           >
             <option value="private-operator">
               Private Business Operator / Founder
@@ -197,77 +197,79 @@ export default function FoldInquiryForm() {
             </option>
           </select>
           {state.errors?.profileType && (
-            <p className="text-red-400 text-xs">{state.errors.profileType[0]}</p>
+            <p className="text-red-500 text-xs">{state.errors.profileType[0]}</p>
           )}
         </div>
       </div>
 
-      {/* Voucher Code */}
-      <div className="space-y-2">
-        <label
-          htmlFor="fold-voucherCode"
-          className="block text-xs font-bold uppercase tracking-wider text-white"
-        >
-          Board Sponsor / Voucher Code (Optional)
-        </label>
-        <input
-          type="text"
-          id="fold-voucherCode"
-          name="voucherCode"
-          placeholder="HIN-FOLD-XXXX"
-          className="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/20 text-white placeholder-white/40 uppercase font-mono text-sm focus:outline-none focus:ring-2 focus:ring-[#ABF67E]/40 focus:border-[#ABF67E] transition-all"
-        />
-        {state.errors?.voucherCode && (
-          <p className="text-red-400 text-xs">{state.errors.voucherCode[0]}</p>
-        )}
-      </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+        {/* Voucher Code */}
+        <div className="space-y-1.5">
+          <label
+            htmlFor="fold-voucherCode"
+            className="block text-xs font-semibold text-[#00190A]"
+          >
+            Voucher Code <span className="text-[#8A9E92] font-normal">(Optional)</span>
+          </label>
+          <input
+            type="text"
+            id="fold-voucherCode"
+            name="voucherCode"
+            placeholder="HIN-FOLD-XXXX"
+            className="w-full px-4 py-3 rounded-xl bg-[#F8FDFF] border border-[#DEF2F4] text-[#00190A] placeholder-[#8A9E92] uppercase font-mono text-sm focus:outline-none focus:ring-2 focus:ring-[#2D6C00]/20 focus:border-[#2D6C00] transition-all"
+          />
+          {state.errors?.voucherCode && (
+            <p className="text-red-500 text-xs">{state.errors.voucherCode[0]}</p>
+          )}
+        </div>
 
-      {/* Primary Sector Interest */}
-      <div className="space-y-2">
-        <label
-          htmlFor="fold-interestNotes"
-          className="block text-xs font-bold uppercase tracking-wider text-white"
-        >
-          Primary Investment Interest or Sector Focus
-        </label>
-        <textarea
-          id="fold-interestNotes"
-          name="interestNotes"
-          rows={3}
-          placeholder="Outline your interest in agribusiness, trade pipelines, logistics infrastructure, or capital co-deployment."
-          className="w-full p-4 rounded-xl bg-white/10 border border-white/20 text-white placeholder-white/40 text-sm focus:outline-none focus:ring-2 focus:ring-[#ABF67E]/40 focus:border-[#ABF67E] transition-all resize-none"
-        />
-        {state.errors?.interestNotes && (
-          <p className="text-red-400 text-xs">{state.errors.interestNotes[0]}</p>
-        )}
+        {/* Primary Sector Interest */}
+        <div className="space-y-1.5">
+          <label
+            htmlFor="fold-interestNotes"
+            className="block text-xs font-semibold text-[#00190A]"
+          >
+            Sector Interest <span className="text-[#8A9E92] font-normal">(Optional)</span>
+          </label>
+          <input
+            type="text"
+            id="fold-interestNotes"
+            name="interestNotes"
+            placeholder="e.g. Agriculture, Real Estate, Finance, Tech"
+            className="w-full px-4 py-3 rounded-xl bg-[#F8FDFF] border border-[#DEF2F4] text-[#00190A] placeholder-[#8A9E92] text-sm focus:outline-none focus:ring-2 focus:ring-[#2D6C00]/20 focus:border-[#2D6C00] transition-all"
+          />
+          {state.errors?.interestNotes && (
+            <p className="text-red-500 text-xs">{state.errors.interestNotes[0]}</p>
+          )}
+        </div>
       </div>
 
       <div className="pt-2">
         <button
           type="submit"
           disabled={isPending}
-          className="w-full inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl bg-[#ABF67E] text-[#00190A] text-sm font-bold shadow-xl hover:bg-[#8ee459] transition-all disabled:opacity-50 group cursor-pointer"
+          className="w-full inline-flex items-center justify-center gap-2.5 px-8 py-3.5 rounded-full bg-[#0A2F1B] hover:bg-[#00190A] text-white text-sm font-semibold transition-all shadow-md hover:shadow-lg disabled:opacity-50 group cursor-pointer"
         >
           {isPending ? (
             <>
-              <SpinnerIcon className="w-4 h-4 text-[#00190A] animate-spin" />
-              <span>Transmitting Candidate Dossier...</span>
+              <SpinnerIcon className="w-4 h-4 text-[#ABF67E] animate-spin" />
+              <span>Transmitting Dossier...</span>
             </>
           ) : (
             <>
-              <span>Request Cohort Dossier &amp; Vetting Criteria</span>
-              <ArrowRightIcon className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              <span>Submit Candidate Dossier</span>
+              <ArrowRightIcon className="w-4 h-4 text-[#ABF67E] group-hover:translate-x-1 transition-transform" />
             </>
           )}
         </button>
       </div>
 
-      <div className="flex items-center justify-between pt-2 border-t border-white/10 text-xs text-white/60">
+      <div className="flex items-center justify-between pt-3 border-t border-[#DEF2F4] text-xs text-[#556358]">
         <span className="flex items-center gap-1.5">
-          <ShieldCheckIcon className="w-3.5 h-3.5 text-[#ABF67E]" />
-          Strict Confidentiality &bull; Institutional Standards
+          <ShieldCheckIcon className="w-3.5 h-3.5 text-[#2D6C00]" />
+          Strict Confidentiality &bull; Non-Disclosure
         </span>
-        <span className="font-mono text-[11px] text-[#ABF67E]">Cycle 1 Active</span>
+        <span className="font-mono text-[11px] text-[#2D6C00] font-bold">Cycle 1 Active</span>
       </div>
     </form>
   );

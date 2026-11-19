@@ -553,59 +553,57 @@ export default function TheFoldPage() {
         </div>
       </section>
 
-      {/* ─── SECTION 6: CANDIDATE REGISTRY INTAKE FORM (Executive Dark Section) ─── */}
-      <section id="join" className="relative w-full py-16 sm:py-24 px-6 lg:px-12 bg-[#0A2F1B] text-white scroll-mt-20">
+      {/* ─── SECTION 6: CANDIDATE REGISTRY INTAKE FORM ─── */}
+      <section id="join" className="relative w-full py-16 sm:py-20 lg:py-24 px-6 lg:px-12 bg-[#E9FDFF] text-[#0C1E20] border-t border-[#DEF2F4] scroll-mt-28">
         <div className="max-w-[1320px] mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
 
-            {/* Left Column: Intake Overview & Photo */}
-            <div className="lg:col-span-6 space-y-6">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-[#ABF67E] text-xs uppercase font-bold tracking-wider">
-                <span>CANDIDATE REGISTRY &bull; CYCLE 1</span>
-              </div>
-
-              <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl text-white font-semibold tracking-tight">
-                Lodge Your Candidate Dossier.
-              </h2>
-
-              <p className="text-white/80 text-sm sm:text-base leading-relaxed">
-                Admission into The Fold is conducted through multi-stage executive review. To initiate confidential evaluation and receive the Cohort Prospectus, submit your credentials below.
-              </p>
-
-              {/* Photo Showcase */}
-              <div className="relative aspect-[16/9] w-full rounded-2xl overflow-hidden border border-white/20 shadow-2xl bg-black/40">
+            {/* Left Column: Prominent Magazine Editorial Card */}
+            <div className="lg:col-span-5 flex flex-col justify-center">
+              <div className="relative aspect-[3/4] sm:aspect-[4/5] w-full rounded-3xl overflow-hidden shadow-2xl border border-white bg-[#0A2F1B] group">
                 <Image
                   src="/images/strategic_partnerships.jpg"
-                  alt="Confidential strategic partnerships and executive conclave"
+                  alt="The Fold Strategic Alliances and Executive Conclave"
                   fill
                   quality={100}
-                  sizes="(max-width: 1024px) 100vw, 600px"
-                  className="object-cover object-center"
+                  sizes="(max-width: 1024px) 100vw, 550px"
+                  className="object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none" />
-                <div className="absolute bottom-3 left-4 right-4 text-xs font-mono text-[#ABF67E]">
-                  Strict 100-Member Cohort Ceiling &bull; Confidential Secretariat
-                </div>
-              </div>
 
-              <div className="space-y-3 pt-2 text-xs sm:text-sm text-white/75">
-                <div className="flex items-center gap-2.5">
-                  <CheckCircleIcon className="w-4 h-4 text-[#ABF67E] shrink-0" />
-                  <span>Complete Non-Disclosure &amp; Institutional Governance Compliance</span>
-                </div>
-                <div className="flex items-center gap-2.5">
-                  <CheckCircleIcon className="w-4 h-4 text-[#ABF67E] shrink-0" />
-                  <span>Strict 100-member cohort ceiling maintained at all times</span>
-                </div>
-                <div className="flex items-center gap-2.5">
-                  <CheckCircleIcon className="w-4 h-4 text-[#ABF67E] shrink-0" />
-                  <span>Executive Secretariat review within 5 business days</span>
+                {/* Dark Vignette Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent pointer-events-none" />
+
+                {/* Overlaid Executive Caption */}
+                <div className="absolute inset-x-0 bottom-0 p-6 sm:p-8 z-10 flex flex-col gap-2.5 text-white">
+                  <span className="text-[11px] font-mono uppercase tracking-widest text-[#ABF67E] font-bold">
+                    CYCLE 1 ADMISSIONS
+                  </span>
+
+                  <h3 className="font-heading text-2xl sm:text-3xl font-bold text-white tracking-tight">
+                    Join The Fold
+                  </h3>
+
+                  <p className="text-xs sm:text-sm text-white/85 leading-relaxed font-light">
+                    A private syndicate of 100 vetted enterprise operators and capital allocators pooling resources into Africa&apos;s most productive sectors.
+                  </p>
+
+                  <div className="flex flex-wrap gap-2 pt-2">
+                    <span className="px-3.5 py-1.5 rounded-full bg-white/15 backdrop-blur-md text-xs font-mono text-white border border-white/20">
+                      Strict 100 Cap
+                    </span>
+                    <span className="px-3.5 py-1.5 rounded-full bg-white/15 backdrop-blur-md text-xs font-mono text-white border border-white/20">
+                      Confidential Review
+                    </span>
+                    <span className="px-3.5 py-1.5 rounded-full bg-white/15 backdrop-blur-md text-xs font-mono text-white border border-white/20">
+                      85% Member Surplus
+                    </span>
+                  </div>
                 </div>
               </div>
             </div>
 
-            {/* Right Column: Intake Form */}
-            <div className="lg:col-span-6">
+            {/* Right Column: Clean White Intake Form */}
+            <div className="lg:col-span-7">
               <FoldInquiryForm />
             </div>
 
