@@ -7,8 +7,6 @@ import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 import {
   ChevronLeftIcon,
   ChevronRightIcon,
-  PauseIcon,
-  PlayIcon,
   ChevronDownIcon,
 } from "@/components/ui/Icons";
 
@@ -74,6 +72,8 @@ export default function InsightsHero() {
   return (
     <section
       id="overview"
+      onMouseEnter={() => setIsPaused(true)}
+      onMouseLeave={() => setIsPaused(false)}
       className="relative w-full min-h-[580px] lg:min-h-[640px] h-[72vh] flex flex-col justify-between overflow-hidden bg-black"
     >
       {/* 100% Crisp Background Slides (Zero Blur / Zero Filter) */}
