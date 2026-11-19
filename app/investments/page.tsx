@@ -203,38 +203,21 @@ function SectorBannerRow({
       {/* Subtle Base Dark Layer for Photo Richness, deepening to Dark Backdrop on Hover (Zero Blur) */}
       <div className="absolute inset-0 bg-black/10 group-hover:bg-black/65 transition-all duration-700 ease-out pointer-events-none" />
 
-      {/* Sector Name & Extra Write-ups in Distinct Forms: Invisible Until Hovered Upon */}
+      {/* Sector Name & Description: Invisible Until Hovered Upon */}
       <div className="absolute inset-0 z-20 flex flex-col items-center justify-center p-6 sm:p-10 text-center pointer-events-none">
         <div className="opacity-0 group-hover:opacity-100 transform translate-y-6 group-hover:translate-y-0 transition-all duration-500 ease-out flex flex-col items-center max-w-4xl">
-          {/* Eyebrow Tagline */}
-          <span className="text-xs sm:text-sm font-mono uppercase tracking-[0.25em] text-[#ABF67E] font-bold mb-2 drop-shadow-md">
-            {sector.tagline}
-          </span>
-
           {/* Sector Title */}
           <h2 className="font-heading text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-white tracking-tight drop-shadow-2xl">
             {sector.title}
           </h2>
 
           {/* Accent Line */}
-          <div className="my-4 sm:my-6 h-[2px] w-20 sm:w-28 bg-[#9BE564] drop-shadow-md" />
+          <div className="my-4 sm:my-5 h-[2px] w-20 sm:w-28 bg-[#9BE564] drop-shadow-md" />
 
-          {/* Form 1: Editorial Narrative Paragraph */}
-          <p className="font-sans text-sm sm:text-base lg:text-lg text-white/95 max-w-3xl leading-relaxed font-normal drop-shadow-md mb-6 px-4">
+          {/* Sector Description Paragraph */}
+          <p className="font-sans text-sm sm:text-base lg:text-lg text-white/95 max-w-3xl leading-relaxed font-normal drop-shadow-md px-4">
             {sector.description}
           </p>
-
-          {/* Form 2: Structured Highlights / Capabilities (Pills) */}
-          <div className="flex flex-wrap justify-center gap-2 sm:gap-3">
-            {sector.highlights.map((item) => (
-              <span
-                key={item}
-                className="px-4 py-1.5 rounded-full bg-white/15 backdrop-blur-md border border-white/25 text-[#ABF67E] text-xs sm:text-sm font-semibold tracking-wide shadow-md"
-              >
-                {item}
-              </span>
-            ))}
-          </div>
         </div>
       </div>
     </div>
