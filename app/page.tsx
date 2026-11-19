@@ -71,32 +71,134 @@ const HERO_SLIDES = [
 ];
 
 // Strategic Investment Sectors conforming to panoramic strip architecture
-const BUSINESS_SECTORS = [
+interface SectorItem {
+  title: string;
+  href: string;
+  images: string[];
+  alt: string;
+}
+
+const BUSINESS_SECTORS: SectorItem[] = [
   {
     title: "Agriculture",
     href: "/investments#agriculture",
-    image: "/images/tim-mossholder-xDwEa2kaeJA-unsplash.jpg",
+    images: [
+      "/images/tim-mossholder-xDwEa2kaeJA-unsplash.jpg",
+      "/images/agric.jpg",
+      "/images/annie-spratt-IT6aov1ScW0-unsplash.jpg",
+    ],
     alt: "Agriculture and agricultural commodity supply chains",
   },
   {
     title: "Real Estate",
     href: "/investments#real-estate",
-    image: "/images/sean-pollock-PhYq704ffdA-unsplash.jpg",
+    images: [
+      "/images/sean-pollock-PhYq704ffdA-unsplash.jpg",
+      "/images/business-skyscraper_ZDUJ7AJIQ2.jpg",
+      "/images/hector-j-rivas-1FxMET2U5dU-unsplash.jpg",
+    ],
     alt: "Commercial real estate and productive tangible assets",
   },
   {
     title: "Finance",
     href: "/investments#finance",
-    image: "/images/andras-vas-Bd7gNnWJBkU-unsplash.jpg",
+    images: [
+      "/images/photo-1590283603385-17ffb3a7f29f.avif",
+      "/images/adeolu-eletu-E7RLgUjjazc-unsplash.jpg",
+      "/images/pexels-towfiqu-barbhuiya-3440682-14527417.jpg",
+      "/images/cytonn-photography-n95VMLxqM2I-unsplash.jpg",
+    ],
     alt: "Financial capital stewardship and strategic investment",
   },
   {
     title: "Technology",
     href: "/investments#technology",
-    image: "/images/fotis-fotopoulos-6sAl6aQ4OWI-unsplash.jpg",
+    images: [
+      "/images/andras-vas-Bd7gNnWJBkU-unsplash.jpg",
+      "/images/fotis-fotopoulos-6sAl6aQ4OWI-unsplash.jpg",
+      "/images/jakub-zerdzicki-WD7S-Lz12Es-unsplash.jpg",
+    ],
     alt: "Technology infrastructure and digital enterprise solutions",
   },
 ];
+
+// Carousel card component for each sector in the panoramic strip
+function SectorCarouselCard({
+  sector,
+  index,
+}: {
+  sector: SectorItem;
+  index: number;
+}) {
+  const [currentIdx, setCurrentIdx] = useState(0);
+  const [isHovered, setIsHovered] = useState(false);
+
+  // Auto-rotate pictures like a carousel; pauses smoothly when hovered
+  useEffect(() => {
+    if (isHovered || sector.images.length <= 1) return;
+    const intervalTime = 4200 + index * 900; // Stagger intervals per column for organic rhythm
+    const timer = setInterval(() => {
+      setCurrentIdx((prev) => (prev + 1) % sector.images.length);
+    }, intervalTime);
+    return () => clearInterval(timer);
+  }, [isHovered, sector.images.length, index]);
+
+  return (
+    <Link
+      href={sector.href}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+      className="group relative w-full h-[240px] sm:h-[280px] lg:h-[340px] overflow-hidden bg-black flex flex-col justify-end border-r border-white/20 last:border-r-0 cursor-pointer select-none"
+    >
+      {/* Background Photographic Image Carousel */}
+      <AnimatePresence initial={false}>
+        <motion.div
+          key={sector.images[currentIdx]}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+          className="absolute inset-0 w-full h-full"
+        >
+          <Image
+            src={sector.images[currentIdx]}
+            alt={sector.alt}
+            fill
+            quality={95}
+            sizes="(max-width: 640px) 50vw, 25vw"
+            className="object-cover object-center grayscale contrast-110 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-out"
+          />
+        </motion.div>
+      </AnimatePresence>
+
+      {/* Base subtle dark gradient for text legibility (no colored tints) */}
+      <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent pointer-events-none z-10" />
+
+      {/* Carousel Progress Indicators (subtle dashes visible on hover) */}
+      {sector.images.length > 1 && (
+        <div className="absolute top-4 left-5 sm:left-6 lg:left-8 z-20 flex items-center gap-1.5 opacity-0 group-hover:opacity-90 transition-opacity duration-300 pointer-events-none">
+          {sector.images.map((_, i) => (
+            <span
+              key={i}
+              className={`h-1 rounded-full transition-all duration-300 ${
+                i === currentIdx ? "w-5 bg-white" : "w-1.5 bg-white/40"
+              }`}
+            />
+          ))}
+        </div>
+      )}
+
+      {/* Sector Title: Completely invisible until hovered, slides smoothly up into view */}
+      <div className="relative z-20 p-5 sm:p-6 lg:p-8 flex flex-col justify-end h-full pointer-events-none">
+        <div className="opacity-0 group-hover:opacity-100 transform translate-y-3 group-hover:translate-y-0 transition-all duration-500 ease-out">
+          <h3 className="font-poppins text-base sm:text-lg lg:text-xl font-semibold tracking-tight text-white drop-shadow-lg">
+            {sector.title}
+          </h3>
+        </div>
+      </div>
+    </Link>
+  );
+}
 
 export default function Home() {
   const shouldReduceMotion = useReducedMotion();
@@ -339,37 +441,15 @@ export default function Home() {
           </motion.div>
         </div>
 
-        {/* Transcorp Style Panoramic Multi-Sector Strip (Full-Bleed Grayscale-to-Color Architecture) */}
+        {/* Transcorp Style Panoramic Multi-Sector Strip (Full-Bleed Grayscale-to-Color Architecture with Living Carousels) */}
         <div className="w-full">
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-0 w-full border-t border-b border-white/20">
             {BUSINESS_SECTORS.map((sector, index) => (
-              <Link
+              <SectorCarouselCard
                 key={sector.title}
-                href={sector.href}
-                className="group relative w-full h-[240px] sm:h-[280px] lg:h-[340px] overflow-hidden bg-black flex flex-col justify-end border-r border-white/20 last:border-r-0 cursor-pointer select-none"
-              >
-                {/* Background Photographic Image: Grayscale by default to match Transcorp strip, blooms to full color on hover */}
-                <Image
-                  src={sector.image}
-                  alt={sector.alt}
-                  fill
-                  quality={95}
-                  sizes="(max-width: 640px) 50vw, 25vw"
-                  className="object-cover object-center grayscale contrast-110 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-out"
-                />
-
-                {/* Base subtle dark gradient for text legibility (no colored tints) */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent pointer-events-none" />
-
-                {/* Sector Title: Completely invisible until hovered, slides smoothly up into view */}
-                <div className="relative z-10 p-5 sm:p-6 lg:p-8 flex flex-col justify-end h-full pointer-events-none">
-                  <div className="opacity-0 group-hover:opacity-100 transform translate-y-3 group-hover:translate-y-0 transition-all duration-500 ease-out">
-                    <h3 className="font-poppins text-base sm:text-lg lg:text-xl font-semibold tracking-tight text-white drop-shadow-lg">
-                      {sector.title}
-                    </h3>
-                  </div>
-                </div>
-              </Link>
+                sector={sector}
+                index={index}
+              />
             ))}
           </div>
         </div>
