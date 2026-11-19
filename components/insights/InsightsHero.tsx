@@ -4,13 +4,7 @@ import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
-import {
-  ChevronLeftIcon,
-  ChevronRightIcon,
-  ChevronDownIcon,
-  PauseIcon,
-  PlayIcon,
-} from "@/components/ui/Icons";
+import { ChevronDownIcon } from "@/components/ui/Icons";
 
 const PRO_MAX_EASE = [0.16, 1, 0.3, 1] as const;
 
@@ -48,34 +42,18 @@ const INSIGHTS_HERO_SLIDES = [
 export default function InsightsHero() {
   const shouldReduceMotion = useReducedMotion();
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [isPaused, setIsPaused] = useState(false);
 
   // Auto-fading hero carousel timer
   useEffect(() => {
-    if (isPaused) return;
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % INSIGHTS_HERO_SLIDES.length);
     }, 6500);
     return () => clearInterval(timer);
-  }, [isPaused]);
-
-  const handlePrevSlide = () => {
-    setCurrentSlide((prev) => (prev === 0 ? INSIGHTS_HERO_SLIDES.length - 1 : prev - 1));
-  };
-
-  const handleNextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % INSIGHTS_HERO_SLIDES.length);
-  };
-
-  const handleTogglePause = () => {
-    setIsPaused((prev) => !prev);
-  };
+  }, []);
 
   return (
     <section
       id="overview"
-      onMouseEnter={() => setIsPaused(true)}
-      onMouseLeave={() => setIsPaused(false)}
       className="relative w-full h-[calc(100vh-40px)] min-h-[580px] sm:min-h-[620px] flex flex-col justify-end overflow-hidden bg-black"
     >
       {/* 100% Crisp Background Slides (Zero Blur / Zero Filter) */}
@@ -165,6 +143,7 @@ export default function InsightsHero() {
         </div>
 
       </div>
+
     </section>
   );
 }

@@ -498,10 +498,10 @@ export default function InvestmentPhilosophy() {
               className="mt-8 sm:mt-10 pt-4"
             >
               <Link
-                href="/investments"
+                href="#sectors"
                 className="inline-flex items-center gap-2 text-xs sm:text-sm font-bold uppercase tracking-[0.18em] text-[#2D6C00] hover:text-[#00190A] underline underline-offset-8 decoration-2 decoration-[#9BE564] hover:decoration-[#2D6C00] transition-all group"
               >
-                <span>LEARN MORE</span>
+                <span>EXPLORE SECTORS</span>
                 <ArrowRightIcon className="w-4 h-4 text-[#2D6C00] group-hover:text-[#00190A] group-hover:translate-x-1.5 transition-all duration-200" />
               </Link>
             </motion.div>

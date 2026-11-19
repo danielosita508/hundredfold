@@ -14,7 +14,6 @@ import {
   PlayIcon,
   ChevronDownIcon,
 } from "@/components/ui/Icons";
-import InvestmentPhilosophy from "@/components/about/InvestmentPhilosophy";
 
 const PRO_MAX_EASE = [0.16, 1, 0.3, 1] as const;
 
@@ -444,9 +443,6 @@ export default function AboutPage() {
           </motion.div>
         </div>
       </section>
-
-      {/* ─── STEP 2.5: "OUR INVESTMENT PHILOSOPHY" (Heirs Holdings Style Radial Portfolio Wheel & Narrative) ─── */}
-      <InvestmentPhilosophy />
 
       {/* ─── STEP 3: "OUR LEADERSHIP" SECTION (Heirs Holdings Style Gallery Grid) ─── */}
       <section id="leadership" className="w-full px-6 lg:px-12 pt-10 sm:pt-12 lg:pt-14 pb-16 sm:pb-20 lg:pb-24 bg-white border-t border-black/5">

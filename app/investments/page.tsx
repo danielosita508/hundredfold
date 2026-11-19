@@ -12,6 +12,7 @@ import {
   PlayIcon,
   ChevronDownIcon,
 } from "@/components/ui/Icons";
+import InvestmentPhilosophy from "@/components/about/InvestmentPhilosophy";
 
 const PRO_MAX_EASE = [0.16, 1, 0.3, 1] as const;
 
@@ -367,6 +368,9 @@ export default function InvestmentsPage() {
           </motion.div>
         </div>
       </section>
+
+      {/* ─── STEP 2.5: OUR INVESTMENT PHILOSOPHY (Radial Sector Wheel & Tenets) ─── */}
+      <InvestmentPhilosophy />
 
       {/* ─── STEP 3: THE 4 INVESTMENT SECTORS (Full-Width Photographic Banners, Invisible Writeup until Hover) ─── */}
       <section id="sectors" className="w-full bg-black flex flex-col">
