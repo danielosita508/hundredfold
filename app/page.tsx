@@ -4,7 +4,6 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import HeroTicker from "@/components/home/HeroTicker";
-import FactsBand from "@/components/home/FactsBand";
 import SplitText from "@/components/ui/SplitText";
 import BackgroundBeams from "@/components/ui/BackgroundBeams";
 import siteConfig from "@/lib/site-config";
@@ -468,9 +467,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/* ─── FACTS & GOVERNANCE BAND (Motion Primitives Animated Numbers & Spotlight) ─── */}
-      <FactsBand />
 
       {/* ─── SECTION 4: OUR APPROACH (Simple Centralized Summary) ─── */}
       <section className="relative w-full py-16 sm:py-20 lg:py-24 bg-white/70">
