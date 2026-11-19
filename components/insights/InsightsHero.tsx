@@ -12,7 +12,7 @@ export default function InsightsHero() {
   return (
     <section
       id="overview"
-      className="relative w-full min-h-[90vh] lg:min-h-screen flex flex-col justify-end pb-12 sm:pb-16 lg:pb-24 pt-32 overflow-hidden bg-[#0A2F1B]"
+      className="relative w-full min-h-[400px] lg:min-h-[440px] flex flex-col justify-end pb-12 sm:pb-14 pt-32 lg:pt-36 overflow-hidden bg-[#0A2F1B]"
     >
       {/* Full-Bleed Photographic Backdrop */}
       <div className="absolute inset-0 z-0">

@@ -20,19 +20,6 @@ const PRO_MAX_EASE = [0.16, 1, 0.3, 1] as const;
 export default function TheFoldPage() {
   const shouldReduceMotion = useReducedMotion();
 
-  const heroFadeVariants: Variants = {
-    hidden: { opacity: 0, y: shouldReduceMotion ? 0 : 20 },
-    visible: (custom: number = 0) => ({
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: shouldReduceMotion ? 0 : 0.55,
-        delay: shouldReduceMotion ? 0 : custom * 0.08,
-        ease: PRO_MAX_EASE,
-      },
-    }),
-  };
-
   const staggerGridVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
@@ -63,146 +50,52 @@ export default function TheFoldPage() {
       <div className="absolute top-[480px] -left-32 w-[580px] h-[580px] bg-[#2D6C00]/15 rounded-full blur-[130px] pointer-events-none" />
       <div className="absolute bottom-20 right-10 w-[520px] h-[520px] bg-[#ABF67E]/8 rounded-full blur-[140px] pointer-events-none" />
 
-      {/* ─── SECTION 1: PRESTIGE HERO & BANNER ─── */}
-      <section className="relative max-w-[1320px] mx-auto px-6 lg:px-12 pt-28 lg:pt-32 pb-20 z-10">
-        <div className="flex flex-col items-start max-w-4xl">
+      {/* ─── SECTION 1: PRESTIGE HERO (Clean Full-Bleed with Frosted Glass Overlay) ─── */}
+      <section
+        id="overview"
+        className="relative w-full min-h-[85vh] lg:min-h-[90vh] flex flex-col justify-end pb-12 sm:pb-16 lg:pb-24 pt-32 overflow-hidden bg-[#061D10]"
+      >
+        {/* Full-Bleed Photographic Backdrop */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/images/the_fold_executive_lounge.jpg"
+            alt="The Fold Executive Conclave at Hundredfold Headquarters"
+            fill
+            priority
+            quality={100}
+            sizes="100vw"
+            className="object-cover object-center"
+          />
+        </div>
 
-          {/* Prestige Badge */}
-          <motion.div
-            initial="hidden"
-            animate="visible"
-            custom={0}
-            variants={heroFadeVariants}
-            className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/15 shadow-sm"
-          >
-            <span className="w-2 h-2 rounded-full bg-[#ABF67E] animate-pulse" />
-            <span className="text-[11px] uppercase tracking-widest text-[#ABF67E] font-bold">
-              THE COMMUNITY &bull; PRIVATE EXECUTIVE COHORT
-            </span>
-            <span className="text-xs text-white/50 font-mono">/ NO. 001-INV</span>
-          </motion.div>
+        {/* Cinematic Dark Frosted Glass Overlay */}
+        <div className="absolute inset-0 bg-black/55 backdrop-blur-sm z-10 pointer-events-none" />
 
+        {/* Dark Cinematic Vignette & Bottom Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-t from-[#061D10] via-black/40 to-black/60 z-10 pointer-events-none" />
+
+        {/* Subtle emerald brand glow */}
+        <div className="absolute bottom-0 left-0 w-[550px] h-[340px] bg-[#2D6C00]/25 rounded-full blur-[140px] pointer-events-none z-10" />
+
+        {/* Hero Title Container Layered on Top (z-20) */}
+        <div className="w-full max-w-[1320px] mx-auto px-6 lg:px-12 relative z-20 flex flex-col items-start text-left">
           <motion.h1
-            initial="hidden"
-            animate="visible"
-            custom={1}
-            variants={heroFadeVariants}
-            className="font-serif text-4xl sm:text-5xl md:text-6xl text-white mt-6 tracking-tight leading-[1.08]"
+            initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: PRO_MAX_EASE }}
+            className="font-serif text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-white tracking-tight font-medium leading-[1.05] drop-shadow-2xl text-left"
           >
-            Welcome to The Fold. <br />
-            <span className="text-[#ABF67E] italic font-normal">
-              Curated Enterprise &amp; Capital Sovereign.
-            </span>
+            Welcome to The Fold
           </motion.h1>
 
           <motion.p
-            initial="hidden"
-            animate="visible"
-            custom={2}
-            variants={heroFadeVariants}
-            className="text-base sm:text-lg text-white/80 mt-6 max-w-2xl leading-relaxed"
+            initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2, ease: PRO_MAX_EASE }}
+            className="text-base sm:text-lg md:text-xl text-white/90 max-w-3xl font-light leading-relaxed mt-4 drop-shadow-md text-left"
           >
-            The Fold is the private membership and community arm of Hundredfold Innovation Network Ltd. It convenes forward-thinking individuals, business leaders, and investors who share a common commitment to disciplined growth, ethical commerce, and collective economic advancement.
+            The private membership and collaborative syndicate network of Hundredfold Innovation Network Ltd, uniting vetted enterprise leaders and capital allocators across African commercial frontiers.
           </motion.p>
-
-          {/* Access Ribbon & Protocol Badges */}
-          <motion.div
-            initial="hidden"
-            animate="visible"
-            custom={3}
-            variants={heroFadeVariants}
-            className="flex flex-wrap items-center gap-6 mt-8 pt-6 border-t border-white/10 w-full text-xs text-white/80"
-          >
-            <div className="flex items-center gap-2 font-medium">
-              <ShieldCheckIcon className="w-4 h-4 text-[#ABF67E]" />
-              <span>By Board Invitation &amp; Vetting</span>
-            </div>
-            <div className="flex items-center gap-2 font-medium">
-              <UsersIcon className="w-4 h-4 text-[#ABF67E]" />
-              <span>Strict 100 Members per Cohort Limit</span>
-            </div>
-            <div className="flex items-center gap-2 font-medium">
-              <ClockIcon className="w-4 h-4 text-[#ABF67E]" />
-              <span>Cycle 1 Cohort Active</span>
-            </div>
-          </motion.div>
-        </div>
-
-        {/* ─── VIP MOSAIC & CONCLAVE SLAB ─── */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mt-14 items-stretch">
-
-          <motion.div
-            initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.15 }}
-            transition={{ duration: 0.55, ease: PRO_MAX_EASE }}
-            className="lg:col-span-8 relative rounded-3xl overflow-hidden shadow-2xl min-h-[380px] lg:min-h-[460px] border border-white/10"
-          >
-            <img
-              src="/images/the_fold_executive_lounge.jpg"
-              alt="The Fold Executive Conclave at Hundredfold Headquarters"
-              className="absolute inset-0 w-full h-full object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#061D10] via-[#061D10]/50 to-transparent flex flex-col justify-end p-8 lg:p-12" />
-            <div className="relative z-10 flex flex-col justify-end p-8 lg:p-12 text-white">
-              <span className="text-[11px] uppercase tracking-wider text-[#ABF67E] font-mono font-bold mb-2">
-                EXECUTIVE CONCLAVE &bull; CORPORATE HQ
-              </span>
-              <h2 className="font-serif text-2xl sm:text-3xl text-white font-semibold max-w-xl leading-snug">
-                &ldquo;We assemble not for speculation, but to orchestrate sovereign balance sheets across Africa&apos;s real-economy assets.&rdquo;
-              </h2>
-              <div className="flex items-center gap-4 mt-4 text-xs text-white/60 font-mono">
-                <span>H.I.N COUNCIL DIRECTIVE // 2026–2035</span>
-              </div>
-            </div>
-          </motion.div>
-
-          {/* Right Metrics Panel */}
-          <motion.div
-            initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.15 }}
-            transition={{ duration: 0.55, delay: 0.1, ease: PRO_MAX_EASE }}
-            className="lg:col-span-4 flex flex-col gap-6"
-          >
-            <div className="flex-1 p-8 rounded-3xl bg-white/5 backdrop-blur-xl border border-white/10 shadow-xl flex flex-col justify-between">
-              <div>
-                <div className="flex items-center justify-between text-[#ABF67E]">
-                  <span className="text-[10px] uppercase font-bold tracking-wider">
-                    Cohort Model
-                  </span>
-                  <ShieldCheckIcon className="w-5 h-5" />
-                </div>
-                <div className="my-6">
-                  <div className="font-serif text-5xl font-bold text-white">
-                    100<span className="text-[#ABF67E] text-3xl font-sans font-normal ml-1">Cap</span>
-                  </div>
-                  <p className="text-xs text-white/70 mt-2 leading-relaxed">
-                    Strict numerical cap preserving elite governance, high-trust syndicates, and direct executive access across continental corridors.
-                  </p>
-                </div>
-              </div>
-
-              <div className="pt-4 border-t border-white/10 flex items-center justify-between text-xs text-white/60 font-mono">
-                <span>Cohort Alpha</span>
-                <span className="text-[#ABF67E] font-bold">Cycle 1 Active</span>
-              </div>
-            </div>
-
-            <div className="p-6 rounded-3xl bg-gradient-to-r from-[#0A2F1B] to-[#123E25] border border-white/15 text-white flex items-center justify-between gap-4">
-              <div>
-                <span className="text-[10px] uppercase tracking-wider text-[#ABF67E] font-bold block">
-                  Admissions Status
-                </span>
-                <span className="font-serif text-lg font-bold text-white">
-                  Reviewing Inquiries
-                </span>
-              </div>
-              <div className="px-3 py-1.5 rounded-full bg-white/10 text-xs font-mono text-[#ABF67E] border border-[#ABF67E]/30">
-                Window Active
-              </div>
-            </div>
-          </motion.div>
         </div>
       </section>
 
