@@ -26,15 +26,15 @@ export default function HeroTicker() {
   ];
 
   return (
-    <div id="ticker" className="relative w-full bg-[#00190A] border-y border-white/15 overflow-hidden z-20 select-none py-3.5 sm:py-4 shadow-lg">
+    <div id="ticker" className="relative w-full bg-transparent border-y border-[#DEF2F4] overflow-hidden z-20 select-none py-3.5 sm:py-4">
       
       {/* Subtle edge fade vignettes for smooth boundary entry/exit */}
-      <div className="absolute left-0 inset-y-0 w-16 sm:w-24 bg-gradient-to-r from-[#00190A] to-transparent z-20 pointer-events-none" />
-      <div className="absolute right-0 inset-y-0 w-16 sm:w-24 bg-gradient-to-l from-[#00190A] to-transparent z-20 pointer-events-none" />
+      <div className="absolute left-0 inset-y-0 w-16 sm:w-24 bg-gradient-to-r from-[#E9FDFF] to-transparent z-20 pointer-events-none" />
+      <div className="absolute right-0 inset-y-0 w-16 sm:w-24 bg-gradient-to-l from-[#E9FDFF] to-transparent z-20 pointer-events-none" />
 
       {/* Continuous Marquee Track */}
       <motion.div
-        className="flex items-center gap-12 sm:gap-16 lg:gap-20 whitespace-nowrap will-change-transform"
+        className="flex items-center gap-14 sm:gap-18 lg:gap-24 whitespace-nowrap will-change-transform"
         animate={
           shouldReduceMotion
             ? {}
@@ -51,13 +51,11 @@ export default function HeroTicker() {
         {duplicatedItems.map((sector, index) => (
           <div
             key={`${sector}-${index}`}
-            className="inline-flex items-center gap-3 sm:gap-4 tracking-wider"
+            className="inline-flex items-center tracking-wider"
           >
-            <span className="w-1.5 h-1.5 rounded-full bg-[#ABF67E] shrink-0" />
-            <span className="font-heading font-bold tracking-widest text-white text-sm sm:text-base uppercase">
+            <span className="font-heading font-semibold tracking-[0.25em] text-[#00190A] text-xs sm:text-sm uppercase hover:text-[#2D6C00] transition-colors">
               {sector}
             </span>
-            <span className="text-white/20 pl-6 sm:pl-8">&bull;</span>
           </div>
         ))}
       </motion.div>
