@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import { ArrowRightIcon } from "@/components/ui/Icons";
 
 const PRO_MAX_EASE = [0.16, 1, 0.3, 1] as const;
@@ -118,8 +118,6 @@ export const SECTORS: SectorItem[] = [
 export default function InvestmentPhilosophy() {
   const shouldReduceMotion = useReducedMotion();
   const [activeSectorId, setActiveSectorId] = useState<string>("agro-trading");
-
-  const activeSector = SECTORS.find((s) => s.id === activeSectorId) || SECTORS[0];
 
   // SVG wheel geometry
   const cx = 270;
@@ -405,60 +403,6 @@ export default function InvestmentPhilosophy() {
                 </text>
               </svg>
             </div>
-
-            {/* Mobile / Accessible Interactive Sector Pills */}
-            <div className="w-full mt-6 flex flex-wrap items-center justify-center gap-1.5 sm:gap-2">
-              {SECTORS.map((s) => {
-                const isSelected = s.id === activeSectorId;
-                return (
-                  <button
-                    key={s.id}
-                    onClick={() => setActiveSectorId(s.id)}
-                    className={`px-3 py-1.5 rounded-full text-xs font-semibold tracking-wide transition-all duration-200 border ${
-                      isSelected
-                        ? "bg-[#00190A] text-[#ABF67E] border-[#00190A] shadow-sm scale-105"
-                        : "bg-white text-[#475569] border-[#E2E8F0] hover:bg-[#F8FAFC] hover:text-[#00190A]"
-                    }`}
-                  >
-                    {s.name}
-                  </button>
-                );
-              })}
-            </div>
-
-            {/* Micro Callout for the Selected Sector */}
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={activeSector.id}
-                initial={{ opacity: 0, y: 6 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -6 }}
-                transition={{ duration: 0.2 }}
-                className="mt-4 w-full max-w-[460px] p-3.5 sm:p-4 rounded-xl border border-[#DEF2F4] bg-[#F8FAFC] flex items-center justify-between gap-3"
-              >
-                <div className="flex flex-col text-left">
-                  <div className="flex items-center gap-2">
-                    <span
-                      className="w-2.5 h-2.5 rounded-full shrink-0"
-                      style={{ backgroundColor: activeSector.color }}
-                    />
-                    <span className="text-xs font-bold uppercase tracking-wider text-[#00190A]">
-                      {activeSector.name}: {activeSector.tagline}
-                    </span>
-                  </div>
-                  <p className="text-xs text-[#475569] mt-0.5 line-clamp-1">
-                    {activeSector.description}
-                  </p>
-                </div>
-                <Link
-                  href={activeSector.href}
-                  className="shrink-0 text-xs font-bold text-[#1E5208] hover:text-[#00190A] flex items-center gap-1 underline underline-offset-4"
-                >
-                  <span>Explore</span>
-                  <ArrowRightIcon className="w-3.5 h-3.5" />
-                </Link>
-              </motion.div>
-            </AnimatePresence>
           </div>
 
           {/* ─── RIGHT COLUMN: Philosophy Narrative (Matching Reference Copy Structure) ─── */}
