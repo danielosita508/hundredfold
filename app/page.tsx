@@ -4,6 +4,9 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import HeroTicker from "@/components/home/HeroTicker";
+import FactsBand from "@/components/home/FactsBand";
+import SplitText from "@/components/ui/SplitText";
+import BackgroundBeams from "@/components/ui/BackgroundBeams";
 import siteConfig from "@/lib/site-config";
 import { motion, AnimatePresence, useReducedMotion, type Variants } from "framer-motion";
 import {
@@ -230,7 +233,7 @@ export default function Home() {
     <div className="relative overflow-hidden bg-[#E9FDFF] text-[#0C1E20]">
 
       {/* ─── SECTION 1: HERO (Transcorp Style Sharp Panoramic Carousel) ─── */}
-      <section className="relative w-full h-screen min-h-[640px] overflow-hidden bg-black flex flex-col justify-between">
+      <section className="relative w-full h-[calc(100vh-90px)] min-h-[460px] sm:min-h-[500px] max-h-[720px] overflow-hidden bg-black flex flex-col justify-between">
 
         {/* 100% Crisp Background Slides (Zero Blur / Zero Filter) */}
         <div className="absolute inset-0 z-0">
@@ -262,19 +265,19 @@ export default function Home() {
         <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-black/15 to-transparent z-10 pointer-events-none" />
 
         {/* Hero Content Container (Layered on Top z-20, flexed down toward the bottom controls for uniform placement) */}
-        <div className="relative max-w-[1360px] mx-auto px-6 lg:px-12 w-full z-20 flex-1 flex flex-col justify-end pb-8 sm:pb-10 pt-28">
+        <div className="relative max-w-[1360px] mx-auto px-6 lg:px-12 w-full z-20 flex-1 flex flex-col justify-end pb-4 sm:pb-6 pt-20 sm:pt-24">
           <div className="flex flex-col items-start">
 
-            {/* Headline in Poppins (Sans-Serif, Corporate Bold) */}
-            <motion.h1
-              key={`hero-h1-${currentSlide}`}
-              initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.65, ease: PRO_MAX_EASE }}
-              className="font-poppins text-[30px] sm:text-[36px] lg:text-[42px] font-bold leading-[1.15] tracking-[-0.02em] max-w-[500px] text-white drop-shadow-md"
-            >
-              {HERO_SLIDES[currentSlide].title}
-            </motion.h1>
+            {/* Headline in Poppins with React Bits SplitText Cinematic Reveal */}
+            <h1 className="font-poppins text-[30px] sm:text-[36px] lg:text-[42px] font-bold leading-[1.15] tracking-[-0.02em] max-w-[500px] text-white drop-shadow-md">
+              <SplitText
+                key={`hero-title-${currentSlide}`}
+                text={HERO_SLIDES[currentSlide].title}
+                delay={0.08}
+                duration={0.55}
+                stagger={0.022}
+              />
+            </h1>
 
             {/* Hundredfold Brand Green Accent Divider */}
             <div className="my-6 h-[2px] w-[220px] bg-[#9BE564]" />
@@ -293,9 +296,71 @@ export default function Home() {
           </div>
         </div>
 
+        {/* Bottom Hero Controls Container (z-20, pushed up with generous bottom padding) */}
+        <div className="relative max-w-[1360px] mx-auto px-6 lg:px-12 w-full pb-12 sm:pb-16 lg:pb-20 mb-1 sm:mb-2 z-20 flex items-end justify-between">
 
-        {/* Bottom Hero Controls Container (z-20) */}
-        <div className="relative max-w-[1360px] mx-auto px-6 lg:px-12 w-full pb-8 sm:pb-12 z-20 flex items-end justify-end">
+          {/* Bottom-Left: Carousel Navigation & Progress Controller */}
+          <div className="flex items-center gap-3 sm:gap-5 p-2 px-3 sm:px-4 rounded-full bg-black/45 backdrop-blur-md border border-white/20 shadow-xl">
+            <div className="font-mono text-xs font-semibold tracking-wider flex items-center gap-1 pl-1 select-none">
+              <span className="text-[#ABF67E] font-bold text-sm">0{currentSlide + 1}</span>
+              <span className="text-white/30">/</span>
+              <span className="text-white/60">0{HERO_SLIDES.length}</span>
+            </div>
+
+            <div className="flex items-center gap-1.5 sm:gap-2">
+              {HERO_SLIDES.map((_, idx) => (
+                <button
+                  key={idx}
+                  type="button"
+                  onClick={() => setCurrentSlide(idx)}
+                  aria-label={`Go to slide ${idx + 1}`}
+                  className="py-2 cursor-pointer focus:outline-none group"
+                >
+                  <span
+                    className={`block h-1 rounded-full transition-all duration-500 ${
+                      currentSlide === idx
+                        ? "w-8 sm:w-10 bg-[#ABF67E]"
+                        : "w-3 sm:w-4 bg-white/30 group-hover:bg-white/60"
+                    }`}
+                  />
+                </button>
+              ))}
+            </div>
+
+            <div className="flex items-center gap-1.5 border-l border-white/15 pl-2 sm:pl-3">
+              <button
+                type="button"
+                onClick={handlePrevSlide}
+                className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-white/10 hover:bg-[#ABF67E] hover:text-[#0A2F1B] text-white transition-all flex items-center justify-center cursor-pointer active:scale-95 shadow-sm"
+                aria-label="Previous slide"
+              >
+                <ChevronLeftIcon className="w-3.5 h-3.5" />
+              </button>
+
+              <button
+                type="button"
+                onClick={handleTogglePause}
+                className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-white/10 hover:bg-[#ABF67E] hover:text-[#0A2F1B] text-white transition-all flex items-center justify-center cursor-pointer active:scale-95 shadow-sm"
+                aria-label={isPaused ? "Resume autoplay" : "Pause autoplay"}
+                title={isPaused ? "Resume autoplay" : "Pause autoplay"}
+              >
+                {isPaused ? (
+                  <PlayIcon className="w-3.5 h-3.5 ml-0.5" />
+                ) : (
+                  <PauseIcon className="w-3.5 h-3.5" />
+                )}
+              </button>
+
+              <button
+                type="button"
+                onClick={handleNextSlide}
+                className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-white/10 hover:bg-[#ABF67E] hover:text-[#0A2F1B] text-white transition-all flex items-center justify-center cursor-pointer active:scale-95 shadow-sm"
+                aria-label="Next slide"
+              >
+                <ChevronRightIcon className="w-3.5 h-3.5" />
+              </button>
+            </div>
+          </div>
 
           {/* Bottom-Right: Translucent white-bordered pill button & stacked downward chevrons */}
           <div className="flex flex-col items-center gap-3">
@@ -455,6 +520,9 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ─── FACTS & GOVERNANCE BAND (Motion Primitives Animated Numbers & Spotlight) ─── */}
+      <FactsBand />
+
       {/* ─── SECTION 4: OUR APPROACH (Simple Centralized Summary) ─── */}
       <section className="relative w-full py-16 sm:py-20 lg:py-24 bg-white/70">
         <div className="max-w-[860px] mx-auto px-6 lg:px-8 text-center">
@@ -494,6 +562,8 @@ export default function Home() {
             whileHover={shouldReduceMotion ? {} : { y: -4, transition: { duration: 0.25 } }}
             className="relative rounded-3xl bg-white/85 backdrop-blur-xl p-8 sm:p-12 lg:p-14 border border-white shadow-[0_8px_32px_-4px_rgba(10,47,27,0.06)] hover:shadow-[0_16px_40px_-6px_rgba(45,108,0,0.12)] transition-shadow overflow-hidden"
           >
+            {/* Aceternity UI Ambient Background Beams */}
+            <BackgroundBeams />
             <div className="absolute top-0 right-0 w-64 h-64 bg-[#ABF67E]/15 rounded-bl-full pointer-events-none" />
 
             <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">

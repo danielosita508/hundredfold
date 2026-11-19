@@ -244,7 +244,7 @@ export default function AboutPage() {
     <div className="relative overflow-hidden bg-[#E9FDFF] text-[#0C1E20]">
 
       {/* ─── SECTION 1: EDITORIAL HERO BANNER (Transcorp Style Sharp Panoramic Backdrop Carousel) ─── */}
-      <section id="overview" className="relative w-full min-h-[580px] lg:min-h-[640px] h-[72vh] flex flex-col justify-between overflow-hidden bg-black">
+      <section id="overview" className="relative w-full h-[calc(100vh-90px)] min-h-[460px] sm:min-h-[500px] max-h-[720px] flex flex-col justify-between overflow-hidden bg-black">
         {/* 100% Crisp Background Slides (Zero Blur / Zero Filter) */}
         <div className="absolute inset-0 z-0">
           <AnimatePresence initial={false} mode="wait">
@@ -275,7 +275,7 @@ export default function AboutPage() {
         <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-black/15 to-transparent z-10 pointer-events-none" />
 
         {/* Hero Title Container Layered on Top (z-20, uniform bottom-anchored placement) */}
-        <div className="relative max-w-[1360px] mx-auto px-6 lg:px-12 w-full z-20 flex-1 flex flex-col justify-end pb-8 sm:pb-10 pt-28">
+        <div className="relative max-w-[1360px] mx-auto px-6 lg:px-12 w-full z-20 flex-1 flex flex-col justify-end pb-4 sm:pb-6 pt-20 sm:pt-24">
           <div className="flex flex-col items-start text-left">
             <motion.h1
               key={`about-h1-${currentSlide}`}
@@ -302,9 +302,71 @@ export default function AboutPage() {
           </div>
         </div>
 
+        {/* Bottom Hero Actions Container (z-20, pushed up with generous bottom padding) */}
+        <div className="relative max-w-[1360px] mx-auto px-6 lg:px-12 w-full pb-12 sm:pb-16 lg:pb-20 mb-1 sm:mb-2 z-20 flex items-end justify-between">
 
-      {/* Bottom Hero Actions Container (z-20) */}
-      <div className="relative max-w-[1360px] mx-auto px-6 lg:px-12 w-full pb-8 sm:pb-12 z-20 flex items-end justify-end">
+          {/* Bottom-Left: Carousel Navigation & Progress Controller */}
+          <div className="flex items-center gap-3 sm:gap-5 p-2 px-3 sm:px-4 rounded-full bg-black/45 backdrop-blur-md border border-white/20 shadow-xl">
+            <div className="font-mono text-xs font-semibold tracking-wider flex items-center gap-1 pl-1 select-none">
+              <span className="text-[#ABF67E] font-bold text-sm">0{currentSlide + 1}</span>
+              <span className="text-white/30">/</span>
+              <span className="text-white/60">0{ABOUT_HERO_SLIDES.length}</span>
+            </div>
+
+            <div className="flex items-center gap-1.5 sm:gap-2">
+              {ABOUT_HERO_SLIDES.map((_, idx) => (
+                <button
+                  key={idx}
+                  type="button"
+                  onClick={() => setCurrentSlide(idx)}
+                  aria-label={`Go to slide ${idx + 1}`}
+                  className="py-2 cursor-pointer focus:outline-none group"
+                >
+                  <span
+                    className={`block h-1 rounded-full transition-all duration-500 ${
+                      currentSlide === idx
+                        ? "w-8 sm:w-10 bg-[#ABF67E]"
+                        : "w-3 sm:w-4 bg-white/30 group-hover:bg-white/60"
+                    }`}
+                  />
+                </button>
+              ))}
+            </div>
+
+            <div className="flex items-center gap-1.5 border-l border-white/15 pl-2 sm:pl-3">
+              <button
+                type="button"
+                onClick={handlePrevSlide}
+                className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-white/10 hover:bg-[#ABF67E] hover:text-[#0A2F1B] text-white transition-all flex items-center justify-center cursor-pointer active:scale-95 shadow-sm"
+                aria-label="Previous slide"
+              >
+                <ChevronLeftIcon className="w-3.5 h-3.5" />
+              </button>
+
+              <button
+                type="button"
+                onClick={handleTogglePause}
+                className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-white/10 hover:bg-[#ABF67E] hover:text-[#0A2F1B] text-white transition-all flex items-center justify-center cursor-pointer active:scale-95 shadow-sm"
+                aria-label={isPaused ? "Resume autoplay" : "Pause autoplay"}
+                title={isPaused ? "Resume autoplay" : "Pause autoplay"}
+              >
+                {isPaused ? (
+                  <PlayIcon className="w-3.5 h-3.5 ml-0.5" />
+                ) : (
+                  <PauseIcon className="w-3.5 h-3.5" />
+                )}
+              </button>
+
+              <button
+                type="button"
+                onClick={handleNextSlide}
+                className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-white/10 hover:bg-[#ABF67E] hover:text-[#0A2F1B] text-white transition-all flex items-center justify-center cursor-pointer active:scale-95 shadow-sm"
+                aria-label="Next slide"
+              >
+                <ChevronRightIcon className="w-3.5 h-3.5" />
+              </button>
+            </div>
+          </div>
 
           {/* Bottom-Right: Quick link and scroll down */}
           <div className="flex flex-col items-center gap-3">

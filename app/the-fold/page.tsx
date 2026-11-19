@@ -146,7 +146,7 @@ export default function TheFoldPage() {
       {/* ─── SECTION 1: PRESTIGE HERO CAROUSEL ─── */}
       <section
         id="overview"
-        className="relative w-full min-h-[560px] lg:min-h-[620px] h-[70vh] flex flex-col justify-between overflow-hidden bg-black"
+        className="relative w-full h-[calc(100vh-90px)] min-h-[460px] sm:min-h-[500px] max-h-[720px] flex flex-col justify-between overflow-hidden bg-black"
       >
         {/* Crisp Background Slides */}
         <div className="absolute inset-0 z-0">
@@ -178,7 +178,7 @@ export default function TheFoldPage() {
         <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/20 to-transparent z-10 pointer-events-none" />
 
         {/* Hero Title Container */}
-        <div className="relative max-w-[1360px] mx-auto px-6 lg:px-12 w-full z-20 flex-1 flex flex-col justify-end pb-8 sm:pb-10 pt-28">
+        <div className="relative max-w-[1360px] mx-auto px-6 lg:px-12 w-full z-20 flex-1 flex flex-col justify-end pb-4 sm:pb-6 pt-20 sm:pt-24">
           <div className="flex flex-col items-start text-left">
             <motion.h1
               key={`fold-h1-${currentSlide}`}
@@ -205,8 +205,8 @@ export default function TheFoldPage() {
           </div>
         </div>
 
-        {/* Bottom Hero Controls Container (z-20) */}
-        <div className="relative max-w-[1360px] mx-auto px-6 lg:px-12 w-full pb-8 sm:pb-12 z-20 flex items-end justify-between">
+        {/* Bottom Hero Controls Container (z-20, pushed up with generous bottom padding) */}
+        <div className="relative max-w-[1360px] mx-auto px-6 lg:px-12 w-full pb-12 sm:pb-16 lg:pb-20 mb-1 sm:mb-2 z-20 flex items-end justify-between">
           {/* Bottom-Left: Carousel Navigation & Progress Controller */}
           <div className="flex items-center gap-3 sm:gap-5 p-2 px-3 sm:px-4 rounded-full bg-black/45 backdrop-blur-md border border-white/20 shadow-xl">
             <div className="font-mono text-xs font-semibold tracking-wider flex items-center gap-1 pl-1 select-none">

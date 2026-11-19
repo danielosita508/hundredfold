@@ -3,6 +3,7 @@ import { Poppins, Montserrat, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+import SmoothScrollProvider from "@/components/providers/SmoothScrollProvider";
 import siteConfig from "@/lib/site-config";
 
 const poppins = Poppins({
@@ -62,20 +63,21 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      data-scroll-behavior="smooth"
-      className={`${poppins.variable} ${montserrat.variable} ${plusJakartaSans.variable} scroll-smooth`}
+      className={`${poppins.variable} ${montserrat.variable} ${plusJakartaSans.variable}`}
     >
       <body className="min-h-screen flex flex-col bg-[#E9FDFF] text-[#0C1E20] antialiased selection:bg-[#ABF67E] selection:text-[#0A2F1B]">
-        {/* Global Floating Glass Navbar */}
-        <Navbar />
+        <SmoothScrollProvider>
+          {/* Global Floating Glass Navbar */}
+          <Navbar />
 
-        {/* Main Content Area */}
-        <main className="flex-grow">
-          {children}
-        </main>
+          {/* Main Content Area */}
+          <main className="flex-grow">
+            {children}
+          </main>
 
-        {/* Global Executive Dark-Green Footer (Stitch Design) */}
-        <Footer />
+          {/* Global Executive Dark-Green Footer (Stitch Design) */}
+          <Footer />
+        </SmoothScrollProvider>
       </body>
     </html>
   );
