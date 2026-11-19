@@ -363,29 +363,13 @@ export default function InvestmentPhilosophy() {
           {/* ─── RIGHT COLUMN: Hundredfold Investment Philosophy Narrative ─── */}
           <div className="lg:col-span-6 flex flex-col items-start text-left">
             
-            <motion.div
-              initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, ease: PRO_MAX_EASE }}
-              className="space-y-1"
-            >
-              <span className="text-xs uppercase tracking-[0.25em] font-bold text-[#2D6C00] block">
-                OUR INVESTMENT PHILOSOPHY
-              </span>
-              <h2 className="font-heading text-3xl sm:text-4xl lg:text-[44px] text-[#00190A] font-semibold leading-[1.15] tracking-tight">
-                Sound Commercial Judgment. <br className="hidden sm:inline" />
-                Disciplined Growth.
-              </h2>
-            </motion.div>
-
             {/* Core Brand Statement */}
             <motion.p
               initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 15 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.1, ease: PRO_MAX_EASE }}
-              className="mt-6 text-base sm:text-lg text-[#334155] leading-relaxed font-normal"
+              transition={{ duration: 0.6, ease: PRO_MAX_EASE }}
+              className="text-base sm:text-lg text-[#334155] leading-relaxed font-normal"
             >
               At Hundredfold, we believe sustainable wealth is created by bridging the gap between African commercial opportunity and disciplined institutional execution. We evaluate ventures based on real market fundamentals, verified off-taker demand, and clear cash-flow pathways.
             </motion.p>
