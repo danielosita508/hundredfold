@@ -93,7 +93,13 @@ export default function Navbar() {
   }, [mobileMenuOpen]);
 
   return (
-    <header className="fixed top-0 left-0 w-full z-50 bg-black border-b border-white/10 h-[76px]">
+    <header
+      className={`fixed top-0 left-0 w-full z-50 h-[76px] transition-colors duration-300 ease-out ${
+        scrolled
+          ? "bg-black border-b border-white/10 shadow-lg"
+          : "bg-gradient-to-b from-black/80 via-black/30 to-transparent border-b border-transparent"
+      }`}
+    >
       <div className="max-w-[1360px] mx-auto px-6 lg:px-12 h-full">
         <div className="flex items-center justify-between h-full gap-4 sm:gap-6">
 

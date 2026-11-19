@@ -93,7 +93,7 @@ export default function Home() {
     <div className="relative overflow-hidden bg-[#E9FDFF] text-[#0C1E20]">
 
       {/* ─── SECTION 1: HERO (Transcorp Style Sharp Panoramic Carousel) ─── */}
-      <section className="relative w-full h-[calc(100vh-76px)] min-h-[620px] mt-[76px] overflow-hidden bg-black flex flex-col justify-between">
+      <section className="relative w-full h-screen min-h-[640px] overflow-hidden bg-black flex flex-col justify-between">
 
         {/* 100% Crisp Background Slides (Zero Blur / Zero Filter) */}
         <div className="absolute inset-0 z-0">
