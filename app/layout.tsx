@@ -1,9 +1,16 @@
 import type { Metadata } from "next";
-import { EB_Garamond, Plus_Jakarta_Sans } from "next/font/google";
+import { Poppins, EB_Garamond, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import siteConfig from "@/lib/site-config";
+
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-poppins",
+  display: "swap",
+});
 
 const ebGaramond = EB_Garamond({
   subsets: ["latin"],
@@ -54,7 +61,8 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${ebGaramond.variable} ${plusJakartaSans.variable} scroll-smooth`}
+      data-scroll-behavior="smooth"
+      className={`${poppins.variable} ${ebGaramond.variable} ${plusJakartaSans.variable} scroll-smooth`}
     >
       <body className="min-h-screen flex flex-col bg-[#E9FDFF] text-[#0C1E20] antialiased selection:bg-[#ABF67E] selection:text-[#0A2F1B]">
         {/* Global Floating Glass Navbar */}

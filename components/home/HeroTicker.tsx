@@ -26,7 +26,7 @@ export default function HeroTicker() {
   ];
 
   return (
-    <div className="relative w-full bg-[#00190A] border-y border-white/15 overflow-hidden z-20 select-none py-3.5 sm:py-4 shadow-lg">
+    <div id="ticker" className="relative w-full bg-[#00190A] border-y border-white/15 overflow-hidden z-20 select-none py-3.5 sm:py-4 shadow-lg">
       
       {/* Subtle edge fade vignettes for smooth boundary entry/exit */}
       <div className="absolute left-0 inset-y-0 w-16 sm:w-24 bg-gradient-to-r from-[#00190A] to-transparent z-20 pointer-events-none" />

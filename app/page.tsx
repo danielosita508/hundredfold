@@ -6,23 +6,36 @@ import Image from "next/image";
 import HeroTicker from "@/components/home/HeroTicker";
 import siteConfig from "@/lib/site-config";
 import { motion, AnimatePresence, useReducedMotion, type Variants } from "framer-motion";
-import { ArrowRightIcon } from "@/components/ui/Icons";
+import {
+  ArrowRightIcon,
+  ChevronLeftIcon,
+  ChevronRightIcon,
+  ChevronDownIcon,
+  PauseIcon,
+  PlayIcon,
+} from "@/components/ui/Icons";
 
 const PRO_MAX_EASE = [0.16, 1, 0.3, 1] as const;
 
-// Hero Auto-Fading Slides
+// Hero Auto-Fading Slides with sharp corporate Transcorp typography
 const HERO_SLIDES = [
   {
     image: "/images/watermarked_img_12091658178589332582.jpg",
     alt: "Global African commercial partnership and investment landscape",
+    title: "Redefining Partnerships.",
+    description:
+      "Hundredfold Innovation Network Ltd is an African business and investment company focused on identifying high-impact commercial opportunities, building strategic relationships, and developing ventures with long-term potential.",
   },
   {
     image: "/images/pexels-artem-korolev-2159253660-38320074.jpg",
     alt: "Institutional infrastructure and strategic commercial horizons",
+    title: "Building Businesses. Creating Value.",
+    description:
+      "Grounded in institutional governance and disciplined capital stewardship, we pool capabilities and participate in high-conviction ventures across key sovereign sectors.",
   },
 ];
 
-// Strategic Investment Sectors conforming to Heirs Holdings panoramic strip architecture
+// Strategic Investment Sectors conforming to panoramic strip architecture
 const BUSINESS_SECTORS = [
   {
     title: "Agriculture",
@@ -53,30 +66,44 @@ const BUSINESS_SECTORS = [
 export default function Home() {
   const shouldReduceMotion = useReducedMotion();
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
 
   // Auto-fading hero carousel timer
   useEffect(() => {
+    if (isPaused) return;
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % HERO_SLIDES.length);
     }, 6500);
     return () => clearInterval(timer);
-  }, []);
+  }, [isPaused]);
+
+  const handlePrevSlide = () => {
+    setCurrentSlide((prev) => (prev === 0 ? HERO_SLIDES.length - 1 : prev - 1));
+  };
+
+  const handleNextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % HERO_SLIDES.length);
+  };
+
+  const handleTogglePause = () => {
+    setIsPaused((prev) => !prev);
+  };
 
   return (
     <div className="relative overflow-hidden bg-[#E9FDFF] text-[#0C1E20]">
 
-      {/* ─── SECTION 1: HERO (Cinematic Auto-Fading Carousel with Frosted Glass & EB Garamond) ─── */}
-      <section className="relative w-full min-h-screen flex flex-col justify-end pb-16 lg:pb-24 pt-32 overflow-hidden bg-[#0A2F1B]">
+      {/* ─── SECTION 1: HERO (Transcorp Style Sharp Panoramic Carousel) ─── */}
+      <section className="relative w-full h-[calc(100vh-76px)] min-h-[620px] mt-[76px] overflow-hidden bg-black flex flex-col justify-between">
 
-        {/* Full-bleed Auto-Fading Background Slides */}
+        {/* 100% Crisp Background Slides (Zero Blur / Zero Filter) */}
         <div className="absolute inset-0 z-0">
           <AnimatePresence initial={false} mode="wait">
             <motion.div
               key={currentSlide}
-              initial={{ opacity: 0, scale: 1.04 }}
-              animate={{ opacity: 1, scale: 1 }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              transition={{ duration: 1.5, ease: "easeInOut" }}
+              transition={{ duration: 1.1, ease: "easeInOut" }}
               className="absolute inset-0 w-full h-full"
             >
               <Image
@@ -84,7 +111,7 @@ export default function Home() {
                 alt={HERO_SLIDES[currentSlide].alt}
                 fill
                 priority
-                quality={100}
+                quality={95}
                 sizes="100vw"
                 className="object-cover object-center"
               />
@@ -92,54 +119,124 @@ export default function Home() {
           </AnimatePresence>
         </div>
 
-        {/* Cinematic Dark Frosted Glass Overlay */}
-        <div className="absolute inset-0 bg-black/50 backdrop-blur-sm z-10 pointer-events-none" />
+        {/* Crisp Directional Gradient Overlay (Dark text backdrop on left, 100% bright & sharp on right) */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/30 to-transparent z-10 pointer-events-none" />
 
-        {/* Ambient subtle vignette & directional gradient */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/35 to-black/60 z-10 pointer-events-none" />
+        {/* Hero Content Container (Top/Middle Layered on Top z-20) */}
+        <div className="relative max-w-[1360px] mx-auto px-6 lg:px-12 w-full z-20 pt-14 sm:pt-20 lg:pt-24">
+          <div className="flex flex-col items-start">
 
-        {/* Ambient emerald brand glow */}
-        <div className="absolute bottom-0 left-0 w-[550px] h-[340px] bg-[#2D6C00]/25 rounded-full blur-[140px] pointer-events-none z-10" />
-
-        {/* Hero Content Container Layered on Top (z-20) */}
-        <div className="relative max-w-[1320px] mx-auto px-6 lg:px-12 w-full z-20">
-          <div className="flex flex-col items-start max-w-4xl">
-
-            {/* Headline in EB Garamond font-serif */}
+            {/* Headline in Poppins (Sans-Serif, Corporate Bold) */}
             <motion.h1
-              initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.85, ease: PRO_MAX_EASE }}
-              className="font-serif text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-white font-medium tracking-tight leading-[1.05] drop-shadow-xl"
-            >
-              Redefining <br className="hidden sm:inline" />
-              Partnerships.
-            </motion.h1>
-
-            {/* Sub-Headline Description */}
-            <motion.p
+              key={`hero-h1-${currentSlide}`}
               initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.18, ease: PRO_MAX_EASE }}
-              className="text-sm sm:text-base md:text-lg text-white/90 max-w-4xl lg:max-w-[860px] font-normal leading-relaxed mt-5 sm:mt-6 drop-shadow-md"
+              transition={{ duration: 0.65, ease: PRO_MAX_EASE }}
+              className="font-poppins text-[30px] sm:text-[36px] lg:text-[42px] font-bold leading-[1.15] tracking-[-0.02em] max-w-[500px] text-white drop-shadow-md"
             >
-              Hundredfold Innovation Network Ltd is an African business and investment company focused on identifying high-impact commercial opportunities, building strategic relationships, and developing ventures with long-term potential.
+              {HERO_SLIDES[currentSlide].title}
+            </motion.h1>
+
+            {/* Hundredfold Brand Green Accent Divider */}
+            <div className="my-6 h-[2px] w-[220px] bg-[#9BE564]" />
+
+            {/* Compact Sub-Headline Description */}
+            <motion.p
+              key={`hero-desc-${currentSlide}`}
+              initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.65, delay: 0.1, ease: PRO_MAX_EASE }}
+              className="font-poppins text-[13px] md:text-[14px] font-normal leading-[1.65] max-w-[400px] text-white/90 drop-shadow-sm"
+            >
+              {HERO_SLIDES[currentSlide].description}
             </motion.p>
 
-            {/* Slide Indicators */}
-            <div className="flex items-center gap-2.5 mt-8 pt-1">
-              {HERO_SLIDES.map((_, idx) => (
-                <button
-                  key={idx}
-                  onClick={() => setCurrentSlide(idx)}
-                  className={`h-1.5 rounded-full transition-all duration-500 cursor-pointer ${
-                    currentSlide === idx ? "w-8 bg-[#ABF67E]" : "w-2 bg-white/40 hover:bg-white/70"
-                  }`}
-                  aria-label={`Go to slide ${idx + 1}`}
-                />
-              ))}
+          </div>
+        </div>
+
+        {/* Bottom Hero Controls Container (z-20) */}
+        <div className="relative max-w-[1360px] mx-auto px-6 lg:px-12 w-full pb-8 sm:pb-12 z-20 flex items-end justify-between">
+
+          {/* Bottom-Left: Three 44x44px crisp white square buttons with centered 10px uppercase tracking-widest white labels */}
+          <div className="flex items-center gap-4 sm:gap-6">
+            {/* PREV */}
+            <div className="flex flex-col items-center gap-1.5">
+              <button
+                type="button"
+                onClick={handlePrevSlide}
+                className="h-11 w-11 bg-white hover:bg-white/90 active:scale-95 transition-all flex items-center justify-center text-black shadow-md cursor-pointer select-none"
+                aria-label="Previous slide"
+              >
+                <ChevronLeftIcon className="w-4 h-4 text-black stroke-[2.5]" />
+              </button>
+              <span className="text-[10px] uppercase tracking-widest font-semibold text-white">
+                PREV
+              </span>
+            </div>
+
+            {/* PAUSE / PLAY */}
+            <div className="flex flex-col items-center gap-1.5">
+              <button
+                type="button"
+                onClick={handleTogglePause}
+                className="h-11 w-11 bg-white hover:bg-white/90 active:scale-95 transition-all flex items-center justify-center text-black shadow-md cursor-pointer select-none"
+                aria-label={isPaused ? "Play slideshow" : "Pause slideshow"}
+              >
+                {isPaused ? (
+                  <PlayIcon className="w-4 h-4 text-black" />
+                ) : (
+                  <PauseIcon className="w-4 h-4 text-black" />
+                )}
+              </button>
+              <span className="text-[10px] uppercase tracking-widest font-semibold text-white">
+                {isPaused ? "PLAY" : "PAUSE"}
+              </span>
+            </div>
+
+            {/* NEXT */}
+            <div className="flex flex-col items-center gap-1.5">
+              <button
+                type="button"
+                onClick={handleNextSlide}
+                className="h-11 w-11 bg-white hover:bg-white/90 active:scale-95 transition-all flex items-center justify-center text-black shadow-md cursor-pointer select-none"
+                aria-label="Next slide"
+              >
+                <ChevronRightIcon className="w-4 h-4 text-black stroke-[2.5]" />
+              </button>
+              <span className="text-[10px] uppercase tracking-widest font-semibold text-white">
+                NEXT
+              </span>
             </div>
           </div>
+
+          {/* Bottom-Right: Translucent white-bordered pill button & stacked downward chevrons */}
+          <div className="flex flex-col items-center gap-3">
+            <Link
+              href="/business"
+              className="rounded-full border border-white/80 bg-black/25 px-7 py-3 text-[14px] font-semibold text-white hover:bg-white hover:text-black transition-all shadow-md backdrop-blur-sm whitespace-nowrap"
+            >
+              Explore Our Businesses
+            </Link>
+
+            <button
+              type="button"
+              onClick={() => {
+                const ticker = document.getElementById("ticker");
+                if (ticker) {
+                  ticker.scrollIntoView({ behavior: "smooth" });
+                } else {
+                  window.scrollBy({ top: window.innerHeight - 76, behavior: "smooth" });
+                }
+              }}
+              className="flex flex-col items-center -space-y-1.5 text-white/90 hover:text-white transition-colors cursor-pointer pt-1"
+              aria-label="Scroll to next section"
+            >
+              <ChevronDownIcon className="w-4 h-4 stroke-[2]" />
+              <ChevronDownIcon className="w-4 h-4 stroke-[2]" />
+              <ChevronDownIcon className="w-4 h-4 stroke-[2]" />
+            </button>
+          </div>
+
         </div>
 
       </section>
@@ -202,7 +299,7 @@ export default function Home() {
                   alt="Executive boardroom presentation and institutional strategic briefing"
                   fill
                   quality={100}
-                  sizes="100vw"
+                  sizes="(max-width: 1024px) 100vw, 550px"
                   className="object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
                 />
 
@@ -262,50 +359,39 @@ export default function Home() {
           </motion.div>
         </div>
 
-        {/* Heirs Holdings Style Panoramic 4-Column Strip (Full-Bleed Grayscale-to-Color Architecture) */}
+        {/* Transcorp Style Panoramic Multi-Sector Strip (Full-Bleed Grayscale-to-Color Architecture) */}
         <div className="w-full">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-0 w-full">
-            {BUSINESS_SECTORS.map((sector, index) => {
-              const borderClasses =
-                index === 0
-                  ? "border-b sm:border-b lg:border-b-0 sm:border-r border-white/20"
-                  : index === 1
-                  ? "border-b sm:border-b lg:border-b-0 lg:border-r border-white/20"
-                  : index === 2
-                  ? "border-b sm:border-b-0 sm:border-r border-white/20"
-                  : "";
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-0 w-full border-t border-b border-white/20">
+            {BUSINESS_SECTORS.map((sector, index) => (
+              <Link
+                key={sector.title}
+                href={sector.href}
+                className="group relative w-full h-[240px] sm:h-[280px] lg:h-[340px] overflow-hidden bg-black flex flex-col justify-end border-r border-white/20 last:border-r-0 cursor-pointer select-none"
+              >
+                {/* Background Photographic Image: Grayscale by default to match Transcorp strip, blooms to full color on hover */}
+                <Image
+                  src={sector.image}
+                  alt={sector.alt}
+                  fill
+                  quality={95}
+                  sizes="(max-width: 640px) 50vw, 25vw"
+                  className="object-cover object-center grayscale contrast-110 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-out"
+                />
 
-              return (
-                <Link
-                  key={sector.title}
-                  href={sector.href}
-                  className={`group relative w-full h-[360px] sm:h-[400px] lg:h-[440px] overflow-hidden bg-[#0A2F1B] flex flex-col justify-end ${borderClasses} cursor-pointer select-none`}
-                >
-                  {/* Background Photographic Image: Grayscale by default to match Heirs Holdings, blooms to full color on hover */}
-                  <Image
-                    src={sector.image}
-                    alt={sector.alt}
-                    fill
-                    quality={100}
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                    className="object-cover object-center grayscale contrast-105 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-out"
-                  />
+                {/* Base subtle vignette for text readability */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent pointer-events-none" />
 
-                  {/* Base subtle vignette for text readability */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent pointer-events-none" />
+                {/* Rich Emerald Green Overlay on Hover */}
+                <div className="absolute inset-0 bg-gradient-to-t from-[#00190A]/95 via-[#0A2F1B]/75 to-[#0A2F1B]/35 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-out pointer-events-none" />
 
-                  {/* Rich Emerald Green Overlay on Hover */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#00190A]/95 via-[#0A2F1B]/75 to-[#0A2F1B]/35 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-out pointer-events-none" />
-
-                  {/* Sector Title (Bottom-Left, Light Sans-Serif, Title Case White) */}
-                  <div className="relative z-10 p-6 sm:p-8 lg:p-10 flex flex-col justify-end h-full">
-                    <h3 className="font-sans text-xl sm:text-2xl lg:text-3xl font-light tracking-wide text-white drop-shadow-md transform transition-transform duration-500 ease-out group-hover:-translate-y-1">
-                      {sector.title}
-                    </h3>
-                  </div>
-                </Link>
-              );
-            })}
+                {/* Sector Title (Bottom-Left, Poppins Semi-Bold, Title Case White) */}
+                <div className="relative z-10 p-5 sm:p-6 lg:p-8 flex flex-col justify-end h-full">
+                  <h3 className="font-poppins text-base sm:text-lg lg:text-xl font-semibold tracking-tight text-white drop-shadow-md transform transition-transform duration-500 ease-out group-hover:-translate-y-1">
+                    {sector.title}
+                  </h3>
+                </div>
+              </Link>
+            ))}
           </div>
         </div>
       </section>

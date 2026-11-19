@@ -27,6 +27,7 @@
   --color-outline: #727972;
   --color-outline-variant: #c1c8c0;
 
+  --font-poppins: var(--font-poppins), "Poppins", system-ui, sans-serif;
   --font-serif: var(--font-garamond), "EB Garamond", Georgia, serif;
   --font-sans: var(--font-jakarta), "Plus Jakarta Sans", system-ui, sans-serif;
   --font-heading: var(--font-garamond), "EB Garamond", Georgia, serif;
