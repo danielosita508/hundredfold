@@ -20,8 +20,8 @@ const PRO_MAX_EASE = [0.16, 1, 0.3, 1] as const;
 // Hero Auto-Fading Slides with sharp corporate Transcorp typography
 const HERO_SLIDES = [
   {
-    image: "/images/pexels-thomas-haney-175964438-20812782.jpg",
-    alt: "Global African commercial partnership and investment landscape",
+    image: "/images/andras-vas-Bd7gNnWJBkU-unsplash.jpg",
+    alt: "Modern corporate architecture and strategic African enterprise landscape",
     title: "Redefining Partnerships.",
     description:
       "Hundredfold Innovation Network is a community-driven investment and business network designed to connect individuals around structured opportunities for wealth creation.",
