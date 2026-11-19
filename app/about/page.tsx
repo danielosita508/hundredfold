@@ -302,73 +302,27 @@ export default function AboutPage() {
           </div>
         </div>
 
-        {/* Bottom Hero Controls Container (z-20) */}
-        <div className="relative max-w-[1360px] mx-auto px-6 lg:px-12 w-full pb-8 sm:pb-12 z-20 flex items-end justify-between">
-          {/* Bottom-Left: Sleek Institutional Carousel Navigation & Progress Controller */}
-          <div className="flex items-center gap-3 sm:gap-5 p-2 px-3 sm:px-4 rounded-full bg-black/45 backdrop-blur-md border border-white/20 shadow-xl">
-            {/* Slide Index Counter */}
-            <div className="font-mono text-xs font-semibold tracking-wider flex items-center gap-1 pl-1 select-none">
-              <span className="text-[#ABF67E] font-bold text-sm">0{currentSlide + 1}</span>
-              <span className="text-white/30">/</span>
-              <span className="text-white/60">0{ABOUT_HERO_SLIDES.length}</span>
-            </div>
+      {/* ─── Side Navigation Arrows (Left & Right Flanks of Hero) ─── */}
+      <button
+        type="button"
+        onClick={handlePrevSlide}
+        className="absolute left-4 sm:left-6 lg:left-8 top-1/2 -translate-y-1/2 z-30 w-11 h-11 sm:w-13 sm:h-13 rounded-full bg-black/40 hover:bg-black/75 text-white backdrop-blur-md border border-white/20 shadow-2xl transition-all duration-300 flex items-center justify-center cursor-pointer hover:scale-110 active:scale-95 group focus:outline-none"
+        aria-label="Previous slide"
+      >
+        <ChevronLeftIcon className="w-5 h-5 sm:w-6 sm:h-6 text-white group-hover:text-[#ABF67E] transition-colors" />
+      </button>
 
-            {/* Slide Progress Dash Indicators */}
-            <div className="flex items-center gap-1.5 sm:gap-2">
-              {ABOUT_HERO_SLIDES.map((_, idx) => (
-                <button
-                  key={idx}
-                  type="button"
-                  onClick={() => setCurrentSlide(idx)}
-                  aria-label={`Go to slide ${idx + 1}`}
-                  className="py-2 cursor-pointer focus:outline-none group"
-                >
-                  <span
-                    className={`block h-1 rounded-full transition-all duration-500 ${
-                      currentSlide === idx
-                        ? "w-8 sm:w-10 bg-[#ABF67E]"
-                        : "w-3 sm:w-4 bg-white/30 group-hover:bg-white/60"
-                    }`}
-                  />
-                </button>
-              ))}
-            </div>
+      <button
+        type="button"
+        onClick={handleNextSlide}
+        className="absolute right-4 sm:right-6 lg:right-8 top-1/2 -translate-y-1/2 z-30 w-11 h-11 sm:w-13 sm:h-13 rounded-full bg-black/40 hover:bg-black/75 text-white backdrop-blur-md border border-white/20 shadow-2xl transition-all duration-300 flex items-center justify-center cursor-pointer hover:scale-110 active:scale-95 group focus:outline-none"
+        aria-label="Next slide"
+      >
+        <ChevronRightIcon className="w-5 h-5 sm:w-6 sm:h-6 text-white group-hover:text-[#ABF67E] transition-colors" />
+      </button>
 
-            {/* Subtle Frosted Glass Navigation Buttons */}
-            <div className="flex items-center gap-1.5 border-l border-white/15 pl-2 sm:pl-3">
-              <button
-                type="button"
-                onClick={handlePrevSlide}
-                className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-white/10 hover:bg-[#ABF67E] hover:text-[#0A2F1B] text-white transition-all flex items-center justify-center cursor-pointer active:scale-95 shadow-sm"
-                aria-label="Previous slide"
-              >
-                <ChevronLeftIcon className="w-3.5 h-3.5" />
-              </button>
-
-              <button
-                type="button"
-                onClick={handleTogglePause}
-                className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-white/10 hover:bg-[#ABF67E] hover:text-[#0A2F1B] text-white transition-all flex items-center justify-center cursor-pointer active:scale-95 shadow-sm"
-                aria-label={isPaused ? "Resume autoplay" : "Pause autoplay"}
-                title={isPaused ? "Resume autoplay" : "Pause autoplay"}
-              >
-                {isPaused ? (
-                  <PlayIcon className="w-3.5 h-3.5 ml-0.5" />
-                ) : (
-                  <PauseIcon className="w-3.5 h-3.5" />
-                )}
-              </button>
-
-              <button
-                type="button"
-                onClick={handleNextSlide}
-                className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-white/10 hover:bg-[#ABF67E] hover:text-[#0A2F1B] text-white transition-all flex items-center justify-center cursor-pointer active:scale-95 shadow-sm"
-                aria-label="Next slide"
-              >
-                <ChevronRightIcon className="w-3.5 h-3.5" />
-              </button>
-            </div>
-          </div>
+      {/* Bottom Hero Actions Container (z-20) */}
+      <div className="relative max-w-[1360px] mx-auto px-6 lg:px-12 w-full pb-8 sm:pb-12 z-20 flex items-end justify-end">
 
           {/* Bottom-Right: Quick link and scroll down */}
           <div className="flex flex-col items-center gap-3">
