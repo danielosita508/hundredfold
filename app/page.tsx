@@ -249,7 +249,7 @@ export default function Home() {
     <div className="relative overflow-hidden bg-[#E9FDFF] text-[#0C1E20]">
 
       {/* ─── SECTION 1: HERO (Transcorp Style Sharp Panoramic Carousel) ─── */}
-      <section className="relative w-full h-[calc(100vh-40px)] min-h-[580px] sm:min-h-[620px] overflow-hidden bg-black flex flex-col justify-end">
+      <section className="relative w-full h-[calc(100vh-65px)] min-h-[540px] sm:min-h-[580px] overflow-hidden bg-black flex flex-col justify-end">
 
         {/* 100% Crisp Background Slides (Zero Blur / Zero Filter) */}
         <div className="absolute inset-0 z-0">
@@ -281,7 +281,7 @@ export default function Home() {
         <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/15 to-transparent z-10 pointer-events-none" />
 
         {/* Hero Bottom Container (Unified Left Writeup + Right Actions) */}
-        <div className="relative max-w-[1360px] mx-auto px-6 lg:px-12 w-full z-20 pb-8 sm:pb-12 flex flex-col lg:flex-row lg:items-end justify-between gap-6">
+        <div className="relative max-w-[1360px] mx-auto px-6 lg:px-12 w-full z-20 pb-7 sm:pb-10 flex flex-col lg:flex-row lg:items-end justify-between gap-6">
 
           {/* Left: Headline & Writeup sitting at the bottom-left */}
           <div className="flex flex-col items-start max-w-[560px]">

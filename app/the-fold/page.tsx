@@ -146,7 +146,7 @@ export default function TheFoldPage() {
       {/* ─── SECTION 1: PRESTIGE HERO CAROUSEL ─── */}
       <section
         id="overview"
-        className="relative w-full h-[calc(100vh-40px)] min-h-[580px] sm:min-h-[620px] flex flex-col justify-end overflow-hidden bg-black"
+        className="relative w-full h-[calc(100vh-65px)] min-h-[540px] sm:min-h-[580px] flex flex-col justify-end overflow-hidden bg-black"
       >
         {/* Crisp Background Slides */}
         <div className="absolute inset-0 z-0">
@@ -178,7 +178,7 @@ export default function TheFoldPage() {
         <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/20 to-transparent z-10 pointer-events-none" />
 
         {/* Hero Bottom Container (Unified Left Writeup + Right Actions) */}
-        <div className="relative max-w-[1360px] mx-auto px-6 lg:px-12 w-full z-20 pb-8 sm:pb-12 flex flex-col lg:flex-row lg:items-end justify-between gap-6">
+        <div className="relative max-w-[1360px] mx-auto px-6 lg:px-12 w-full z-20 pb-7 sm:pb-10 flex flex-col lg:flex-row lg:items-end justify-between gap-6">
 
           {/* Left: Headline & Writeup sitting at the bottom-left */}
           <div className="flex flex-col items-start max-w-[580px]">
@@ -212,7 +212,7 @@ export default function TheFoldPage() {
               href="#join"
               className="rounded-full border border-white/80 bg-black/25 px-7 py-3 text-[14px] font-semibold text-white hover:bg-white hover:text-black transition-all shadow-md backdrop-blur-sm whitespace-nowrap"
             >
-              Request Access
+              Join The Fold
             </Link>
 
             <button
@@ -451,42 +451,17 @@ export default function TheFoldPage() {
         <div className="max-w-[1240px] mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
 
-            {/* Left Column: Magazine Feature Card */}
+            {/* Left Column: Magazine Feature Image (Clean photograph, writing removed per user request) */}
             <div className="lg:col-span-5 flex flex-col justify-center">
               <div className="relative aspect-[3/4] sm:aspect-[4/5] w-full rounded-3xl overflow-hidden shadow-xl border border-white bg-[#0A2F1B] group">
                 <Image
                   src="/images/istockphoto-2211042706-612x612.jpg"
-                  alt="The Fold Strategic Alliances and Executive Conclave"
+                  alt="The Fold Agricultural and Syndicate Field Operations"
                   fill
                   quality={100}
                   sizes="(max-width: 1024px) 100vw, 550px"
                   className="object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
                 />
-
-                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent pointer-events-none" />
-
-                <div className="absolute inset-x-0 bottom-0 p-6 sm:p-8 z-10 flex flex-col gap-2 text-white">
-                  <span className="text-[10px] font-mono uppercase tracking-widest text-[#ABF67E] font-bold">
-                    CYCLE 1 ADMISSIONS
-                  </span>
-
-                  <h3 className="font-heading text-2xl sm:text-3xl font-bold text-white tracking-tight">
-                    Join The Fold
-                  </h3>
-
-                  <p className="text-xs text-white/80 leading-relaxed font-light">
-                    Confidential syndicate admissions strictly limited to 100 members.
-                  </p>
-
-                  <div className="flex flex-wrap gap-1.5 pt-1">
-                    <span className="px-3 py-1 rounded-full bg-white/15 backdrop-blur-md text-[11px] font-mono text-white border border-white/20">
-                      Strict 100 Cap
-                    </span>
-                    <span className="px-3 py-1 rounded-full bg-white/15 backdrop-blur-md text-[11px] font-mono text-white border border-white/20">
-                      Confidential Review
-                    </span>
-                  </div>
-                </div>
               </div>
             </div>
 

@@ -243,7 +243,7 @@ export default function AboutPage() {
     <div className="relative overflow-hidden bg-[#E9FDFF] text-[#0C1E20]">
 
       {/* ─── SECTION 1: EDITORIAL HERO BANNER (Transcorp Style Sharp Panoramic Backdrop Carousel) ─── */}
-      <section id="overview" className="relative w-full h-[calc(100vh-40px)] min-h-[580px] sm:min-h-[620px] flex flex-col justify-end overflow-hidden bg-black">
+      <section id="overview" className="relative w-full h-[calc(100vh-65px)] min-h-[540px] sm:min-h-[580px] flex flex-col justify-end overflow-hidden bg-black">
         {/* 100% Crisp Background Slides (Zero Blur / Zero Filter) */}
         <div className="absolute inset-0 z-0">
           <AnimatePresence initial={false} mode="wait">
@@ -274,7 +274,7 @@ export default function AboutPage() {
         <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-black/15 to-transparent z-10 pointer-events-none" />
 
         {/* Hero Bottom Container (Unified Left Writeup + Right Actions) */}
-        <div className="relative max-w-[1360px] mx-auto px-6 lg:px-12 w-full z-20 pb-8 sm:pb-12 flex flex-col lg:flex-row lg:items-end justify-between gap-6">
+        <div className="relative max-w-[1360px] mx-auto px-6 lg:px-12 w-full z-20 pb-7 sm:pb-10 flex flex-col lg:flex-row lg:items-end justify-between gap-6">
 
           {/* Left: Headline & Writeup sitting at the bottom-left */}
           <div className="flex flex-col items-start max-w-[580px]">
@@ -308,7 +308,7 @@ export default function AboutPage() {
               href="#story"
               className="rounded-full border border-white/80 bg-black/25 px-7 py-3 text-[14px] font-semibold text-white hover:bg-white hover:text-black transition-all shadow-md backdrop-blur-sm whitespace-nowrap"
             >
-              Explore Our Story
+              Our Story
             </Link>
 
             <button

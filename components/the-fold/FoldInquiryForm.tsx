@@ -201,48 +201,6 @@ export default function FoldInquiryForm() {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-        {/* Voucher Code */}
-        <div className="space-y-1.5">
-          <label
-            htmlFor="fold-voucherCode"
-            className="block text-xs font-semibold text-[#00190A]"
-          >
-            Voucher Code <span className="text-[#8A9E92] font-normal">(Optional)</span>
-          </label>
-          <input
-            type="text"
-            id="fold-voucherCode"
-            name="voucherCode"
-            placeholder="HIN-FOLD-XXXX"
-            className="w-full px-4 py-3 rounded-xl bg-[#F8FDFF] border border-[#DEF2F4] text-[#00190A] placeholder-[#8A9E92] uppercase font-mono text-sm focus:outline-none focus:ring-2 focus:ring-[#2D6C00]/20 focus:border-[#2D6C00] transition-all"
-          />
-          {state.errors?.voucherCode && (
-            <p className="text-red-500 text-xs">{state.errors.voucherCode[0]}</p>
-          )}
-        </div>
-
-        {/* Primary Sector Interest */}
-        <div className="space-y-1.5">
-          <label
-            htmlFor="fold-interestNotes"
-            className="block text-xs font-semibold text-[#00190A]"
-          >
-            Sector Interest <span className="text-[#8A9E92] font-normal">(Optional)</span>
-          </label>
-          <input
-            type="text"
-            id="fold-interestNotes"
-            name="interestNotes"
-            placeholder="e.g. Agriculture, Real Estate, Finance, Tech"
-            className="w-full px-4 py-3 rounded-xl bg-[#F8FDFF] border border-[#DEF2F4] text-[#00190A] placeholder-[#8A9E92] text-sm focus:outline-none focus:ring-2 focus:ring-[#2D6C00]/20 focus:border-[#2D6C00] transition-all"
-          />
-          {state.errors?.interestNotes && (
-            <p className="text-red-500 text-xs">{state.errors.interestNotes[0]}</p>
-          )}
-        </div>
-      </div>
-
       <div className="pt-2">
         <button
           type="submit"
