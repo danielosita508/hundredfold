@@ -345,61 +345,29 @@ export default function InvestmentPhilosophy() {
                   className="pointer-events-none"
                 />
 
-                {/* Stylized Pan-African Globe Vector */}
-                <g
-                  transform={`translate(${cx - 24}, ${cy - 48})`}
-                  className="pointer-events-none"
-                  filter="url(#africaGlow)"
-                >
-                  {/* Stylized Africa Continent Silhouette Path */}
-                  <path
-                    d="M 22 2 C 26 2, 33 4, 38 9 C 40 12, 42 16, 40 19 C 38 22, 35 24, 37 28 C 39 31, 38 36, 35 41 C 32 45, 27 49, 24 50 C 23 49, 21 44, 21 40 C 20 37, 16 34, 15 31 C 13 28, 9 27, 8 23 C 7 19, 10 16, 12 14 C 13 11, 12 8, 14 6 C 16 4, 19 2, 22 2 Z"
-                    fill="#1E5208"
-                    stroke="#ABF67E"
-                    strokeWidth="1.2"
-                  />
-                  {/* Madagascar Island Accent */}
-                  <ellipse cx="43" cy="38" rx="2.5" ry="5.5" transform="rotate(20 43 38)" fill="#2D6C00" />
-                  {/* Nigerian / Asaba Sovereign Hub Marker */}
-                  <circle cx="19" cy="24" r="2.2" fill="#ABF67E" stroke="#00190A" strokeWidth="0.8" />
-                </g>
+                {/* ─── Official Hundredfold Logo Centered Directly in the Middle of the Medallion ─── */}
+                <image
+                  href="/images/logo_v2.png"
+                  x={cx - 38}
+                  y={cy - 48}
+                  width={76}
+                  height={76}
+                  preserveAspectRatio="xMidYMid meet"
+                  className="pointer-events-none drop-shadow-md"
+                />
 
-                {/* Central Brand Motto & Identity */}
+                {/* Central Brand Wordmark Centered Below the Logo */}
                 <text
                   x={cx}
-                  y={cy + 16}
+                  y={cy + 38}
                   textAnchor="middle"
                   fill="#00190A"
-                  fontSize="8.5"
+                  fontSize="9.5"
                   fontWeight="800"
-                  letterSpacing="1.2"
-                  className="font-sans uppercase pointer-events-none"
+                  letterSpacing="1.4"
+                  className="font-sans uppercase pointer-events-none font-bold"
                 >
                   HUNDREDFOLD
-                </text>
-                <text
-                  x={cx}
-                  y={cy + 29}
-                  textAnchor="middle"
-                  fill="#475569"
-                  fontSize="7.2"
-                  fontWeight="600"
-                  letterSpacing="0.4"
-                  className="font-sans pointer-events-none"
-                >
-                  Investing in Africa&apos;s
-                </text>
-                <text
-                  x={cx}
-                  y={cy + 39}
-                  textAnchor="middle"
-                  fill="#1E5208"
-                  fontSize="7.5"
-                  fontWeight="700"
-                  letterSpacing="0.5"
-                  className="font-sans uppercase pointer-events-none"
-                >
-                  Potential
                 </text>
               </svg>
             </div>
