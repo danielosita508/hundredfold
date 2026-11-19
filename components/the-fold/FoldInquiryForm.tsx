@@ -3,7 +3,6 @@
 import React, { useActionState, useEffect, useRef } from "react";
 import { submitFoldInquiry, FormActionResponse } from "@/app/actions/submitForms";
 import {
-  ShieldCheckIcon,
   ArrowRightIcon,
   CheckCircleIcon,
   WhatsAppIcon,
@@ -221,14 +220,6 @@ export default function FoldInquiryForm() {
             </>
           )}
         </button>
-      </div>
-
-      <div className="flex items-center justify-between pt-3 border-t border-[#DEF2F4] text-xs text-[#556358]">
-        <span className="flex items-center gap-1.5">
-          <ShieldCheckIcon className="w-3.5 h-3.5 text-[#2D6C00]" />
-          Strictly Confidential &bull; Private Network
-        </span>
-        <span className="font-mono text-[11px] text-[#2D6C00] font-bold">Cohort 1 Open</span>
       </div>
     </form>
   );
