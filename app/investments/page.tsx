@@ -39,7 +39,7 @@ const INVESTMENT_HERO_SLIDES = [
       "Acquiring strategic commercial land and logistics hubs engineered for inflation resistance, long-term wealth compounding, and capital preservation.",
   },
   {
-    image: "/images/andras-vas-Bd7gNnWJBkU-unsplash.jpg",
+    image: "/images/photo-1590283603385-17ffb3a7f29f.avif",
     alt: "Disciplined Capital Stewardship & Financial Solutions",
     title: "Strategic Co-Investment",
     description:
@@ -59,6 +59,7 @@ interface PortfolioSector {
   number: string;
   title: string;
   image: string;
+  images?: string[];
   alt: string;
   tagline: string;
   description: string;
@@ -71,6 +72,11 @@ const PORTFOLIO_SECTORS: PortfolioSector[] = [
     number: "01",
     title: "Agriculture",
     image: "/images/tim-mossholder-xDwEa2kaeJA-unsplash.jpg",
+    images: [
+      "/images/tim-mossholder-xDwEa2kaeJA-unsplash.jpg",
+      "/images/agric.jpg",
+      "/images/annie-spratt-IT6aov1ScW0-unsplash.jpg",
+    ],
     alt: "Agricultural commodity trading, processing, and agrarian supply-chain operations",
     tagline: "Sovereign Agrarian Corridors & Commodity Supply",
     description:
@@ -86,6 +92,11 @@ const PORTFOLIO_SECTORS: PortfolioSector[] = [
     number: "02",
     title: "Real Estate",
     image: "/images/sean-pollock-PhYq704ffdA-unsplash.jpg",
+    images: [
+      "/images/sean-pollock-PhYq704ffdA-unsplash.jpg",
+      "/images/business-skyscraper_ZDUJ7AJIQ2.jpg",
+      "/images/hector-j-rivas-1FxMET2U5dU-unsplash.jpg",
+    ],
     alt: "Commercial real estate, prime commercial land, and productive physical infrastructure",
     tagline: "Productive Physical Assets & Commercial Real Estate",
     description:
@@ -100,7 +111,12 @@ const PORTFOLIO_SECTORS: PortfolioSector[] = [
     id: "finance",
     number: "03",
     title: "Finance",
-    image: "/images/andras-vas-Bd7gNnWJBkU-unsplash.jpg",
+    image: "/images/photo-1590283603385-17ffb3a7f29f.avif",
+    images: [
+      "/images/photo-1590283603385-17ffb3a7f29f.avif",
+      "/images/adeolu-eletu-E7RLgUjjazc-unsplash.jpg",
+      "/images/cytonn-photography-n95VMLxqM2I-unsplash.jpg",
+    ],
     alt: "Institutional financial stewardship, capital deployment, and strategic market analytics",
     tagline: "Disciplined Capital Stewardship & Co-Investment",
     description:
@@ -116,6 +132,11 @@ const PORTFOLIO_SECTORS: PortfolioSector[] = [
     number: "04",
     title: "Technology",
     image: "/images/fotis-fotopoulos-6sAl6aQ4OWI-unsplash.jpg",
+    images: [
+      "/images/fotis-fotopoulos-6sAl6aQ4OWI-unsplash.jpg",
+      "/images/andras-vas-Bd7gNnWJBkU-unsplash.jpg",
+      "/images/jakub-zerdzicki-WD7S-Lz12Es-unsplash.jpg",
+    ],
     alt: "Digital technology infrastructure, enterprise platforms, and scalable African solutions",
     tagline: "Digital Infrastructure & Enterprise Systems",
     description:
@@ -127,6 +148,72 @@ const PORTFOLIO_SECTORS: PortfolioSector[] = [
     ],
   },
 ];
+
+// Interactive Living Banner for each Investment Sector with graceful cross-fading imagery
+function SectorBannerRow({
+  sector,
+  index,
+}: {
+  sector: PortfolioSector;
+  index: number;
+}) {
+  const [currentIdx, setCurrentIdx] = useState(0);
+
+  useEffect(() => {
+    if (!sector.images || sector.images.length <= 1) return;
+    const intervalTime = 5500 + index * 1200;
+    const timer = setInterval(() => {
+      setCurrentIdx((prev) => (prev + 1) % sector.images!.length);
+    }, intervalTime);
+    return () => clearInterval(timer);
+  }, [sector.images, index]);
+
+  const activeImage =
+    sector.images && sector.images.length > 0
+      ? sector.images[currentIdx]
+      : sector.image;
+
+  return (
+    <div
+      key={sector.title}
+      id={sector.id}
+      className="scroll-mt-20 relative w-full h-[520px] sm:h-[620px] lg:h-[720px] overflow-hidden bg-black group select-none cursor-pointer border-b border-black/40 last:border-b-0"
+    >
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={activeImage}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 1.1, ease: "easeInOut" }}
+          className="absolute inset-0"
+        >
+          <Image
+            src={activeImage}
+            alt={sector.alt}
+            fill
+            quality={100}
+            sizes="100vw"
+            className="object-cover object-center group-hover:scale-105 transition-transform duration-1000 ease-out"
+          />
+        </motion.div>
+      </AnimatePresence>
+
+      {/* Subtle Base Dark Layer for Photo Richness, deepening to Dark Backdrop on Hover (Zero Blur) */}
+      <div className="absolute inset-0 bg-black/10 group-hover:bg-black/50 transition-all duration-700 ease-out pointer-events-none" />
+
+      {/* Sector Name: Completely Invisible Until Hovered Upon */}
+      <div className="absolute inset-0 z-20 flex flex-col items-center justify-center p-6 text-center pointer-events-none">
+        <div className="opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500 ease-out flex flex-col items-center">
+          <h2 className="font-heading text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-white tracking-tight drop-shadow-2xl">
+            {sector.title}
+          </h2>
+          <div className="mt-4 sm:mt-6 h-[2px] w-16 sm:w-24 bg-[#9BE564] drop-shadow-md" />
+        </div>
+      </div>
+    </div>
+  );
+}
 
 export default function InvestmentsPage() {
   const shouldReduceMotion = useReducedMotion();
@@ -170,7 +257,7 @@ export default function InvestmentsPage() {
     <div className="relative overflow-hidden bg-[#E9FDFF] text-[#0C1E20] font-sans">
 
       {/* ─── STEP 1: THE HERO SECTION (Transcorp Style Sharp Panoramic Backdrop Carousel) ─── */}
-      <section id="overview" className="relative w-full min-h-[580px] lg:min-h-[640px] h-[72vh] flex flex-col justify-between overflow-hidden bg-black">
+      <section id="overview" className="relative w-full h-[calc(100vh-90px)] min-h-[460px] sm:min-h-[500px] max-h-[720px] flex flex-col justify-between overflow-hidden bg-black">
         {/* 100% Crisp Background Slides (Zero Blur / Zero Filter) */}
         <div className="absolute inset-0 z-0">
           <AnimatePresence initial={false} mode="wait">
@@ -201,7 +288,7 @@ export default function InvestmentsPage() {
         <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/35 to-transparent z-10 pointer-events-none" />
 
         {/* Hero Title Container Layered on Top (z-20, uniform bottom-anchored placement) */}
-        <div className="relative max-w-[1360px] mx-auto px-6 lg:px-12 w-full z-20 flex-1 flex flex-col justify-end pb-8 sm:pb-10 pt-28">
+        <div className="relative max-w-[1360px] mx-auto px-6 lg:px-12 w-full z-20 flex-1 flex flex-col justify-end pb-4 sm:pb-6 pt-20 sm:pt-24">
           <div className="flex flex-col items-start text-left">
             <motion.h1
               key={`invest-h1-${currentSlide}`}
@@ -228,8 +315,8 @@ export default function InvestmentsPage() {
           </div>
         </div>
 
-        {/* Bottom Hero Controls Container (z-20) */}
-        <div className="relative max-w-[1360px] mx-auto px-6 lg:px-12 w-full pb-8 sm:pb-12 z-20 flex items-end justify-between">
+        {/* Bottom Hero Controls Container (z-20, pushed up with generous bottom padding) */}
+        <div className="relative max-w-[1360px] mx-auto px-6 lg:px-12 w-full pb-12 sm:pb-16 lg:pb-20 mb-1 sm:mb-2 z-20 flex items-end justify-between">
           {/* Bottom-Left: Sleek Institutional Carousel Navigation & Progress Controller */}
           <div className="flex items-center gap-3 sm:gap-5 p-2 px-3 sm:px-4 rounded-full bg-black/45 backdrop-blur-md border border-white/20 shadow-xl">
             {/* Slide Index Counter */}
@@ -348,35 +435,8 @@ export default function InvestmentsPage() {
 
       {/* ─── STEP 3: THE 4 INVESTMENT SECTORS (Full-Width Photographic Banners, Invisible Writeup until Hover) ─── */}
       <section id="sectors" className="w-full bg-black flex flex-col">
-        {PORTFOLIO_SECTORS.map((sector) => (
-          <div
-            key={sector.title}
-            id={sector.id}
-            className="scroll-mt-20 relative w-full h-[520px] sm:h-[620px] lg:h-[720px] overflow-hidden bg-black group select-none cursor-pointer border-b border-black/40 last:border-b-0"
-          >
-            {/* Massive Full-Bleed Image Filling 100% of Width */}
-            <Image
-              src={sector.image}
-              alt={sector.alt}
-              fill
-              quality={100}
-              sizes="100vw"
-              className="object-cover object-center group-hover:scale-105 transition-transform duration-1000 ease-out"
-            />
-
-            {/* Subtle Base Dark Layer for Photo Richness, deepening to Dark Backdrop on Hover (Zero Blur) */}
-            <div className="absolute inset-0 bg-black/10 group-hover:bg-black/50 transition-all duration-700 ease-out pointer-events-none" />
-
-            {/* Sector Name: Completely Invisible Until Hovered Upon */}
-            <div className="absolute inset-0 z-20 flex flex-col items-center justify-center p-6 text-center pointer-events-none">
-              <div className="opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500 ease-out flex flex-col items-center">
-                <h2 className="font-heading text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-white tracking-tight drop-shadow-2xl">
-                  {sector.title}
-                </h2>
-                <div className="mt-4 sm:mt-6 h-[2px] w-16 sm:w-24 bg-[#9BE564] drop-shadow-md" />
-              </div>
-            </div>
-          </div>
+        {PORTFOLIO_SECTORS.map((sector, index) => (
+          <SectorBannerRow key={sector.title} sector={sector} index={index} />
         ))}
       </section>
 

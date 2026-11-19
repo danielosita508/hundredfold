@@ -28,7 +28,7 @@ const INSIGHTS_HERO_SLIDES = [
       "Thought leadership, macroeconomic analysis, and strategic intelligence shaping African commerce and institutional asset deployment.",
   },
   {
-    image: "/images/andras-vas-Bd7gNnWJBkU-unsplash.jpg",
+    image: "/images/photo-1590283603385-17ffb3a7f29f.avif",
     alt: "Macroeconomic intelligence and strategic investment analytics",
     title: "News & Insights",
     description:

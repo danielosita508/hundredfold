@@ -34,7 +34,7 @@ const HERO_SLIDES = [
       "Grounded in institutional governance and disciplined capital stewardship, we pool capabilities and participate in high-conviction ventures across key sovereign sectors.",
   },
   {
-    image: "/images/tim-mossholder-xDwEa2kaeJA-unsplash.jpg",
+    image: "/images/agric-tractor-field.jpg",
     alt: "Agricultural commodity corridors and fertile agro-processing basins",
     title: "Agrarian Corridors & Food Security.",
     description:
@@ -83,9 +83,9 @@ const BUSINESS_SECTORS: SectorItem[] = [
     title: "Agriculture",
     href: "/investments#agriculture",
     images: [
-      "/images/tim-mossholder-xDwEa2kaeJA-unsplash.jpg",
-      "/images/agric.jpg",
-      "/images/annie-spratt-IT6aov1ScW0-unsplash.jpg",
+      "/images/agric-tractor-field.jpg",
+      "/images/agric-harvest.jpg",
+      "/images/agric-poultry.webp",
     ],
     alt: "Agriculture and agricultural commodity supply chains",
   },
@@ -103,10 +103,10 @@ const BUSINESS_SECTORS: SectorItem[] = [
     title: "Finance",
     href: "/investments#finance",
     images: [
+      "/images/finance-globe-coins.jpg",
+      "/images/finance-stock-chart.jpg",
       "/images/photo-1590283603385-17ffb3a7f29f.avif",
       "/images/adeolu-eletu-E7RLgUjjazc-unsplash.jpg",
-      "/images/pexels-towfiqu-barbhuiya-3440682-14527417.jpg",
-      "/images/cytonn-photography-n95VMLxqM2I-unsplash.jpg",
     ],
     alt: "Financial capital stewardship and strategic investment",
   },
