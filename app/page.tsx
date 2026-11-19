@@ -247,7 +247,7 @@ export default function Home() {
                 WHO WE ARE
               </span>
 
-              <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-semibold text-[#00190A] tracking-tight leading-[1.12]">
+              <h2 className="font-poppins text-3xl sm:text-4xl md:text-5xl font-bold text-[#00190A] tracking-[-0.02em] leading-[1.15]">
                 A Network Built Around Opportunity.
               </h2>
 
@@ -318,7 +318,7 @@ export default function Home() {
                 INVESTMENTS
               </span>
 
-              <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-semibold text-[#00190A] tracking-tight">
+              <h2 className="font-poppins text-3xl sm:text-4xl md:text-5xl font-bold text-[#00190A] tracking-[-0.02em] leading-[1.15]">
                 Where We Focus
               </h2>
 
@@ -390,7 +390,7 @@ export default function Home() {
               OUR APPROACH
             </span>
 
-            <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-semibold text-[#00190A] tracking-tight">
+            <h2 className="font-poppins text-3xl sm:text-4xl md:text-5xl font-bold text-[#00190A] tracking-[-0.02em] leading-[1.15]">
               Opportunity With Purpose. <br className="hidden sm:inline" />
               Growth With Discipline.
             </h2>
@@ -422,7 +422,7 @@ export default function Home() {
                   THE COMMUNITY
                 </span>
 
-                <h3 className="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold text-[#00190A] tracking-tight">
+                <h3 className="font-poppins text-2xl sm:text-3xl lg:text-4xl font-bold text-[#00190A] tracking-[-0.02em]">
                   Welcome to The Fold
                 </h3>
 
