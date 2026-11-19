@@ -729,10 +729,9 @@ export default function AboutPage() {
 
             {/* Right Column: Narrative & Links */}
             <div className="lg:col-span-7 space-y-6">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#ABF67E]/30 text-[#2D6C00] text-xs uppercase font-bold tracking-wider">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#2D6C00]" />
-                <span>THE FOLD &amp; ALLIANCES</span>
-              </div>
+              <span className="text-xs uppercase tracking-[0.25em] font-bold text-[#2D6C00] block">
+                THE FOLD &amp; ALLIANCES
+              </span>
 
               <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-semibold text-[#00190A] tracking-tight leading-[1.12]">
                 Convening Forward-Thinking Leaders.

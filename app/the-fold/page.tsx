@@ -316,10 +316,9 @@ export default function TheFoldPage() {
             variants={fadeInVariants}
             className="space-y-4"
           >
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#ABF67E]/30 text-[#2D6C00] text-xs uppercase font-bold tracking-wider">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#2D6C00]" />
-              <span>THE FOLD CONCLAVE</span>
-            </div>
+            <span className="text-xs uppercase tracking-[0.25em] font-bold text-[#2D6C00] block">
+              THE FOLD CONCLAVE
+            </span>
             <p className="font-heading text-2xl sm:text-3xl md:text-4xl lg:text-[2.25rem] text-[#00190A] leading-snug sm:leading-relaxed font-semibold tracking-tight">
               A private syndicate of vetted enterprise leaders pooling capital into Africa&apos;s most productive commercial frontiers.
             </p>
@@ -378,10 +377,9 @@ export default function TheFoldPage() {
               transition={{ duration: 0.6, ease: PRO_MAX_EASE }}
               className="lg:col-span-6 space-y-6"
             >
-              <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#ABF67E]/30 text-[#2D6C00] text-xs uppercase font-bold tracking-wider">
-                <TrendingUpIcon className="w-3.5 h-3.5 text-[#2D6C00]" />
-                <span>DISTRIBUTION STRUCTURE</span>
-              </div>
+              <span className="text-xs uppercase tracking-[0.25em] font-bold text-[#2D6C00] block">
+                DISTRIBUTION STRUCTURE
+              </span>
 
               <h2 className="font-heading text-3xl sm:text-4xl font-semibold text-[#00190A] tracking-tight">
                 The 85% / 15% Profit Allocation Model
@@ -435,10 +433,9 @@ export default function TheFoldPage() {
           {/* Section Header */}
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 sm:mb-14">
             <div className="space-y-3">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#ABF67E]/30 text-[#2D6C00] text-xs uppercase font-bold tracking-wider">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#2D6C00]" />
-                <span>COMMUNITY ARCHITECTURE</span>
-              </div>
+              <span className="text-xs uppercase tracking-[0.25em] font-bold text-[#2D6C00] block">
+                COMMUNITY ARCHITECTURE
+              </span>
               <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl font-semibold text-[#00190A] tracking-tight">
                 Three Pillars of The Fold
               </h2>
@@ -523,7 +520,7 @@ export default function TheFoldPage() {
         <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-transparent to-black/60 pointer-events-none" />
 
         <div className="relative max-w-[900px] mx-auto px-6 text-center z-10 space-y-4">
-          <span className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#ABF67E]/20 border border-[#ABF67E]/40 text-[#ABF67E] text-xs uppercase font-bold tracking-widest">
+          <span className="text-xs uppercase tracking-[0.25em] font-bold text-[#ABF67E] block">
             THE FOLD MANDATE
           </span>
           <h2 className="font-heading text-3xl sm:text-5xl lg:text-6xl font-bold text-white tracking-tight drop-shadow-xl">

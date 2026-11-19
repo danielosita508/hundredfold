@@ -227,10 +227,9 @@ export default function PortfolioTabs() {
               
               {/* Left Column: Text, Highlights & Action */}
               <div className="lg:col-span-7 flex flex-col items-start gap-5">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#ABF67E]/30 text-[#2D6C00] text-[11px] uppercase tracking-widest font-bold">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#2D6C00]" />
-                  <span>{currentTab.eyebrow}</span>
-                </div>
+                <span className="text-xs uppercase tracking-[0.25em] font-bold text-[#2D6C00] block">
+                  {currentTab.eyebrow}
+                </span>
 
                 <h3 className="font-heading text-3xl sm:text-4xl lg:text-5xl text-[#00190A] tracking-tight font-medium leading-[1.15]">
                   {currentTab.headline}

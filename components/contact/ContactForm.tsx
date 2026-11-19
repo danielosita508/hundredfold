@@ -88,10 +88,9 @@ export default function ContactForm() {
         id="hin-contact-form"
       >
         <div className="border-b border-[#c1c8c0]/30 pb-5">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#ABF67E]/25 text-[#205100] font-sans text-xs uppercase tracking-wider font-bold mb-2">
-            <ShieldCheckIcon className="w-4 h-4 text-[#2D6C00]" />
-            <span>Corporate Engagement Portal</span>
-          </div>
+          <span className="text-xs uppercase tracking-[0.25em] font-bold text-[#2D6C00] block mb-2">
+            Corporate Engagement Portal
+          </span>
           <h3 className="font-heading text-2xl sm:text-3xl font-medium text-[#00190A]">
             Transmit Formal Memorandum
           </h3>

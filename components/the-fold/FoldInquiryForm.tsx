@@ -87,10 +87,9 @@ export default function FoldInquiryForm() {
       className="p-8 sm:p-10 rounded-3xl bg-white border border-[#DEF2F4] shadow-2xl space-y-6 text-[#00190A]"
     >
       <div className="space-y-1.5 border-b border-[#DEF2F4] pb-4">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#ABF67E]/30 text-[#2D6C00] text-xs uppercase font-bold tracking-wider">
-          <span className="w-1.5 h-1.5 rounded-full bg-[#2D6C00]" />
-          <span>CANDIDATE REGISTRY</span>
-        </div>
+        <span className="text-xs uppercase tracking-[0.25em] font-bold text-[#2D6C00] block">
+          CANDIDATE REGISTRY
+        </span>
         <h3 className="font-heading text-2xl sm:text-3xl font-bold tracking-tight text-[#00190A]">
           Request Cohort Dossier
         </h3>
