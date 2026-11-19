@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Poppins, Montserrat, Plus_Jakarta_Sans } from "next/font/google";
+import { Poppins, Montserrat, Plus_Jakarta_Sans, Mulish } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
@@ -23,6 +23,13 @@ const montserrat = Montserrat({
 const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
   variable: "--font-jakarta",
+  display: "swap",
+});
+
+const mulish = Mulish({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700", "800"],
+  variable: "--font-mulish",
   display: "swap",
 });
 
@@ -63,7 +70,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${poppins.variable} ${montserrat.variable} ${plusJakartaSans.variable}`}
+      className={`${poppins.variable} ${montserrat.variable} ${plusJakartaSans.variable} ${mulish.variable}`}
     >
       <body className="min-h-screen flex flex-col bg-[#E9FDFF] text-[#0C1E20] antialiased selection:bg-[#ABF67E] selection:text-[#0A2F1B]">
         <SmoothScrollProvider>
