@@ -255,10 +255,6 @@ export default function Home() {
                 Hundredfold Innovation Network Ltd is an African business and investment company focused on identifying commercial opportunities, building strategic relationships and developing ventures with long-term potential.
               </p>
 
-              <p className="text-sm sm:text-base text-[#424842]/80 leading-relaxed font-light">
-                Grounded in institutional governance and disciplined capital stewardship, we bring together committed enterprise leaders to pool capabilities, acquire productive tangible assets, and participate in high-conviction ventures across key sovereign sectors.
-              </p>
-
               <div className="pt-2">
                 <Link
                   href="/about"
