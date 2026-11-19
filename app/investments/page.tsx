@@ -81,7 +81,7 @@ const PORTFOLIO_SECTORS: PortfolioSector[] = [
     alt: "Agricultural commodity trading, processing, and agrarian supply-chain operations",
     tagline: "Sovereign Agrarian Corridors & Commodity Supply",
     description:
-      "We participate in agricultural commodity trading through robust sourcing relationships, supply-chain coordination, and buyer-supplier partnerships connecting rural agrarian basins with commercial off-takers across Nigeria and West Africa. Sourcing staple commodities at institutional scale, we bridge production and industrial demand.",
+      "We operate at the vital intersection of primary agrarian production, institutional commodity aggregation, and structured industrial off-take. Through strategic sourcing networks across Nigeria’s high-yield agro-ecological corridors, Hundredfold coordinates supply chains that connect rural smallholder farming basins with commercial food processors, beverage manufacturers, and export markets. Sourcing staple commodities at institutional scale—including grains, oilseeds, and pulses—we deploy rigorous quality inspection, structured warehousing, and reliable logistics. By bridging the structural gap between fragmented rural farm gates and dependable industrial processing demand, we de-risk agricultural value chains, enhance smallholder earning power, and strengthen sovereign food security across West Africa.",
     highlights: [
       "Agro-Commodity Aggregation",
       "Off-Taker Contract Structuring",
@@ -102,7 +102,7 @@ const PORTFOLIO_SECTORS: PortfolioSector[] = [
     alt: "Commercial real estate, prime commercial land, and productive physical infrastructure",
     tagline: "Productive Physical Assets & Commercial Real Estate",
     description:
-      "We acquire and develop prime commercial real estate, logistics hubs, and tangible physical assets designed for long-term capital preservation, income generation, and sovereign balance-sheet compounding. Our focus is on prime commercial corridors that yield steady cash flow and inflation-resilient equity.",
+      "We stand as long-term custodians and strategic developers of prime commercial real estate, logistics corridors, and tangible physical assets across high-velocity growth hubs in Nigeria. Structured to hedge against currency depreciation and compound sovereign balance-sheet equity, our property portfolio spans commercial land reserves, industrial warehousing facilities, and mixed-use commercial developments designed for enduring capital appreciation. We prioritize strategic transport junctions, industrial corridors, and expanding commercial urban centres that command steady occupancy, verified title integrity, and resilient cash yields. By combining disciplined site acquisition with institutional asset management, we create balance-sheet stability and enduring institutional wealth across market cycles.",
     highlights: [
       "Prime Commercial Land Holdings",
       "Logistics & Warehousing Corridors",
@@ -122,7 +122,7 @@ const PORTFOLIO_SECTORS: PortfolioSector[] = [
     alt: "Institutional financial stewardship, capital deployment, and strategic market analytics",
     tagline: "Disciplined Capital Stewardship & Co-Investment",
     description:
-      "We deploy patient capital and structure institutional financial partnerships to support viable enterprise expansion. Through transparent co-investment syndicates and rigorous risk-adjusted due diligence, we provide structured liquidity and governance-first capital solutions.",
+      "We deploy disciplined, patient capital and structure institutional co-investment syndicates designed to accelerate high-conviction African commercial enterprises. Operating with rigorous fiduciary governance and transparent stewardship, Hundredfold bridges the gap between private capital allocators and viable, cash-generating commercial operators in productive economic sectors. Every transaction undergoes thorough balance-sheet stress-testing, legal compliance verification, and cash-flow viability modeling to ensure risk-adjusted capital preservation. Through collective syndicate leverage and structured liquidity facilities, we provide growing enterprises with the non-speculative growth capital they need while delivering protected, compounding returns to participating co-investors.",
     highlights: [
       "Structured Co-Investment Syndicates",
       "Due Diligence & Valuation Rigour",
@@ -142,7 +142,7 @@ const PORTFOLIO_SECTORS: PortfolioSector[] = [
     alt: "Digital technology infrastructure, enterprise platforms, and scalable African solutions",
     tagline: "Digital Infrastructure & Enterprise Systems",
     description:
-      "We invest in foundational digital infrastructure, commercial software platforms, and scalable technological platforms that accelerate trade, automate operations, and expand market access across the continent. By integrating digital efficiency into physical enterprise, we build competitive moats.",
+      "We invest in foundational digital infrastructure, commercial software systems, and scalable technological platforms that eliminate friction, accelerate trade velocity, and automate operational workflows across African enterprise. Recognizing that true continental scale requires integrating software with physical commerce, Hundredfold focuses on supply-chain digitization, commodity tracking platforms, and enterprise management tools tailored to indigenous operating environments. By equipping real-economy businesses with robust data transparency, automated reconciliation, and scalable digital tools, we reduce transaction overhead, mitigate counterparty risk, and construct durable commercial moats that power modern African commerce.",
     highlights: [
       "Enterprise Automation Platforms",
       "Trade & Commodity Digitization",
@@ -204,19 +204,19 @@ function SectorBannerRow({
       {/* Subtle Base Dark Layer for Photo Richness, deepening to Dark Backdrop on Hover (Zero Blur) */}
       <div className="absolute inset-0 bg-black/10 group-hover:bg-black/65 transition-all duration-700 ease-out pointer-events-none" />
 
-      {/* Sector Name & Description: Invisible Until Hovered Upon */}
+      {/* Sector Name & Description: Invisible Until Hovered Upon (Wider width, smaller elegant font) */}
       <div className="absolute inset-0 z-20 flex flex-col items-center justify-center p-6 sm:p-10 text-center pointer-events-none">
-        <div className="opacity-0 group-hover:opacity-100 transform translate-y-6 group-hover:translate-y-0 transition-all duration-500 ease-out flex flex-col items-center max-w-4xl">
+        <div className="opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500 ease-out flex flex-col items-center max-w-5xl lg:max-w-6xl w-full px-4">
           {/* Sector Title */}
-          <h2 className="font-heading text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-white tracking-tight drop-shadow-2xl">
+          <h2 className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white tracking-tight drop-shadow-2xl">
             {sector.title}
           </h2>
 
           {/* Accent Line */}
-          <div className="my-4 sm:my-5 h-[2px] w-20 sm:w-28 bg-[#9BE564] drop-shadow-md" />
+          <div className="my-3.5 sm:my-4 h-[2px] w-16 sm:w-24 bg-[#9BE564] drop-shadow-md" />
 
-          {/* Sector Description Paragraph */}
-          <p className="font-sans text-sm sm:text-base lg:text-lg text-white/95 max-w-3xl leading-relaxed font-normal drop-shadow-md px-4">
+          {/* Sector Description Paragraph: Wide horizontally, smaller refined typography */}
+          <p className="font-sans text-xs sm:text-sm lg:text-[14.5px] text-white/95 max-w-4xl lg:max-w-5xl leading-[1.75] sm:leading-[1.85] font-normal drop-shadow-md px-2 sm:px-4">
             {sector.description}
           </p>
         </div>
