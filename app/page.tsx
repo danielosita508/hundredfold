@@ -405,18 +405,6 @@ export default function Home() {
                   sizes="(max-width: 1024px) 100vw, 550px"
                   className="object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
                 />
-
-                {/* Subtle Glassmorphism Bottom Vignette */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent pointer-events-none" />
-
-                <div className="absolute inset-x-0 bottom-0 p-5 sm:p-6 z-10 flex flex-col gap-1 text-white">
-                  <span className="text-[10px] font-mono uppercase tracking-widest text-[#ABF67E] font-bold">
-                    Executive Stewardship
-                  </span>
-                  <h4 className="font-serif text-base sm:text-lg font-medium text-white tracking-wide">
-                    Institutional Governance &amp; Strategic Alignment
-                  </h4>
-                </div>
               </div>
             </motion.div>
 
