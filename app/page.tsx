@@ -159,7 +159,7 @@ function SectorCarouselCard({
       href={sector.href}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      className="group relative w-full h-[320px] sm:h-[360px] lg:h-[400px] rounded-2xl overflow-hidden bg-black flex flex-col justify-end border border-white/10 cursor-pointer select-none shadow-md hover:shadow-2xl transition-all duration-500"
+      className="group relative w-full h-[340px] sm:h-[380px] lg:h-[440px] overflow-hidden bg-black flex flex-col justify-end cursor-pointer select-none transition-all duration-500"
     >
       {/* Background Photographic Image Carousel */}
       <AnimatePresence initial={false}>
@@ -456,9 +456,9 @@ export default function Home() {
           </motion.div>
         </div>
 
-        {/* Strategic Investment Sectors with Thin Spaces Separating Each Sector Vertically */}
-        <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-3.5 lg:gap-4 w-full">
+        {/* Strategic Investment Sectors: Seamless Full-Bleed Ribbon (Zero space between pictures) */}
+        <div className="w-full">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-0 w-full">
             {BUSINESS_SECTORS.map((sector, index) => (
               <SectorCarouselCard
                 key={sector.title}
