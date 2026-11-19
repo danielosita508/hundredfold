@@ -127,44 +127,9 @@ const LEADERSHIP_TEAM: LeaderProfile[] = [
   },
 ];
 
-interface CorporatePillar {
-  number: string;
-  title: string;
-  description: string;
-}
-
-const FIVE_PILLARS: CorporatePillar[] = [
-  {
-    number: "01",
-    title: "Unity",
-    description: "Collective capital and shared opportunity",
-  },
-  {
-    number: "02",
-    title: "Discipline",
-    description: "Structured contributions and responsible investing",
-  },
-  {
-    number: "03",
-    title: "Governance",
-    description: "Transparency, accountability, and leadership oversight",
-  },
-  {
-    number: "04",
-    title: "Strategic Investment",
-    description: "Focus on productive economic sectors",
-  },
-  {
-    number: "05",
-    title: "Long-Term Wealth",
-    description: "Building sustainable financial growth",
-  },
-];
-
 export default function AboutPage() {
   const shouldReduceMotion = useReducedMotion();
   const [selectedLeader, setSelectedLeader] = useState<LeaderProfile | null>(null);
-  const [openPillarIndex, setOpenPillarIndex] = useState<number | null>(0);
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
 
@@ -543,79 +508,6 @@ export default function AboutPage() {
               ))}
             </div>
           </motion.div>
-
-        </div>
-      </section>
-
-      {/* ─── OUR FIVE PILLARS SECTION (Centralized Top & Centralized Under) ─── */}
-      <section id="pillars" className="w-full px-6 lg:px-12 py-20 lg:py-28 bg-[#0A2F1B] text-white scroll-mt-20 border-t border-white/10 relative overflow-hidden">
-        <span id="values" className="sr-only" />
-        {/* Subtle decorative brand glow */}
-        <div className="absolute top-0 right-0 w-96 h-96 bg-[#ABF67E]/5 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute bottom-0 left-0 w-80 h-80 bg-[#ABF67E]/5 rounded-full blur-3xl pointer-events-none" />
-
-        <div className="max-w-[1000px] mx-auto relative z-10 flex flex-col items-center">
-
-          {/* Centralized Top Header */}
-          <div className="flex flex-col items-center text-center gap-4 max-w-2xl mx-auto mb-12 sm:mb-16">
-            <span className="text-xs uppercase tracking-[0.25em] font-bold text-[#ABF67E] block">
-              Our Five Pillars
-            </span>
-            <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-medium text-white tracking-tight leading-[1.15]">
-              The pillars that define our enterprise.
-            </h2>
-            <p className="text-sm sm:text-base text-emerald-100/75 leading-relaxed max-w-xl">
-              Our foundational pillars guide every capital allocation, strategic partnership, and operational decision across our business.
-            </p>
-          </div>
-
-          {/* Centralized Under: Interactive Numbered Accordion */}
-          <div className="w-full max-w-3xl mx-auto divide-y divide-white/15 border-t border-b border-white/15">
-            {FIVE_PILLARS.map((pillar, idx) => {
-              const isOpen = openPillarIndex === idx;
-              return (
-                <div key={pillar.number} className="py-4 sm:py-5">
-                  <button
-                    onClick={() => setOpenPillarIndex(isOpen ? null : idx)}
-                    className="w-full flex items-center justify-between gap-4 text-left group transition-colors cursor-pointer"
-                    aria-expanded={isOpen}
-                  >
-                    <div className="flex items-center gap-3.5 sm:gap-5">
-                      <span className="text-[#ABF67E] font-bold text-xs sm:text-sm shrink-0 font-mono">
-                        {pillar.number}
-                      </span>
-                      <span className="text-base sm:text-lg lg:text-xl font-heading font-medium text-white group-hover:text-[#ABF67E] transition-colors leading-snug">
-                        {pillar.title}
-                      </span>
-                    </div>
-                    <div className="text-[#ABF67E]/80 group-hover:text-[#ABF67E] transition-colors shrink-0">
-                      {isOpen ? (
-                        <span className="text-lg sm:text-xl font-light leading-none select-none">&minus;</span>
-                      ) : (
-                        <span className="text-lg sm:text-xl font-light leading-none select-none">&#43;</span>
-                      )}
-                    </div>
-                  </button>
-
-                  <AnimatePresence initial={false}>
-                    {isOpen && (
-                      <motion.div
-                        initial={{ opacity: 0, height: 0 }}
-                        animate={{ opacity: 1, height: "auto" }}
-                        exit={{ opacity: 0, height: 0 }}
-                        transition={{ duration: 0.3, ease: PRO_MAX_EASE }}
-                        className="overflow-hidden"
-                      >
-                        <p className="pt-3 pl-7 sm:pl-9 text-xs sm:text-sm text-emerald-100/75 leading-relaxed max-w-2xl font-normal">
-                          {pillar.description}
-                        </p>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-                </div>
-              );
-            })}
-          </div>
 
         </div>
       </section>

@@ -199,7 +199,7 @@ function SectorCarouselCard({
         </div>
       )}
 
-      {/* Sector Title, Green Line & Description (Using user's exact font and font size) */}
+      {/* Sector Title, Green Line & Description (Title & Line visible by default; Description reveals on hover) */}
       <div className="relative z-20 p-5 sm:p-6 lg:p-7 flex flex-col justify-end h-full pointer-events-none">
         <div className="transform transition-transform duration-500 group-hover:-translate-y-1">
           <h3 className="font-poppins text-xl sm:text-2xl font-bold tracking-tight text-white drop-shadow-md">
@@ -209,10 +209,12 @@ function SectorCarouselCard({
           {/* Accent Green Line */}
           <div className="w-12 sm:w-14 h-[2px] bg-[#9BE564] my-2.5 rounded-full group-hover:w-16 transition-all duration-300" />
           
-          {/* Concise Sector Description */}
-          <p className="font-poppins text-[13px] sm:text-[14px] font-normal leading-[1.6] text-white/90 drop-shadow-sm">
-            {sector.description}
-          </p>
+          {/* Concise Sector Description (Invisible until hovered upon) */}
+          <div className="overflow-hidden max-h-0 opacity-0 group-hover:max-h-40 group-hover:opacity-100 transition-all duration-500 ease-out">
+            <p className="font-poppins text-[13px] sm:text-[14px] font-normal leading-[1.6] text-white/90 drop-shadow-sm pt-1">
+              {sector.description}
+            </p>
+          </div>
         </div>
       </div>
     </Link>
