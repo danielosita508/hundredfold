@@ -37,7 +37,7 @@ export default function FoldInquiryForm() {
 
         <div className="space-y-2">
           <h3 className="font-heading text-2xl sm:text-3xl font-bold tracking-tight text-[#00190A]">
-            Dossier Received by Secretariat
+            Application Received!
           </h3>
           <p className="text-[#424842] text-sm sm:text-base max-w-xl mx-auto leading-relaxed">
             {state.message}
@@ -46,13 +46,13 @@ export default function FoldInquiryForm() {
 
         {state.referenceId && (
           <div className="inline-block px-4 py-2 rounded-xl bg-[#E9FDFF] border border-[#DEF2F4] font-mono text-xs text-[#2D6C00]">
-            Candidate Registration ID:{" "}
+            Registration Reference:{" "}
             <span className="font-bold text-[#00190A]">{state.referenceId}</span>
           </div>
         )}
 
         <p className="text-xs text-[#556358] max-w-md mx-auto">
-          The formal Cycle 1 Prospectus and executive interview schedule will be communicated to your work email.
+          We will review your submission and reach out to your email with next steps.
         </p>
 
         <div className="pt-4 border-t border-[#DEF2F4] flex flex-col sm:flex-row items-center justify-center gap-4 text-xs">
@@ -61,19 +61,19 @@ export default function FoldInquiryForm() {
             onClick={() => window.location.reload()}
             className="px-6 py-3 rounded-full bg-[#0A2F1B] hover:bg-[#00190A] text-white font-semibold transition-colors min-h-[44px] cursor-pointer shadow-sm"
           >
-            Submit Another Dossier
+            Submit Another Application
           </button>
 
           <a
             href={`https://wa.me/2349027077073?text=${encodeURIComponent(
-              `Hello The Fold Secretariat, I have submitted my candidate expression of interest for Cycle 1 (Ref: ${state.referenceId || "Direct"}).`
+              `Hello The Fold, I have submitted my membership application (Ref: ${state.referenceId || "Direct"}).`
             )}`}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#ABF67E] text-[#00190A] hover:bg-[#8ee459] font-bold transition-colors min-h-[44px] shadow-sm"
           >
             <WhatsAppIcon className="w-4 h-4 text-[#00190A]" />
-            <span>Connect on WhatsApp</span>
+            <span>Chat on WhatsApp</span>
           </a>
         </div>
       </div>
@@ -88,13 +88,13 @@ export default function FoldInquiryForm() {
     >
       <div className="space-y-1.5 border-b border-[#DEF2F4] pb-4">
         <span className="text-xs uppercase tracking-[0.25em] font-bold text-[#2D6C00] block">
-          CANDIDATE REGISTRY
+          MEMBERSHIP
         </span>
         <h3 className="font-heading text-2xl sm:text-3xl font-bold tracking-tight text-[#00190A]">
-          Request Cohort Dossier
+          Join The Fold
         </h3>
         <p className="text-[#556358] text-xs sm:text-sm">
-          Submit your profile for confidential Secretariat review (strict 100 seats per cohort).
+          Fill in your details below to join our private investment network. Strictly limited to 100 members per cohort.
         </p>
       </div>
 
@@ -120,7 +120,7 @@ export default function FoldInquiryForm() {
             id="fold-fullName"
             name="fullName"
             required
-            placeholder="e.g. Dr. Daniel Evans"
+            placeholder="e.g. Daniel Evans"
             className="w-full px-4 py-3 rounded-xl bg-[#F8FDFF] border border-[#DEF2F4] text-[#00190A] placeholder-[#8A9E92] text-sm focus:outline-none focus:ring-2 focus:ring-[#2D6C00]/20 focus:border-[#2D6C00] transition-all"
           />
           {state.errors?.fullName && (
@@ -141,7 +141,7 @@ export default function FoldInquiryForm() {
             id="fold-email"
             name="email"
             required
-            placeholder="name@enterprise.com"
+            placeholder="name@company.com"
             className="w-full px-4 py-3 rounded-xl bg-[#F8FDFF] border border-[#DEF2F4] text-[#00190A] placeholder-[#8A9E92] text-sm focus:outline-none focus:ring-2 focus:ring-[#2D6C00]/20 focus:border-[#2D6C00] transition-all"
           />
           {state.errors?.email && (
@@ -162,7 +162,7 @@ export default function FoldInquiryForm() {
             id="fold-phone"
             name="phone"
             required
-            placeholder="+234 (0) 800 000 0000"
+            placeholder="+234 800 000 0000"
             className="w-full px-4 py-3 rounded-xl bg-[#F8FDFF] border border-[#DEF2F4] text-[#00190A] placeholder-[#8A9E92] text-sm focus:outline-none focus:ring-2 focus:ring-[#2D6C00]/20 focus:border-[#2D6C00] transition-all"
           />
           {state.errors?.phone && (
@@ -176,7 +176,7 @@ export default function FoldInquiryForm() {
             htmlFor="fold-profileType"
             className="block text-xs font-semibold text-[#00190A]"
           >
-            Applicant Profile <span className="text-[#2D6C00]">*</span>
+            I am a... <span className="text-[#2D6C00]">*</span>
           </label>
           <select
             id="fold-profileType"
@@ -185,14 +185,16 @@ export default function FoldInquiryForm() {
             className="w-full px-4 py-3 rounded-xl bg-[#F8FDFF] border border-[#DEF2F4] text-[#00190A] text-sm focus:outline-none focus:ring-2 focus:ring-[#2D6C00]/20 focus:border-[#2D6C00] transition-all cursor-pointer"
           >
             <option value="private-operator">
-              Private Business Operator / Founder
+              Business Owner / Founder
             </option>
-            <option value="family-office">Single / Multi-Family Office</option>
-            <option value="institutional-manager">
-              Institutional Asset Manager / DFI
+            <option value="family-office">
+              Private Investor / Family Office
             </option>
             <option value="corporate-executive">
-              Corporate / Sovereign Enterprise Executive
+              Corporate Executive
+            </option>
+            <option value="institutional-manager">
+              Fund / Asset Manager
             </option>
           </select>
           {state.errors?.profileType && (
@@ -210,11 +212,11 @@ export default function FoldInquiryForm() {
           {isPending ? (
             <>
               <SpinnerIcon className="w-4 h-4 text-[#ABF67E] animate-spin" />
-              <span>Transmitting Dossier...</span>
+              <span>Submitting Application...</span>
             </>
           ) : (
             <>
-              <span>Submit Candidate Dossier</span>
+              <span>Submit Application</span>
               <ArrowRightIcon className="w-4 h-4 text-[#ABF67E] group-hover:translate-x-1 transition-transform" />
             </>
           )}
@@ -224,9 +226,9 @@ export default function FoldInquiryForm() {
       <div className="flex items-center justify-between pt-3 border-t border-[#DEF2F4] text-xs text-[#556358]">
         <span className="flex items-center gap-1.5">
           <ShieldCheckIcon className="w-3.5 h-3.5 text-[#2D6C00]" />
-          Strict Confidentiality &bull; Non-Disclosure
+          Strictly Confidential &bull; Private Network
         </span>
-        <span className="font-mono text-[11px] text-[#2D6C00] font-bold">Cycle 1 Active</span>
+        <span className="font-mono text-[11px] text-[#2D6C00] font-bold">Cohort 1 Open</span>
       </div>
     </form>
   );

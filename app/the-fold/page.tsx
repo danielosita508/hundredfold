@@ -451,12 +451,12 @@ export default function TheFoldPage() {
         <div className="max-w-[1240px] mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
 
-            {/* Left Column: Magazine Feature Image (Clean photograph, writing removed per user request) */}
+            {/* Left Column: Magazine Feature Image (Clean photograph of executive leaders overlooking city skyline) */}
             <div className="lg:col-span-5 flex flex-col justify-center">
               <div className="relative aspect-[3/4] sm:aspect-[4/5] w-full rounded-3xl overflow-hidden shadow-xl border border-white bg-[#0A2F1B] group">
                 <Image
-                  src="/images/istockphoto-2211042706-612x612.jpg"
-                  alt="The Fold Agricultural and Syndicate Field Operations"
+                  src="/images/charles-forerunner-3fPXt37X6UQ-unsplash.jpg"
+                  alt="The Fold Private Investment Network and Executive Members"
                   fill
                   quality={100}
                   sizes="(max-width: 1024px) 100vw, 550px"

@@ -308,7 +308,7 @@ export async function submitFoldInquiry(
     return {
       success: true,
       message:
-        "Thank you for registering your interest in The Fold (Cycle 1, January 2027). The Admissions Committee reviews candidates strictly against the 100-member ceiling and mutual values alignment.",
+        "Thank you for applying to join The Fold. Our team will review your application and contact you directly with cohort details.",
       referenceId,
     };
   } catch (err: unknown) {
