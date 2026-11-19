@@ -100,11 +100,12 @@ const BUSINESS_SECTORS: SectorItem[] = [
     description:
       "Acquiring prime commercial land, logistics hubs, and productive real estate engineered for long-term purchasing power preservation.",
     images: [
-      "/images/sean-pollock-PhYq704ffdA-unsplash.jpg",
-      "/images/business-skyscraper_ZDUJ7AJIQ2.jpg",
-      "/images/hector-j-rivas-1FxMET2U5dU-unsplash.jpg",
+      "/images/real-estate-modern-development.jpg",
+      "/images/real-estate-land-development.jpg",
+      "/images/real-estate-construction-skyline.jpg",
+      "/images/real-estate-building-structure.jpg",
     ],
-    alt: "Commercial real estate and productive tangible assets",
+    alt: "Commercial real estate, prime land holdings, and productive physical infrastructure",
   },
   {
     title: "Finance",

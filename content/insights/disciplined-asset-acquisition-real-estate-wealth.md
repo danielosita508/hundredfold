@@ -7,7 +7,7 @@ author:
 category: "Asset ownership and real estate"
 categorySlug: "asset-ownership"
 readTime: "5 min read"
-coverImage: "/images/sean-pollock-PhYq704ffdA-unsplash.jpg"
+coverImage: "/images/real-estate-modern-development.jpg"
 featured: false
 excerpt: "Why tangible commercial land banks and logistics properties provide essential resilience against currency devaluation and form the bedrock of generational African wealth."
 tags: ["Real Estate", "Asset Acquisition", "Capital Preservation", "Asaba", "Commercial Land"]

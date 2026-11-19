@@ -77,7 +77,7 @@ const TABS: TabItem[] = [
       "High-utility locations tied to trade corridors and ports",
       "Inflation-resilient long-term balance sheet compounding",
     ],
-    image: "/images/business-skyscraper_ZDUJ7AJIQ2.jpg",
+    image: "/images/real-estate-modern-development.jpg",
     caption: "Real Estate • Productive Commercial Infrastructure",
     ctaText: "Explore Real Estate Strategy",
     ctaHref: "/investments#real-estate",
