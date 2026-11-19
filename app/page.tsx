@@ -54,6 +54,20 @@ const HERO_SLIDES = [
     description:
       "Guided by the philosophy of Africapitalism, we build enduring commercial institutions that create compounding economic value for investors, partners, and communities.",
   },
+  {
+    image: "/images/adeolu-eletu-E7RLgUjjazc-unsplash.jpg",
+    alt: "Strategic African leadership and executive enterprise collaboration",
+    title: "Strategic Alliances. Scaled Impact.",
+    description:
+      "Convening exceptional African operators and sovereign syndicates to pool capital, mitigate operational risk, and capture high-conviction economic growth.",
+  },
+  {
+    image: "/images/charles-forerunner-3fPXt37X6UQ-unsplash.jpg",
+    alt: "Modern commercial architecture and institutional infrastructure",
+    title: "Institutional Rigour. Sovereign Vision.",
+    description:
+      "Operating with unyielding adherence to compliance, statutory governance, and corporate transparency across West Africa's expanding commercial frontiers.",
+  },
 ];
 
 // Strategic Investment Sectors conforming to panoramic strip architecture
@@ -140,10 +154,10 @@ export default function Home() {
           </AnimatePresence>
         </div>
 
-        {/* Dark Cinematic Overlays (Sharp Photo, Rich Executive Tone) */}
-        <div className="absolute inset-0 bg-black/50 z-10 pointer-events-none" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-black/70 z-10 pointer-events-none" />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/35 to-transparent z-10 pointer-events-none" />
+        {/* Subtle Dark Overlays (Just enough to be noticed, keeping photo bright & vivid) */}
+        <div className="absolute inset-0 bg-black/25 z-10 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/40 z-10 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-black/15 to-transparent z-10 pointer-events-none" />
 
         {/* Hero Content Container (Layered on Top z-20, flexed down toward the bottom controls for uniform placement) */}
         <div className="relative max-w-[1360px] mx-auto px-6 lg:px-12 w-full z-20 flex-1 flex flex-col justify-end pb-8 sm:pb-10 pt-28">

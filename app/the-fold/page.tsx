@@ -1,10 +1,11 @@
 "use client";
 
-import React from "react";
+import React, { useState, useEffect } from "react";
+import Link from "next/link";
 import Image from "next/image";
 import siteConfig from "@/lib/site-config";
 import FoldInquiryForm from "@/components/the-fold/FoldInquiryForm";
-import { motion, useReducedMotion, type Variants } from "framer-motion";
+import { motion, AnimatePresence, useReducedMotion, type Variants } from "framer-motion";
 import {
   ShieldCheckIcon,
   ArrowRightIcon,
@@ -13,9 +14,46 @@ import {
   UsersIcon,
   TrendingUpIcon,
   ClockIcon,
+  ChevronLeftIcon,
+  ChevronRightIcon,
+  PauseIcon,
+  PlayIcon,
+  ChevronDownIcon,
 } from "@/components/ui/Icons";
 
 const PRO_MAX_EASE = [0.16, 1, 0.3, 1] as const;
+
+// The Fold Hero Auto-Fading Slides
+const THE_FOLD_HERO_SLIDES = [
+  {
+    image: "/images/the_fold_executive_lounge.jpg",
+    alt: "The Fold Executive Conclave at Hundredfold Headquarters",
+    title: "Welcome to The Fold",
+    description:
+      "The private membership and collaborative syndicate network of Hundredfold Innovation Network Ltd, uniting vetted enterprise leaders and capital allocators across African commercial frontiers.",
+  },
+  {
+    image: "/images/benjamin-child-GWe0dlVD9e0-unsplash.jpg",
+    alt: "Executive Boardroom Conclave and Private Syndicate Assembly",
+    title: "Private Syndicate Conclave",
+    description:
+      "Assembling exceptional entrepreneurs and institutional allocators into structured cohorts with active governance, audited yields, and collective leverage.",
+  },
+  {
+    image: "/images/adeolu-eletu-E7RLgUjjazc-unsplash.jpg",
+    alt: "Vetted African Enterprise Leadership Cohort",
+    title: "Sovereign Capital Network",
+    description:
+      "Pooling private capital into tangible productive assets with institutional transparency and disciplined risk-adjusted compounding.",
+  },
+  {
+    image: "/images/charles-forerunner-3fPXt37X6UQ-unsplash.jpg",
+    alt: "Modern Enterprise Infrastructure and High-Yield Venues",
+    title: "Generational Wealth Architecture",
+    description:
+      "Anchored in our constitution with an 85% direct operational return distribution model to participating cohort syndicate members.",
+  },
+];
 
 export default function TheFoldPage() {
   const shouldReduceMotion = useReducedMotion();
@@ -68,10 +106,10 @@ export default function TheFoldPage() {
           />
         </div>
 
-        {/* Dark Cinematic Overlays (Sharp Photo, Rich Executive Tone) */}
-        <div className="absolute inset-0 bg-black/50 z-10 pointer-events-none" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-black/70 z-10 pointer-events-none" />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/35 to-transparent z-10 pointer-events-none" />
+        {/* Subtle Dark Overlays (Just enough to be noticed, keeping photo bright & vivid) */}
+        <div className="absolute inset-0 bg-black/25 z-10 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/40 z-10 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-black/15 to-transparent z-10 pointer-events-none" />
 
         {/* Hero Title Container Layered on Top (z-20, uniform bottom-anchored placement) */}
         <div className="w-full max-w-[1360px] mx-auto px-6 lg:px-12 relative z-20 flex flex-col items-start text-left">
