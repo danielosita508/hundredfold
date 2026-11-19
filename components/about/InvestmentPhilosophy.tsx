@@ -33,7 +33,7 @@ export const SECTORS: SectorItem[] = [
     textColor: "#14532D",
     accentColor: "#ABF67E",
     tagline: "Sovereign Agrarian Corridors & Commodity Supply",
-    focusItems: ["Agro-Commodity Aggregation", "Regional Supply Logistics", "Commercial Off-Taker Supply"],
+    focusItems: ["Commodity Trading"],
     description:
       "Sourcing staple agricultural commodities at scale across rural basins, connecting domestic production with industrial off-takers across Nigeria and West Africa.",
     href: "/investments#agriculture",
@@ -48,7 +48,7 @@ export const SECTORS: SectorItem[] = [
     textColor: "#78350F",
     accentColor: "#FDE68A",
     tagline: "Tangible Sovereign Assets & Land Banking",
-    focusItems: ["Commercial Land Holdings", "Logistics & Warehousing Corridors", "Balance-Sheet Compounding Assets"],
+    focusItems: ["Commercial Land"],
     description:
       "Acquiring and developing prime commercial land, warehousing logistics, and physical assets that generate steady recurring income and hedge against currency volatility.",
     href: "/investments#real-estate",
@@ -63,7 +63,7 @@ export const SECTORS: SectorItem[] = [
     textColor: "#1E3A8A",
     accentColor: "#93C5FD",
     tagline: "Disciplined Capital Stewardship & Syndicates",
-    focusItems: ["Structured Co-Investment Syndicates", "Fiduciary Due Diligence Rigour", "Long-Term Capital Preservation"],
+    focusItems: ["Co-Investments"],
     description:
       "Deploying patient capital and structuring co-investment syndicates that provide structured liquidity and governance-first capital to proven commercial operators.",
     href: "/investments#finance",
@@ -78,7 +78,7 @@ export const SECTORS: SectorItem[] = [
     textColor: "#075985",
     accentColor: "#7DD3FC",
     tagline: "Digital Infrastructure & Commodity Digitization",
-    focusItems: ["Enterprise Automation Systems", "Trade & Supply Digitization", "Scalable African Platforms"],
+    focusItems: ["Digital Systems"],
     description:
       "Investing in foundational digital tools, enterprise software, and supply-chain digitization platforms that accelerate African trade velocity and operational transparency.",
     href: "/investments#technology",
@@ -93,7 +93,7 @@ export const SECTORS: SectorItem[] = [
     textColor: "#581C87",
     accentColor: "#D8B4FE",
     tagline: "Governed Cohorts & Commercial Literacy",
-    focusItems: ["Governed Member Cohorts", "Executive Mentorship & Literacy", "Collective Economic Advancement"],
+    focusItems: ["Private Syndicate"],
     description:
       "Convening forward-thinking business leaders, entrepreneurs, and investors committed to commercial literacy, ethical commerce, and governed collective economic strength.",
     href: "/the-fold",
@@ -108,7 +108,7 @@ export const SECTORS: SectorItem[] = [
     textColor: "#991B1B",
     accentColor: "#FECACA",
     tagline: "Joint Ventures & Indigenous African Scaling",
-    focusItems: ["Joint Venture Structuring", "Strategic Supply Alliances", "Pan-African Commercial Scaling"],
+    focusItems: ["Joint Ventures"],
     description:
       "Forming high-conviction joint ventures and institutional partnerships with indigenous African companies poised for continental expansion and operational leadership.",
     href: "/investments",
@@ -214,7 +214,7 @@ export default function InvestmentPhilosophy() {
                   const isSelected = sector.id === activeSectorId;
                   const innerSlicePath = getSlicePath(idx, rInner, rMid);
                   const outerArcPath = getSlicePath(idx, rMid, rOuter);
-                  const centerPt = getSliceCenterPoint(idx, 142);
+                  const centerPt = getSliceCenterPoint(idx, 146);
                   const rimCenterPt = getSliceCenterPoint(idx, 222);
 
                   return (
@@ -266,7 +266,7 @@ export default function InvestmentPhilosophy() {
                         {sector.name}
                       </text>
 
-                      {/* Inner Slice Content Labels (Representative Focus Area / Capabilities) */}
+                      {/* Inner Slice Content Label (Clean single writeup fitting neatly inside the circle) */}
                       <g
                         transform={`translate(${centerPt.x}, ${centerPt.y})`}
                         className="pointer-events-none"
@@ -281,19 +281,6 @@ export default function InvestmentPhilosophy() {
                         >
                           {sector.focusItems[0]}
                         </text>
-                        {sector.focusItems[1] && (
-                          <text
-                            y="13"
-                            textAnchor="middle"
-                            dominantBaseline="central"
-                            fill="#64748B"
-                            fontSize="8"
-                            fontWeight="500"
-                            className="font-sans"
-                          >
-                            {sector.focusItems[1]}
-                          </text>
-                        )}
                       </g>
                     </g>
                   );
