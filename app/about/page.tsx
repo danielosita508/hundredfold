@@ -268,10 +268,10 @@ export default function AboutPage() {
           </AnimatePresence>
         </div>
 
-        {/* Dark Cinematic Overlays (Sharp Photo, Rich Executive Tone) */}
-        <div className="absolute inset-0 bg-black/50 z-10 pointer-events-none" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-black/70 z-10 pointer-events-none" />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/35 to-transparent z-10 pointer-events-none" />
+        {/* Subtle Dark Overlays (Just enough to be noticed, keeping photo bright & vivid) */}
+        <div className="absolute inset-0 bg-black/25 z-10 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/40 z-10 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-black/15 to-transparent z-10 pointer-events-none" />
 
         {/* Hero Title Container Layered on Top (z-20, uniform bottom-anchored placement) */}
         <div className="relative max-w-[1360px] mx-auto px-6 lg:px-12 w-full z-20 flex-1 flex flex-col justify-end pb-8 sm:pb-10 pt-28">
