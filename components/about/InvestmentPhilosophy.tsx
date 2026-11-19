@@ -373,18 +373,24 @@ export default function InvestmentPhilosophy() {
             </div>
           </div>
 
-          {/* ─── RIGHT COLUMN: Philosophy Narrative (Matching Reference Copy Structure) ─── */}
+          {/* ─── RIGHT COLUMN: Hundredfold Investment Philosophy Narrative ─── */}
           <div className="lg:col-span-6 flex flex-col items-start text-left">
             
-            <motion.h2
+            <motion.div
               initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, ease: PRO_MAX_EASE }}
-              className="font-heading text-3xl sm:text-4xl lg:text-[44px] text-[#00190A] font-semibold leading-[1.15] tracking-tight"
+              className="space-y-1"
             >
-              Our Investment Philosophy
-            </motion.h2>
+              <span className="text-xs uppercase tracking-[0.25em] font-bold text-[#2D6C00] block">
+                OUR INVESTMENT PHILOSOPHY
+              </span>
+              <h2 className="font-heading text-3xl sm:text-4xl lg:text-[44px] text-[#00190A] font-semibold leading-[1.15] tracking-tight">
+                Sound Commercial Judgment. <br className="hidden sm:inline" />
+                Disciplined Growth.
+              </h2>
+            </motion.div>
 
             {/* Core Brand Statement */}
             <motion.p
@@ -394,7 +400,7 @@ export default function InvestmentPhilosophy() {
               transition={{ duration: 0.6, delay: 0.1, ease: PRO_MAX_EASE }}
               className="mt-6 text-base sm:text-lg text-[#334155] leading-relaxed font-normal"
             >
-              At Hundredfold, we believe that lasting prosperity is created by building resilient businesses, strong institutions and sustainable economies. Our investments demonstrate the power of Africapitalism in action.
+              At Hundredfold, we believe sustainable wealth is created by bridging the gap between African commercial opportunity and disciplined institutional execution. We evaluate ventures based on real market fundamentals, verified off-taker demand, and clear cash-flow pathways.
             </motion.p>
 
             {/* Value Creation Subheading */}
@@ -405,13 +411,13 @@ export default function InvestmentPhilosophy() {
               transition={{ duration: 0.6, delay: 0.15, ease: PRO_MAX_EASE }}
               className="mt-6 text-base sm:text-lg text-[#0F172A] font-medium"
             >
-              We create value in three ways:
+              Our three core tenets:
             </motion.p>
 
-            {/* Three Value Creation Tenets (Directly matching reference list structure) */}
+            {/* Three Value Creation Tenets (Hundredfold Official Tenets) */}
             <div className="mt-5 space-y-4 w-full">
               
-              {/* 1. Disciplined Capital */}
+              {/* 1. Opportunity Evaluation */}
               <motion.div
                 initial={{ opacity: 0, x: shouldReduceMotion ? 0 : 15 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -421,12 +427,12 @@ export default function InvestmentPhilosophy() {
               >
                 <span className="w-2 h-2 rounded-full bg-[#1E5208] mt-2.5 shrink-0" />
                 <p className="text-sm sm:text-base text-[#334155] leading-relaxed">
-                  <strong className="text-[#0F172A] font-semibold">Disciplined Capital:</strong>{" "}
-                  We invest where we can create long-term value through sound commercial judgment, rejecting speculative hype in favor of cash-generating, productive assets.
+                  <strong className="text-[#0F172A] font-semibold">Opportunity Evaluation:</strong>{" "}
+                  We evaluate opportunities based on fundamental market demand, clear cash-flow pathways, and operational viability across key sovereign sectors.
                 </p>
               </motion.div>
 
-              {/* 2. Active Stewardship */}
+              {/* 2. Disciplined Risk Assessment */}
               <motion.div
                 initial={{ opacity: 0, x: shouldReduceMotion ? 0 : 15 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -436,12 +442,12 @@ export default function InvestmentPhilosophy() {
               >
                 <span className="w-2 h-2 rounded-full bg-[#1E5208] mt-2.5 shrink-0" />
                 <p className="text-sm sm:text-base text-[#334155] leading-relaxed">
-                  <strong className="text-[#0F172A] font-semibold">Active Stewardship:</strong>{" "}
-                  We partner with our businesses and co-investors to strengthen corporate governance, statutory compliance, and institutional operational resilience.
+                  <strong className="text-[#0F172A] font-semibold">Disciplined Risk Assessment:</strong>{" "}
+                  We reject speculative hype. Every venture undergoes rigorous stress-testing against market volatility, statutory standards, and real-world supply chain dynamics.
                 </p>
               </motion.div>
 
-              {/* 3. Purposeful Growth */}
+              {/* 3. Long-Term Value Creation */}
               <motion.div
                 initial={{ opacity: 0, x: shouldReduceMotion ? 0 : 15 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -451,8 +457,8 @@ export default function InvestmentPhilosophy() {
               >
                 <span className="w-2 h-2 rounded-full bg-[#1E5208] mt-2.5 shrink-0" />
                 <p className="text-sm sm:text-base text-[#334155] leading-relaxed">
-                  <strong className="text-[#0F172A] font-semibold">Purposeful Growth:</strong>{" "}
-                  We invest in foundational sectors that generate sustainable returns, while advancing Africa&apos;s economic development and regional self-reliance.
+                  <strong className="text-[#0F172A] font-semibold">Long-Term Value Creation:</strong>{" "}
+                  We prioritize productive, cash-generating tangible assets and scalable commercial platforms engineered to compound enduring value across economic cycles.
                 </p>
               </motion.div>
             </div>
