@@ -77,6 +77,7 @@ const HERO_SLIDES = [
 interface SectorItem {
   title: string;
   href: string;
+  description: string;
   images: string[];
   alt: string;
 }
@@ -85,16 +86,20 @@ const BUSINESS_SECTORS: SectorItem[] = [
   {
     title: "Agriculture",
     href: "/investments#agriculture",
+    description:
+      "Coordinating agricultural commodity aggregation, farm asset acquisition, and reliable supply chain corridors across productive African basins.",
     images: [
-      "/images/agric-tractor-field.jpg",
-      "/images/agric-harvest.jpg",
-      "/images/agric-poultry.webp",
+      "/images/tim-mossholder-xDwEa2kaeJA-unsplash.jpg",
+      "/images/agric.jpg",
+      "/images/annie-spratt-IT6aov1ScW0-unsplash.jpg",
     ],
     alt: "Agriculture and agricultural commodity supply chains",
   },
   {
     title: "Real Estate",
     href: "/investments#real-estate",
+    description:
+      "Acquiring prime commercial land, logistics hubs, and productive real estate engineered for long-term purchasing power preservation.",
     images: [
       "/images/sean-pollock-PhYq704ffdA-unsplash.jpg",
       "/images/business-skyscraper_ZDUJ7AJIQ2.jpg",
@@ -105,17 +110,21 @@ const BUSINESS_SECTORS: SectorItem[] = [
   {
     title: "Finance",
     href: "/investments#finance",
+    description:
+      "Deploying capital into structured co-investments, commercial trading operations, and high-conviction ventures under disciplined fiduciary governance.",
     images: [
-      "/images/finance-globe-coins.jpg",
-      "/images/finance-stock-chart.jpg",
       "/images/photo-1590283603385-17ffb3a7f29f.avif",
       "/images/adeolu-eletu-E7RLgUjjazc-unsplash.jpg",
+      "/images/pexels-towfiqu-barbhuiya-3440682-14527417.jpg",
+      "/images/cytonn-photography-n95VMLxqM2I-unsplash.jpg",
     ],
     alt: "Financial capital stewardship and strategic investment",
   },
   {
     title: "Technology",
     href: "/investments#technology",
+    description:
+      "Backing scalable digital infrastructure, enterprise software solutions, and operational tech ventures built for regional market expansion.",
     images: [
       "/images/andras-vas-Bd7gNnWJBkU-unsplash.jpg",
       "/images/fotis-fotopoulos-6sAl6aQ4OWI-unsplash.jpg",
@@ -151,7 +160,7 @@ function SectorCarouselCard({
       href={sector.href}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      className="group relative w-full h-[240px] sm:h-[280px] lg:h-[340px] overflow-hidden bg-black flex flex-col justify-end border-r border-white/20 last:border-r-0 cursor-pointer select-none"
+      className="group relative w-full h-[320px] sm:h-[360px] lg:h-[400px] rounded-2xl overflow-hidden bg-black flex flex-col justify-end border border-white/10 cursor-pointer select-none shadow-md hover:shadow-2xl transition-all duration-500"
     >
       {/* Background Photographic Image Carousel */}
       <AnimatePresence initial={false}>
@@ -168,18 +177,18 @@ function SectorCarouselCard({
             alt={sector.alt}
             fill
             quality={95}
-            sizes="(max-width: 640px) 50vw, 25vw"
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
             className="object-cover object-center grayscale contrast-110 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-out"
           />
         </motion.div>
       </AnimatePresence>
 
-      {/* Base subtle dark gradient for text legibility (no colored tints) */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent pointer-events-none z-10" />
+      {/* Deep gradient overlay ensuring text legibility */}
+      <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/50 to-transparent pointer-events-none z-10" />
 
       {/* Carousel Progress Indicators (subtle dashes visible on hover) */}
       {sector.images.length > 1 && (
-        <div className="absolute top-4 left-5 sm:left-6 lg:left-8 z-20 flex items-center gap-1.5 opacity-0 group-hover:opacity-90 transition-opacity duration-300 pointer-events-none">
+        <div className="absolute top-4 left-5 sm:left-6 lg:left-7 z-20 flex items-center gap-1.5 opacity-0 group-hover:opacity-90 transition-opacity duration-300 pointer-events-none">
           {sector.images.map((_, i) => (
             <span
               key={i}
@@ -191,12 +200,20 @@ function SectorCarouselCard({
         </div>
       )}
 
-      {/* Sector Title: Completely invisible until hovered, slides smoothly up into view */}
-      <div className="relative z-20 p-5 sm:p-6 lg:p-8 flex flex-col justify-end h-full pointer-events-none">
-        <div className="opacity-0 group-hover:opacity-100 transform translate-y-3 group-hover:translate-y-0 transition-all duration-500 ease-out">
-          <h3 className="font-poppins text-base sm:text-lg lg:text-xl font-semibold tracking-tight text-white drop-shadow-lg">
+      {/* Sector Title, Green Line & Description (Using user's exact font and font size) */}
+      <div className="relative z-20 p-5 sm:p-6 lg:p-7 flex flex-col justify-end h-full pointer-events-none">
+        <div className="transform transition-transform duration-500 group-hover:-translate-y-1">
+          <h3 className="font-poppins text-xl sm:text-2xl font-bold tracking-tight text-white drop-shadow-md">
             {sector.title}
           </h3>
+          
+          {/* Accent Green Line */}
+          <div className="w-12 sm:w-14 h-[2px] bg-[#9BE564] my-2.5 rounded-full group-hover:w-16 transition-all duration-300" />
+          
+          {/* Concise Sector Description */}
+          <p className="font-poppins text-[13px] sm:text-[14px] font-normal leading-[1.6] text-white/90 drop-shadow-sm">
+            {sector.description}
+          </p>
         </div>
       </div>
     </Link>
@@ -233,7 +250,7 @@ export default function Home() {
     <div className="relative overflow-hidden bg-[#E9FDFF] text-[#0C1E20]">
 
       {/* ─── SECTION 1: HERO (Transcorp Style Sharp Panoramic Carousel) ─── */}
-      <section className="relative w-full h-[calc(100vh-90px)] min-h-[460px] sm:min-h-[500px] max-h-[720px] overflow-hidden bg-black flex flex-col justify-between">
+      <section className="relative w-full h-[calc(100vh-40px)] min-h-[580px] sm:min-h-[620px] overflow-hidden bg-black flex flex-col justify-end">
 
         {/* 100% Crisp Background Slides (Zero Blur / Zero Filter) */}
         <div className="absolute inset-0 z-0">
@@ -261,15 +278,15 @@ export default function Home() {
 
         {/* Subtle Dark Overlays (Just enough to be noticed, keeping photo bright & vivid) */}
         <div className="absolute inset-0 bg-black/25 z-10 pointer-events-none" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/40 z-10 pointer-events-none" />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-black/15 to-transparent z-10 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-black/40 z-10 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/15 to-transparent z-10 pointer-events-none" />
 
-        {/* Hero Content Container (Layered on Top z-20, flexed down toward the bottom controls for uniform placement) */}
-        <div className="relative max-w-[1360px] mx-auto px-6 lg:px-12 w-full z-20 flex-1 flex flex-col justify-end pb-4 sm:pb-6 pt-20 sm:pt-24">
-          <div className="flex flex-col items-start">
+        {/* Hero Bottom Container (Unified Left Writeup + Right Actions) */}
+        <div className="relative max-w-[1360px] mx-auto px-6 lg:px-12 w-full z-20 pb-8 sm:pb-12 flex flex-col lg:flex-row lg:items-end justify-between gap-6">
 
-            {/* Headline in Poppins with React Bits SplitText Cinematic Reveal */}
-            <h1 className="font-poppins text-[30px] sm:text-[36px] lg:text-[42px] font-bold leading-[1.15] tracking-[-0.02em] max-w-[500px] text-white drop-shadow-md">
+          {/* Left: Headline & Writeup sitting at the bottom-left */}
+          <div className="flex flex-col items-start max-w-[560px]">
+            <h1 className="font-poppins text-[30px] sm:text-[36px] lg:text-[42px] font-bold leading-[1.15] tracking-[-0.02em] text-white drop-shadow-md">
               <SplitText
                 key={`hero-title-${currentSlide}`}
                 text={HERO_SLIDES[currentSlide].title}
@@ -280,7 +297,7 @@ export default function Home() {
             </h1>
 
             {/* Hundredfold Brand Green Accent Divider */}
-            <div className="my-6 h-[2px] w-[220px] bg-[#9BE564]" />
+            <div className="my-4 sm:my-5 h-[2px] w-[200px] bg-[#9BE564]" />
 
             {/* Compact Sub-Headline Description */}
             <motion.p
@@ -288,82 +305,14 @@ export default function Home() {
               initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.65, delay: 0.1, ease: PRO_MAX_EASE }}
-              className="font-poppins text-[13px] md:text-[14px] font-normal leading-[1.65] max-w-[400px] text-white/90 drop-shadow-sm"
+              className="font-poppins text-[13px] md:text-[14px] font-normal leading-[1.65] max-w-[420px] text-white/90 drop-shadow-sm"
             >
               {HERO_SLIDES[currentSlide].description}
             </motion.p>
-
-          </div>
-        </div>
-
-        {/* Bottom Hero Controls Container (z-20, pushed up with generous bottom padding) */}
-        <div className="relative max-w-[1360px] mx-auto px-6 lg:px-12 w-full pb-12 sm:pb-16 lg:pb-20 mb-1 sm:mb-2 z-20 flex items-end justify-between">
-
-          {/* Bottom-Left: Carousel Navigation & Progress Controller */}
-          <div className="flex items-center gap-3 sm:gap-5 p-2 px-3 sm:px-4 rounded-full bg-black/45 backdrop-blur-md border border-white/20 shadow-xl">
-            <div className="font-mono text-xs font-semibold tracking-wider flex items-center gap-1 pl-1 select-none">
-              <span className="text-[#ABF67E] font-bold text-sm">0{currentSlide + 1}</span>
-              <span className="text-white/30">/</span>
-              <span className="text-white/60">0{HERO_SLIDES.length}</span>
-            </div>
-
-            <div className="flex items-center gap-1.5 sm:gap-2">
-              {HERO_SLIDES.map((_, idx) => (
-                <button
-                  key={idx}
-                  type="button"
-                  onClick={() => setCurrentSlide(idx)}
-                  aria-label={`Go to slide ${idx + 1}`}
-                  className="py-2 cursor-pointer focus:outline-none group"
-                >
-                  <span
-                    className={`block h-1 rounded-full transition-all duration-500 ${
-                      currentSlide === idx
-                        ? "w-8 sm:w-10 bg-[#ABF67E]"
-                        : "w-3 sm:w-4 bg-white/30 group-hover:bg-white/60"
-                    }`}
-                  />
-                </button>
-              ))}
-            </div>
-
-            <div className="flex items-center gap-1.5 border-l border-white/15 pl-2 sm:pl-3">
-              <button
-                type="button"
-                onClick={handlePrevSlide}
-                className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-white/10 hover:bg-[#ABF67E] hover:text-[#0A2F1B] text-white transition-all flex items-center justify-center cursor-pointer active:scale-95 shadow-sm"
-                aria-label="Previous slide"
-              >
-                <ChevronLeftIcon className="w-3.5 h-3.5" />
-              </button>
-
-              <button
-                type="button"
-                onClick={handleTogglePause}
-                className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-white/10 hover:bg-[#ABF67E] hover:text-[#0A2F1B] text-white transition-all flex items-center justify-center cursor-pointer active:scale-95 shadow-sm"
-                aria-label={isPaused ? "Resume autoplay" : "Pause autoplay"}
-                title={isPaused ? "Resume autoplay" : "Pause autoplay"}
-              >
-                {isPaused ? (
-                  <PlayIcon className="w-3.5 h-3.5 ml-0.5" />
-                ) : (
-                  <PauseIcon className="w-3.5 h-3.5" />
-                )}
-              </button>
-
-              <button
-                type="button"
-                onClick={handleNextSlide}
-                className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-white/10 hover:bg-[#ABF67E] hover:text-[#0A2F1B] text-white transition-all flex items-center justify-center cursor-pointer active:scale-95 shadow-sm"
-                aria-label="Next slide"
-              >
-                <ChevronRightIcon className="w-3.5 h-3.5" />
-              </button>
-            </div>
           </div>
 
-          {/* Bottom-Right: Translucent white-bordered pill button & stacked downward chevrons */}
-          <div className="flex flex-col items-center gap-3">
+          {/* Right: Translucent white-bordered pill button & stacked downward chevrons */}
+          <div className="flex flex-col items-start lg:items-center gap-3 shrink-0">
             <Link
               href="/investments"
               className="rounded-full border border-white/80 bg-black/25 px-7 py-3 text-[14px] font-semibold text-white hover:bg-white hover:text-black transition-all shadow-md backdrop-blur-sm whitespace-nowrap"
@@ -381,7 +330,7 @@ export default function Home() {
                   window.scrollBy({ top: window.innerHeight - 76, behavior: "smooth" });
                 }
               }}
-              className="flex flex-col items-center -space-y-1.5 text-white/90 hover:text-white transition-colors cursor-pointer pt-1"
+              className="hidden lg:flex flex-col items-center -space-y-1.5 text-white/90 hover:text-white transition-colors cursor-pointer pt-1"
               aria-label="Scroll to next section"
             >
               <ChevronDownIcon className="w-4 h-4 stroke-[2]" />
@@ -506,9 +455,9 @@ export default function Home() {
           </motion.div>
         </div>
 
-        {/* Transcorp Style Panoramic Multi-Sector Strip (Full-Bleed Grayscale-to-Color Architecture with Living Carousels) */}
-        <div className="w-full">
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-0 w-full border-t border-b border-white/20">
+        {/* Strategic Investment Sectors with Thin Spaces Separating Each Sector Vertically */}
+        <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-3.5 lg:gap-4 w-full">
             {BUSINESS_SECTORS.map((sector, index) => (
               <SectorCarouselCard
                 key={sector.title}

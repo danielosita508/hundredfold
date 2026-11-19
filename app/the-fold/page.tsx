@@ -146,7 +146,7 @@ export default function TheFoldPage() {
       {/* ─── SECTION 1: PRESTIGE HERO CAROUSEL ─── */}
       <section
         id="overview"
-        className="relative w-full h-[calc(100vh-90px)] min-h-[460px] sm:min-h-[500px] max-h-[720px] flex flex-col justify-between overflow-hidden bg-black"
+        className="relative w-full h-[calc(100vh-40px)] min-h-[580px] sm:min-h-[620px] flex flex-col justify-end overflow-hidden bg-black"
       >
         {/* Crisp Background Slides */}
         <div className="absolute inset-0 z-0">
@@ -177,21 +177,23 @@ export default function TheFoldPage() {
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-black/40 z-10 pointer-events-none" />
         <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/20 to-transparent z-10 pointer-events-none" />
 
-        {/* Hero Title Container */}
-        <div className="relative max-w-[1360px] mx-auto px-6 lg:px-12 w-full z-20 flex-1 flex flex-col justify-end pb-4 sm:pb-6 pt-20 sm:pt-24">
-          <div className="flex flex-col items-start text-left">
+        {/* Hero Bottom Container (Unified Left Writeup + Right Actions) */}
+        <div className="relative max-w-[1360px] mx-auto px-6 lg:px-12 w-full z-20 pb-8 sm:pb-12 flex flex-col lg:flex-row lg:items-end justify-between gap-6">
+
+          {/* Left: Headline & Writeup sitting at the bottom-left */}
+          <div className="flex flex-col items-start max-w-[580px]">
             <motion.h1
               key={`fold-h1-${currentSlide}`}
               initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.65, ease: PRO_MAX_EASE }}
-              className="font-poppins text-[30px] sm:text-[36px] lg:text-[42px] font-bold leading-[1.15] tracking-[-0.02em] max-w-[580px] text-white drop-shadow-md text-left"
+              className="font-poppins text-[30px] sm:text-[36px] lg:text-[42px] font-bold leading-[1.15] tracking-[-0.02em] text-white drop-shadow-md text-left"
             >
               {THE_FOLD_HERO_SLIDES[currentSlide].title}
             </motion.h1>
 
             {/* Hundredfold Brand Green Accent Divider */}
-            <div className="my-5 sm:my-6 h-[2px] w-[220px] bg-[#9BE564]" />
+            <div className="my-4 sm:my-5 h-[2px] w-[200px] bg-[#9BE564]" />
 
             <motion.p
               key={`fold-desc-${currentSlide}`}
@@ -203,75 +205,9 @@ export default function TheFoldPage() {
               {THE_FOLD_HERO_SLIDES[currentSlide].description}
             </motion.p>
           </div>
-        </div>
 
-        {/* Bottom Hero Controls Container (z-20, pushed up with generous bottom padding) */}
-        <div className="relative max-w-[1360px] mx-auto px-6 lg:px-12 w-full pb-12 sm:pb-16 lg:pb-20 mb-1 sm:mb-2 z-20 flex items-end justify-between">
-          {/* Bottom-Left: Carousel Navigation & Progress Controller */}
-          <div className="flex items-center gap-3 sm:gap-5 p-2 px-3 sm:px-4 rounded-full bg-black/45 backdrop-blur-md border border-white/20 shadow-xl">
-            <div className="font-mono text-xs font-semibold tracking-wider flex items-center gap-1 pl-1 select-none">
-              <span className="text-[#ABF67E] font-bold text-sm">0{currentSlide + 1}</span>
-              <span className="text-white/30">/</span>
-              <span className="text-white/60">0{THE_FOLD_HERO_SLIDES.length}</span>
-            </div>
-
-            <div className="flex items-center gap-1.5 sm:gap-2">
-              {THE_FOLD_HERO_SLIDES.map((_, idx) => (
-                <button
-                  key={idx}
-                  type="button"
-                  onClick={() => setCurrentSlide(idx)}
-                  aria-label={`Go to slide ${idx + 1}`}
-                  className="py-2 cursor-pointer focus:outline-none group"
-                >
-                  <span
-                    className={`block h-1 rounded-full transition-all duration-500 ${
-                      currentSlide === idx
-                        ? "w-8 sm:w-10 bg-[#ABF67E]"
-                        : "w-3 sm:w-4 bg-white/30 group-hover:bg-white/60"
-                    }`}
-                  />
-                </button>
-              ))}
-            </div>
-
-            <div className="flex items-center gap-1.5 border-l border-white/15 pl-2 sm:pl-3">
-              <button
-                type="button"
-                onClick={handlePrevSlide}
-                className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-white/10 hover:bg-[#ABF67E] hover:text-[#0A2F1B] text-white transition-all flex items-center justify-center cursor-pointer active:scale-95 shadow-sm"
-                aria-label="Previous slide"
-              >
-                <ChevronLeftIcon className="w-3.5 h-3.5" />
-              </button>
-
-              <button
-                type="button"
-                onClick={handleTogglePause}
-                className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-white/10 hover:bg-[#ABF67E] hover:text-[#0A2F1B] text-white transition-all flex items-center justify-center cursor-pointer active:scale-95 shadow-sm"
-                aria-label={isPaused ? "Resume autoplay" : "Pause autoplay"}
-                title={isPaused ? "Resume autoplay" : "Pause autoplay"}
-              >
-                {isPaused ? (
-                  <PlayIcon className="w-3.5 h-3.5 ml-0.5" />
-                ) : (
-                  <PauseIcon className="w-3.5 h-3.5" />
-                )}
-              </button>
-
-              <button
-                type="button"
-                onClick={handleNextSlide}
-                className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-white/10 hover:bg-[#ABF67E] hover:text-[#0A2F1B] text-white transition-all flex items-center justify-center cursor-pointer active:scale-95 shadow-sm"
-                aria-label="Next slide"
-              >
-                <ChevronRightIcon className="w-3.5 h-3.5" />
-              </button>
-            </div>
-          </div>
-
-          {/* Bottom-Right: Quick link and scroll down */}
-          <div className="flex flex-col items-center gap-3">
+          {/* Right: Quick link and scroll down */}
+          <div className="flex flex-col items-start lg:items-center gap-3 shrink-0">
             <Link
               href="#join"
               className="rounded-full border border-white/80 bg-black/25 px-7 py-3 text-[14px] font-semibold text-white hover:bg-white hover:text-black transition-all shadow-md backdrop-blur-sm whitespace-nowrap"
@@ -289,7 +225,7 @@ export default function TheFoldPage() {
                   window.scrollBy({ top: window.innerHeight - 76, behavior: "smooth" });
                 }
               }}
-              className="flex flex-col items-center -space-y-1.5 text-white/90 hover:text-white transition-colors cursor-pointer pt-1"
+              className="hidden lg:flex flex-col items-center -space-y-1.5 text-white/90 hover:text-white transition-colors cursor-pointer pt-1"
               aria-label="Scroll to next section"
             >
               <ChevronDownIcon className="w-4 h-4 stroke-[2]" />
@@ -297,7 +233,9 @@ export default function TheFoldPage() {
               <ChevronDownIcon className="w-4 h-4 stroke-[2]" />
             </button>
           </div>
+
         </div>
+
       </section>
 
       {/* ─── SECTION 2: CONCLAVE HIGHLIGHT (Single Focused Sentence) ─── */}
