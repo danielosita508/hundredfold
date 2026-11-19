@@ -128,8 +128,10 @@ const BUSINESS_SECTORS: SectorItem[] = [
     description:
       "Backing scalable digital infrastructure, enterprise software solutions, and operational tech ventures built for regional market expansion.",
     images: [
-      "/images/andras-vas-Bd7gNnWJBkU-unsplash.jpg",
+      "/images/tech-digital-network-mesh.jpg",
+      "/images/tech-global-connectivity-earth.jpg",
       "/images/fotis-fotopoulos-6sAl6aQ4OWI-unsplash.jpg",
+      "/images/andras-vas-Bd7gNnWJBkU-unsplash.jpg",
       "/images/jakub-zerdzicki-WD7S-Lz12Es-unsplash.jpg",
     ],
     alt: "Technology infrastructure and digital enterprise solutions",

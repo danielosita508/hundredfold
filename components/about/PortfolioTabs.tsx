@@ -111,7 +111,7 @@ const TABS: TabItem[] = [
       "Fintech infrastructure and enterprise software scaling",
       "Robust data governance, privacy, and scalable architectures",
     ],
-    image: "/images/fotis-fotopoulos-6sAl6aQ4OWI-unsplash.jpg",
+    image: "/images/tech-digital-network-mesh.jpg",
     caption: "Technology • Digital Infrastructure & Enterprise Systems",
     ctaText: "Explore Technology Scope",
     ctaHref: "/investments#technology",

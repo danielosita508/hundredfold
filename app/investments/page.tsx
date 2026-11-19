@@ -47,7 +47,7 @@ const INVESTMENT_HERO_SLIDES = [
       "Structuring vetted co-investment syndicates with risk-adjusted underwriting to deploy patient capital into generative economic sectors.",
   },
   {
-    image: "/images/fotis-fotopoulos-6sAl6aQ4OWI-unsplash.jpg",
+    image: "/images/tech-global-connectivity-earth.jpg",
     alt: "Digital Infrastructure & Scalable Enterprise",
     title: "Foundational Technology",
     description:
@@ -135,8 +135,10 @@ const PORTFOLIO_SECTORS: PortfolioSector[] = [
     id: "technology",
     number: "04",
     title: "Technology",
-    image: "/images/fotis-fotopoulos-6sAl6aQ4OWI-unsplash.jpg",
+    image: "/images/tech-digital-network-mesh.jpg",
     images: [
+      "/images/tech-digital-network-mesh.jpg",
+      "/images/tech-global-connectivity-earth.jpg",
       "/images/fotis-fotopoulos-6sAl6aQ4OWI-unsplash.jpg",
       "/images/andras-vas-Bd7gNnWJBkU-unsplash.jpg",
       "/images/jakub-zerdzicki-WD7S-Lz12Es-unsplash.jpg",
