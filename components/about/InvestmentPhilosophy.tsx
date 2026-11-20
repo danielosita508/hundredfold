@@ -177,7 +177,7 @@ export default function InvestmentPhilosophy() {
           <motion.span
             initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 12 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.5 }}
             className="text-xs uppercase tracking-[0.25em] font-bold text-[#2D6C00]"
           >
@@ -367,7 +367,7 @@ export default function InvestmentPhilosophy() {
             <motion.p
               initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 15 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.6, ease: PRO_MAX_EASE }}
               className="text-base sm:text-lg text-[#334155] leading-relaxed font-normal"
             >
@@ -378,22 +378,40 @@ export default function InvestmentPhilosophy() {
             <motion.p
               initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 15 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.15, ease: PRO_MAX_EASE }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.6, delay: 0.1, ease: PRO_MAX_EASE }}
               className="mt-6 text-base sm:text-lg text-[#0F172A] font-medium"
             >
               Our three core tenets:
             </motion.p>
 
-            {/* Three Value Creation Tenets (Hundredfold Official Tenets) */}
-            <div className="mt-5 space-y-4 w-full">
-              
+            {/* Three Value Creation Tenets (Staggered Cleanly on Viewport Entrance) */}
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.2 }}
+              variants={{
+                hidden: { opacity: 0 },
+                visible: {
+                  opacity: 1,
+                  transition: {
+                    staggerChildren: shouldReduceMotion ? 0 : 0.12,
+                    delayChildren: shouldReduceMotion ? 0 : 0.05,
+                  },
+                },
+              }}
+              className="mt-5 space-y-4 w-full"
+            >
               {/* 1. Opportunity Evaluation */}
               <motion.div
-                initial={{ opacity: 0, x: shouldReduceMotion ? 0 : 15 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.2, ease: PRO_MAX_EASE }}
+                variants={{
+                  hidden: { opacity: 0, x: shouldReduceMotion ? 0 : 18 },
+                  visible: {
+                    opacity: 1,
+                    x: 0,
+                    transition: { duration: 0.5, ease: PRO_MAX_EASE },
+                  },
+                }}
                 className="flex items-start gap-3"
               >
                 <span className="w-2 h-2 rounded-full bg-[#1E5208] mt-2.5 shrink-0" />
@@ -405,10 +423,14 @@ export default function InvestmentPhilosophy() {
 
               {/* 2. Disciplined Risk Assessment */}
               <motion.div
-                initial={{ opacity: 0, x: shouldReduceMotion ? 0 : 15 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.25, ease: PRO_MAX_EASE }}
+                variants={{
+                  hidden: { opacity: 0, x: shouldReduceMotion ? 0 : 18 },
+                  visible: {
+                    opacity: 1,
+                    x: 0,
+                    transition: { duration: 0.5, ease: PRO_MAX_EASE },
+                  },
+                }}
                 className="flex items-start gap-3"
               >
                 <span className="w-2 h-2 rounded-full bg-[#1E5208] mt-2.5 shrink-0" />
@@ -420,10 +442,14 @@ export default function InvestmentPhilosophy() {
 
               {/* 3. Long-Term Value Creation */}
               <motion.div
-                initial={{ opacity: 0, x: shouldReduceMotion ? 0 : 15 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.3, ease: PRO_MAX_EASE }}
+                variants={{
+                  hidden: { opacity: 0, x: shouldReduceMotion ? 0 : 18 },
+                  visible: {
+                    opacity: 1,
+                    x: 0,
+                    transition: { duration: 0.5, ease: PRO_MAX_EASE },
+                  },
+                }}
                 className="flex items-start gap-3"
               >
                 <span className="w-2 h-2 rounded-full bg-[#1E5208] mt-2.5 shrink-0" />
@@ -432,13 +458,13 @@ export default function InvestmentPhilosophy() {
                   We prioritize productive, cash-generating tangible assets and scalable commercial platforms engineered to compound enduring value across economic cycles.
                 </p>
               </motion.div>
-            </div>
+            </motion.div>
 
             {/* CTA Button matching brand green with lemon green underline */}
             <motion.div
               initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 15 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.5, delay: 0.35, ease: PRO_MAX_EASE }}
               className="mt-8 sm:mt-10 pt-4"
             >

@@ -15,6 +15,8 @@ import {
   ChevronDownIcon,
 } from "@/components/ui/Icons";
 import PillarsSection from "@/components/about/PillarsSection";
+import MaskedTextReveal from "@/components/animations/MaskedTextReveal";
+import Tilt3DCard from "@/components/animations/Tilt3DCard";
 
 const PRO_MAX_EASE = [0.16, 1, 0.3, 1] as const;
 
@@ -187,14 +189,14 @@ export default function AboutPage() {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: shouldReduceMotion ? 0 : 0.1,
-        delayChildren: shouldReduceMotion ? 0 : 0.05,
+        staggerChildren: shouldReduceMotion ? 0 : 0.08,
+        delayChildren: shouldReduceMotion ? 0 : 0.04,
       },
     },
   };
 
   const cardScrollVariants: Variants = {
-    hidden: { opacity: 0, y: shouldReduceMotion ? 0 : 24 },
+    hidden: { opacity: 0, y: shouldReduceMotion ? 0 : 20 },
     visible: {
       opacity: 1,
       y: 0,
@@ -244,15 +246,13 @@ export default function AboutPage() {
 
           {/* Left: Headline & Writeup sitting at the bottom-left */}
           <div className="flex flex-col items-start max-w-[580px]">
-            <motion.h1
+            <MaskedTextReveal
               key={`about-h1-${currentSlide}`}
-              initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.65, ease: PRO_MAX_EASE }}
+              as="h1"
               className="font-poppins text-[30px] sm:text-[36px] lg:text-[42px] font-bold leading-[1.15] tracking-[-0.02em] text-white drop-shadow-md text-left"
             >
               {ABOUT_HERO_SLIDES[currentSlide].title}
-            </motion.h1>
+            </MaskedTextReveal>
 
             {/* Hundredfold Brand Green Accent Divider */}
             <div className="my-4 sm:my-5 h-[2px] w-[200px] bg-[#9BE564]" />
@@ -306,7 +306,7 @@ export default function AboutPage() {
           <motion.div
             initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 24 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.15 }}
+            viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.55, ease: PRO_MAX_EASE }}
             className="space-y-10"
           >
@@ -320,9 +320,12 @@ export default function AboutPage() {
                     ABOUT US
                   </span>
 
-                  <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-semibold text-[#00190A] tracking-tight leading-[1.12]">
+                  <MaskedTextReveal
+                    as="h2"
+                    className="font-heading text-3xl sm:text-4xl lg:text-5xl font-semibold text-[#00190A] tracking-tight leading-[1.12]"
+                  >
                     Founded for African Enterprise.
-                  </h2>
+                  </MaskedTextReveal>
                 </div>
 
                 <div className="space-y-5 text-base sm:text-lg text-[#374138] leading-relaxed font-normal">
@@ -432,15 +435,17 @@ export default function AboutPage() {
           <motion.div
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.1 }}
+            viewport={{ once: true, amount: 0.2 }}
             variants={staggerGridVariants}
             className="flex flex-col items-center gap-3 sm:gap-4 lg:gap-5 w-full"
           >
-            {/* 1. Founder & CEO (Centered on Top with Rounded Corners) */}
-            <div className="w-full flex justify-center">
-              <div
-                onClick={() => setSelectedLeader(ceo)}
+            {/* 1. Founder & CEO (Centered on Top with 3D Tilt & Rounded Corners) */}
+            <motion.div variants={cardScrollVariants} className="w-full flex justify-center">
+              <Tilt3DCard
+                maxTilt={6}
+                sheen={true}
                 className="group relative aspect-[4/5] w-full max-w-[280px] sm:max-w-[320px] lg:max-w-[340px] rounded-2xl sm:rounded-3xl overflow-hidden cursor-pointer select-none bg-[#141815] shadow-xl border border-black/5"
+                onClick={() => setSelectedLeader(ceo)}
               >
                 {/* Background Portrait Image: Grayscale by default, full color on hover, magnifies smoothly */}
                 <Image
@@ -467,42 +472,48 @@ export default function AboutPage() {
                     </p>
                   </div>
                 </div>
-              </div>
-            </div>
+              </Tilt3DCard>
+            </motion.div>
 
-            {/* 2. Executive Directors (4-Column Grid with rounded cards) */}
+            {/* 2. Executive Directors (4-Column Grid with 3D Tilt Cards) */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-5 w-full max-w-[1240px] mx-auto">
               {directors.map((member) => (
-                <div
+                <motion.div
                   key={member.name}
-                  onClick={() => setSelectedLeader(member)}
-                  className="group relative aspect-[4/5] w-full rounded-2xl overflow-hidden cursor-pointer select-none bg-[#141815] shadow-lg border border-black/5"
+                  variants={cardScrollVariants}
                 >
-                  {/* Background Portrait Image: Grayscale by default, full color on hover, magnifies smoothly */}
-                  <Image
-                    src={member.image}
-                    alt={`${member.name} — ${member.role}`}
-                    fill
-                    sizes="100vw"
-                    quality={100}
-                    className="object-cover object-top grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500 ease-out"
-                  />
+                  <Tilt3DCard
+                    maxTilt={6}
+                    sheen={true}
+                    className="group relative aspect-[4/5] w-full rounded-2xl overflow-hidden cursor-pointer select-none bg-[#141815] shadow-lg border border-black/5"
+                    onClick={() => setSelectedLeader(member)}
+                  >
+                    {/* Background Portrait Image: Grayscale by default, full color on hover, magnifies smoothly */}
+                    <Image
+                      src={member.image}
+                      alt={`${member.name} — ${member.role}`}
+                      fill
+                      sizes="100vw"
+                      quality={100}
+                      className="object-cover object-top grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500 ease-out"
+                    />
 
-                  {/* Ambient vignette / bottom gradient on hover */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 via-35% to-transparent opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 group-active:opacity-100 transition-opacity duration-300 pointer-events-none" />
+                    {/* Ambient vignette / bottom gradient on hover */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 via-35% to-transparent opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 group-active:opacity-100 transition-opacity duration-300 pointer-events-none" />
 
-                  {/* Bottom Overlay: The two top lines invisible by default and reveal on hover. The two lines below removed! */}
-                  <div className="absolute inset-x-0 bottom-0 p-4 sm:p-5 flex flex-col items-center justify-end text-center z-10 opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 group-active:opacity-100 transition-opacity duration-300 pointer-events-none">
-                    <div className="transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300 ease-out flex flex-col items-center space-y-1">
-                      <h3 className="font-heading text-sm sm:text-base font-bold text-white tracking-wide uppercase drop-shadow-md">
-                        {member.name}
-                      </h3>
-                      <p className="text-[10px] sm:text-[11px] uppercase font-bold tracking-wider text-[#ABF67E] drop-shadow-sm leading-tight max-w-[95%]">
-                        {member.role}
-                      </p>
+                    {/* Bottom Overlay: The two top lines invisible by default and reveal on hover. The two lines below removed! */}
+                    <div className="absolute inset-x-0 bottom-0 p-4 sm:p-5 flex flex-col items-center justify-end text-center z-10 opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 group-active:opacity-100 transition-opacity duration-300 pointer-events-none">
+                      <div className="transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300 ease-out flex flex-col items-center space-y-1">
+                        <h3 className="font-heading text-sm sm:text-base font-bold text-white tracking-wide uppercase drop-shadow-md">
+                          {member.name}
+                        </h3>
+                        <p className="text-[10px] sm:text-[11px] uppercase font-bold tracking-wider text-[#ABF67E] drop-shadow-sm leading-tight max-w-[95%]">
+                          {member.role}
+                        </p>
+                      </div>
                     </div>
-                  </div>
-                </div>
+                  </Tilt3DCard>
+                </motion.div>
               ))}
             </div>
           </motion.div>
@@ -514,21 +525,27 @@ export default function AboutPage() {
       <AnimatePresence>
         {selectedLeader && (
           <div className="fixed inset-0 z-50 flex justify-center p-3 sm:p-5 overflow-y-auto">
-            {/* Modal Backdrop */}
+            {/* Modal Backdrop with fade */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
+              transition={{ duration: 0.25, ease: "easeOut" }}
               onClick={() => setSelectedLeader(null)}
               className="fixed inset-0 bg-black/80 backdrop-blur-sm transition-opacity"
             />
 
-            {/* Modal Dialog Content: Wide Executive Portfolio View */}
+            {/* Modal Dialog Content: Wide Executive Portfolio View with Crisp Spring Scale */}
             <motion.div
-              initial={{ opacity: 0, scale: 0.95, y: 20 }}
+              initial={{ opacity: 0, scale: 0.95, y: 16 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0.95, y: 20 }}
-              transition={{ duration: 0.3, ease: PRO_MAX_EASE }}
+              exit={{ opacity: 0, scale: 0.95, y: 16 }}
+              transition={{
+                type: "spring",
+                stiffness: 320,
+                damping: 26,
+                mass: 0.8,
+              }}
               role="dialog"
               aria-modal="true"
               className="relative w-full max-w-[880px] lg:max-w-[940px] bg-white rounded-3xl shadow-2xl overflow-hidden z-10 m-auto my-4 sm:my-8 border border-black/5 flex flex-col md:flex-row"
@@ -612,9 +629,12 @@ export default function AboutPage() {
                 THE FOLD &amp; ALLIANCES
               </span>
 
-              <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-semibold text-[#00190A] tracking-tight leading-[1.12]">
+              <MaskedTextReveal
+                as="h2"
+                className="font-heading text-3xl sm:text-4xl lg:text-5xl font-semibold text-[#00190A] tracking-tight leading-[1.12]"
+              >
                 Convening Forward-Thinking Leaders.
-              </h2>
+              </MaskedTextReveal>
 
               <p className="text-base sm:text-lg text-[#424842] leading-relaxed">
                 Through The Fold and our institutional alliances, we assemble private syndicates and ambitious business operators into structured cohorts. Every cohort provides member mentorship, financial education, and an active voice in governance.
@@ -638,14 +658,41 @@ export default function AboutPage() {
       <section id="vision-mission" className="w-full px-6 lg:px-12 py-16 lg:py-24 bg-white border-t border-[#c1c8c0]/25 scroll-mt-20">
         <div className="max-w-[1360px] mx-auto flex flex-col gap-10">
           <div>
-            <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl text-[#00190A] tracking-tight font-semibold">
+            <MaskedTextReveal
+              as="h2"
+              className="font-heading text-3xl sm:text-4xl lg:text-5xl text-[#00190A] tracking-tight font-semibold"
+            >
               Our Vision & Mission
-            </h2>
+            </MaskedTextReveal>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            variants={{
+              hidden: { opacity: 0 },
+              visible: {
+                opacity: 1,
+                transition: {
+                  staggerChildren: shouldReduceMotion ? 0 : 0.12,
+                },
+              },
+            }}
+            className="grid grid-cols-1 md:grid-cols-2 gap-8"
+          >
             {/* Vision Card */}
-            <div className="p-8 sm:p-10 rounded-3xl bg-[#E9FDFF] border border-[#DEF2F4] shadow-xs flex flex-col justify-between">
+            <motion.div
+              variants={{
+                hidden: { opacity: 0, y: shouldReduceMotion ? 0 : 20 },
+                visible: {
+                  opacity: 1,
+                  y: 0,
+                  transition: { duration: 0.55, ease: PRO_MAX_EASE },
+                },
+              }}
+              className="p-8 sm:p-10 rounded-3xl bg-[#E9FDFF] border border-[#DEF2F4] shadow-xs flex flex-col justify-between"
+            >
               <div className="space-y-4">
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#2D6C00] text-white text-[11px] uppercase font-bold tracking-wider w-fit">
                   <span>OUR VISION</span>
@@ -654,10 +701,20 @@ export default function AboutPage() {
                   To build a leading African investment and business development network that creates enduring economic value, fosters enterprise, and transforms commercial opportunities into long-term wealth.
                 </p>
               </div>
-            </div>
+            </motion.div>
 
             {/* Mission Card */}
-            <div className="p-8 sm:p-10 rounded-3xl bg-[#E9FDFF] border border-[#DEF2F4] shadow-xs flex flex-col justify-between">
+            <motion.div
+              variants={{
+                hidden: { opacity: 0, y: shouldReduceMotion ? 0 : 20 },
+                visible: {
+                  opacity: 1,
+                  y: 0,
+                  transition: { duration: 0.55, ease: PRO_MAX_EASE },
+                },
+              }}
+              className="p-8 sm:p-10 rounded-3xl bg-[#E9FDFF] border border-[#DEF2F4] shadow-xs flex flex-col justify-between"
+            >
               <div className="space-y-4">
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#2D6C00] text-white text-[11px] uppercase font-bold tracking-wider w-fit">
                   <span>OUR MISSION</span>
@@ -666,8 +723,8 @@ export default function AboutPage() {
                   To identify, structure and scale viable commercial ventures across key African sectors through disciplined research, strategic partnerships, collective strength, and unwavering governance.
                 </p>
               </div>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
       </section>
 

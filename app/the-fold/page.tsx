@@ -4,6 +4,9 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import FoldInquiryForm from "@/components/the-fold/FoldInquiryForm";
+import MaskedTextReveal from "@/components/animations/MaskedTextReveal";
+import ParallaxImageFrame from "@/components/animations/ParallaxImageFrame";
+import Tilt3DCard from "@/components/animations/Tilt3DCard";
 import { motion, AnimatePresence, useReducedMotion, type Variants } from "framer-motion";
 import {
   TrendingUpIcon,
@@ -148,7 +151,7 @@ export default function TheFoldPage() {
         id="overview"
         className="relative w-full h-[calc(100vh-65px)] min-h-[540px] sm:min-h-[580px] flex flex-col justify-end overflow-hidden bg-black"
       >
-        {/* Crisp Background Slides */}
+        {/* Crisp Background Slides with Parallax Frame */}
         <div className="absolute inset-0 z-0">
           <AnimatePresence initial={false} mode="wait">
             <motion.div
@@ -159,15 +162,20 @@ export default function TheFoldPage() {
               transition={{ duration: 1.1, ease: "easeInOut" }}
               className="absolute inset-0 w-full h-full"
             >
-              <Image
-                src={THE_FOLD_HERO_SLIDES[currentSlide].image}
-                alt={THE_FOLD_HERO_SLIDES[currentSlide].alt}
-                fill
-                priority
-                quality={100}
-                sizes="100vw"
-                className="object-cover object-center"
-              />
+              <ParallaxImageFrame
+                containerClassName="w-full h-full"
+                className="w-full h-full"
+              >
+                <Image
+                  src={THE_FOLD_HERO_SLIDES[currentSlide].image}
+                  alt={THE_FOLD_HERO_SLIDES[currentSlide].alt}
+                  fill
+                  priority
+                  quality={100}
+                  sizes="100vw"
+                  className="object-cover object-center"
+                />
+              </ParallaxImageFrame>
             </motion.div>
           </AnimatePresence>
         </div>
@@ -182,15 +190,13 @@ export default function TheFoldPage() {
 
           {/* Left: Headline & Writeup sitting at the bottom-left */}
           <div className="flex flex-col items-start max-w-[580px]">
-            <motion.h1
+            <MaskedTextReveal
               key={`fold-h1-${currentSlide}`}
-              initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.65, ease: PRO_MAX_EASE }}
+              as="h1"
               className="font-poppins text-[30px] sm:text-[36px] lg:text-[42px] font-bold leading-[1.15] tracking-[-0.02em] text-white drop-shadow-md text-left"
             >
               {THE_FOLD_HERO_SLIDES[currentSlide].title}
-            </motion.h1>
+            </MaskedTextReveal>
 
             {/* Hundredfold Brand Green Accent Divider */}
             <div className="my-4 sm:my-5 h-[2px] w-[200px] bg-[#9BE564]" />
@@ -244,16 +250,19 @@ export default function TheFoldPage() {
           <motion.div
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
+            viewport={{ once: true, amount: 0.2 }}
             variants={fadeInVariants}
             className="space-y-3"
           >
             <span className="text-xs uppercase tracking-[0.25em] font-bold text-[#2D6C00] block">
               THE FOLD CONCLAVE
             </span>
-            <p className="font-heading text-2xl sm:text-3xl md:text-4xl text-[#00190A] leading-snug sm:leading-relaxed font-semibold tracking-tight">
+            <MaskedTextReveal
+              as="p"
+              className="font-heading text-2xl sm:text-3xl md:text-4xl text-[#00190A] leading-snug sm:leading-relaxed font-semibold tracking-tight"
+            >
               A private syndicate of 100 vetted enterprise leaders pooling capital into Africa&apos;s most productive commercial sectors.
-            </p>
+            </MaskedTextReveal>
           </motion.div>
         </div>
       </section>
@@ -306,9 +315,12 @@ export default function TheFoldPage() {
                 <span className="text-xs uppercase tracking-[0.25em] font-bold text-[#2D6C00] block">
                   ENTERPRISE INTEGRATION
                 </span>
-                <h2 className="font-heading text-3xl sm:text-4xl font-semibold text-[#00190A] tracking-tight mt-1">
+                <MaskedTextReveal
+                  as="h2"
+                  className="font-heading text-3xl sm:text-4xl font-semibold text-[#00190A] tracking-tight mt-1"
+                >
                   How Hundredfold Powers The Fold
-                </h2>
+                </MaskedTextReveal>
               </div>
 
               {/* Company Synergy Cards (Clean, Structured, Institutional) */}
@@ -369,16 +381,19 @@ export default function TheFoldPage() {
             <span className="text-xs uppercase tracking-[0.25em] font-bold text-[#2D6C00] block">
               ARCHITECTURE
             </span>
-            <h2 className="font-heading text-3xl sm:text-4xl font-semibold text-[#00190A] tracking-tight mt-1">
+            <MaskedTextReveal
+              as="h2"
+              className="font-heading text-3xl sm:text-4xl font-semibold text-[#00190A] tracking-tight mt-1"
+            >
               Three Pillars of The Fold
-            </h2>
+            </MaskedTextReveal>
           </div>
 
           {/* 3 Summarized Photographic Cards */}
           <motion.div
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.15 }}
+            viewport={{ once: true, amount: 0.2 }}
             variants={staggerGridVariants}
             className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8"
           >
@@ -386,36 +401,41 @@ export default function TheFoldPage() {
               <motion.div
                 key={pillar.title}
                 variants={cardScrollVariants}
-                className="rounded-3xl overflow-hidden bg-white border border-[#DEF2F4] shadow-md hover:shadow-xl transition-all duration-300 flex flex-col group"
               >
-                {/* Image */}
-                <div className="relative aspect-[16/10] w-full overflow-hidden bg-[#0A2F1B]">
-                  <Image
-                    src={pillar.image}
-                    alt={pillar.alt}
-                    fill
-                    quality={100}
-                    sizes="(max-width: 768px) 100vw, 400px"
-                    className="object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
+                <Tilt3DCard
+                  maxTilt={6}
+                  sheen={true}
+                  className="rounded-3xl overflow-hidden bg-white border border-[#DEF2F4] shadow-md hover:shadow-xl transition-all duration-300 flex flex-col h-full group"
+                >
+                  {/* Image */}
+                  <div className="relative aspect-[16/10] w-full overflow-hidden bg-[#0A2F1B]">
+                    <Image
+                      src={pillar.image}
+                      alt={pillar.alt}
+                      fill
+                      quality={100}
+                      sizes="(max-width: 768px) 100vw, 400px"
+                      className="object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
 
-                  <div className="absolute top-4 left-4 z-10">
-                    <span className="inline-flex items-center px-3 py-1 rounded-full bg-black/50 backdrop-blur-md border border-white/20 text-[#ABF67E] text-[10px] font-mono font-bold tracking-wider uppercase">
-                      {pillar.tag}
-                    </span>
+                    <div className="absolute top-4 left-4 z-10">
+                      <span className="inline-flex items-center px-3 py-1 rounded-full bg-black/50 backdrop-blur-md border border-white/20 text-[#ABF67E] text-[10px] font-mono font-bold tracking-wider uppercase">
+                        {pillar.tag}
+                      </span>
+                    </div>
                   </div>
-                </div>
 
-                {/* Content */}
-                <div className="p-6 flex-1 flex flex-col justify-between space-y-2">
-                  <h3 className="font-heading text-xl font-bold text-[#00190A] tracking-tight">
-                    {pillar.title}
-                  </h3>
-                  <p className="text-xs sm:text-sm text-[#424842] leading-relaxed">
-                    {pillar.description}
-                  </p>
-                </div>
+                  {/* Content */}
+                  <div className="p-6 flex-1 flex flex-col justify-between space-y-2">
+                    <h3 className="font-heading text-xl font-bold text-[#00190A] tracking-tight">
+                      {pillar.title}
+                    </h3>
+                    <p className="text-xs sm:text-sm text-[#424842] leading-relaxed">
+                      {pillar.description}
+                    </p>
+                  </div>
+                </Tilt3DCard>
               </motion.div>
             ))}
           </motion.div>
@@ -424,14 +444,19 @@ export default function TheFoldPage() {
 
       {/* ─── SECTION 5: FULL-BLEED PANORAMIC IMAGE BREAK ─── */}
       <section className="relative w-full h-[320px] sm:h-[400px] overflow-hidden bg-black flex items-center justify-center">
-        <Image
-          src="/images/cytonn-photography-n95VMLxqM2I-unsplash.jpg"
-          alt="African corporate skyline and sovereign asset development"
-          fill
-          quality={100}
-          sizes="100vw"
-          className="object-cover object-center"
-        />
+        <ParallaxImageFrame
+          containerClassName="absolute inset-0 w-full h-full pointer-events-none"
+          className="w-full h-full"
+        >
+          <Image
+            src="/images/cytonn-photography-n95VMLxqM2I-unsplash.jpg"
+            alt="African corporate skyline and sovereign asset development"
+            fill
+            quality={100}
+            sizes="100vw"
+            className="object-cover object-center"
+          />
+        </ParallaxImageFrame>
 
         <div className="absolute inset-0 bg-black/55 pointer-events-none" />
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/50 pointer-events-none" />
@@ -440,9 +465,12 @@ export default function TheFoldPage() {
           <span className="text-xs uppercase tracking-[0.25em] font-bold text-[#ABF67E] block">
             THE FOLD MANDATE
           </span>
-          <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight drop-shadow-xl">
+          <MaskedTextReveal
+            as="h2"
+            className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight drop-shadow-xl"
+          >
             Disciplined Capital. Compounding Enterprise.
-          </h2>
+          </MaskedTextReveal>
         </div>
       </section>
 

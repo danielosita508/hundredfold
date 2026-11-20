@@ -13,6 +13,8 @@ import {
   ChevronDownIcon,
 } from "@/components/ui/Icons";
 import InvestmentPhilosophy from "@/components/about/InvestmentPhilosophy";
+import MaskedTextReveal from "@/components/animations/MaskedTextReveal";
+import ParallaxImageFrame from "@/components/animations/ParallaxImageFrame";
 
 const PRO_MAX_EASE = [0.16, 1, 0.3, 1] as const;
 
@@ -185,25 +187,30 @@ function SectorBannerRow({
       id={sector.id}
       className="scroll-mt-20 relative w-full h-[520px] sm:h-[620px] lg:h-[720px] overflow-hidden bg-black group select-none cursor-pointer border-b border-black/40 last:border-b-0"
     >
-      <AnimatePresence mode="wait">
-        <motion.div
-          key={activeImage}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 1.1, ease: "easeInOut" }}
-          className="absolute inset-0"
-        >
-          <Image
-            src={activeImage}
-            alt={sector.alt}
-            fill
-            quality={100}
-            sizes="100vw"
-            className="object-cover object-center group-hover:scale-105 transition-transform duration-1000 ease-out"
-          />
-        </motion.div>
-      </AnimatePresence>
+      <ParallaxImageFrame
+        containerClassName="absolute inset-0 w-full h-full pointer-events-none"
+        className="w-full h-full"
+      >
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={activeImage}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 1.1, ease: "easeInOut" }}
+            className="absolute inset-0 w-full h-full"
+          >
+            <Image
+              src={activeImage}
+              alt={sector.alt}
+              fill
+              quality={100}
+              sizes="100vw"
+              className="object-cover object-center group-hover:scale-105 transition-transform duration-1000 ease-out"
+            />
+          </motion.div>
+        </AnimatePresence>
+      </ParallaxImageFrame>
 
       {/* Subtle Base Dark Layer for Photo Richness, deepening to Dark Backdrop on Hover (Zero Blur) */}
       <div className="absolute inset-0 bg-black/10 group-hover:bg-black/65 transition-all duration-700 ease-out pointer-events-none" />
@@ -306,15 +313,13 @@ export default function InvestmentsPage() {
 
           {/* Left: Headline & Writeup sitting at the bottom-left */}
           <div className="flex flex-col items-start max-w-[580px]">
-            <motion.h1
+            <MaskedTextReveal
               key={`invest-h1-${currentSlide}`}
-              initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.65, ease: PRO_MAX_EASE }}
+              as="h1"
               className="font-poppins text-[30px] sm:text-[36px] lg:text-[42px] font-bold leading-[1.15] tracking-[-0.02em] text-white drop-shadow-md text-left"
             >
               {INVESTMENT_HERO_SLIDES[currentSlide].title}
-            </motion.h1>
+            </MaskedTextReveal>
 
             {/* Hundredfold Brand Green Accent Divider */}
             <div className="my-4 sm:my-5 h-[2px] w-[200px] bg-[#9BE564]" />
@@ -368,16 +373,19 @@ export default function InvestmentsPage() {
           <motion.div
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
+            viewport={{ once: true, amount: 0.2 }}
             variants={fadeInVariants}
             className="space-y-4"
           >
             <span className="text-xs uppercase tracking-widest text-[#2D6C00] font-bold">
               STRATEGIC ASSET ALLOCATION
             </span>
-            <p className="font-mulish text-2xl sm:text-3xl md:text-4xl lg:text-[2.35rem] text-[#00190A] leading-snug sm:leading-relaxed font-bold tracking-tight">
+            <MaskedTextReveal
+              as="p"
+              className="font-mulish text-2xl sm:text-3xl md:text-4xl lg:text-[2.35rem] text-[#00190A] leading-snug sm:leading-relaxed font-bold tracking-tight"
+            >
               We invest in sectors that provide strong returns and have the ability to transform the economy.
-            </p>
+            </MaskedTextReveal>
           </motion.div>
         </div>
       </section>
@@ -399,9 +407,12 @@ export default function InvestmentsPage() {
             <span className="text-xs uppercase tracking-wider text-[#ABF67E] font-bold">
               CO-INVESTMENT &amp; ALLIANCES
             </span>
-            <h3 className="font-heading text-2xl sm:text-3xl font-semibold text-white">
+            <MaskedTextReveal
+              as="h3"
+              className="font-heading text-2xl sm:text-3xl font-semibold text-white"
+            >
               Partner Across Our Strategic Sectors
-            </h3>
+            </MaskedTextReveal>
             <p className="text-sm sm:text-base text-white/80 leading-relaxed">
               We welcome dialogue with institutional partners, qualified co-investors, and commercial collaborators across our 4 strategic pillars.
             </p>
