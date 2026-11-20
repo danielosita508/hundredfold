@@ -341,12 +341,12 @@ export default function AboutPage() {
 
               {/* Right Column: High-End Magazine Feature with B&W Image and Executive Quote */}
               <div className="lg:col-span-5">
-                <div className="relative aspect-[3/4] w-full rounded-3xl overflow-hidden shadow-2xl border border-white/60 bg-[#0A2F1B] group">
+                <div className="relative aspect-[4/4.2] w-full rounded-3xl overflow-hidden shadow-2xl border border-white/60 bg-[#0A2F1B] group">
                   <Image
-                    src="/images/pexels-artempodrez-6584751.jpg"
-                    alt="Editorial executive portrait — High-end African enterprise feature"
+                    src="/images/team_daniel_evans_v3.jpg"
+                    alt="Daniel C. Evans — Founder & Chief Executive Officer"
                     fill
-                    sizes="100vw"
+                    sizes="(max-width: 1024px) 100vw, 550px"
                     quality={100}
                     className="object-cover object-top grayscale group-hover:scale-105 transition-transform duration-700 ease-out"
                     priority
@@ -356,14 +356,14 @@ export default function AboutPage() {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/60 via-45% to-transparent pointer-events-none" />
 
                   {/* Executive Quote & Attribution Overlaid Directly on the Bottom of the Picture */}
-                  <div className="absolute inset-x-0 bottom-0 p-6 sm:p-7 z-10 flex flex-col gap-2.5 text-white">
-                    <div className="text-3xl font-heading text-[#ABF67E] leading-none select-none">
+                  <div className="absolute inset-x-0 bottom-0 p-5 sm:p-6 z-10 flex flex-col gap-2 text-white">
+                    <div className="text-2xl sm:text-3xl font-heading text-[#ABF67E] leading-none select-none">
                       &ldquo;
                     </div>
-                    <blockquote className="font-heading text-sm sm:text-base text-white/95 italic leading-relaxed -mt-1 drop-shadow-xs">
+                    <blockquote className="font-heading text-xs sm:text-sm text-white/95 italic leading-relaxed -mt-1 drop-shadow-xs">
                       Sustainable African wealth is not built on short-term speculation, but on disciplined enterprise, strategic capital allocation, and long-term ownership of productive assets.
                     </blockquote>
-                    <div className="pt-3 border-t border-white/20 flex items-center justify-between">
+                    <div className="pt-2.5 sm:pt-3 border-t border-white/20 flex items-center justify-between">
                       <div>
                         <h4 className="font-heading text-base sm:text-lg font-bold text-white tracking-wide">
                           Daniel C. Evans
@@ -371,9 +371,6 @@ export default function AboutPage() {
                         <p className="text-[11px] sm:text-xs uppercase tracking-wider text-[#ABF67E] font-bold mt-0.5">
                           Founder &amp; Chief Executive Officer
                         </p>
-                      </div>
-                      <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-white/15 backdrop-blur-md border border-white/25 text-[#ABF67E] flex items-center justify-center font-heading text-xs font-bold shadow-xs">
-                        HIN
                       </div>
                     </div>
                   </div>
