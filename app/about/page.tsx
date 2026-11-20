@@ -300,57 +300,32 @@ export default function AboutPage() {
 
       </section>
 
-      {/* ─── STEP 2: "ABOUT US" SECTION (High-End Magazine Feature with B&W Editorial Portrait) ─── */}
+      {/* ─── STEP 2: "ABOUT US" SECTION (High-End Magazine Feature with Fluid Text Wrap) ─── */}
       <section id="story" className="relative w-full pt-16 sm:pt-20 pb-12 sm:pb-16 lg:pb-20 px-6 lg:px-12 bg-white/70 scroll-mt-20">
         <div className="max-w-[1240px] mx-auto">
           <motion.div
-            initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 24 }}
+            initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.55, ease: PRO_MAX_EASE }}
-            className="space-y-10"
           >
-            {/* Main Story & Founder Feature Grid */}
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+            {/* Eyebrow Header */}
+            <div className="mb-6 sm:mb-8">
+              <span className="text-xs uppercase tracking-[0.25em] font-bold text-[#2D6C00] block">
+                ABOUT US
+              </span>
+            </div>
 
-              {/* Left Column: Heading and Narrative Paragraphs */}
-              <div className="lg:col-span-7 space-y-6">
-                <div className="space-y-4">
-                  <span className="text-xs uppercase tracking-[0.25em] font-bold text-[#2D6C00] block">
-                    ABOUT US
-                  </span>
-
-                  <MaskedTextReveal
-                    as="h2"
-                    className="font-heading text-3xl sm:text-4xl lg:text-5xl font-semibold text-[#00190A] tracking-tight leading-[1.12]"
-                  >
-                    Founded for African Enterprise.
-                  </MaskedTextReveal>
-                </div>
-
-                <div className="space-y-5 text-base sm:text-lg text-[#374138] leading-relaxed font-normal">
-                  <p>
-                    Hundredfold Innovation Network Ltd was established to address the structural gap between African commercial opportunity and disciplined institutional execution. While Africa possesses abundant natural resources, vibrant markets and ambitious entrepreneurs, sustainable wealth creation requires pooled resources, rigorous governance and strategic operational frameworks.
-                  </p>
-
-                  <p>
-                    Hundredfold was created to bridge this divide, building resilient businesses and generative commercial platforms across agriculture, real estate, finance, and technology.
-                  </p>
-
-                  <p>
-                    We are a private, member-based investment network incorporated under Nigerian law. A limited number of committed individuals pool capital and skills to invest in opportunities that would be hard to reach alone, and each cohort is deliberately capped to keep accountability strong as the network grows.
-                  </p>
-                </div>
-              </div>
-
-              {/* Right Column: High-End Magazine Feature with B&W Image and Executive Quote */}
-              <div className="lg:col-span-5">
+            {/* Fluid Editorial Layout: Image Floated Right on Desktop, Writeup Wraps Naturally Underneath */}
+            <div className="w-full">
+              {/* High-End Magazine Feature Picture Floated Right on Desktop */}
+              <div className="w-full sm:w-[420px] lg:w-[480px] lg:float-right lg:ml-12 lg:mb-8 mb-8">
                 <div className="relative aspect-[4/4.2] w-full rounded-3xl overflow-hidden shadow-2xl border border-white/60 bg-[#0A2F1B] group">
                   <Image
                     src="/images/team_daniel_evans_v3.jpg"
                     alt="Daniel C. Evans — Founder & Chief Executive Officer"
                     fill
-                    sizes="(max-width: 1024px) 100vw, 550px"
+                    sizes="(max-width: 1024px) 100vw, 480px"
                     quality={100}
                     className="object-cover object-top grayscale group-hover:scale-105 transition-transform duration-700 ease-out"
                     priority
@@ -381,11 +356,20 @@ export default function AboutPage() {
                 </div>
               </div>
 
-            </div>
+              {/* Narrative Paragraphs: Starts on the same top line as the picture, then flows underneath after reaching the bottom */}
+              <div className="space-y-5 text-base sm:text-lg text-[#374138] leading-relaxed font-normal">
+                <p>
+                  Hundredfold Innovation Network Ltd was established to address the structural gap between African commercial opportunity and disciplined institutional execution. While Africa possesses abundant natural resources, vibrant markets and ambitious entrepreneurs, sustainable wealth creation requires pooled resources, rigorous governance and strategic operational frameworks.
+                </p>
 
-            {/* Full-Width Story Continuation Below the Picture */}
-            <div className="pt-4 sm:pt-6 space-y-6 w-full">
-              <div className="space-y-5 text-base sm:text-lg text-[#374138] leading-relaxed">
+                <p>
+                  Hundredfold was created to bridge this divide, building resilient businesses and generative commercial platforms across agriculture, real estate, finance, and technology.
+                </p>
+
+                <p>
+                  We are a private, member-based investment network incorporated under Nigerian law. A limited number of committed individuals pool capital and skills to invest in opportunities that would be hard to reach alone, and each cohort is deliberately capped to keep accountability strong as the network grows.
+                </p>
+
                 <p>
                   We begin with agriculture, in a country that is Africa&apos;s largest food market and still cannot meet its own demand. Real estate and other productive assets follow as part of our long-term strategy. Every opportunity is reviewed by the Investment Committee and approved by the Board before any capital is committed, and no fixed return is promised.
                 </p>
@@ -395,8 +379,8 @@ export default function AboutPage() {
                 </p>
               </div>
 
-              {/* Link CTA */}
-              <div className="pt-4 border-t border-[#DEF2F4]">
+              {/* Link CTA with clear-both */}
+              <div className="pt-6 mt-6 border-t border-[#DEF2F4] clear-both">
                 <Link
                   href="/investments"
                   className="group inline-flex items-center gap-2 text-base font-semibold text-[#2D6C00] underline underline-offset-8 decoration-2 decoration-[#2D6C00] hover:text-[#00190A] hover:decoration-[#00190A] transition-all"
