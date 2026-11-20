@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import SmoothScrollProvider from "@/components/providers/SmoothScrollProvider";
+import ScrollProgressBar from "@/components/animations/ScrollProgressBar";
 import siteConfig from "@/lib/site-config";
 
 const poppins = Poppins({
@@ -74,6 +75,9 @@ export default function RootLayout({
     >
       <body className="min-h-screen flex flex-col bg-[#E9FDFF] text-[#0C1E20] antialiased selection:bg-[#ABF67E] selection:text-[#0A2F1B]">
         <SmoothScrollProvider>
+          {/* Top Edge Reactive Scroll Progress Bar */}
+          <ScrollProgressBar />
+
           {/* Global Floating Glass Navbar */}
           <Navbar />
 
