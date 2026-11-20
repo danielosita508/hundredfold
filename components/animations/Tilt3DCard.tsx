@@ -13,6 +13,7 @@ import {
 export interface Tilt3DCardProps extends HTMLMotionProps<"div"> {
   children: React.ReactNode;
   className?: string;
+  containerClassName?: string;
   maxTilt?: number; // default: 6
   sheen?: boolean; // default: true
   sheenColor?: string; // radial gradient color
@@ -21,6 +22,7 @@ export interface Tilt3DCardProps extends HTMLMotionProps<"div"> {
 export default function Tilt3DCard({
   children,
   className = "",
+  containerClassName = "",
   maxTilt = 6,
   sheen = true,
   sheenColor = "rgba(171, 246, 126, 0.14)",
@@ -90,7 +92,7 @@ export default function Tilt3DCard({
   return (
     <div
       style={{ perspective: 1000 }}
-      className="relative will-change-transform"
+      className={`relative will-change-transform w-full ${containerClassName}`}
     >
       <motion.div
         ref={cardRef}

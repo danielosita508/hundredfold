@@ -441,38 +441,40 @@ export default function AboutPage() {
           >
             {/* 1. Founder & CEO (Centered on Top with 3D Tilt & Rounded Corners) */}
             <motion.div variants={cardScrollVariants} className="w-full flex justify-center">
-              <Tilt3DCard
-                maxTilt={6}
-                sheen={true}
-                className="group relative aspect-[4/5] w-full max-w-[280px] sm:max-w-[320px] lg:max-w-[340px] rounded-2xl sm:rounded-3xl overflow-hidden cursor-pointer select-none bg-[#141815] shadow-xl border border-black/5"
-                onClick={() => setSelectedLeader(ceo)}
-              >
-                {/* Background Portrait Image: Grayscale by default, full color on hover, magnifies smoothly */}
-                <Image
-                  src={ceo.image}
-                  alt={`${ceo.name} — ${ceo.role}`}
-                  fill
-                  sizes="100vw"
-                  quality={100}
-                  className="object-cover object-top grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500 ease-out"
-                  priority
-                />
+              <div className="w-full max-w-[280px] sm:max-w-[320px] lg:max-w-[340px]">
+                <Tilt3DCard
+                  maxTilt={6}
+                  sheen={true}
+                  className="group relative aspect-[4/5] w-full rounded-2xl sm:rounded-3xl overflow-hidden cursor-pointer select-none bg-[#141815] shadow-xl border border-black/5"
+                  onClick={() => setSelectedLeader(ceo)}
+                >
+                  {/* Background Portrait Image: Grayscale by default, full color on hover, magnifies smoothly */}
+                  <Image
+                    src={ceo.image}
+                    alt={`${ceo.name} — ${ceo.role}`}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 360px"
+                    quality={100}
+                    className="object-cover object-top grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500 ease-out"
+                    priority
+                  />
 
-                {/* Ambient vignette / bottom gradient on hover */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 via-35% to-transparent opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 group-active:opacity-100 transition-opacity duration-300 pointer-events-none" />
+                  {/* Ambient vignette / bottom gradient on hover */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 via-35% to-transparent opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 group-active:opacity-100 transition-opacity duration-300 pointer-events-none" />
 
-                {/* Bottom Overlay: The two top lines invisible by default and reveal on hover. The two lines below removed! */}
-                <div className="absolute inset-x-0 bottom-0 p-5 sm:p-6 flex flex-col items-center justify-end text-center z-10 opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 group-active:opacity-100 transition-opacity duration-300 pointer-events-none">
-                  <div className="transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300 ease-out flex flex-col items-center space-y-1">
-                    <h3 className="font-heading text-lg sm:text-xl font-bold text-white tracking-wide uppercase drop-shadow-md">
-                      {ceo.name}
-                    </h3>
-                    <p className="text-[11px] sm:text-xs uppercase font-bold tracking-wider text-[#ABF67E] drop-shadow-sm whitespace-nowrap">
-                      {ceo.role}
-                    </p>
+                  {/* Bottom Overlay: The two top lines invisible by default and reveal on hover */}
+                  <div className="absolute inset-x-0 bottom-0 p-5 sm:p-6 flex flex-col items-center justify-end text-center z-10 opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 group-active:opacity-100 transition-opacity duration-300 pointer-events-none">
+                    <div className="transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300 ease-out flex flex-col items-center space-y-1">
+                      <h3 className="font-heading text-lg sm:text-xl font-bold text-white tracking-wide uppercase drop-shadow-md">
+                        {ceo.name}
+                      </h3>
+                      <p className="text-[11px] sm:text-xs uppercase font-bold tracking-wider text-[#ABF67E] drop-shadow-sm whitespace-nowrap">
+                        {ceo.role}
+                      </p>
+                    </div>
                   </div>
-                </div>
-              </Tilt3DCard>
+                </Tilt3DCard>
+              </div>
             </motion.div>
 
             {/* 2. Executive Directors (4-Column Grid with 3D Tilt Cards) */}
