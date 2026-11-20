@@ -55,7 +55,6 @@ const THE_FOLD_HERO_SLIDES = [
 const FOLD_PILLARS = [
   {
     number: "01",
-    tag: "SCALE",
     title: "Collective Leverage",
     description:
       "Pooled capital and commercial scale to execute ventures beyond individual reach.",
@@ -64,7 +63,6 @@ const FOLD_PILLARS = [
   },
   {
     number: "02",
-    tag: "TRUST",
     title: "Strict 100 Cap",
     description:
       "Deliberate cohort ceiling preserving confidentiality, alignment, and high trust.",
@@ -73,7 +71,6 @@ const FOLD_PILLARS = [
   },
   {
     number: "03",
-    tag: "RIGOUR",
     title: "Audited Yields",
     description:
       "Disciplined due diligence, risk governance, and board-approved yield distribution.",
@@ -418,12 +415,6 @@ export default function TheFoldPage() {
                       className="object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
-
-                    <div className="absolute top-4 left-4 z-10">
-                      <span className="inline-flex items-center px-3 py-1 rounded-full bg-black/50 backdrop-blur-md border border-white/20 text-[#ABF67E] text-[10px] font-mono font-bold tracking-wider uppercase">
-                        {pillar.tag}
-                      </span>
-                    </div>
                   </div>
 
                   {/* Content */}
