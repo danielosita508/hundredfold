@@ -7,6 +7,9 @@ import HeroTicker from "@/components/home/HeroTicker";
 import SplitText from "@/components/ui/SplitText";
 import BackgroundBeams from "@/components/ui/BackgroundBeams";
 import siteConfig from "@/lib/site-config";
+import MaskedTextReveal from "@/components/animations/MaskedTextReveal";
+import Tilt3DCard from "@/components/animations/Tilt3DCard";
+import ParallaxImageFrame from "@/components/animations/ParallaxImageFrame";
 import { motion, AnimatePresence, useReducedMotion, type Variants } from "framer-motion";
 import {
   ArrowRightIcon,
@@ -290,15 +293,17 @@ export default function Home() {
 
           {/* Left: Headline & Writeup sitting at the bottom-left */}
           <div className="flex flex-col items-start max-w-[560px]">
-            <h1 className="font-poppins text-[30px] sm:text-[36px] lg:text-[42px] font-bold leading-[1.15] tracking-[-0.02em] text-white drop-shadow-md">
-              <SplitText
-                key={`hero-title-${currentSlide}`}
-                text={HERO_SLIDES[currentSlide].title}
-                delay={0.08}
-                duration={0.55}
-                stagger={0.022}
-              />
-            </h1>
+            <MaskedTextReveal as="h1" duration={0.75} amount={0.1}>
+              <span className="font-poppins text-[30px] sm:text-[36px] lg:text-[42px] font-bold leading-[1.15] tracking-[-0.02em] text-white drop-shadow-md block">
+                <SplitText
+                  key={`hero-title-${currentSlide}`}
+                  text={HERO_SLIDES[currentSlide].title}
+                  delay={0.08}
+                  duration={0.55}
+                  stagger={0.022}
+                />
+              </span>
+            </MaskedTextReveal>
 
             {/* Hundredfold Brand Green Accent Divider */}
             <div className="my-4 sm:my-5 h-[2px] w-[200px] bg-[#9BE564]" />
@@ -367,9 +372,11 @@ export default function Home() {
                 WHO WE ARE
               </span>
 
-              <h2 className="font-poppins text-3xl sm:text-4xl md:text-5xl font-bold text-[#00190A] tracking-[-0.02em] leading-[1.15]">
-                A Network Built Around Opportunity.
-              </h2>
+              <MaskedTextReveal as="h2">
+                <span className="font-poppins text-3xl sm:text-4xl md:text-5xl font-bold text-[#00190A] tracking-[-0.02em] leading-[1.15] block">
+                  A Network Built Around Opportunity.
+                </span>
+              </MaskedTextReveal>
 
               <p className="text-base sm:text-lg text-[#424842] leading-relaxed font-normal">
                 Hundredfold Innovation Network Ltd is an African business and investment company focused on identifying commercial opportunities, building strategic relationships and developing ventures with long-term potential.
@@ -386,7 +393,7 @@ export default function Home() {
               </div>
             </motion.div>
 
-            {/* Right Column: Boardroom Presentation Image */}
+            {/* Right Column: Boardroom Presentation Image with Parallax */}
             <motion.div
               initial={{ opacity: 0, scale: 0.96, y: shouldReduceMotion ? 0 : 20 }}
               whileInView={{ opacity: 1, scale: 1, y: 0 }}
@@ -395,14 +402,16 @@ export default function Home() {
               className="lg:col-span-5"
             >
               <div className="relative aspect-[4/3] w-full rounded-3xl overflow-hidden shadow-2xl border border-white bg-[#0A2F1B] group">
-                <Image
-                  src="/images/premium_photo-1707155465391-5cfc46746a34.avif"
-                  alt="Executive boardroom presentation and institutional strategic briefing"
-                  fill
-                  quality={100}
-                  sizes="(max-width: 1024px) 100vw, 550px"
-                  className="object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
-                />
+                <ParallaxImageFrame containerClassName="w-full h-full">
+                  <Image
+                    src="/images/premium_photo-1707155465391-5cfc46746a34.avif"
+                    alt="Executive boardroom presentation and institutional strategic briefing"
+                    fill
+                    quality={100}
+                    sizes="(max-width: 1024px) 100vw, 550px"
+                    className="object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
+                  />
+                </ParallaxImageFrame>
               </div>
             </motion.div>
 
@@ -426,9 +435,11 @@ export default function Home() {
                 INVESTMENTS
               </span>
 
-              <h2 className="font-poppins text-3xl sm:text-4xl md:text-5xl font-bold text-[#00190A] tracking-[-0.02em] leading-[1.15]">
-                Where We Focus
-              </h2>
+              <MaskedTextReveal as="h2">
+                <span className="font-poppins text-3xl sm:text-4xl md:text-5xl font-bold text-[#00190A] tracking-[-0.02em] leading-[1.15] block">
+                  Where We Focus
+                </span>
+              </MaskedTextReveal>
 
               <p className="text-base sm:text-lg text-[#424842] leading-relaxed">
                 We deploy capital, expertise and network resources across four strategic commercial pillars.
@@ -447,15 +458,29 @@ export default function Home() {
           </motion.div>
         </div>
 
-        {/* Strategic Investment Sectors: Seamless Full-Bleed Ribbon (Zero space between pictures) */}
+        {/* Strategic Investment Sectors: Seamless Full-Bleed Ribbon Wrapped in Tilt3DCard with Stagger */}
         <div className="w-full">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-0 w-full">
             {BUSINESS_SECTORS.map((sector, index) => (
-              <SectorCarouselCard
+              <motion.div
                 key={sector.title}
-                sector={sector}
-                index={index}
-              />
+                initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 25 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{
+                  duration: 0.6,
+                  delay: index * 0.08,
+                  ease: PRO_MAX_EASE,
+                }}
+                className="w-full h-full"
+              >
+                <Tilt3DCard maxTilt={5} className="w-full h-full">
+                  <SectorCarouselCard
+                    sector={sector}
+                    index={index}
+                  />
+                </Tilt3DCard>
+              </motion.div>
             ))}
           </div>
         </div>
@@ -476,10 +501,12 @@ export default function Home() {
               OUR APPROACH
             </span>
 
-            <h2 className="font-poppins text-3xl sm:text-4xl md:text-5xl font-bold text-[#00190A] tracking-[-0.02em] leading-[1.15]">
-              Opportunity With Purpose. <br className="hidden sm:inline" />
-              Growth With Discipline.
-            </h2>
+            <MaskedTextReveal as="h2">
+              <span className="font-poppins text-3xl sm:text-4xl md:text-5xl font-bold text-[#00190A] tracking-[-0.02em] leading-[1.15] block">
+                Opportunity With Purpose. <br className="hidden sm:inline" />
+                Growth With Discipline.
+              </span>
+            </MaskedTextReveal>
 
             <p className="text-base sm:text-lg lg:text-xl text-[#424842] leading-relaxed font-light">
               We approach every venture with research-led judgment, disciplined risk management, and long-term commitment. Guided by commercial integrity, rigorous due diligence, and active execution, we build generative assets that endure across economic cycles.
@@ -510,9 +537,11 @@ export default function Home() {
                   THE COMMUNITY
                 </span>
 
-                <h3 className="font-poppins text-2xl sm:text-3xl lg:text-4xl font-bold text-[#00190A] tracking-[-0.02em]">
-                  Welcome to The Fold
-                </h3>
+                <MaskedTextReveal as="h3">
+                  <span className="font-poppins text-2xl sm:text-3xl lg:text-4xl font-bold text-[#00190A] tracking-[-0.02em] block">
+                    Welcome to The Fold
+                  </span>
+                </MaskedTextReveal>
 
                 <p className="text-sm sm:text-base text-[#424842] leading-relaxed">
                   The Fold is the private membership and community arm of Hundredfold Innovation Network Ltd. It convenes forward-thinking individuals, business leaders, and investors who share a common commitment to disciplined growth, ethical commerce, and collective economic advancement.

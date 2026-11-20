@@ -14,6 +14,7 @@ import {
   PlayIcon,
   ChevronDownIcon,
 } from "@/components/ui/Icons";
+import PillarsSection from "@/components/about/PillarsSection";
 
 const PRO_MAX_EASE = [0.16, 1, 0.3, 1] as const;
 
@@ -579,6 +580,9 @@ export default function AboutPage() {
           </div>
         )}
       </AnimatePresence>
+
+      {/* ─── OUR FIVE PILLARS SECTION (2-Column Grid with 3D Globe & Editorial Tilt Card) ─── */}
+      <PillarsSection />
 
       {/* ─── COMMUNITY, ALLIANCES & THE FOLD COHORTS (Editorial Feature with High-End Image) ─── */}
       <section id="community" className="w-full px-6 lg:px-12 py-16 sm:py-20 lg:py-24 bg-[#E9FDFF] border-t border-[#DEF2F4] scroll-mt-20">

@@ -39,6 +39,7 @@ const NAV_PAGES: NavItem[] = [
       { label: "Our Story", href: "/about#story" },
       { label: "Investment Philosophy", href: "/about#philosophy" },
       { label: "Our Leadership", href: "/about#leadership" },
+      { label: "Our Five Pillars", href: "/about#pillars" },
       { label: "Vision & Mission", href: "/about#vision-mission" },
     ],
   },
