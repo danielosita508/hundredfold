@@ -286,7 +286,7 @@ export default function Home() {
 
           {/* Left: Headline & Writeup sitting at the bottom-left */}
           <div className="flex flex-col items-start max-w-[560px]">
-            <MaskedTextReveal as="h1" duration={0.75} amount={0.1}>
+            <MaskedTextReveal as="h1" animate duration={0.75}>
               <span className="font-poppins text-[30px] sm:text-[36px] lg:text-[42px] font-bold leading-[1.15] tracking-[-0.02em] text-white drop-shadow-md block">
                 <SplitText
                   key={`hero-title-${currentSlide}`}

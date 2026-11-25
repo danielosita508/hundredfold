@@ -130,13 +130,12 @@ export default function Logo({
     >
       <LogoMark className="w-10 h-10 transition-transform duration-300 group-hover:scale-105 shadow-sm" />
       
-      <div className="flex flex-col text-left">
+      <div className="flex flex-col text-left select-none">
         <div className="flex items-center gap-1.5">
           <span
             className={`font-extrabold tracking-tight text-lg leading-none font-heading ${
               isDark ? "text-white" : "text-slate-900"
             }`}
-            style={{ letterSpacing: "0.02em" }}
           >
             HUNDREDFOLD
           </span>
@@ -151,7 +150,7 @@ export default function Logo({
           </span>
         </div>
         <span
-          className={`text-[10px] uppercase font-semibold tracking-[0.16em] mt-0.5 ${
+          className={`text-[8.5px] uppercase font-bold tracking-[0.27em] mt-1 -mr-[0.27em] ${
             isDark ? "text-slate-400 group-hover:text-slate-200" : "text-slate-600 group-hover:text-slate-900"
           } transition-colors duration-200`}
         >

@@ -316,6 +316,7 @@ export default function InvestmentsPage() {
             <MaskedTextReveal
               key={`invest-h1-${currentSlide}`}
               as="h1"
+              animate
               className="font-poppins text-[30px] sm:text-[36px] lg:text-[42px] font-bold leading-[1.15] tracking-[-0.02em] text-white drop-shadow-md text-left"
             >
               {INVESTMENT_HERO_SLIDES[currentSlide].title}
