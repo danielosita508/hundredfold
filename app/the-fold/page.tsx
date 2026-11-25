@@ -272,17 +272,17 @@ export default function TheFoldPage() {
       {/* ─── SECTION 3: INVESTMENT PARTICIPATION STRUCTURE ─── */}
       <section className="relative w-full py-14 sm:py-18 px-6 lg:px-12">
         <div className="max-w-[1240px] mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-stretch">
 
-            {/* Left Column: Clean Image with Minimal Caption */}
+            {/* Left Column: Clean Image stretched to align flush with Right Card */}
             <motion.div
               initial={{ opacity: 0, scale: 0.98, y: shouldReduceMotion ? 0 : 15 }}
               whileInView={{ opacity: 1, scale: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.6, ease: PRO_MAX_EASE }}
-              className="lg:col-span-5"
+              className="lg:col-span-5 flex"
             >
-              <div className="relative aspect-[4/5] w-full rounded-3xl overflow-hidden shadow-xl border border-white bg-[#0A2F1B] group">
+              <div className="relative w-full min-h-[380px] lg:min-h-full rounded-3xl overflow-hidden shadow-xl border border-white bg-[#0A2F1B] group flex-1">
                 <Image
                   src="/images/istockphoto-2189200243-612x612.jpg"
                   alt="Executive roundtable and syndicate cohort assembly"
@@ -305,42 +305,44 @@ export default function TheFoldPage() {
               </div>
             </motion.div>
 
-            {/* Right Column: Writeup & Participation Table */}
+            {/* Right Column: Unified Single Card combining Writeup & Participation Structure */}
             <motion.div
               initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.55, ease: PRO_MAX_EASE }}
-              className="lg:col-span-7 space-y-6"
+              className="lg:col-span-7 flex flex-col justify-between bg-white rounded-3xl p-6 sm:p-8 lg:p-10 border border-[#DEF2F4] shadow-xl space-y-6"
             >
-              <div>
-                <span className="text-xs uppercase tracking-[0.25em] font-bold text-[#2D6C00] block">
-                  THE FOLD
-                </span>
-                <h2 className="font-heading text-3xl sm:text-4xl font-semibold text-[#00190A] tracking-tight mt-1">
-                  Investment Participation Structure
-                </h2>
+              <div className="space-y-4">
+                <div>
+                  <span className="text-xs uppercase tracking-[0.25em] font-bold text-[#2D6C00] block">
+                    THE FOLD
+                  </span>
+                  <h2 className="font-heading text-3xl sm:text-4xl font-semibold text-[#00190A] tracking-tight mt-1">
+                    Investment Participation Structure
+                  </h2>
+                </div>
+
+                <div className="space-y-3 text-sm sm:text-base text-[#424842] leading-relaxed font-normal">
+                  <p>
+                    The Fold operates through structured investment participation groups of varying sizes, bringing members together to mobilise capital towards defined investment opportunities.
+                  </p>
+                  <p>
+                    Each participation structure is determined by the capital requirements, financial commitments and operational considerations of the proposed investment.
+                  </p>
+                  <p>
+                    Participation sizes are not restricted to specific industries or business categories. Instead, each investment opportunity determines the appropriate participation structure and capital threshold.
+                  </p>
+                </div>
               </div>
 
-              <div className="space-y-3.5 text-sm sm:text-base text-[#424842] leading-relaxed font-normal">
-                <p>
-                  The Fold operates through structured investment participation groups of varying sizes, bringing members together to mobilise capital towards defined investment opportunities.
-                </p>
-                <p>
-                  Each participation structure is determined by the capital requirements, financial commitments and operational considerations of the proposed investment.
-                </p>
-                <p>
-                  Participation sizes are not restricted to specific industries or business categories. Instead, each investment opportunity determines the appropriate participation structure and capital threshold.
-                </p>
-              </div>
-
-              {/* Participation Structure Table Card (Clean Institutional White Card) */}
-              <div className="rounded-2xl bg-white text-[#00190A] p-5 sm:p-6 shadow-md border border-[#DEF2F4] overflow-hidden">
-                <div className="flex items-center justify-between pb-3.5 border-b border-[#DEF2F4] text-xs font-bold uppercase tracking-wider text-[#2D6C00]">
+              {/* Integrated Participation Structure Table (Aligned flush inside the same container) */}
+              <div className="pt-5 border-t border-[#DEF2F4]">
+                <div className="flex items-center justify-between pb-3 border-b border-[#DEF2F4] text-xs font-bold uppercase tracking-wider text-[#2D6C00]">
                   <span>Participation structure</span>
                   <span className="text-right">Number of participants</span>
                 </div>
-                <div className="divide-y divide-[#DEF2F4]/70">
+                <div className="divide-y divide-[#DEF2F4]/60">
                   {[
                     { structure: "Unit 10", participants: "10 Members" },
                     { structure: "Unit 20", participants: "20 Members" },
@@ -350,7 +352,7 @@ export default function TheFoldPage() {
                   ].map((row) => (
                     <div
                       key={row.structure}
-                      className="flex items-center justify-between py-3 text-sm transition-colors hover:bg-[#E9FDFF]/60 px-2 rounded-lg"
+                      className="flex items-center justify-between py-2.5 text-sm transition-colors hover:bg-[#E9FDFF]/50 rounded-md px-1 -mx-1"
                     >
                       <span className="font-semibold text-[#00190A] tracking-wide">{row.structure}</span>
                       <span className="text-[#424842] font-semibold text-right">{row.participants}</span>
