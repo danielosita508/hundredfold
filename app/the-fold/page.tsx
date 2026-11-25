@@ -259,16 +259,10 @@ export default function TheFoldPage() {
             </span>
             <div className="space-y-4 font-sans text-base sm:text-lg text-[#00190A] leading-relaxed font-normal">
               <p>
-                We recognise that Africa&rsquo;s potential is enormous, but unlocking it requires more than individual ambition. It requires trust, structure, access to knowledge, strategic relationships and a willingness to build together.
+                We recognise that Africa&rsquo;s potential is enormous, but unlocking it requires more than individual ambition. It requires trust, structure, access to knowledge, strategic relationships and a willingness to build together. Our goal is to cultivate a community where members can learn, connect, exchange ideas, explore opportunities and contribute to ventures that create lasting economic and social value. We are not simply building a membership community. We are building a culture of participation, responsibility, integrity and shared progress.
               </p>
-              <p className="font-semibold">
+              <p className="font-semibold text-lg sm:text-xl text-[#00190A] pt-2">
                 The Fold exists to bring these elements together.
-              </p>
-              <p>
-                Our goal is to cultivate a community where members can learn, connect, exchange ideas, explore opportunities and contribute to ventures that create lasting economic and social value.
-              </p>
-              <p>
-                We are not simply building a membership community. We are building a culture of participation, responsibility, integrity and shared progress.
               </p>
             </div>
           </motion.div>
