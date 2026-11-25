@@ -221,10 +221,6 @@ function SectorBannerRow({
       {/* Editorial Writeup Below Each Sector Picture */}
       <div className="w-full bg-white py-8 sm:py-10 lg:py-12 px-6 lg:px-12">
         <div className="max-w-[1280px] mx-auto">
-          <span className="text-xs uppercase tracking-[0.22em] font-bold text-[#2D6C00] block mb-2">
-            {sector.number} &mdash; {sector.tagline}
-          </span>
-
           <h2 className="font-heading text-2xl sm:text-3xl lg:text-4xl font-bold text-[#00190A] tracking-tight">
             {sector.title}
           </h2>
