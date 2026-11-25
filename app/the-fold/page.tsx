@@ -275,7 +275,7 @@ export default function TheFoldPage() {
         </div>
       </section>
 
-      {/* ─── SECTION 3: CORPORATE SYNERGY (How Hundredfold Powers The Fold) ─── */}
+      {/* ─── SECTION 3: INVESTMENT PARTICIPATION STRUCTURE ─── */}
       <section className="relative w-full py-14 sm:py-18 px-6 lg:px-12">
         <div className="max-w-[1240px] mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
@@ -286,91 +286,83 @@ export default function TheFoldPage() {
               whileInView={{ opacity: 1, scale: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.6, ease: PRO_MAX_EASE }}
-              className="lg:col-span-6"
+              className="lg:col-span-5"
             >
-              <div className="relative aspect-[4/3] w-full rounded-3xl overflow-hidden shadow-xl border border-white bg-[#0A2F1B] group">
+              <div className="relative aspect-[4/5] w-full rounded-3xl overflow-hidden shadow-xl border border-white bg-[#0A2F1B] group">
                 <Image
                   src="/images/istockphoto-2189200243-612x612.jpg"
                   alt="Executive roundtable and syndicate cohort assembly"
                   fill
                   quality={100}
-                  sizes="(max-width: 1024px) 100vw, 600px"
+                  sizes="(max-width: 1024px) 100vw, 500px"
                   className="object-cover object-center grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-out"
                 />
 
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent pointer-events-none" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent pointer-events-none" />
 
                 <div className="absolute inset-x-0 bottom-0 p-6 z-10 flex flex-col gap-1 text-white">
                   <span className="text-[10px] font-mono uppercase tracking-widest text-[#ABF67E] font-bold">
-                    CORPORATE SYNERGY
+                    STRUCTURED SYNDICATES
                   </span>
                   <h4 className="font-heading text-lg sm:text-xl font-bold text-white">
-                    The Hundredfold Network Engine
+                    Capital Mobilisation Framework
                   </h4>
                 </div>
               </div>
             </motion.div>
 
-            {/* Right Column: Clean Summarized Corporate Integration Card */}
+            {/* Right Column: Writeup & Participation Table */}
             <motion.div
               initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.55, ease: PRO_MAX_EASE }}
-              className="lg:col-span-6 space-y-6"
+              className="lg:col-span-7 space-y-6"
             >
               <div>
                 <span className="text-xs uppercase tracking-[0.25em] font-bold text-[#2D6C00] block">
-                  ENTERPRISE INTEGRATION
+                  THE FOLD
                 </span>
                 <h2 className="font-heading text-3xl sm:text-4xl font-semibold text-[#00190A] tracking-tight mt-1">
-                  How Hundredfold Powers The Fold
+                  Investment Participation Structure
                 </h2>
               </div>
 
-              {/* Company Synergy Cards (Clean, Structured, Institutional) */}
-              <div className="p-6 rounded-2xl bg-white border border-[#DEF2F4] shadow-md space-y-5">
-                <div>
-                  <div className="flex items-center gap-2 mb-1">
-                    <span className="w-2 h-2 rounded-full bg-[#2D6C00]" />
-                    <h3 className="text-sm font-bold text-[#00190A]">Curated Sovereign Dealflow</h3>
-                  </div>
-                  <p className="text-xs text-[#556358] leading-relaxed pl-4">
-                    The Fold does not speculate. Members co-participate alongside Hundredfold&apos;s high-conviction ventures across Agro-Trading, Real Estate, and Digital Infrastructure.
-                  </p>
-                </div>
-
-                <div className="pt-4 border-t border-[#DEF2F4]">
-                  <div className="flex items-center gap-2 mb-1">
-                    <span className="w-2 h-2 rounded-full bg-[#2D6C00]" />
-                    <h3 className="text-sm font-bold text-[#00190A]">Institutional Governance &amp; Custodianship</h3>
-                  </div>
-                  <p className="text-xs text-[#556358] leading-relaxed pl-4">
-                    Backed by Hundredfold&apos;s corporate umbrella, statutory CAC and SCUML compliance, and board-level risk management.
-                  </p>
-                </div>
-
-                <div className="pt-4 border-t border-[#DEF2F4]">
-                  <div className="flex items-center gap-2 mb-1">
-                    <span className="w-2 h-2 rounded-full bg-[#2D6C00]" />
-                    <h3 className="text-sm font-bold text-[#00190A]">Executive Mentorship &amp; Literacy</h3>
-                  </div>
-                  <p className="text-xs text-[#556358] leading-relaxed pl-4">
-                    Direct access to company leadership, quarterly macroeconomic briefings, and peer-to-peer syndication with vetted African enterprise leaders.
-                  </p>
-                </div>
+              <div className="space-y-3.5 text-sm sm:text-base text-[#424842] leading-relaxed font-normal">
+                <p>
+                  The Fold operates through structured investment participation groups of varying sizes, bringing members together to mobilise capital towards defined investment opportunities.
+                </p>
+                <p>
+                  Each participation structure is determined by the capital requirements, financial commitments and operational considerations of the proposed investment.
+                </p>
+                <p>
+                  Participation sizes are not restricted to specific industries or business categories. Instead, each investment opportunity determines the appropriate participation structure and capital threshold.
+                </p>
               </div>
 
-              <div className="flex flex-wrap gap-2 pt-1">
-                <span className="px-3 py-1 rounded-full bg-white border border-[#DEF2F4] text-[11px] font-semibold text-[#00190A]">
-                  3 Sovereign Sectors
-                </span>
-                <span className="px-3 py-1 rounded-full bg-white border border-[#DEF2F4] text-[11px] font-semibold text-[#00190A]">
-                  Corporate MEMART Governed
-                </span>
-                <span className="px-3 py-1 rounded-full bg-white border border-[#DEF2F4] text-[11px] font-semibold text-[#00190A]">
-                  Audited Operations
-                </span>
+              {/* Participation Structure Table Card (Matching Institutional Spec) */}
+              <div className="rounded-2xl bg-[#00190A] text-white p-5 sm:p-6 shadow-xl border border-white/10 overflow-hidden">
+                <div className="flex items-center justify-between pb-3.5 border-b border-white/15 text-xs font-bold uppercase tracking-wider text-[#ABF67E]">
+                  <span>Participation structure</span>
+                  <span className="text-right">Number of participants</span>
+                </div>
+                <div className="divide-y divide-white/10">
+                  {[
+                    { structure: "Unit 10", participants: "10 Members" },
+                    { structure: "Unit 20", participants: "20 Members" },
+                    { structure: "Unit 50", participants: "50 Members" },
+                    { structure: "Unit 60", participants: "60 Members" },
+                    { structure: "Unit 100", participants: "100 Members" },
+                  ].map((row) => (
+                    <div
+                      key={row.structure}
+                      className="flex items-center justify-between py-2.5 text-sm transition-colors hover:bg-white/5 px-2 rounded-lg"
+                    >
+                      <span className="font-semibold text-white tracking-wide">{row.structure}</span>
+                      <span className="text-emerald-100/90 font-medium">{row.participants}</span>
+                    </div>
+                  ))}
+                </div>
               </div>
             </motion.div>
 
