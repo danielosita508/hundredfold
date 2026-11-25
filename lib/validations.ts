@@ -166,7 +166,7 @@ export const theFoldInquirySchema = z.object({
   email: z
     .string()
     .trim()
-    .email("Please provide a valid work email address."),
+    .email("Please provide a valid email address."),
   phone: z
     .string()
     .trim()

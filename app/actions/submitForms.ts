@@ -247,7 +247,7 @@ export async function submitFoldInquiry(
       fullName: (formData.get("fullName") || "").toString().trim(),
       email: (formData.get("email") || "").toString().trim(),
       phone: (formData.get("phone") || "").toString().trim(),
-      profileType: (formData.get("profileType") || "private-operator")
+      profileType: (formData.get("profileType") || "business-owner")
         .toString()
         .trim(),
       voucherCode: (formData.get("voucherCode") || "").toString().trim(),

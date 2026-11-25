@@ -119,8 +119,7 @@ export default function FoldInquiryForm() {
             id="fold-fullName"
             name="fullName"
             required
-            placeholder="e.g. Daniel Evans"
-            className="w-full px-4 py-3 rounded-xl bg-[#F8FDFF] border border-[#DEF2F4] text-[#00190A] placeholder-[#8A9E92] text-sm focus:outline-none focus:ring-2 focus:ring-[#2D6C00]/20 focus:border-[#2D6C00] transition-all"
+            className="w-full px-4 py-3 rounded-xl bg-[#F8FDFF] border border-[#DEF2F4] text-[#00190A] text-sm focus:outline-none focus:ring-2 focus:ring-[#2D6C00]/20 focus:border-[#2D6C00] transition-all"
           />
           {state.errors?.fullName && (
             <p className="text-red-500 text-xs">{state.errors.fullName[0]}</p>
@@ -133,15 +132,14 @@ export default function FoldInquiryForm() {
             htmlFor="fold-email"
             className="block text-xs font-semibold text-[#00190A]"
           >
-            Work Email <span className="text-[#2D6C00]">*</span>
+            Email <span className="text-[#2D6C00]">*</span>
           </label>
           <input
             type="email"
             id="fold-email"
             name="email"
             required
-            placeholder="name@company.com"
-            className="w-full px-4 py-3 rounded-xl bg-[#F8FDFF] border border-[#DEF2F4] text-[#00190A] placeholder-[#8A9E92] text-sm focus:outline-none focus:ring-2 focus:ring-[#2D6C00]/20 focus:border-[#2D6C00] transition-all"
+            className="w-full px-4 py-3 rounded-xl bg-[#F8FDFF] border border-[#DEF2F4] text-[#00190A] text-sm focus:outline-none focus:ring-2 focus:ring-[#2D6C00]/20 focus:border-[#2D6C00] transition-all"
           />
           {state.errors?.email && (
             <p className="text-red-500 text-xs">{state.errors.email[0]}</p>
@@ -161,8 +159,7 @@ export default function FoldInquiryForm() {
             id="fold-phone"
             name="phone"
             required
-            placeholder="+234 800 000 0000"
-            className="w-full px-4 py-3 rounded-xl bg-[#F8FDFF] border border-[#DEF2F4] text-[#00190A] placeholder-[#8A9E92] text-sm focus:outline-none focus:ring-2 focus:ring-[#2D6C00]/20 focus:border-[#2D6C00] transition-all"
+            className="w-full px-4 py-3 rounded-xl bg-[#F8FDFF] border border-[#DEF2F4] text-[#00190A] text-sm focus:outline-none focus:ring-2 focus:ring-[#2D6C00]/20 focus:border-[#2D6C00] transition-all"
           />
           {state.errors?.phone && (
             <p className="text-red-500 text-xs">{state.errors.phone[0]}</p>
@@ -180,20 +177,26 @@ export default function FoldInquiryForm() {
           <select
             id="fold-profileType"
             name="profileType"
-            defaultValue="private-operator"
+            defaultValue="business-owner"
             className="w-full px-4 py-3 rounded-xl bg-[#F8FDFF] border border-[#DEF2F4] text-[#00190A] text-sm focus:outline-none focus:ring-2 focus:ring-[#2D6C00]/20 focus:border-[#2D6C00] transition-all cursor-pointer"
           >
-            <option value="private-operator">
+            <option value="business-owner">
               Business Owner / Founder
             </option>
-            <option value="family-office">
-              Private Investor / Family Office
+            <option value="employee">
+              Employee
             </option>
-            <option value="corporate-executive">
-              Corporate Executive
+            <option value="employer">
+              Employer
             </option>
-            <option value="institutional-manager">
-              Fund / Asset Manager
+            <option value="self-employed">
+              Self-Employed
+            </option>
+            <option value="student">
+              Student
+            </option>
+            <option value="investor">
+              Investor
             </option>
           </select>
           {state.errors?.profileType && (

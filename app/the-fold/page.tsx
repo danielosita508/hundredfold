@@ -228,22 +228,33 @@ export default function TheFoldPage() {
 
       </section>
 
-      {/* ─── SECTION 2: CONCLAVE HIGHLIGHT (Single Focused Sentence) ─── */}
+      {/* ─── SECTION 2: WHY WE EXIST ─── */}
       <section id="conclave-statement" className="w-full py-12 sm:py-16 px-6 lg:px-12 bg-white/90 border-b border-[#DEF2F4] scroll-mt-20">
-        <div className="max-w-[960px] mx-auto text-center">
+        <div className="max-w-[820px] mx-auto text-center">
           <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}
             variants={fadeInVariants}
-            className="space-y-3"
+            className="space-y-5"
           >
             <span className="text-xs uppercase tracking-[0.25em] font-bold text-[#2D6C00] block">
-              THE FOLD CONCLAVE
+              WHY WE EXIST
             </span>
-            <p className="font-heading text-2xl sm:text-3xl md:text-4xl text-[#00190A] leading-snug sm:leading-relaxed font-semibold tracking-tight">
-              A private syndicate of 100 vetted enterprise leaders pooling capital into Africa&apos;s most productive commercial sectors.
-            </p>
+            <div className="space-y-4 font-sans text-base sm:text-lg text-[#00190A] leading-relaxed font-normal">
+              <p>
+                We recognise that Africa&rsquo;s potential is enormous, but unlocking it requires more than individual ambition. It requires trust, structure, access to knowledge, strategic relationships and a willingness to build together.
+              </p>
+              <p className="font-semibold">
+                The Fold exists to bring these elements together.
+              </p>
+              <p>
+                Our goal is to cultivate a community where members can learn, connect, exchange ideas, explore opportunities and contribute to ventures that create lasting economic and social value.
+              </p>
+              <p>
+                We are not simply building a membership community. We are building a culture of participation, responsibility, integrity and shared progress.
+              </p>
+            </div>
           </motion.div>
         </div>
       </section>
