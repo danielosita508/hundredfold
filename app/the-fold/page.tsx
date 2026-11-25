@@ -285,7 +285,7 @@ export default function TheFoldPage() {
                   fill
                   quality={100}
                   sizes="(max-width: 1024px) 100vw, 600px"
-                  className="object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
+                  className="object-cover object-center grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-out"
                 />
 
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent pointer-events-none" />
@@ -413,7 +413,7 @@ export default function TheFoldPage() {
                       fill
                       quality={100}
                       sizes="(max-width: 768px) 100vw, 400px"
-                      className="object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
+                      className="object-cover object-center grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-out"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
                   </div>
@@ -435,7 +435,7 @@ export default function TheFoldPage() {
       </section>
 
       {/* ─── SECTION 5: FULL-BLEED PANORAMIC IMAGE BREAK ─── */}
-      <section className="relative w-full h-[320px] sm:h-[400px] overflow-hidden bg-black flex items-center justify-center">
+      <section className="relative w-full h-[320px] sm:h-[400px] overflow-hidden bg-black flex items-center justify-center group">
         <ParallaxImageFrame
           containerClassName="absolute inset-0 w-full h-full pointer-events-none"
           className="w-full h-full"
@@ -446,7 +446,7 @@ export default function TheFoldPage() {
             fill
             quality={100}
             sizes="100vw"
-            className="object-cover object-center"
+            className="object-cover object-center grayscale group-hover:grayscale-0 transition-all duration-700 ease-out"
           />
         </ParallaxImageFrame>
 
@@ -480,7 +480,7 @@ export default function TheFoldPage() {
                   fill
                   quality={100}
                   sizes="(max-width: 1024px) 100vw, 550px"
-                  className="object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
+                  className="object-cover object-center grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-out"
                 />
               </div>
             </div>

@@ -198,7 +198,7 @@ export default function PillarsSection({ className = "" }: { className?: string 
               sheenColor="rgba(171, 246, 126, 0.12)"
               className="w-full rounded-3xl bg-[#00190A] border border-white/15 p-1 sm:p-2 shadow-2xl"
             >
-              <div className="relative w-full h-[460px] sm:h-[520px] lg:h-[560px] rounded-[22px] overflow-hidden flex flex-col justify-between p-6 sm:p-8 bg-gradient-to-b from-[#0A2F1B] to-[#001408]">
+              <div className="relative w-full h-[460px] sm:h-[520px] lg:h-[560px] rounded-[22px] overflow-hidden flex flex-col justify-between p-6 sm:p-8 bg-gradient-to-b from-[#0A2F1B] to-[#001408] group">
                 
                 {/* Visual View Switcher (Globe vs Editorial Photo) */}
                 <div className="relative z-20 flex items-center justify-between w-full">
@@ -264,7 +264,7 @@ export default function PillarsSection({ className = "" }: { className?: string 
                           fill
                           quality={95}
                           sizes="(max-width: 1024px) 100vw, 600px"
-                          className="object-cover object-center brightness-90 contrast-105"
+                          className="object-cover object-center grayscale brightness-90 contrast-105 group-hover:grayscale-0 group-hover:brightness-100 group-hover:scale-105 transition-all duration-700 ease-out"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-black/20" />
                       </motion.div>

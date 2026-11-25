@@ -328,7 +328,7 @@ export default function AboutPage() {
                     fill
                     sizes="(max-width: 1024px) 100vw, 480px"
                     quality={100}
-                    className="object-cover object-top grayscale group-hover:scale-105 transition-transform duration-700 ease-out"
+                    className="object-cover object-top grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-out"
                     priority
                   />
 
@@ -606,7 +606,7 @@ export default function AboutPage() {
                 fill
                 sizes="100vw"
                 quality={100}
-                className="object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
+                className="object-cover object-center grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-out"
               />
             </div>
 

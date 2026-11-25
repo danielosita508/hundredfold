@@ -25,15 +25,15 @@ const PRO_MAX_EASE = [0.16, 1, 0.3, 1] as const;
 // Hero Auto-Fading Slides with sharp corporate Transcorp typography
 const HERO_SLIDES = [
   {
-    image: "/images/andras-vas-Bd7gNnWJBkU-unsplash.jpg",
-    alt: "Modern corporate architecture and strategic African enterprise landscape",
+    image: "/images/cytonn-photography-n95VMLxqM2I-unsplash.jpg",
+    alt: "Executive partnership handshake and strategic African enterprise alliance",
     title: "Redefining Partnerships.",
     description:
       "Hundredfold Innovation Network is a community-driven investment and business network designed to connect individuals around structured opportunities for wealth creation.",
   },
   {
-    image: "/images/cytonn-photography-n95VMLxqM2I-unsplash.jpg",
-    alt: "Modern African corporate skyline and sovereign asset development",
+    image: "/images/adeolu-eletu-E7RLgUjjazc-unsplash.jpg",
+    alt: "Strategic African leadership and institutional market intelligence",
     title: "Building Businesses. Creating Value.",
     description:
       "Grounded in institutional governance and disciplined capital stewardship, we pool capabilities and participate in high-conviction ventures across key sovereign sectors.",
@@ -539,18 +539,6 @@ export default function Home() {
                 <p className="text-sm sm:text-base text-[#424842] leading-relaxed">
                   The Fold is the private membership and community arm of Hundredfold Innovation Network Ltd. It convenes forward-thinking individuals, business leaders, and investors who share a common commitment to disciplined growth, ethical commerce, and collective economic advancement.
                 </p>
-
-                <div className="flex flex-wrap gap-2 pt-2">
-                  <span className="px-3.5 py-1.5 rounded-lg bg-[#DEF2F4] text-[#00190A] text-xs font-semibold">
-                    Strict 100 Member Cap
-                  </span>
-                  <span className="px-3.5 py-1.5 rounded-lg bg-[#DEF2F4] text-[#00190A] text-xs font-semibold">
-                    Cycle 1: Jan 2027
-                  </span>
-                  <span className="px-3.5 py-1.5 rounded-lg bg-[#DEF2F4] text-[#00190A] text-xs font-semibold">
-                    Governed Admissions
-                  </span>
-                </div>
               </div>
 
               <div className="flex-shrink-0">

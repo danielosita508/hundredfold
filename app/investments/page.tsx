@@ -157,7 +157,7 @@ const PORTFOLIO_SECTORS: PortfolioSector[] = [
   },
 ];
 
-// Interactive Living Banner for each Investment Sector with graceful cross-fading imagery
+// Interactive Living Banner for each Investment Sector with graceful cross-fading imagery and editorial writeup below
 function SectorBannerRow({
   sector,
   index,
@@ -182,57 +182,61 @@ function SectorBannerRow({
       : sector.image;
 
   return (
-    <div
+    <article
       key={sector.title}
       id={sector.id}
-      className="scroll-mt-20 relative w-full h-[520px] sm:h-[620px] lg:h-[720px] overflow-hidden bg-black group select-none cursor-pointer border-b border-black/40 last:border-b-0"
+      className="scroll-mt-24 w-full bg-white border-y border-[#DEF2F4] shadow-sm"
     >
-      <ParallaxImageFrame
-        containerClassName="absolute inset-0 w-full h-full pointer-events-none"
-        className="w-full h-full"
-      >
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={activeImage}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 1.1, ease: "easeInOut" }}
-            className="absolute inset-0 w-full h-full"
-          >
-            <Image
-              src={activeImage}
-              alt={sector.alt}
-              fill
-              quality={100}
-              sizes="100vw"
-              className="object-cover object-center group-hover:scale-105 transition-transform duration-1000 ease-out"
-            />
-          </motion.div>
-        </AnimatePresence>
-      </ParallaxImageFrame>
+      {/* Shorter Panoramic Sector Picture (Black & white by default; reveals color on hover) */}
+      <div className="relative w-full h-[240px] sm:h-[300px] lg:h-[360px] overflow-hidden bg-black group select-none cursor-pointer">
+        <ParallaxImageFrame
+          containerClassName="absolute inset-0 w-full h-full pointer-events-none"
+          className="w-full h-full"
+        >
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={activeImage}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 1.1, ease: "easeInOut" }}
+              className="absolute inset-0 w-full h-full"
+            >
+              <Image
+                src={activeImage}
+                alt={sector.alt}
+                fill
+                quality={100}
+                sizes="100vw"
+                className="object-cover object-center grayscale contrast-110 group-hover:grayscale-0 group-hover:contrast-100 group-hover:scale-105 transition-all duration-700 ease-out"
+              />
+            </motion.div>
+          </AnimatePresence>
+        </ParallaxImageFrame>
 
-      {/* Subtle Base Dark Layer for Photo Richness, deepening to Dark Backdrop on Hover (Zero Blur) */}
-      <div className="absolute inset-0 bg-black/10 group-hover:bg-black/65 transition-all duration-700 ease-out pointer-events-none" />
+        {/* Subtle Edge Scrim */}
+        <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-all duration-500 pointer-events-none" />
+      </div>
 
-      {/* Sector Name & Description: Invisible Until Hovered Upon (Wider width, smaller elegant font) */}
-      <div className="absolute inset-0 z-20 flex flex-col items-center justify-center p-6 sm:p-10 text-center pointer-events-none">
-        <div className="opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500 ease-out flex flex-col items-center max-w-5xl lg:max-w-6xl w-full px-4">
-          {/* Sector Title */}
-          <h2 className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white tracking-tight drop-shadow-2xl">
+      {/* Editorial Writeup Below Each Sector Picture */}
+      <div className="w-full bg-white py-8 sm:py-10 lg:py-12 px-6 lg:px-12">
+        <div className="max-w-[1280px] mx-auto">
+          <span className="text-xs uppercase tracking-[0.22em] font-bold text-[#2D6C00] block mb-2">
+            {sector.number} &mdash; {sector.tagline}
+          </span>
+
+          <h2 className="font-heading text-2xl sm:text-3xl lg:text-4xl font-bold text-[#00190A] tracking-tight">
             {sector.title}
           </h2>
 
-          {/* Accent Line */}
-          <div className="my-3.5 sm:my-4 h-[2px] w-16 sm:w-24 bg-[#9BE564] drop-shadow-md" />
+          <div className="my-3.5 sm:my-4 h-[2px] w-16 bg-[#2D6C00]" />
 
-          {/* Sector Description Paragraph: Wide horizontally, smaller refined typography */}
-          <p className="font-sans text-xs sm:text-sm lg:text-[14.5px] text-white/95 max-w-4xl lg:max-w-5xl leading-[1.75] sm:leading-[1.85] font-normal drop-shadow-md px-2 sm:px-4">
+          <p className="font-sans text-sm sm:text-[15px] text-[#374138] w-full max-w-none leading-[1.8] font-normal">
             {sector.description}
           </p>
         </div>
       </div>
-    </div>
+    </article>
   );
 }
 
@@ -394,8 +398,8 @@ export default function InvestmentsPage() {
       {/* ─── STEP 2.5: OUR INVESTMENT PHILOSOPHY (Radial Sector Wheel & Tenets) ─── */}
       <InvestmentPhilosophy />
 
-      {/* ─── STEP 3: THE 4 INVESTMENT SECTORS (Full-Width Photographic Banners, Invisible Writeup until Hover) ─── */}
-      <section id="sectors" className="w-full bg-black flex flex-col">
+      {/* ─── STEP 3: THE 4 INVESTMENT SECTORS (Shorter Banners with Spaced Editorial Writeups Below) ─── */}
+      <section id="sectors" className="w-full bg-[#E9FDFF] py-12 sm:py-16 lg:py-20 flex flex-col gap-12 sm:gap-16 lg:gap-20">
         {PORTFOLIO_SECTORS.map((sector, index) => (
           <SectorBannerRow key={sector.title} sector={sector} index={index} />
         ))}
