@@ -448,12 +448,9 @@ export default function TheFoldPage() {
           <span className="text-xs uppercase tracking-[0.25em] font-bold text-[#ABF67E] block">
             THE FOLD MANDATE
           </span>
-          <MaskedTextReveal
-            as="h2"
-            className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight drop-shadow-xl"
-          >
+          <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight drop-shadow-xl">
             Disciplined Capital. Compounding Enterprise.
-          </MaskedTextReveal>
+          </h2>
         </div>
       </section>
 

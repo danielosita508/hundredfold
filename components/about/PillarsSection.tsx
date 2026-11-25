@@ -102,11 +102,9 @@ export default function PillarsSection({ className = "" }: { className?: string 
               OUR CORE PILLARS
             </span>
 
-            <MaskedTextReveal as="h2">
-              <span className="font-heading text-3xl sm:text-4xl lg:text-5xl font-medium text-white tracking-tight leading-[1.15] block">
-                The pillars that define our enterprise.
-              </span>
-            </MaskedTextReveal>
+            <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-medium text-white tracking-tight leading-[1.15] block">
+              The pillars that define our enterprise.
+            </h2>
 
             <p className="text-sm sm:text-base text-emerald-100/75 leading-relaxed max-w-xl font-light">
               Our foundational pillars guide every capital allocation, strategic partnership, and operational decision across our business.

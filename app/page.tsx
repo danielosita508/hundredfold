@@ -365,11 +365,9 @@ export default function Home() {
                 WHO WE ARE
               </span>
 
-              <MaskedTextReveal as="h2">
-                <span className="font-poppins text-3xl sm:text-4xl md:text-5xl font-bold text-[#00190A] tracking-[-0.02em] leading-[1.15] block">
-                  A Network Built Around Community and Opportunity.
-                </span>
-              </MaskedTextReveal>
+              <h2 className="font-poppins text-3xl sm:text-4xl md:text-5xl font-bold text-[#00190A] tracking-[-0.02em] leading-[1.15] block">
+                A Network Built Around Community and Opportunity.
+              </h2>
 
               <p className="text-base sm:text-lg text-[#424842] leading-relaxed font-normal">
                 Hundredfold Innovation Network Ltd is an African business and investment company focused on identifying commercial opportunities, building strategic relationships and developing ventures with long-term potential.
@@ -428,11 +426,9 @@ export default function Home() {
                 INVESTMENTS
               </span>
 
-              <MaskedTextReveal as="h2">
-                <span className="font-poppins text-3xl sm:text-4xl md:text-5xl font-bold text-[#00190A] tracking-[-0.02em] leading-[1.15] block">
-                  Where We Focus
-                </span>
-              </MaskedTextReveal>
+              <h2 className="font-poppins text-3xl sm:text-4xl md:text-5xl font-bold text-[#00190A] tracking-[-0.02em] leading-[1.15] block">
+                Where We Focus
+              </h2>
 
               <p className="text-base sm:text-lg text-[#424842] leading-relaxed">
                 We deploy capital, expertise and network resources across four strategic commercial pillars.
@@ -494,12 +490,10 @@ export default function Home() {
               OUR APPROACH
             </span>
 
-            <MaskedTextReveal as="h2">
-              <span className="font-poppins text-3xl sm:text-4xl md:text-5xl font-bold text-[#00190A] tracking-[-0.02em] leading-[1.15] block">
-                Opportunity With Purpose. <br className="hidden sm:inline" />
-                Growth With Discipline.
-              </span>
-            </MaskedTextReveal>
+            <h2 className="font-poppins text-3xl sm:text-4xl md:text-5xl font-bold text-[#00190A] tracking-[-0.02em] leading-[1.15] block">
+              Opportunity With Purpose. <br className="hidden sm:inline" />
+              Growth With Discipline.
+            </h2>
 
             <p className="text-base sm:text-lg lg:text-xl text-[#424842] leading-relaxed font-light">
               We approach every venture with research-led judgment, disciplined risk management, and long-term commitment. Guided by commercial integrity, rigorous due diligence, and active execution, we build generative assets that endure across economic cycles.
@@ -530,11 +524,9 @@ export default function Home() {
                   THE COMMUNITY
                 </span>
 
-                <MaskedTextReveal as="h3">
-                  <span className="font-poppins text-2xl sm:text-3xl lg:text-4xl font-bold text-[#00190A] tracking-[-0.02em] block">
-                    Welcome to The Fold
-                  </span>
-                </MaskedTextReveal>
+                <h3 className="font-poppins text-2xl sm:text-3xl lg:text-4xl font-bold text-[#00190A] tracking-[-0.02em] block">
+                  Welcome to The Fold
+                </h3>
 
                 <p className="text-sm sm:text-base text-[#424842] leading-relaxed">
                   The Fold is the private membership and community arm of Hundredfold Innovation Network Ltd. It convenes forward-thinking individuals, business leaders, and investors who share a common commitment to disciplined growth, ethical commerce, and collective economic advancement.

@@ -616,12 +616,9 @@ export default function AboutPage() {
                 THE FOLD &amp; ALLIANCES
               </span>
 
-              <MaskedTextReveal
-                as="h2"
-                className="font-heading text-3xl sm:text-4xl lg:text-5xl font-semibold text-[#00190A] tracking-tight leading-[1.12]"
-              >
+              <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-semibold text-[#00190A] tracking-tight leading-[1.12]">
                 Convening Forward-Thinking Leaders.
-              </MaskedTextReveal>
+              </h2>
 
               <p className="text-base sm:text-lg text-[#424842] leading-relaxed">
                 Through The Fold and our institutional alliances, we assemble private syndicates and ambitious business operators into structured cohorts. Every cohort provides member mentorship, financial education, and an active voice in governance.
@@ -645,12 +642,9 @@ export default function AboutPage() {
       <section id="vision-mission" className="w-full px-6 lg:px-12 py-16 lg:py-24 bg-white border-t border-[#c1c8c0]/25 scroll-mt-20">
         <div className="max-w-[1360px] mx-auto flex flex-col gap-10">
           <div>
-            <MaskedTextReveal
-              as="h2"
-              className="font-heading text-3xl sm:text-4xl lg:text-5xl text-[#00190A] tracking-tight font-semibold"
-            >
+            <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl text-[#00190A] tracking-tight font-semibold">
               Our Vision & Mission
-            </MaskedTextReveal>
+            </h2>
           </div>
 
           <motion.div

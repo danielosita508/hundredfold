@@ -409,12 +409,9 @@ export default function InvestmentsPage() {
             <span className="text-xs uppercase tracking-wider text-[#ABF67E] font-bold">
               CO-INVESTMENT &amp; ALLIANCES
             </span>
-            <MaskedTextReveal
-              as="h3"
-              className="font-heading text-2xl sm:text-3xl font-semibold text-white"
-            >
+            <h3 className="font-heading text-2xl sm:text-3xl font-semibold text-white">
               Partner Across Our Strategic Sectors
-            </MaskedTextReveal>
+            </h3>
             <p className="text-sm sm:text-base text-white/80 leading-relaxed">
               We welcome dialogue with institutional partners, qualified co-investors, and commercial collaborators across our 4 strategic pillars.
             </p>
