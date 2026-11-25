@@ -19,35 +19,23 @@ import {
 
 const PRO_MAX_EASE = [0.16, 1, 0.3, 1] as const;
 
-// The Fold Hero Auto-Fading Slides (Ultra-Concise Copy)
+// The Fold Hero Auto-Fading Background Slides (Fixed Hero Copy)
 const THE_FOLD_HERO_SLIDES = [
   {
     image: "/images/pexels-artem-korolev-2159253660-38320074.jpg",
     alt: "The Fold Executive Conclave at Hundredfold Headquarters",
-    title: "Welcome to The Fold",
-    description:
-      "The Fold is the community at the heart of Hundredfold Innovation Network Ltd, bringing together individuals who believe in the power of collaboration, responsible enterprise and collective progress.",
   },
   {
     image: "/images/benjamin-child-GWe0dlVD9e0-unsplash.jpg",
     alt: "Executive Boardroom Conclave and Private Syndicate Assembly",
-    title: "Private Syndicate Conclave",
-    description:
-      "Collective leverage and structured cohorts anchored in institutional governance.",
   },
   {
     image: "/images/adeolu-eletu-E7RLgUjjazc-unsplash.jpg",
     alt: "Vetted African Enterprise Leadership Cohort",
-    title: "Sovereign Capital Network",
-    description:
-      "Pooling capital into tangible assets with disciplined, risk-adjusted compounding.",
   },
   {
     image: "/images/charles-forerunner-3fPXt37X6UQ-unsplash.jpg",
     alt: "Modern Enterprise Infrastructure and High-Yield Venues",
-    title: "Disciplined Stewardship",
-    description:
-      "Transparent governance, verified due diligence, and audited operational reporting.",
   },
 ];
 
@@ -185,28 +173,26 @@ export default function TheFoldPage() {
         {/* Hero Bottom Container (Unified Left Writeup + Right Actions) */}
         <div className="relative max-w-[1360px] mx-auto px-6 lg:px-12 w-full z-20 pb-7 sm:pb-10 flex flex-col lg:flex-row lg:items-end justify-between gap-6">
 
-          {/* Left: Headline & Writeup sitting at the bottom-left */}
+          {/* Left: Fixed Hero Headline & Writeup sitting at the bottom-left */}
           <div className="flex flex-col items-start max-w-[580px]">
             <MaskedTextReveal
-              key={`fold-h1-${currentSlide}`}
               as="h1"
               animate
               className="font-poppins text-[30px] sm:text-[36px] lg:text-[42px] font-bold leading-[1.15] tracking-[-0.02em] text-white drop-shadow-md text-left"
             >
-              {THE_FOLD_HERO_SLIDES[currentSlide].title}
+              Welcome to The Fold
             </MaskedTextReveal>
 
             {/* Hundredfold Brand Green Accent Divider */}
             <div className="my-4 sm:my-5 h-[2px] w-[200px] bg-[#9BE564]" />
 
             <motion.p
-              key={`fold-desc-${currentSlide}`}
               initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.65, delay: 0.1, ease: PRO_MAX_EASE }}
               className="font-poppins text-[13px] md:text-[14px] font-normal leading-[1.65] max-w-[480px] text-white/90 drop-shadow-sm text-left"
             >
-              {THE_FOLD_HERO_SLIDES[currentSlide].description}
+              The Fold is the community at the heart of Hundredfold Innovation Network Ltd, bringing together individuals who believe in the power of collaboration, responsible enterprise and collective progress.
             </motion.p>
           </div>
 
