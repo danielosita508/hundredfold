@@ -39,31 +39,47 @@ const THE_FOLD_HERO_SLIDES = [
   },
 ];
 
-// Three Sovereign Pillars of The Fold (Summarized to Essential Points)
-const FOLD_PILLARS = [
+// Five Progressive Stages of The Fold Journey
+const FOLD_JOURNEY_STAGES = [
   {
     number: "01",
-    title: "Collective Leverage",
+    title: "1. LEARN",
     description:
-      "Pooled capital and commercial scale to execute ventures beyond individual reach.",
-    image: "/images/benjamin-child-GWe0dlVD9e0-unsplash.jpg",
-    alt: "Executive syndicate assembly and institutional boardroom meeting",
+      "Develop your understanding of business, investment, entrepreneurship, financial responsibility and wealth creation through shared knowledge, educational initiatives and community engagement.",
+    image: "/images/adeolu-eletu-E7RLgUjjazc-unsplash.jpg",
+    alt: "Business and investment literacy through shared knowledge",
   },
   {
     number: "02",
-    title: "Strict 100 Cap",
+    title: "2. CONNECT",
     description:
-      "Deliberate cohort ceiling preserving confidentiality, alignment, and high trust.",
-    image: "/images/istockphoto-2189200243-612x612.jpg",
-    alt: "Curated peer cohort and executive boardroom discussion",
+      "Build meaningful relationships with individuals who share your commitment to growth. Engage, exchange ideas and develop relationships that can create value beyond the community.",
+    image: "/images/cytonn-photography-n95VMLxqM2I-unsplash.jpg",
+    alt: "Building meaningful relationships within The Fold community",
   },
   {
     number: "03",
-    title: "Audited Yields",
+    title: "3. COLLABORATE",
     description:
-      "Disciplined due diligence, risk governance, and board-approved yield distribution.",
-    image: "/images/photo-1590283603385-17ffb3a7f29f.avif",
-    alt: "Financial data analytics, commercial due diligence, and capital stewardship",
+      "Contribute your skills, experience, knowledge and ideas. Explore areas of mutual interest and identify opportunities to work with other members.",
+    image: "/images/istockphoto-2189200243-612x612.jpg",
+    alt: "Members collaborating and exchanging strategic ideas",
+  },
+  {
+    number: "04",
+    title: "4. BUILD",
+    description:
+      "Move from conversations to meaningful action. Participate in approved initiatives, business ventures, strategic partnerships and other opportunities that align with the Network’s objectives.",
+    image: "/images/real-estate-construction-skyline.jpg",
+    alt: "Participating in approved ventures and commercial infrastructure",
+  },
+  {
+    number: "05",
+    title: "5. GROW",
+    description:
+      "Grow through experience, responsible participation, shared achievements and long-term relationships. Contribute to a network that seeks to create value for its members and the wider African economy.",
+    image: "/images/vitaly-gariev-OZnnv0FCA6Y-unsplash.jpg",
+    alt: "Shared growth, achievement, and long-term economic value",
   },
 ];
 
@@ -362,42 +378,43 @@ export default function TheFoldPage() {
         </div>
       </section>
 
-      {/* ─── SECTION 4: THREE PILLARS (Clean Photographic Cards) ─── */}
+      {/* ─── SECTION 4: UNDERSTANDING YOUR JOURNEY (Five Progressive Stage Cards) ─── */}
       <section className="relative w-full py-14 sm:py-18 px-6 lg:px-12 bg-white/70 border-y border-[#DEF2F4]">
         <div className="max-w-[1240px] mx-auto">
           {/* Section Header */}
           <div className="mb-10 text-center sm:text-left">
             <span className="text-xs uppercase tracking-[0.25em] font-bold text-[#2D6C00] block">
-              ARCHITECTURE
+              UNDERSTANDING YOUR JOURNEY
             </span>
-            <h2 className="font-heading text-3xl sm:text-4xl font-semibold text-[#00190A] tracking-tight mt-1">
-              Three Pillars of The Fold
+            <h2 className="font-heading text-2xl sm:text-3xl lg:text-4xl font-semibold text-[#00190A] tracking-tight mt-1.5 max-w-3xl">
+              Your experience within The Fold is built around five progressive stages:
             </h2>
           </div>
 
-          {/* 3 Summarized Photographic Cards */}
+          {/* 5 Photographic Stage Cards (3 top row + 2 centered bottom row on desktop) */}
           <motion.div
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }}
+            viewport={{ once: true, amount: 0.15 }}
             variants={staggerGridVariants}
-            className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8"
+            className="flex flex-wrap justify-center items-stretch gap-6 lg:gap-8"
           >
-            {FOLD_PILLARS.map((pillar) => (
+            {FOLD_JOURNEY_STAGES.map((stage) => (
               <motion.div
-                key={pillar.title}
+                key={stage.title}
                 variants={cardScrollVariants}
+                className="w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-22px)] flex"
               >
                 <Tilt3DCard
                   maxTilt={6}
                   sheen={true}
-                  className="rounded-3xl overflow-hidden bg-white border border-[#DEF2F4] shadow-md hover:shadow-xl transition-all duration-300 flex flex-col h-full group"
+                  className="w-full rounded-3xl overflow-hidden bg-white border border-[#DEF2F4] shadow-md hover:shadow-xl transition-all duration-300 flex flex-col h-full group"
                 >
                   {/* Image */}
                   <div className="relative aspect-[16/10] w-full overflow-hidden bg-[#0A2F1B]">
                     <Image
-                      src={pillar.image}
-                      alt={pillar.alt}
+                      src={stage.image}
+                      alt={stage.alt}
                       fill
                       quality={100}
                       sizes="(max-width: 768px) 100vw, 400px"
@@ -407,12 +424,12 @@ export default function TheFoldPage() {
                   </div>
 
                   {/* Content */}
-                  <div className="p-6 flex-1 flex flex-col justify-between space-y-2">
+                  <div className="p-6 flex-1 flex flex-col justify-start space-y-2.5">
                     <h3 className="font-heading text-xl font-bold text-[#00190A] tracking-tight">
-                      {pillar.title}
+                      {stage.title}
                     </h3>
                     <p className="text-xs sm:text-sm text-[#424842] leading-relaxed">
-                      {pillar.description}
+                      {stage.description}
                     </p>
                   </div>
                 </Tilt3DCard>
