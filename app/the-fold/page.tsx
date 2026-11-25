@@ -46,40 +46,40 @@ const FOLD_JOURNEY_STAGES = [
     title: "1. LEARN",
     description:
       "Develop your understanding of business, investment, entrepreneurship, financial responsibility and wealth creation through shared knowledge, educational initiatives and community engagement.",
-    image: "/images/adeolu-eletu-E7RLgUjjazc-unsplash.jpg",
-    alt: "Business and investment literacy through shared knowledge",
+    image: "/images/fold_event_learn.jpg",
+    alt: "Hundredfold leader presenting at Investors Meet and Greet",
   },
   {
     number: "02",
     title: "2. CONNECT",
     description:
       "Build meaningful relationships with individuals who share your commitment to growth. Engage, exchange ideas and develop relationships that can create value beyond the community.",
-    image: "/images/cytonn-photography-n95VMLxqM2I-unsplash.jpg",
-    alt: "Building meaningful relationships within The Fold community",
+    image: "/images/fold_event_connect.jpg",
+    alt: "Members connecting and exchanging insights during The Fold session",
   },
   {
     number: "03",
     title: "3. COLLABORATE",
     description:
       "Contribute your skills, experience, knowledge and ideas. Explore areas of mutual interest and identify opportunities to work with other members.",
-    image: "/images/istockphoto-2189200243-612x612.jpg",
-    alt: "Members collaborating and exchanging strategic ideas",
+    image: "/images/fold_event_collaborate.jpg",
+    alt: "Hundredfold members collaborating together in front of network banners",
   },
   {
     number: "04",
     title: "4. BUILD",
     description:
       "Move from conversations to meaningful action. Participate in approved initiatives, business ventures, strategic partnerships and other opportunities that align with the Network’s objectives.",
-    image: "/images/real-estate-construction-skyline.jpg",
-    alt: "Participating in approved ventures and commercial infrastructure",
+    image: "/images/fold_event_build.jpg",
+    alt: "Executive strategy presentation during Hundredfold Investors Meet and Greet",
   },
   {
     number: "05",
     title: "5. GROW",
     description:
       "Grow through experience, responsible participation, shared achievements and long-term relationships. Contribute to a network that seeks to create value for its members and the wider African economy.",
-    image: "/images/vitaly-gariev-OZnnv0FCA6Y-unsplash.jpg",
-    alt: "Shared growth, achievement, and long-term economic value",
+    image: "/images/fold_event_grow.jpg",
+    alt: "Hundredfold leadership addressing community members at the 2026 event",
   },
 ];
 
@@ -406,7 +406,7 @@ export default function TheFoldPage() {
                       fill
                       quality={100}
                       sizes="(max-width: 768px) 100vw, 400px"
-                      className="object-cover object-center grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-out"
+                      className="object-cover object-[50%_22%] grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-out"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
                   </div>
