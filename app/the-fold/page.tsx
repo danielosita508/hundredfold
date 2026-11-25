@@ -334,13 +334,13 @@ export default function TheFoldPage() {
                 </p>
               </div>
 
-              {/* Participation Structure Table Card (Matching Institutional Spec) */}
-              <div className="rounded-2xl bg-[#00190A] text-white p-5 sm:p-6 shadow-xl border border-white/10 overflow-hidden">
-                <div className="flex items-center justify-between pb-3.5 border-b border-white/15 text-xs font-bold uppercase tracking-wider text-[#ABF67E]">
+              {/* Participation Structure Table Card (Clean Institutional White Card) */}
+              <div className="rounded-2xl bg-white text-[#00190A] p-5 sm:p-6 shadow-md border border-[#DEF2F4] overflow-hidden">
+                <div className="flex items-center justify-between pb-3.5 border-b border-[#DEF2F4] text-xs font-bold uppercase tracking-wider text-[#2D6C00]">
                   <span>Participation structure</span>
                   <span className="text-right">Number of participants</span>
                 </div>
-                <div className="divide-y divide-white/10">
+                <div className="divide-y divide-[#DEF2F4]/70">
                   {[
                     { structure: "Unit 10", participants: "10 Members" },
                     { structure: "Unit 20", participants: "20 Members" },
@@ -350,10 +350,10 @@ export default function TheFoldPage() {
                   ].map((row) => (
                     <div
                       key={row.structure}
-                      className="flex items-center justify-between py-2.5 text-sm transition-colors hover:bg-white/5 px-2 rounded-lg"
+                      className="flex items-center justify-between py-3 text-sm transition-colors hover:bg-[#E9FDFF]/60 px-2 rounded-lg"
                     >
-                      <span className="font-semibold text-white tracking-wide">{row.structure}</span>
-                      <span className="text-emerald-100/90 font-medium">{row.participants}</span>
+                      <span className="font-semibold text-[#00190A] tracking-wide">{row.structure}</span>
+                      <span className="text-[#424842] font-semibold text-right">{row.participants}</span>
                     </div>
                   ))}
                 </div>
