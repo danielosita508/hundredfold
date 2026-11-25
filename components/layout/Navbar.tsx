@@ -117,11 +117,11 @@ export default function Navbar() {
                 priority
               />
             </div>
-            <div className="flex flex-col">
-              <span className="font-heading text-xl sm:text-2xl font-bold tracking-tight leading-tight transition-colors duration-300 text-white">
+            <div className="flex flex-col leading-none">
+              <span className="font-heading text-xl sm:text-2xl font-bold tracking-tight transition-colors duration-300 text-white uppercase">
                 Hundredfold
               </span>
-              <span className="text-[10px] uppercase tracking-widest font-bold transition-colors duration-300 text-[#ABF67E]">
+              <span className="text-[10px] uppercase tracking-widest font-bold transition-colors duration-300 text-white">
                 Innovation Network Ltd
               </span>
             </div>

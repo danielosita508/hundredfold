@@ -59,13 +59,7 @@ const HERO_SLIDES = [
     description:
       "Guided by the philosophy of Africapitalism, we build enduring commercial institutions that create compounding economic value for investors, partners, and communities.",
   },
-  {
-    image: "/images/adeolu-eletu-E7RLgUjjazc-unsplash.jpg",
-    alt: "Strategic African leadership and executive enterprise collaboration",
-    title: "Strategic Alliances. Scaled Impact.",
-    description:
-      "Convening exceptional African operators and sovereign syndicates to pool capital, mitigate operational risk, and capture high-conviction economic growth.",
-  },
+
   {
     image: "/images/charles-forerunner-3fPXt37X6UQ-unsplash.jpg",
     alt: "Modern commercial architecture and institutional infrastructure",
@@ -199,9 +193,8 @@ function SectorCarouselCard({
           {sector.images.map((_, i) => (
             <span
               key={i}
-              className={`h-1 rounded-full transition-all duration-300 ${
-                i === currentIdx ? "w-5 bg-white" : "w-1.5 bg-white/40"
-              }`}
+              className={`h-1 rounded-full transition-all duration-300 ${i === currentIdx ? "w-5 bg-white" : "w-1.5 bg-white/40"
+                }`}
             />
           ))}
         </div>
@@ -213,10 +206,10 @@ function SectorCarouselCard({
           <h3 className="font-poppins text-xl sm:text-2xl font-bold tracking-tight text-white drop-shadow-md">
             {sector.title}
           </h3>
-          
+
           {/* Accent Green Line */}
           <div className="w-12 sm:w-14 h-[2px] bg-[#9BE564] my-2.5 rounded-full group-hover:w-16 transition-all duration-300" />
-          
+
           {/* Sector Description */}
           <p className="font-poppins text-[13px] sm:text-[14px] font-normal leading-[1.6] text-white/90 drop-shadow-sm pt-1">
             {sector.description}
@@ -374,7 +367,7 @@ export default function Home() {
 
               <MaskedTextReveal as="h2">
                 <span className="font-poppins text-3xl sm:text-4xl md:text-5xl font-bold text-[#00190A] tracking-[-0.02em] leading-[1.15] block">
-                  A Network Built Around Opportunity.
+                  A Network Built Around Community and Opportunity.
                 </span>
               </MaskedTextReveal>
 
@@ -409,7 +402,7 @@ export default function Home() {
                     fill
                     quality={100}
                     sizes="(max-width: 1024px) 100vw, 550px"
-                    className="object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
+                    className="object-cover object-center grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-out"
                   />
                 </ParallaxImageFrame>
               </div>
