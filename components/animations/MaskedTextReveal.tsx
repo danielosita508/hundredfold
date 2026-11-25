@@ -24,7 +24,7 @@ export default function MaskedTextReveal({
   delay = 0,
   duration = 0.75,
   once = true,
-  amount = 0.1,
+  amount = 0.05,
   as: Component = "div",
   animate = false,
 }: MaskedTextRevealProps) {
@@ -36,26 +36,14 @@ export default function MaskedTextReveal({
     ease: EASING,
   };
 
-  const variants = {
-    hidden: {
-      y: shouldReduceMotion ? 0 : "100%",
-      opacity: shouldReduceMotion ? 0 : 0.001,
-    },
-    visible: {
-      y: "0%",
-      opacity: 1,
-      transition,
-    },
-  };
-
   return (
     <Component className={`overflow-hidden block ${containerClassName}`}>
       <motion.span
-        initial="hidden"
+        initial={shouldReduceMotion ? { y: "0%", opacity: 1 } : { y: "100%", opacity: 0 }}
         {...(animate
-          ? { animate: "visible" }
-          : { whileInView: "visible", viewport: { once, amount } })}
-        variants={variants}
+          ? { animate: { y: "0%", opacity: 1 } }
+          : { whileInView: { y: "0%", opacity: 1 }, viewport: { once, amount } })}
+        transition={transition}
         style={{ willChange: "transform" }}
         className={`block ${className}`}
       >

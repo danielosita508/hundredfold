@@ -59,11 +59,11 @@ export default function Footer() {
                   className="w-full h-full object-contain"
                 />
               </div>
-              <div className="flex flex-col select-none">
-                <span className="font-heading text-lg sm:text-[21px] text-[#00190A] font-extrabold uppercase tracking-tight block leading-none">
+              <div className="flex flex-col select-none w-fit">
+                <span className="font-heading text-[18px] sm:text-[22px] text-[#00190A] font-extrabold uppercase tracking-tight block leading-none">
                   Hundredfold
                 </span>
-                <span className="text-[8.5px] sm:text-[9.8px] uppercase tracking-[0.27em] font-bold text-[#2D6C00] block leading-none mt-1 -mr-[0.27em]">
+                <span className="text-[8px] sm:text-[9.8px] uppercase tracking-[0.15em] font-bold text-[#2D6C00] block leading-none mt-1 -mr-[0.15em]">
                   Innovation Network Ltd
                 </span>
               </div>

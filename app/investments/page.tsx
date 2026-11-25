@@ -385,12 +385,9 @@ export default function InvestmentsPage() {
             <span className="text-xs uppercase tracking-widest text-[#2D6C00] font-bold">
               STRATEGIC ASSET ALLOCATION
             </span>
-            <MaskedTextReveal
-              as="p"
-              className="font-mulish text-2xl sm:text-3xl md:text-4xl lg:text-[2.35rem] text-[#00190A] leading-snug sm:leading-relaxed font-bold tracking-tight"
-            >
+            <p className="font-mulish text-2xl sm:text-3xl md:text-4xl lg:text-[2.35rem] text-[#00190A] leading-snug sm:leading-relaxed font-bold tracking-tight">
               We invest in sectors that provide strong returns and have the ability to transform the economy.
-            </MaskedTextReveal>
+            </p>
           </motion.div>
         </div>
       </section>

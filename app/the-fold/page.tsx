@@ -26,7 +26,7 @@ const THE_FOLD_HERO_SLIDES = [
     alt: "The Fold Executive Conclave at Hundredfold Headquarters",
     title: "Welcome to The Fold",
     description:
-      "A private syndicate of vetted enterprise leaders pooling capital into productive African frontiers.",
+      "The Fold is the community at the heart of Hundredfold Innovation Network Ltd, bringing together individuals who believe in the power of collaboration, responsible enterprise and collective progress.",
   },
   {
     image: "/images/benjamin-child-GWe0dlVD9e0-unsplash.jpg",
@@ -255,12 +255,9 @@ export default function TheFoldPage() {
             <span className="text-xs uppercase tracking-[0.25em] font-bold text-[#2D6C00] block">
               THE FOLD CONCLAVE
             </span>
-            <MaskedTextReveal
-              as="p"
-              className="font-heading text-2xl sm:text-3xl md:text-4xl text-[#00190A] leading-snug sm:leading-relaxed font-semibold tracking-tight"
-            >
+            <p className="font-heading text-2xl sm:text-3xl md:text-4xl text-[#00190A] leading-snug sm:leading-relaxed font-semibold tracking-tight">
               A private syndicate of 100 vetted enterprise leaders pooling capital into Africa&apos;s most productive commercial sectors.
-            </MaskedTextReveal>
+            </p>
           </motion.div>
         </div>
       </section>
@@ -313,12 +310,9 @@ export default function TheFoldPage() {
                 <span className="text-xs uppercase tracking-[0.25em] font-bold text-[#2D6C00] block">
                   ENTERPRISE INTEGRATION
                 </span>
-                <MaskedTextReveal
-                  as="h2"
-                  className="font-heading text-3xl sm:text-4xl font-semibold text-[#00190A] tracking-tight mt-1"
-                >
+                <h2 className="font-heading text-3xl sm:text-4xl font-semibold text-[#00190A] tracking-tight mt-1">
                   How Hundredfold Powers The Fold
-                </MaskedTextReveal>
+                </h2>
               </div>
 
               {/* Company Synergy Cards (Clean, Structured, Institutional) */}
@@ -379,12 +373,9 @@ export default function TheFoldPage() {
             <span className="text-xs uppercase tracking-[0.25em] font-bold text-[#2D6C00] block">
               ARCHITECTURE
             </span>
-            <MaskedTextReveal
-              as="h2"
-              className="font-heading text-3xl sm:text-4xl font-semibold text-[#00190A] tracking-tight mt-1"
-            >
+            <h2 className="font-heading text-3xl sm:text-4xl font-semibold text-[#00190A] tracking-tight mt-1">
               Three Pillars of The Fold
-            </MaskedTextReveal>
+            </h2>
           </div>
 
           {/* 3 Summarized Photographic Cards */}
